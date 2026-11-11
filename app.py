@@ -6,6 +6,7 @@
   python app.py dashboard            rebuild docs/index.html
   python app.py open                 rebuild + open the dashboard in your browser
   python app.py monitor              NIFTY paper engine: 30-s exit watch + opening-range breakout (market hours)
+  python app.py brief [--send]       morning "what to buy today" message (auto at 9:35 AM)
   python app.py engine-report        expectancy, drawdown, slippage, rejected quotes, by hour/expiry/IV
   python app.py live                 live server at http://127.0.0.1:8765 (prices every 30-60 s)
   python app.py report               print paper-trading results
@@ -57,6 +58,10 @@ def main():
         elif cmd == "monitor":
             import engine
             engine.run_monitor(once="--once" in args)
+        elif cmd == "brief":
+            import brief
+            title, body = brief.send() if "--send" in args else brief.build()
+            print(title + "\n" + body)
         elif cmd == "engine-report":
             import engine
             engine.report()

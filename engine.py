@@ -535,6 +535,17 @@ def signal_tick(nse):
             st["heartbeat_signal"] = now_ist().isoformat(timespec="seconds")
             save(st)
     reconcile()
+    # morning "what to buy today" message, once a day after the opening range is set
+    if now_ist().strftime("%H:%M") >= E["brief_at"]:
+        with locked():
+            st = load()
+            due = st.get("brief_day") != now_ist().date().isoformat()
+            if due:
+                st["brief_day"] = now_ist().date().isoformat()
+                save(st)
+        if due:
+            import brief
+            brief.send()
 
 
 def step(nse):

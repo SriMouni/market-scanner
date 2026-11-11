@@ -47,11 +47,12 @@
     "min_premium": 2,
     "min_contracts_traded": 200,
     "gap_skip_pct": 5,
-    "lt_top_n": 12,
+    "lt_top_n": 15,
     "lt_max_from_high": 15,
     "lt_extended_pct": 8,
     "lt_budget": 100000,
-    "lt_min_health": 45
+    "lt_min_health": 50,
+    "lt_max_small": 2
   },
 
   "stocks": {
@@ -83,6 +84,7 @@
   "engine": {
     "poll_sec": 10,
     "signal_sec": 60,
+    "brief_at": "09:35",
     "or_minutes": 15,
     "breakout_buffer_pct": 0.05,
     "entry_start": "09:30",

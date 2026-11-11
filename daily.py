@@ -71,8 +71,9 @@ def ban_list():
 
 
 def index_members():
-    syms = []
-    for name in ("nifty50", "niftynext50"):
+    """NIFTY 500 companies, tagged Large cap (NIFTY 50 / Next 50) or Mid/Small cap."""
+    syms, seen = [], set()
+    for name in ("nifty50", "niftynext50", "nifty500"):
         cache = DATA / f"ind_{name}list.csv"
         if not cache.exists() or (datetime.now().timestamp() - cache.stat().st_mtime) > 7 * 86400:
             r = http.get(f"{ARCH}/indices/ind_{name}list.csv", timeout=30)
@@ -80,8 +81,11 @@ def index_members():
                 cache.write_text(r.text)
         if cache.exists():
             df = pd.read_csv(cache)
-            syms += [(s, n, "NIFTY 50" if name == "nifty50" else "Next 50", ind)
-                     for s, n, ind in zip(df["Symbol"], df["Company Name"], df["Industry"])]
+            tag = "Large cap" if name in ("nifty50", "niftynext50") else "Mid/Small cap"
+            for s, n, ind in zip(df["Symbol"], df["Company Name"], df["Industry"]):
+                if s not in seen:
+                    seen.add(s)
+                    syms.append((s, n, tag, ind))
     return syms
 
 
@@ -377,18 +381,21 @@ def long_term(day):
 
     # suggested split of the long-term budget: equal weight across up to 5 names,
     # preferring ones in a fair entry zone, max 2 per sector
-    budget, chosen, sectors = D["lt_budget"], [], {}
+    budget, chosen, sectors, small = D["lt_budget"], [], {}, 0
     for r in sorted(out, key=lambda x: (x["extended"], -x["score"])):
         if r["price"] > budget / 5:
             continue  # one share costs more than a fifth of the budget
+        if r["index"] != "Large cap" and small >= D["lt_max_small"]:
+            continue  # keep most of the money in large, steadier companies
         if len(chosen) < 5 and sectors.get(r["industry"], 0) < 2:
+            small += r["index"] != "Large cap"
             chosen.append(r)
             sectors[r["industry"]] = sectors.get(r["industry"], 0) + 1
     each = budget / max(len(chosen), 1)
     for r in out:
         r["alloc_shares"] = int(each // r["price"]) if r in chosen else 0
         r["alloc_amount"] = round(r["alloc_shares"] * r["price"]) if r in chosen else 0
-    note = f"{len(out)} of {len(df)} big companies are healthy and in a steady rise"
+    note = f"{len(out)} of {len(df)} companies (NIFTY 500) are healthy and in a steady rise"
     return out, note, bench
 
 

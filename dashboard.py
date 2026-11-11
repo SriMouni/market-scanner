@@ -459,7 +459,7 @@ function ltDetail(r){const b=D.daily.benchmark||{},pos=(r.price-r.low52)/((r.hig
   <tr><td>Price vs yearly profit (P/E)</td><td>${r.pe??"–"}</td></tr><tr><td>Price vs company's assets (P/B)</td><td>${r.pb??"–"}</td></tr>
   <tr><td>Company size (market value)</td><td>${r.mcap_cr?"₹"+num(r.mcap_cr,0)+" Cr":"–"}</td></tr><tr><td>Yearly cash paid to shareholders</td><td>${r.div_yield!=null?r.div_yield+"%":"–"}</td></tr>
   <tr><td>Usual price (last 50 days)</td><td>${inr(r.ma50,0)}</td></tr><tr><td>Usual price (last 200 days)</td><td>${inr(r.ma200,0)}</td></tr>
-  <tr><td>Group · business type</td><td>${r.index} · ${r.industry}</td></tr></table></div>
+  <tr><td>Size · business type</td><td>${r.index} · ${r.industry}</td></tr></table></div>
  <div class="box"><h3>🏢 Company health</h3>${healthHTML(r.fund)}</div>
  <div class="box"><h3>📊 Chart now</h3>${r.chart?`<ul class="hl">${r.chart.checks.map(c=>`<li>${c.ok?"✅":"❌"} <b>${c.name}:</b> ${c.text}${c.tech?` <span class="tech">${c.tech}</span>`:""}</li>`).join("")}</ul>`:"–"}</div>
  <div class="box"><h3>How to use this</h3><ul>
@@ -475,7 +475,7 @@ function ltDetail(r){const b=D.daily.benchmark||{},pos=(r.price-r.low52)/((r.hig
  if(alloc.length)h+=`<h2>Example: how to split ${inr(d.lt_budget,0)}</h2><p class="note">Roughly equal money in up to 5 companies, not more than 2 from the same type of business, so one bad sector can't hurt you too much.</p>`+
   table([["Stock",r=>`<b>${r.symbol}</b>`],["Price",r=>inr(r.price)],["Shares",r=>r.alloc_shares],["Amount",r=>inr(r.alloc_amount,0)],["When to buy",r=>`<span class="muted">${r.zone}</span>`]],alloc,"")+
   `<p class="note">Total ${inr(tot,0)} · leftover ${inr(d.lt_budget-tot,0)}. Many people put half in a NIFTY 50 index fund and half in picks like these.</p>`;
- h+=`<h2>Watchlist</h2>`+table([["Stock",r=>`<b>${r.symbol}</b> <span class="muted">${r.name}</span>`],["Price",r=>inr(r.price)],
+ h+=`<h2>Watchlist</h2>`+table([["Stock",r=>`<b>${r.symbol}</b> <span class="muted">${r.name}</span> <span class="pill ${r.index==="Large cap"?"n":"PE"}" style="font-weight:500">${r.index}</span>`],["Price",r=>inr(r.price)],
   ["1 yr",r=>`<span class="${cls(r.ret12m)}">${sgn(r.ret12m,1)}%</span>`],["Per yr (3 yrs)",r=>r.cagr3!=null?`<span class="${cls(r.cagr3)}">${sgn(r.cagr3,1)}%</span>`:"–"],
   ["Per yr (5 yrs)",r=>r.cagr5!=null?`<span class="${cls(r.cagr5)}">${sgn(r.cagr5,1)}%</span>`:"–"],["Health",r=>r.health!=null?`<span class="hb ${r.health>=70?"g":r.health>=50?"m":"b"}">${r.health}</span>`:"–"],["P/E",r=>r.pe??"–"],["Below its top",r=>r.from_high+"%"],
   ["When to buy",r=>`<span class="pill ${r.extended?"n":"CE"}">${r.extended?"wait for a dip":"OK to buy now"}</span>`]],d.long_term,"No stocks passed the screen.",ltDetail);
