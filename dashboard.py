@@ -176,6 +176,16 @@ th.sortable{cursor:pointer;user-select:none}th.sortable:hover{color:var(--ink)}t
 .heat{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:8px 0 14px}
 .heat>div{border-radius:12px;padding:10px;font-size:12px;font-weight:600;line-height:1.3}.heat b{display:block;font-size:17px;font-weight:800}
 .secline{font-size:14px;margin:8px 0 0}
+/* ---- market map */
+.mapbar{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;margin:6px 0 10px}.mapbar .ad{flex:1;height:10px;border-radius:5px;background:var(--dn);overflow:hidden}.mapbar .ad i{display:block;height:100%;background:var(--up)}
+.mapf{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.mapf button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer}.mapf button.on{background:var(--ink);color:var(--card)}
+.mapf input{flex:1;min-width:140px;max-width:260px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 12px;font:inherit;font-size:14px}
+.msec{margin-bottom:12px}.mh{font-size:13px;margin-bottom:5px;display:flex;justify-content:space-between}
+.mt{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:5px}
+.tile{border:0;border-radius:9px;padding:7px 4px;font:inherit;font-size:11px;font-weight:700;cursor:pointer;text-align:center;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tile b{display:block;font-size:13px}.tile.sig{outline:2px solid var(--acc);outline-offset:1px}.tile.sel{outline:3px solid var(--ink)}
+#tileinfo:empty{display:none}#tileinfo{position:sticky;bottom:76px;z-index:5;margin-top:10px}
+@media (min-width:701px){#tileinfo{bottom:12px}}
 /* ---- phones */
 @media (max-width:700px){
  .ixs{grid-template-columns:repeat(5,150px);margin-left:-12px;margin-right:-12px;padding:2px 12px}
@@ -199,7 +209,7 @@ th.sortable{cursor:pointer;user-select:none}th.sortable:hover{color:var(--ink)}t
 <button class="ibtn" onclick="location.reload()" title="Refresh">↻</button><button class="ibtn" id="theme" title="Light / dark">🌓</button></div>
 <div id="ticker" class="ticker"></div>
 </header>
-<nav><button data-t="plan" class="on"><i>🏠</i><span>Today</span></button><button data-t="live"><i>📊</i><span>NIFTY</span></button><button data-t="scan"><i>🔎</i><span>Movers</span></button><button data-t="picks"><i>🌙</i><span>Tomorrow</span></button>
+<nav><button data-t="plan" class="on"><i>🏠</i><span>Today</span></button><button data-t="live"><i>📊</i><span>NIFTY</span></button><button data-t="scan"><i>🗺️</i><span>Market</span></button><button data-t="picks"><i>🌙</i><span>Tomorrow</span></button>
 <button data-t="track"><i>📈</i><span>Results</span></button><button data-t="lt"><i>🌱</i><span>Long-term</span></button><button data-t="guide"><i>📖</i><span>Learn</span></button></nav>
 <main>
 <section id="plan" class="on"></section><section id="live"></section><section id="scan"></section><section id="picks"></section>
@@ -248,6 +258,30 @@ function heatHTML(){const I=D.indices||{},R=I.rows||{},ks=(I.sectors||[]).slice(
  const mx=Math.max(...ks.map(k=>Math.abs(R[k].pchg)),0.5);
  return `<div class="heat">${ks.map(k=>{const v=R[k].pchg,a=Math.min(1,Math.abs(v)/mx)*.85+.08;
   return `<div style="background:${v>=0?`rgba(15,160,85,${a})`:`rgba(220,50,50,${a})`};color:${a>.45?"#fff":"var(--ink)"}">${secName(k)}<b>${sgn(v,2)}%</b></div>`}).join("")}</div>`}
+function mapHTML(){const s=D.stocks;if(!s||!s.rows||!s.rows.length)return "";
+ const by={};s.rows.forEach(r=>(by[r.sector||"Other"]=by[r.sector||"Other"]||[]).push(r));
+ const secs=Object.entries(by).map(([k,v])=>({k,v:v.slice().sort((a,b)=>b.chg-a.chg),avg:v.reduce((a,r)=>a+r.chg,0)/v.length})).sort((a,b)=>b.avg-a.avg);
+ const g=s.rows.filter(r=>r.chg>0).length,rd=s.rows.length-g;
+ const col=v=>{const a=Math.min(1,Math.abs(v)/3)*.78+.14;return v>=0?`rgba(15,160,85,${a})`:`rgba(220,50,50,${a})`};
+ return `<div class="mapbar"><span class="up">▲ ${g} green</span><div class="ad"><i style="width:${(g/s.rows.length*100).toFixed(1)}%"></i></div><span class="dn">${rd} red ▼</span></div>
+ <div class="mapf"><input type="search" placeholder="🔍 Find a stock…" aria-label="Find a stock"><button class="on" data-m="">All</button><button data-m="t-up">🟢 Green</button><button data-m="t-dn">🔴 Red</button><button data-m="sig">⭐ Ideas</button></div>
+ <div class="map">${secs.map(x=>`<div class="msec"><div class="mh"><b>${x.k} <span class="muted" style="font-weight:500">(${x.v.length})</span></b><span class="${cls(x.avg)}">${sgn(x.avg,2)}% avg</span></div>
+  <div class="mt">${x.v.map(r=>`<button class="tile ${r.chg>=0?"t-up":"t-dn"} ${r.signal?"sig":""}" style="background:${col(r.chg)};color:${Math.abs(r.chg)>1.3?"#fff":"var(--ink)"}" data-sym="${r.symbol}">${r.signal?"⭐":""}${r.symbol}<b>${sgn(r.chg,2)}%</b></button>`).join("")}</div></div>`).join("")}</div>
+ <div id="tileinfo"></div>
+ <p class="note">Colour = today's change: darker green = bigger rise, darker red = bigger fall. ⭐ = passed all 5 checks (a trade idea). Tap a tile for details. Prices from the ${s.bar_time} 5-min bar.</p>`}
+function mapApply(){const f=document.querySelector(".mapf button.on")?.dataset.m||"",q=(document.querySelector(".mapf input")?.value||"").toUpperCase().trim();
+ document.querySelectorAll(".map .msec").forEach(sec=>{let n=0;sec.querySelectorAll(".tile").forEach(t=>{const ok=(!f||t.classList.contains(f))&&(!q||t.dataset.sym.includes(q));t.style.display=ok?"":"none";if(ok)n++});sec.style.display=n?"":"none"})}
+document.addEventListener("click",e=>{const b=e.target.closest(".mapf button");if(b){b.parentNode.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));mapApply();return}
+ const t=e.target.closest(".tile");if(!t)return;document.querySelectorAll(".tile.sel").forEach(x=>x.classList.remove("sel"));t.classList.add("sel");
+ const r=(D.stocks.rows||[]).find(x=>x.symbol===t.dataset.sym);if(!r)return;
+ $("#tileinfo").innerHTML=`<div class="card" style="box-shadow:0 8px 30px rgba(0,0,0,.18)"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+  <div><b style="font-size:17px">${r.symbol}</b> <span class="muted" style="font-size:12px">${r.name||""} · ${r.sector||""}</span></div><button class="ibtn" style="width:30px;height:30px;font-size:13px" onclick="this.closest('#tileinfo').innerHTML=''">✕</button></div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;margin:6px 0"><span style="font-size:22px;font-weight:800">${inr(r.price)}</span><b class="${cls(r.chg)}" style="font-size:17px">${sgn(r.chg,2)}%</b>
+  <span class="muted" style="font-size:13px">Day ${inr(r.day_low,1)} – ${inr(r.day_high,1)}</span></div>
+  <div style="font-size:13px">Last 30 min <b class="${cls(r.mom30)}">${sgn(r.mom30)}%</b> · Volume <b>${r.rvol!=null?r.rvol+"×":"–"}</b> normal · vs average price <b class="${cls(r.vs_vwap)}">${sgn(r.vs_vwap)}%</b></div>
+  <div style="font-size:13px;margin-top:6px">${r.signal?`⭐ <b>Trade idea:</b> ${r.signal==="CE"?"rising strongly, see the Today page":"falling strongly, see the Today page"}`:`Checks passed: ${Object.values(r.checks||{}).filter(Boolean).length} of 5 <span class="muted">(needs all 5 to become an idea)</span>`}</div></div>`});
+document.addEventListener("input",e=>{if(e.target.matches(".mapf input"))mapApply()});
+const go=t=>document.querySelector(`nav button[data-t=${t}]`).click();
 function orGauge(lo,hi,now){const w=hi-lo||1,mn=lo-w,mx=hi+w,P=v=>Math.min(98,Math.max(2,(v-mn)/(mx-mn)*100));
  return `<div class="org">${now?`<div class="org-now" style="left:${Math.min(85,Math.max(15,P(now)))}%">NIFTY ${num(now,0)}</div>`:""}
  <div class="org-bar"><span class="org-band" style="left:${P(lo)}%;width:${P(hi)-P(lo)}%"></span>${now?`<i style="left:${P(now)}%"></i>`:""}</div>
@@ -343,7 +377,7 @@ function renderToday(){const now=new Date(new Date().toLocaleString("en-US",{tim
  const mood=nchg==null?"":nchg>0.3?"🟢 Market is UP today":nchg<-0.3?"🔴 Market is DOWN today":"🟡 Market is FLAT today";
  h+=`<div class="hero"><div><div class="hero-k">${open?"Market open · closes 3:30 PM":"Market closed · opens 9:15 AM Mon–Fri"}</div>
  <div class="hero-t">${mood||"Welcome 👋"}</div>
- <div class="hero-s">${nifty?`NIFTY 50 at <b data-idx="NIFTY 50">${num(nifty,0)}</b> (<span data-idxp="NIFTY 50">${sgn(nchg,2)}%</span>)`:""}${adv!=null?` · ${adv} of ${adv+dec} big stocks rising`:""}</div></div>
+ <div class="hero-s">${nifty?`NIFTY 50 at <b data-idx="NIFTY 50">${num(nifty,0)}</b> (<span data-idxp="NIFTY 50">${sgn(nchg,2)}%</span>)`:""}${adv!=null?` · <a href="#" onclick="go('scan');return false" style="color:#fff;font-weight:700">${adv} of ${adv+dec} stocks green 🗺️ see map →</a>`:""}</div></div>
 </div>${indicesHTML()}${(()=>{const I=D.indices||{},R=I.rows||{},ks=(I.sectors||[]).slice().sort((a,b)=>R[b].pchg-R[a].pchg);
   return ks.length>1?`<div class="secline">🔥 Strongest sector: <b class="up">${secName(ks[0])} ${sgn(R[ks[0]].pchg,1)}%</b> · Weakest: <b class="${cls(R[ks[ks.length-1]].pchg)}">${secName(ks[ks.length-1])} ${sgn(R[ks[ks.length-1]].pchg,1)}%</b> <span class="muted">(all sectors in Movers)</span></div>`:""})()}${dayline(hm,wd)}`;
 
@@ -508,9 +542,10 @@ renderToday();
 (()=>{const s=D.stocks;if(!s||!s.rows){$("#scan").innerHTML=`<div class="card empty">The live stock scan runs every 15 min during market hours.</div>`;return}
  const ok=b=>b?`<span class="up">✓</span>`:`<span class="muted">·</span>`;
  const gain=s.rows.filter(r=>r.chg>0).length,lose=s.rows.length-gain;
- let h=`<p class="note">🔧 <b>Advanced page:</b> every big stock we check, and why it did or didn't become an idea. If you're new, use the 🏠 Today page.</p><p class="note">Scanned the <b>${s.scanned}</b> most-traded F&amp;O stocks at <b>${s.time.slice(11,16)}</b> (prices up to the ${s.bar_time} 5-min bar, from Yahoo Finance).
+ let h=`<p class="note" style="display:none">Scanned the <b>${s.scanned}</b> most-traded F&amp;O stocks at <b>${s.time.slice(11,16)}</b> (prices up to the ${s.bar_time} 5-min bar, from Yahoo Finance).
  A <b>signal</b> needs all 5 checks: moved ≥${D.st.chg_min}% on the day · on the right side of VWAP · ≥${D.st.mom_min}% more in the last 30 min · volume ≥${D.st.rvol_min}× normal for this time · broke the first-15-min range. Option premiums are <b>estimates</b> (yesterday's IV at today's price): check Groww before buying. ${s.entry_open?"":"<b>New entries only between "+D.st.entry_start+" and "+D.st.entry_end+".</b>"}</p>
- ${heatHTML()?`<h2 style="margin-top:4px">🔥 Sectors today</h2>${heatHTML()}`:""}<div class="grid">${card("Signals now",s.signals.length,s.signals.length?"up":"")}${card("Advancing / declining",`${gain} / ${lose}`,gain>lose?"up":"dn")}
+ <h2 style="margin-top:4px">🗺️ Market map: who's green, who's red</h2>${mapHTML()}${heatHTML()?`<h2>🔥 Sector indices today</h2>${heatHTML()}`:""}<h2>🔧 Scanner details</h2><p class="note">Scanned the <b>${s.scanned}</b> most-traded F&amp;O stocks at <b>${s.time.slice(11,16)}</b>. A ⭐ idea needs all 5 checks: moved ≥${D.st.chg_min}% on the day · on the right side of the day's average price (VWAP) · ≥${D.st.mom_min}% more in the last 30 min · volume ≥${D.st.rvol_min}× normal · broke the first-15-min range. Option prices are <b>estimates</b>: check Groww before buying.</p>
+ <div class="grid">${card("Signals now",s.signals.length,s.signals.length?"up":"")}${card("Advancing / declining",`${gain} / ${lose}`,gain>lose?"up":"dn")}
  ${card("Top gainer",s.rows.slice().sort((a,b)=>b.chg-a.chg)[0].symbol,"up",sgn(s.rows.slice().sort((a,b)=>b.chg-a.chg)[0].chg)+"%")}
  ${card("Top loser",s.rows.slice().sort((a,b)=>a.chg-b.chg)[0].symbol,"dn",sgn(s.rows.slice().sort((a,b)=>a.chg-b.chg)[0].chg)+"%")}</div>`;
  if(s.signals.length){h+=`<h2>Signals</h2>`+table([["Option",r=>`<b>${r.contract}</b> <span class="pill ${r.signal}">${r.signal}</span>`],["Stock",r=>`${r.symbol} ${inr(r.price)}`],
