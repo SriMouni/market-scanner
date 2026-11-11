@@ -370,6 +370,7 @@ def long_term(day):
     candles = yahoo_ohlc([s + ".NS" for s in ok["symbol"]], "6mo")
     out = []
     for r in ok.to_dict("records"):
+        r = {k: (None if isinstance(v, float) and math.isnan(v) else v) for k, v in r.items()}  # NaN -> None
         ext = (r["price"] / r["ma50"] - 1) * 100
         r["extended"] = ext > D["lt_extended_pct"]
         r["zone"] = (f"Price jumped {ext:.0f}% above its usual level recently: wait for it to come down near ₹{r['ma50']:,.0f}"
@@ -393,6 +394,8 @@ def long_term(day):
     for r in sorted(out, key=lambda x: (x["extended"], -x["score"])):
         if r["price"] > budget / 5:
             continue  # one share costs more than a fifth of the budget
+        if r["volatility"] > D["lt_max_vol_for_split"]:
+            continue  # too jumpy for a beginner's basket (still shown in the list)
         if r["index"] != "Large cap" and small >= D["lt_max_small"]:
             continue  # keep most of the money in large, steadier companies
         if len(chosen) < 5 and sectors.get(r["industry"], 0) < 2:

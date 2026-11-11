@@ -54,7 +54,8 @@
     "lt_extended_pct": 8,
     "lt_budget": 100000,
     "lt_min_health": 50,
-    "lt_max_small": 2
+    "lt_max_small": 2,
+    "lt_max_vol_for_split": 45
   },
 
   "stocks": {
