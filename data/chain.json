@@ -1,0 +1,621 @@
+{
+  "time": "2026-11-11T12:31:13+05:30",
+  "spot": 25300.4,
+  "expiry": "17-Nov-2026",
+  "atm": 25300,
+  "pcr": 0.806,
+  "support": 25000,
+  "resistance": 25500,
+  "lot": 65,
+  "rows": [
+    {
+      "strike": 24800,
+      "CE": {
+        "ltp": 581.4,
+        "chg": 213.65,
+        "oi": 15189,
+        "oi_chg": -3942,
+        "volume": 18329,
+        "iv": 16.96,
+        "delta": 0.832,
+        "gamma": 0.00045,
+        "theta_lot": -933,
+        "vega_lot": 536,
+        "cost_lot": 37791
+      },
+      "PE": {
+        "ltp": 60,
+        "chg": -92.75,
+        "oi": 68847,
+        "oi_chg": 30079,
+        "volume": 424749,
+        "iv": 18.35,
+        "delta": -0.187,
+        "gamma": 0.00045,
+        "theta_lot": -812,
+        "vega_lot": 572,
+        "cost_lot": 3900
+      }
+    },
+    {
+      "strike": 24850,
+      "CE": {
+        "ltp": 539.1,
+        "chg": 201.1,
+        "oi": 2896,
+        "oi_chg": -1056,
+        "volume": 6230,
+        "iv": 17.19,
+        "delta": 0.804,
+        "gamma": 0.00049,
+        "theta_lot": -1011,
+        "vega_lot": 588,
+        "cost_lot": 35042
+      },
+      "PE": {
+        "ltp": 69.65,
+        "chg": -102.35,
+        "oi": 25961,
+        "oi_chg": 17557,
+        "volume": 178445,
+        "iv": 18.28,
+        "delta": -0.21,
+        "gamma": 0.00048,
+        "theta_lot": -864,
+        "vega_lot": 613,
+        "cost_lot": 4527
+      }
+    },
+    {
+      "strike": 24900,
+      "CE": {
+        "ltp": 500.85,
+        "chg": 192.65,
+        "oi": 15473,
+        "oi_chg": -11464,
+        "volume": 30743,
+        "iv": 17.11,
+        "delta": 0.779,
+        "gamma": 0.00053,
+        "theta_lot": -1062,
+        "vega_lot": 631,
+        "cost_lot": 32555
+      },
+      "PE": {
+        "ltp": 79.85,
+        "chg": -113.3,
+        "oi": 66617,
+        "oi_chg": 28514,
+        "volume": 390684,
+        "iv": 18.14,
+        "delta": -0.233,
+        "gamma": 0.00051,
+        "theta_lot": -908,
+        "vega_lot": 652,
+        "cost_lot": 5190
+      }
+    },
+    {
+      "strike": 24950,
+      "CE": {
+        "ltp": 461.4,
+        "chg": 179.75,
+        "oi": 3962,
+        "oi_chg": -2994,
+        "volume": 13444,
+        "iv": 17.16,
+        "delta": 0.751,
+        "gamma": 0.00056,
+        "theta_lot": -1120,
+        "vega_lot": 675,
+        "cost_lot": 29991
+      },
+      "PE": {
+        "ltp": 92.25,
+        "chg": -124.1,
+        "oi": 20410,
+        "oi_chg": 11642,
+        "volume": 201103,
+        "iv": 18.1,
+        "delta": -0.26,
+        "gamma": 0.00055,
+        "theta_lot": -957,
+        "vega_lot": 690,
+        "cost_lot": 5996
+      }
+    },
+    {
+      "strike": 25000,
+      "CE": {
+        "ltp": 427.35,
+        "chg": 171.3,
+        "oi": 45966,
+        "oi_chg": -38358,
+        "volume": 169432,
+        "iv": 17.34,
+        "delta": 0.72,
+        "gamma": 0.00059,
+        "theta_lot": -1182,
+        "vega_lot": 717,
+        "cost_lot": 27778
+      },
+      "PE": {
+        "ltp": 105.3,
+        "chg": -134.35,
+        "oi": 115289,
+        "oi_chg": 33444,
+        "volume": 1095982,
+        "iv": 18.07,
+        "delta": -0.288,
+        "gamma": 0.00058,
+        "theta_lot": -1002,
+        "vega_lot": 726,
+        "cost_lot": 6844
+      }
+    },
+    {
+      "strike": 25050,
+      "CE": {
+        "ltp": 390.25,
+        "chg": 157.55,
+        "oi": 5633,
+        "oi_chg": -6481,
+        "volume": 30829,
+        "iv": 17.15,
+        "delta": 0.691,
+        "gamma": 0.00063,
+        "theta_lot": -1211,
+        "vega_lot": 750,
+        "cost_lot": 25366
+      },
+      "PE": {
+        "ltp": 120.6,
+        "chg": -144.95,
+        "oi": 19160,
+        "oi_chg": 13615,
+        "volume": 247795,
+        "iv": 18,
+        "delta": -0.317,
+        "gamma": 0.0006,
+        "theta_lot": -1038,
+        "vega_lot": 759,
+        "cost_lot": 7839
+      }
+    },
+    {
+      "strike": 25100,
+      "CE": {
+        "ltp": 357.3,
+        "chg": 147.15,
+        "oi": 15943,
+        "oi_chg": -13478,
+        "volume": 80756,
+        "iv": 17.31,
+        "delta": 0.657,
+        "gamma": 0.00065,
+        "theta_lot": -1259,
+        "vega_lot": 783,
+        "cost_lot": 23224
+      },
+      "PE": {
+        "ltp": 137.1,
+        "chg": -156.15,
+        "oi": 48606,
+        "oi_chg": 37325,
+        "volume": 417281,
+        "iv": 17.98,
+        "delta": -0.348,
+        "gamma": 0.00063,
+        "theta_lot": -1071,
+        "vega_lot": 787,
+        "cost_lot": 8912
+      }
+    },
+    {
+      "strike": 25150,
+      "CE": {
+        "ltp": 328.2,
+        "chg": 138.55,
+        "oi": 7047,
+        "oi_chg": -1880,
+        "volume": 40595,
+        "iv": 17.3,
+        "delta": 0.624,
+        "gamma": 0.00067,
+        "theta_lot": -1287,
+        "vega_lot": 808,
+        "cost_lot": 21333
+      },
+      "PE": {
+        "ltp": 155.85,
+        "chg": -166.75,
+        "oi": 20596,
+        "oi_chg": 19062,
+        "volume": 261434,
+        "iv": 18.08,
+        "delta": -0.38,
+        "gamma": 0.00064,
+        "theta_lot": -1105,
+        "vega_lot": 811,
+        "cost_lot": 10130
+      }
+    },
+    {
+      "strike": 25200,
+      "CE": {
+        "ltp": 298.05,
+        "chg": 128.2,
+        "oi": 28036,
+        "oi_chg": -3548,
+        "volume": 207298,
+        "iv": 17.42,
+        "delta": 0.59,
+        "gamma": 0.00068,
+        "theta_lot": -1315,
+        "vega_lot": 828,
+        "cost_lot": 19373
+      },
+      "PE": {
+        "ltp": 176.25,
+        "chg": -177.25,
+        "oi": 52167,
+        "oi_chg": 47699,
+        "volume": 593784,
+        "iv": 18.04,
+        "delta": -0.413,
+        "gamma": 0.00066,
+        "theta_lot": -1121,
+        "vega_lot": 829,
+        "cost_lot": 11456
+      }
+    },
+    {
+      "strike": 25250,
+      "CE": {
+        "ltp": 271.35,
+        "chg": 118.7,
+        "oi": 14128,
+        "oi_chg": 7410,
+        "volume": 162320,
+        "iv": 17.52,
+        "delta": 0.555,
+        "gamma": 0.00069,
+        "theta_lot": -1333,
+        "vega_lot": 842,
+        "cost_lot": 17638
+      },
+      "PE": {
+        "ltp": 198.5,
+        "chg": -188.5,
+        "oi": 29965,
+        "oi_chg": 29023,
+        "volume": 381601,
+        "iv": 18.06,
+        "delta": -0.446,
+        "gamma": 0.00067,
+        "theta_lot": -1133,
+        "vega_lot": 842,
+        "cost_lot": 12902
+      }
+    },
+    {
+      "strike": 25300,
+      "CE": {
+        "ltp": 246,
+        "chg": 109.55,
+        "oi": 88321,
+        "oi_chg": 61796,
+        "volume": 973745,
+        "iv": 17.51,
+        "delta": 0.52,
+        "gamma": 0.00069,
+        "theta_lot": -1335,
+        "vega_lot": 849,
+        "cost_lot": 15990
+      },
+      "PE": {
+        "ltp": 222.8,
+        "chg": -197.15,
+        "oi": 105776,
+        "oi_chg": 103716,
+        "volume": 1391283,
+        "iv": 18.18,
+        "delta": -0.48,
+        "gamma": 0.00067,
+        "theta_lot": -1142,
+        "vega_lot": 849,
+        "cost_lot": 14482
+      }
+    },
+    {
+      "strike": 25350,
+      "CE": {
+        "ltp": 221.1,
+        "chg": 99.4,
+        "oi": 75378,
+        "oi_chg": 67634,
+        "volume": 1096908,
+        "iv": 17.6,
+        "delta": 0.486,
+        "gamma": 0.00069,
+        "theta_lot": -1334,
+        "vega_lot": 849,
+        "cost_lot": 14372
+      },
+      "PE": {
+        "ltp": 248,
+        "chg": -208.4,
+        "oi": 69907,
+        "oi_chg": 69570,
+        "volume": 1068999,
+        "iv": 18.17,
+        "delta": -0.513,
+        "gamma": 0.00067,
+        "theta_lot": -1134,
+        "vega_lot": 849,
+        "cost_lot": 16120
+      }
+    },
+    {
+      "strike": 25400,
+      "CE": {
+        "ltp": 199.05,
+        "chg": 90.5,
+        "oi": 134560,
+        "oi_chg": 100492,
+        "volume": 1543087,
+        "iv": 17.63,
+        "delta": 0.451,
+        "gamma": 0.00069,
+        "theta_lot": -1320,
+        "vega_lot": 843,
+        "cost_lot": 12938
+      },
+      "PE": {
+        "ltp": 276.5,
+        "chg": -213.9,
+        "oi": 66020,
+        "oi_chg": 65295,
+        "volume": 1095551,
+        "iv": 18.21,
+        "delta": -0.546,
+        "gamma": 0.00066,
+        "theta_lot": -1121,
+        "vega_lot": 844,
+        "cost_lot": 17972
+      }
+    },
+    {
+      "strike": 25450,
+      "CE": {
+        "ltp": 178.4,
+        "chg": 82,
+        "oi": 40580,
+        "oi_chg": 35178,
+        "volume": 552388,
+        "iv": 17.7,
+        "delta": 0.418,
+        "gamma": 0.00067,
+        "theta_lot": -1300,
+        "vega_lot": 832,
+        "cost_lot": 11596
+      },
+      "PE": {
+        "ltp": 304.7,
+        "chg": -220.35,
+        "oi": 10449,
+        "oi_chg": 10259,
+        "volume": 186451,
+        "iv": 18.28,
+        "delta": -0.579,
+        "gamma": 0.00065,
+        "theta_lot": -1101,
+        "vega_lot": 833,
+        "cost_lot": 19806
+      }
+    },
+    {
+      "strike": 25500,
+      "CE": {
+        "ltp": 159.5,
+        "chg": 73.7,
+        "oi": 148599,
+        "oi_chg": 54641,
+        "volume": 1327175,
+        "iv": 17.77,
+        "delta": 0.385,
+        "gamma": 0.00066,
+        "theta_lot": -1272,
+        "vega_lot": 814,
+        "cost_lot": 10368
+      },
+      "PE": {
+        "ltp": 335.4,
+        "chg": -231.8,
+        "oi": 36799,
+        "oi_chg": 25862,
+        "volume": 354266,
+        "iv": 18.39,
+        "delta": -0.61,
+        "gamma": 0.00064,
+        "theta_lot": -1077,
+        "vega_lot": 817,
+        "cost_lot": 21801
+      }
+    },
+    {
+      "strike": 25550,
+      "CE": {
+        "ltp": 141.85,
+        "chg": 65.95,
+        "oi": 41727,
+        "oi_chg": 31513,
+        "volume": 385786,
+        "iv": 17.86,
+        "delta": 0.354,
+        "gamma": 0.00064,
+        "theta_lot": -1238,
+        "vega_lot": 792,
+        "cost_lot": 9220
+      },
+      "PE": {
+        "ltp": 369.65,
+        "chg": -242.3,
+        "oi": 3050,
+        "oi_chg": 2940,
+        "volume": 35818,
+        "iv": 18.62,
+        "delta": -0.64,
+        "gamma": 0.00061,
+        "theta_lot": -1054,
+        "vega_lot": 797,
+        "cost_lot": 24027
+      }
+    },
+    {
+      "strike": 25600,
+      "CE": {
+        "ltp": 126.05,
+        "chg": 59.6,
+        "oi": 65670,
+        "oi_chg": 36040,
+        "volume": 620019,
+        "iv": 17.95,
+        "delta": 0.324,
+        "gamma": 0.00061,
+        "theta_lot": -1198,
+        "vega_lot": 766,
+        "cost_lot": 8193
+      },
+      "PE": {
+        "ltp": 402.35,
+        "chg": -246.75,
+        "oi": 5952,
+        "oi_chg": 5638,
+        "volume": 52973,
+        "iv": 18.49,
+        "delta": -0.671,
+        "gamma": 0.0006,
+        "theta_lot": -998,
+        "vega_lot": 770,
+        "cost_lot": 26153
+      }
+    },
+    {
+      "strike": 25650,
+      "CE": {
+        "ltp": 111.55,
+        "chg": 52.6,
+        "oi": 25090,
+        "oi_chg": 19159,
+        "volume": 308008,
+        "iv": 18.01,
+        "delta": 0.295,
+        "gamma": 0.00058,
+        "theta_lot": -1150,
+        "vega_lot": 735,
+        "cost_lot": 7251
+      },
+      "PE": {
+        "ltp": 439.75,
+        "chg": -254.35,
+        "oi": 1178,
+        "oi_chg": 1148,
+        "volume": 8941,
+        "iv": 18.88,
+        "delta": -0.696,
+        "gamma": 0.00057,
+        "theta_lot": -977,
+        "vega_lot": 745,
+        "cost_lot": 28584
+      }
+    },
+    {
+      "strike": 25700,
+      "CE": {
+        "ltp": 99,
+        "chg": 47.9,
+        "oi": 63655,
+        "oi_chg": 17380,
+        "volume": 531534,
+        "iv": 18.17,
+        "delta": 0.269,
+        "gamma": 0.00055,
+        "theta_lot": -1106,
+        "vega_lot": 703,
+        "cost_lot": 6435
+      },
+      "PE": {
+        "ltp": 477,
+        "chg": -257.6,
+        "oi": 3134,
+        "oi_chg": 3025,
+        "volume": 18168,
+        "iv": 19.14,
+        "delta": -0.72,
+        "gamma": 0.00054,
+        "theta_lot": -942,
+        "vega_lot": 717,
+        "cost_lot": 31005
+      }
+    },
+    {
+      "strike": 25750,
+      "CE": {
+        "ltp": 87.5,
+        "chg": 42.05,
+        "oi": 28308,
+        "oi_chg": 20005,
+        "volume": 289386,
+        "iv": 18.27,
+        "delta": 0.244,
+        "gamma": 0.00052,
+        "theta_lot": -1053,
+        "vega_lot": 667,
+        "cost_lot": 5688
+      },
+      "PE": {
+        "ltp": 518.1,
+        "chg": -254.45,
+        "oi": 781,
+        "oi_chg": 616,
+        "volume": 3300,
+        "iv": 19.17,
+        "delta": -0.746,
+        "gamma": 0.00051,
+        "theta_lot": -885,
+        "vega_lot": 683,
+        "cost_lot": 33676
+      }
+    },
+    {
+      "strike": 25800,
+      "CE": {
+        "ltp": 76.9,
+        "chg": 37.75,
+        "oi": 92458,
+        "oi_chg": 44735,
+        "volume": 609501,
+        "iv": 18.36,
+        "delta": 0.22,
+        "gamma": 0.00049,
+        "theta_lot": -996,
+        "vega_lot": 630,
+        "cost_lot": 4998
+      },
+      "PE": {
+        "ltp": 555.9,
+        "chg": -267.9,
+        "oi": 2006,
+        "oi_chg": 1744,
+        "volume": 11558,
+        "iv": 19.14,
+        "delta": -0.77,
+        "gamma": 0.00048,
+        "theta_lot": -819,
+        "vega_lot": 646,
+        "cost_lot": 36134
+      }
+    }
+  ]
+}

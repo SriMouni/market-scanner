@@ -1,0 +1,122 @@
+{
+  "mode": "paper",
+  "capital_per_trade": 20000,
+  "target_pct": 10,
+  "stop_pct": 5,
+  "dashboard_url": "",
+
+  "risk_free_rate": 0.065,
+  "nifty_dividend_yield": 0.012,
+
+  "intraday": {
+    "lot_size": 65,
+    "strike_step": 50,
+    "entry_start": "09:45",
+    "entry_end": "14:30",
+    "exit_all_by": "15:15",
+    "max_trades_per_day": 3,
+    "max_losses_per_day": 2,
+    "cooldown_minutes": 30,
+    "min_days_to_expiry": 2,
+    "delta_min": 0.40,
+    "delta_max": 0.60,
+    "delta_target": 0.50,
+    "min_oi": 1000,
+    "max_spread_pct": 1.5,
+    "min_score": 2,
+    "trend_pct": 0.15,
+    "momentum_minutes": 30,
+    "momentum_pct": 0.10,
+    "oi_bias_threshold": 0.20,
+    "oi_band_strikes": 10,
+    "min_room_pct": 0.40,
+    "iv_spike_ratio": 1.25,
+    "iv_lookback_snapshots": 125,
+    "open_trades": false,
+    "max_quote_age_min": 10
+  },
+
+  "daily": {
+    "universe_top_n": 120,
+    "price_chg_min": 1.0,
+    "oi_chg_min": 3.0,
+    "max_candidates": 40,
+    "picks_per_side": 5,
+    "min_days_to_expiry_stock": 7,
+    "min_days_to_expiry_index": 2,
+    "min_premium": 2,
+    "min_contracts_traded": 200,
+    "gap_skip_pct": 5,
+    "lt_top_n": 12,
+    "lt_max_from_high": 15,
+    "lt_extended_pct": 8,
+    "lt_budget": 100000,
+    "lt_min_health": 45
+  },
+
+  "stocks": {
+    "universe_top_n": 80,
+    "chg_min": 1.0,
+    "mom_min": 0.2,
+    "rvol_min": 1.5,
+    "near_extreme_pct": 0.5,
+    "min_days_to_expiry": 7,
+    "entry_start": "09:45",
+    "entry_end": "14:30",
+    "max_trades_per_day": 3,
+    "max_open": 2,
+    "max_per_sector": 2,
+    "cash_target_pct": 1.5,
+    "cash_stop_pct": 0.75,
+    "max_bar_age_min": 20,
+    "model_slippage_pct": 1.0
+  },
+
+  "cash_charges": {
+    "brokerage_per_order": 20,
+    "brokerage_pct": 0.1,
+    "stt_sell_pct": 0.025,
+    "exchange_pct": 0.00297,
+    "stamp_buy_pct": 0.003
+  },
+
+  "engine": {
+    "poll_sec": 30,
+    "signal_sec": 60,
+    "or_minutes": 15,
+    "breakout_buffer_pct": 0.05,
+    "entry_start": "09:30",
+    "entry_end": "13:30",
+    "exit_by": "15:15",
+    "max_trades_per_day": 2,
+    "max_losses_per_day": 2,
+    "min_days_to_expiry": 2,
+    "delta_min": 0.40,
+    "delta_max": 0.70,
+    "contract_rule": "atm",
+    "rule_delta": {"atm": 0.50, "itm": 0.62},
+    "min_oi": 1000,
+    "max_spread_pct": 1.0,
+    "max_quote_age_min": 3,
+    "max_quote_age_min_exit": 3,
+    "max_bar_age_min": 12,
+    "fill_timeout_sec": 120,
+    "slippage_ticks": 1,
+    "max_theta_share": 0.6,
+    "record_quotes": true,
+    "record_strikes": 6
+  },
+
+  "charges": {
+    "brokerage_per_order": 20,
+    "stt_sell_pct": 0.15,
+    "exchange_pct": 0.0355,
+    "stamp_buy_pct": 0.003
+  },
+
+  "notify": {
+    "mac": "all",
+    "telegram": "all",
+    "whatsapp": "signals"
+  }
+}

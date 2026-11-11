@@ -1,0 +1,645 @@
+{
+  "date": "2026-11-09",
+  "picks": [
+    {
+      "why": [
+        "Futures rose 4.61% while open interest grew 9.5%: new buyers are entering (long build-up).",
+        "INDIANB closed at \u20b9933.66 and above 20-day avg \u20b9857, so the move is with the trend, not against it.",
+        "Strike 940 is near the money (delta +0.49): it moves about \u20b90.49 for each \u20b91 in INDIANB.",
+        "Liquid: 1,870 contracts traded, open interest 311,000 shares, so you can get in and out.",
+        "14 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 10.08,
+          "pct": -53.9,
+          "pnl_lot": -11849
+        },
+        {
+          "move": -2,
+          "price": 13.12,
+          "pct": -40.0,
+          "pnl_lot": -8817
+        },
+        {
+          "move": -1,
+          "price": 16.73,
+          "pct": -23.4,
+          "pnl_lot": -5210
+        },
+        {
+          "move": 0,
+          "price": 20.94,
+          "pct": -4.2,
+          "pnl_lot": -1007
+        },
+        {
+          "move": 1,
+          "price": 25.76,
+          "pct": 17.9,
+          "pnl_lot": 3799
+        },
+        {
+          "move": 2,
+          "price": 31.16,
+          "pct": 42.6,
+          "pnl_lot": 9197
+        },
+        {
+          "move": 3,
+          "price": 37.14,
+          "pct": 70.0,
+          "pnl_lot": 15164
+        }
+      ],
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": false,
+            "text": "It has gone up a lot very fast and may fall back a little first",
+            "tech": "RSI 72",
+            "value": 72.4
+          },
+          {
+            "name": "Who's winning",
+            "ok": true,
+            "tech": "MACD",
+            "text": "Buyers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, buyers were firmly in charge",
+            "tech": "candle: strong green candle",
+            "pattern": "strong green candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "It just went above \u20b9902.0, a level where it kept stopping before. Often a good sign",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 4,
+        "verdict": "strong",
+        "rsi": 72.4,
+        "pattern": "strong green candle",
+        "resistance": 902.0,
+        "support": 808.0
+      },
+      "days": 14,
+      "gamma": 0.0067,
+      "vega_lot": 729,
+      "opt_oi_chg": 148000,
+      "opt_chg": 236.2,
+      "fut_oi": 10840000,
+      "breakeven": 961.85,
+      "max_loss_lot": 21850,
+      "need_move": 4.46,
+      "need_move_pct": 0.48,
+      "symbol": "INDIANB",
+      "side": "CE",
+      "contract": "INDIANB 23 Nov 940 CE",
+      "expiry": "2026-11-23",
+      "strike": 940.0,
+      "entry": 21.85,
+      "target": 24.04,
+      "stop": 20.76,
+      "lot": 1000,
+      "cost_per_lot": 21850,
+      "profit_per_lot": 2082,
+      "loss_per_lot": -1189,
+      "delta": 0.49,
+      "theta_lot": -925,
+      "iv": 32.6,
+      "oi": 311000,
+      "volume": 1870,
+      "spot": 933.66,
+      "price_chg": 4.61,
+      "oi_chg": 9.5,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b9857",
+      "affordable": false
+    },
+    {
+      "why": [
+        "Futures rose 4.20% while open interest grew 9.1%: new buyers are entering (long build-up).",
+        "RVNL closed at \u20b9201.69 and above 20-day avg \u20b9190, so the move is with the trend, not against it.",
+        "Strike 202.5 is near the money (delta +0.51): it moves about \u20b90.51 for each \u20b91 in RVNL.",
+        "Liquid: 784 contracts traded, open interest 363,825 shares, so you can get in and out.",
+        "14 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 4.83,
+          "pct": -38.5,
+          "pnl_lot": -5887
+        },
+        {
+          "move": -2,
+          "price": 5.65,
+          "pct": -28.0,
+          "pnl_lot": -4308
+        },
+        {
+          "move": -1,
+          "price": 6.56,
+          "pct": -16.5,
+          "pnl_lot": -2567
+        },
+        {
+          "move": 0,
+          "price": 7.55,
+          "pct": -3.8,
+          "pnl_lot": -663
+        },
+        {
+          "move": 1,
+          "price": 8.62,
+          "pct": 9.8,
+          "pnl_lot": 1401
+        },
+        {
+          "move": 2,
+          "price": 9.78,
+          "pct": 24.6,
+          "pnl_lot": 3624
+        },
+        {
+          "move": 3,
+          "price": 11.02,
+          "pct": 40.3,
+          "pnl_lot": 6000
+        }
+      ],
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 59",
+            "value": 59.1
+          },
+          {
+            "name": "Who's winning",
+            "ok": true,
+            "tech": "MACD",
+            "text": "Buyers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit higher",
+            "tech": "candle: green candle",
+            "pattern": "green candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": false,
+            "text": "It's close to \u20b9202.0, where it stopped before (only 0.1% away), so little room to rise",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 4,
+        "verdict": "strong",
+        "rsi": 59.1,
+        "pattern": "green candle",
+        "resistance": 201.99,
+        "support": 177.86
+      },
+      "days": 14,
+      "gamma": 0.01988,
+      "vega_lot": 303,
+      "opt_oi_chg": 109725,
+      "opt_chg": 111.6,
+      "fut_oi": 31791375,
+      "breakeven": 210.35,
+      "max_loss_lot": 15111,
+      "need_move": 1.54,
+      "need_move_pct": 0.76,
+      "symbol": "RVNL",
+      "side": "CE",
+      "contract": "RVNL 23 Nov 202.5 CE",
+      "expiry": "2026-11-23",
+      "strike": 202.5,
+      "entry": 7.85,
+      "target": 8.63,
+      "stop": 7.46,
+      "lot": 1925,
+      "cost_per_lot": 15111,
+      "profit_per_lot": 1425,
+      "loss_per_lot": -837,
+      "delta": 0.51,
+      "theta_lot": -582,
+      "iv": 50.8,
+      "oi": 363825,
+      "volume": 784,
+      "spot": 201.69,
+      "price_chg": 4.2,
+      "oi_chg": 9.1,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b9190",
+      "affordable": true
+    },
+    {
+      "why": [
+        "Futures rose 4.12% while open interest grew 5.1%: new buyers are entering (long build-up).",
+        "BDL closed at \u20b91,109.62 and above 20-day avg \u20b91,058, so the move is with the trend, not against it.",
+        "Strike 1120 is near the money (delta +0.49): it moves about \u20b90.49 for each \u20b91 in BDL.",
+        "Liquid: 2,439 contracts traded, open interest 231,200 shares, so you can get in and out.",
+        "14 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 22.95,
+          "pct": -40.6,
+          "pnl_lot": -6744
+        },
+        {
+          "move": -2,
+          "price": 27.17,
+          "pct": -29.7,
+          "pnl_lot": -4955
+        },
+        {
+          "move": -1,
+          "price": 31.86,
+          "pct": -17.6,
+          "pnl_lot": -2965
+        },
+        {
+          "move": 0,
+          "price": 37.04,
+          "pct": -4.2,
+          "pnl_lot": -770
+        },
+        {
+          "move": 1,
+          "price": 42.69,
+          "pct": 10.5,
+          "pnl_lot": 1628
+        },
+        {
+          "move": 2,
+          "price": 48.82,
+          "pct": 26.3,
+          "pnl_lot": 4228
+        },
+        {
+          "move": 3,
+          "price": 55.41,
+          "pct": 43.4,
+          "pnl_lot": 7025
+        }
+      ],
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 56",
+            "value": 55.8
+          },
+          {
+            "name": "Who's winning",
+            "ok": true,
+            "tech": "MACD",
+            "text": "Buyers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit higher",
+            "tech": "candle: green candle",
+            "pattern": "green candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "There's room to rise before \u20b91,141.8, where it stopped before (2.9% away)",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 5,
+        "verdict": "strong",
+        "rsi": 55.8,
+        "pattern": "green candle",
+        "resistance": 1141.8,
+        "support": 974.0
+      },
+      "days": 14,
+      "gamma": 0.00377,
+      "vega_lot": 368,
+      "opt_oi_chg": -31450,
+      "opt_chg": 87.6,
+      "fut_oi": 5988675,
+      "breakeven": 1158.65,
+      "max_loss_lot": 16426,
+      "need_move": 7.89,
+      "need_move_pct": 0.71,
+      "symbol": "BDL",
+      "side": "CE",
+      "contract": "BDL 23 Nov 1120 CE",
+      "expiry": "2026-11-23",
+      "strike": 1120.0,
+      "entry": 38.65,
+      "target": 42.52,
+      "stop": 36.72,
+      "lot": 425,
+      "cost_per_lot": 16426,
+      "profit_per_lot": 1553,
+      "loss_per_lot": -906,
+      "delta": 0.49,
+      "theta_lot": -679,
+      "iv": 48.7,
+      "oi": 231200,
+      "volume": 2439,
+      "spot": 1109.62,
+      "price_chg": 4.12,
+      "oi_chg": 5.1,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b91,058",
+      "affordable": true
+    },
+    {
+      "why": [
+        "Futures rose 3.24% while open interest grew 6.1%: new buyers are entering (long build-up).",
+        "GLENMARK closed at \u20b92,671.37 and above 20-day avg \u20b92,325, so the move is with the trend, not against it.",
+        "Strike 2680 is near the money (delta +0.51): it moves about \u20b90.51 for each \u20b91 in GLENMARK.",
+        "Liquid: 2,552 contracts traded, open interest 124,875 shares, so you can get in and out.",
+        "14 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 33.1,
+          "pct": -52.0,
+          "pnl_lot": -13506
+        },
+        {
+          "move": -2,
+          "price": 42.48,
+          "pct": -38.3,
+          "pnl_lot": -9998
+        },
+        {
+          "move": -1,
+          "price": 53.49,
+          "pct": -22.4,
+          "pnl_lot": -5875
+        },
+        {
+          "move": 0,
+          "price": 66.19,
+          "pct": -3.9,
+          "pnl_lot": -1124
+        },
+        {
+          "move": 1,
+          "price": 80.57,
+          "pct": 16.9,
+          "pnl_lot": 4258
+        },
+        {
+          "move": 2,
+          "price": 96.58,
+          "pct": 40.2,
+          "pnl_lot": 10253
+        },
+        {
+          "move": 3,
+          "price": 114.16,
+          "pct": 65.7,
+          "pnl_lot": 16833
+        }
+      ],
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": false,
+            "text": "It has gone up a lot very fast and may fall back a little first",
+            "tech": "RSI 74",
+            "value": 74.4
+          },
+          {
+            "name": "Who's winning",
+            "ok": true,
+            "tech": "MACD",
+            "text": "Buyers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit higher",
+            "tech": "candle: green candle",
+            "pattern": "green candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": false,
+            "text": "It's close to \u20b92,682.5, where it stopped before (only 0.4% away), so little room to rise",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 3,
+        "verdict": "ok",
+        "rsi": 74.4,
+        "pattern": "green candle",
+        "resistance": 2682.5,
+        "support": 2101.6
+      },
+      "days": 14,
+      "gamma": 0.00228,
+      "vega_lot": 783,
+      "opt_oi_chg": 39750,
+      "opt_chg": 92.2,
+      "fut_oi": 10529250,
+      "breakeven": 2748.9,
+      "max_loss_lot": 25838,
+      "need_move": 13.51,
+      "need_move_pct": 0.51,
+      "symbol": "GLENMARK",
+      "side": "CE",
+      "contract": "GLENMARK 23 Nov 2680 CE",
+      "expiry": "2026-11-23",
+      "strike": 2680.0,
+      "entry": 68.9,
+      "target": 75.79,
+      "stop": 65.45,
+      "lot": 375,
+      "cost_per_lot": 25838,
+      "profit_per_lot": 2470,
+      "loss_per_lot": -1398,
+      "delta": 0.51,
+      "theta_lot": -1022,
+      "iv": 33.5,
+      "oi": 124875,
+      "volume": 2552,
+      "spot": 2671.37,
+      "price_chg": 3.24,
+      "oi_chg": 6.1,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b92,325",
+      "affordable": false
+    },
+    {
+      "why": [
+        "Futures rose 3.36% while open interest grew 3.6%: new buyers are entering (long build-up).",
+        "VOLTAS closed at \u20b91,090.07 and above 20-day avg \u20b91,028, so the move is with the trend, not against it.",
+        "Strike 1100 is near the money (delta +0.47): it moves about \u20b90.47 for each \u20b91 in VOLTAS.",
+        "Liquid: 15,384 contracts traded, open interest 645,750 shares, so you can get in and out.",
+        "14 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 12.25,
+          "pct": -52.6,
+          "pnl_lot": -5162
+        },
+        {
+          "move": -2,
+          "price": 15.75,
+          "pct": -39.1,
+          "pnl_lot": -3849
+        },
+        {
+          "move": -1,
+          "price": 19.9,
+          "pct": -23.0,
+          "pnl_lot": -2298
+        },
+        {
+          "move": 0,
+          "price": 24.7,
+          "pct": -4.4,
+          "pnl_lot": -500
+        },
+        {
+          "move": 1,
+          "price": 30.17,
+          "pct": 16.7,
+          "pnl_lot": 1548
+        },
+        {
+          "move": 2,
+          "price": 36.31,
+          "pct": 40.5,
+          "pnl_lot": 3844
+        },
+        {
+          "move": 3,
+          "price": 43.08,
+          "pct": 66.7,
+          "pnl_lot": 6379
+        }
+      ],
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 57",
+            "value": 56.8
+          },
+          {
+            "name": "Who's winning",
+            "ok": false,
+            "tech": "MACD",
+            "text": "Buyers are winning but getting tired"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit higher",
+            "tech": "candle: green candle",
+            "pattern": "green candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "There's room to rise before \u20b91,122.3, where it stopped before (3.0% away)",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 4,
+        "verdict": "strong",
+        "rsi": 56.8,
+        "pattern": "green candle",
+        "resistance": 1122.3,
+        "support": 930.5
+      },
+      "days": 14,
+      "gamma": 0.00544,
+      "vega_lot": 319,
+      "opt_oi_chg": -236250,
+      "opt_chg": 53.9,
+      "fut_oi": 9910125,
+      "breakeven": 1125.85,
+      "max_loss_lot": 9694,
+      "need_move": 5.5,
+      "need_move_pct": 0.5,
+      "symbol": "VOLTAS",
+      "side": "CE",
+      "contract": "VOLTAS 23 Nov 1100 CE",
+      "expiry": "2026-11-23",
+      "strike": 1100.0,
+      "entry": 25.85,
+      "target": 28.44,
+      "stop": 24.56,
+      "lot": 375,
+      "cost_per_lot": 9694,
+      "profit_per_lot": 897,
+      "loss_per_lot": -554,
+      "delta": 0.47,
+      "theta_lot": -423,
+      "iv": 34.3,
+      "oi": 645750,
+      "volume": 15384,
+      "spot": 1090.07,
+      "price_chg": 3.36,
+      "oi_chg": 3.6,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b91,028",
+      "affordable": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "day": "2026-11-11",
+  "open": [],
+  "taken": [
+    "BANKBARODA",
+    "FEDERALBNK",
+    "TRENT"
+  ],
+  "cash_open": [
+    {
+      "time": "2026-11-11T11:03:17+05:30",
+      "symbol": "TRENT",
+      "action": "BUY",
+      "qty": 6,
+      "entry": 3230.0,
+      "invest": 19380,
+      "target": 3278.45,
+      "stop": 3205.78,
+      "profit": 238,
+      "loss": -198,
+      "last": 3223.3
+    }
+  ],
+  "cash_taken": []
+}

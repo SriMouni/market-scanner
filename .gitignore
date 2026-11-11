@@ -1,0 +1,10 @@
+.env
+__pycache__/
+data/bhav/
+data/*.log
+data/launchd.*
+data/snapshots_old_format.csv
+data/launchd-*
+data/*.tmp
+data/engine.lock
+*.tmp
