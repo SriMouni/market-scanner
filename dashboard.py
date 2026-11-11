@@ -13,6 +13,9 @@ TEMPLATE = r"""<!doctype html>
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1217;--card:#171b22;--ink:#e8ebf0;--soft:#1e232c;
 --muted:#9aa5b4;--line:#2a313b;--up:#3fcf86;--upbg:#12291e;--dn:#ff6b6b;--dnbg:#2e1616;--acc:#7c9cff;--accbg:#1a2340;
 --warn:#f0c14b;--warnbg:#2d2510;--ce:#ff7a75;--pe:#3fcf86}}
+:root[data-theme=dark]{--bg:#0f1217;--card:#171b22;--ink:#e8ebf0;--soft:#1e232c;
+--muted:#9aa5b4;--line:#2a313b;--up:#3fcf86;--upbg:#12291e;--dn:#ff6b6b;--dnbg:#2e1616;--acc:#7c9cff;--accbg:#1a2340;
+--warn:#f0c14b;--warnbg:#2d2510;--ce:#ff7a75;--pe:#3fcf86}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
 header{padding:20px 16px 8px;max-width:1180px;margin:auto}h1{margin:0;font-size:22px}
 .sub{color:var(--muted);font-size:13px;margin-top:4px}
@@ -95,18 +98,73 @@ details.steps ol{margin:8px 0;padding-left:20px}details.steps li{margin:5px 0;fo
 .range{position:relative;height:6px;background:var(--line);border-radius:3px;margin:8px 0 4px}
 .range i{position:absolute;top:-4px;width:3px;height:14px;background:var(--acc);border-radius:2px}
 svg text{fill:var(--muted);font-size:11px}
+/* ---- app shell */
+header{position:sticky;top:0;z-index:20;max-width:none;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
+@supports (backdrop-filter:blur(8px)){header{background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px)}}
+.hdr{max-width:1180px;margin:auto;display:flex;align-items:center;gap:8px}.hdr h1{font-size:18px;flex:1;white-space:nowrap}
+.hdr .sub{margin:0;white-space:nowrap}
+.ibtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;width:36px;height:36px;font-size:16px;cursor:pointer;flex:none}
+.ticker{max-width:1180px;margin:6px auto 0}
+nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+nav button{white-space:nowrap;display:flex;align-items:center;gap:5px}nav button i{font-style:normal}
+.foot{max-width:1180px;margin:8px auto 0;padding:0 16px 24px;font-size:12px;color:var(--muted)}
+/* ---- day timeline */
+.steps5{display:flex;margin:14px 0 2px}.steps5>div{flex:1;position:relative;text-align:center;font-size:11px;color:var(--muted);padding-top:16px;line-height:1.25}
+.steps5>div::before{content:"";position:absolute;top:5px;left:0;right:0;height:3px;background:var(--line)}
+.steps5>div:first-child::before{left:50%}.steps5>div:last-child::before{right:50%}
+.steps5>div::after{content:"";position:absolute;top:1px;left:50%;margin-left:-6px;width:11px;height:11px;border-radius:50%;background:var(--card);border:2px solid var(--line)}
+.steps5>div.done::before,.steps5>div.done::after{background:var(--acc);border-color:var(--acc)}
+.steps5>div.now{color:var(--ink);font-weight:700}.steps5>div.now::after{background:var(--card);border-color:var(--acc);box-shadow:0 0 0 4px var(--accbg)}
+.steps5 b{display:block;font-size:12px;color:inherit}
+.nowline{margin-top:10px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+/* ---- NIFTY range gauge */
+.org{margin:14px 0 4px;position:relative;padding-top:24px}
+.org-bar{position:relative;height:12px;border-radius:6px;background:linear-gradient(90deg,var(--dnbg),var(--soft) 35%,var(--soft) 65%,var(--upbg))}
+.org-band{position:absolute;top:0;bottom:0;background:var(--line);border-left:2px solid var(--dn);border-right:2px solid var(--up)}
+.org-bar i{position:absolute;top:-6px;width:4px;height:24px;margin-left:-2px;background:var(--ink);border-radius:2px}
+.org-now{position:absolute;top:0;transform:translateX(-50%);font-size:12px;font-weight:700;white-space:nowrap}
+.org-l{display:flex;justify-content:space-between;font-size:12px;margin-top:8px;gap:8px}.org-l>span{flex:1}.org-l>span:nth-child(2){text-align:center}
+details.explain{margin:8px 0}details.explain summary{cursor:pointer;color:var(--acc);font-size:14px;font-weight:600}details.explain p{margin:6px 0;font-size:14px}
+/* ---- budget chips */
+.bud{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:4px 0 12px;font-size:14px}.bud>span{font-weight:600;margin-right:4px}
+.bud button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;cursor:pointer}
+.bud button.on{background:var(--ink);color:var(--card);border-color:var(--ink)}
+/* ---- what-if slider */
+.wi{margin:12px 0 4px;background:var(--soft);border-radius:12px;padding:10px 12px 4px}
+.wi-h{font-size:12px;color:var(--muted);font-weight:600}.wi-out{font-size:15px;margin:2px 0 8px;min-height:22px}
+.wi input{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:5px;margin:6px 0;outline:none}
+.wi input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--acc);border:3px solid var(--card);box-shadow:0 1px 5px rgba(0,0,0,.35);cursor:grab}
+.wi input::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--acc);border:3px solid var(--card);cursor:grab}
+.wi-t{position:relative;height:30px;font-size:11px}.wi-t span{position:absolute;transform:translateX(-50%);white-space:nowrap;text-align:center;line-height:1.2}
+.money .m{white-space:nowrap}
+.tw tr:not(.det)>td:first-child,.tw tr>th:first-child{position:sticky;left:0;background:var(--card);z-index:1}
+/* ---- phones */
+@media (max-width:700px){
+ header{padding:8px 12px}.hdr h1{font-size:17px}.ticker{font-size:13px;gap:10px}
+ nav{position:fixed;left:0;right:0;bottom:0;margin:0;z-index:30;display:grid;grid-template-columns:repeat(7,1fr);gap:0;max-width:none;
+  padding:6px 2px calc(6px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -2px 12px rgba(0,0,0,.06)}
+ nav button{flex-direction:column;gap:1px;border:0;background:none;padding:4px 0;border-radius:10px;font-size:10.5px;color:var(--muted)}
+ nav button i{font-size:20px;line-height:1.1}
+ nav button.on{background:var(--accbg);color:var(--acc);font-weight:700}
+ main{padding:10px 12px 100px}.foot{padding-bottom:96px}
+ .hero{padding:14px}.hero-t{font-size:20px}
+ .idea{padding:14px}.idea.big{padding:16px}.idea-title{font-size:17px}.idea.big .idea-title{font-size:20px}
+ .money{grid-template-columns:repeat(3,1fr);gap:6px}.money>div{padding:7px 8px}.money .k{font-size:10px}.money .m,.idea.big .money .m{font-size:17px}
+ .seg{display:flex}.seg button{flex:1;padding:9px 6px;font-size:14px}.seg small{display:none}
+ h2{font-size:16px;margin-top:20px}.grid{grid-template-columns:repeat(2,1fr)}.v{font-size:18px}
+}
 </style></head><body>
-<header><h1>📈 My Market Helper</h1>
-<div class="sub" id="upd"></div>
+<header><div class="hdr"><h1>📈 My Market Helper</h1><span class="sub" id="upd"></span>
+<button class="ibtn" onclick="location.reload()" title="Refresh">↻</button><button class="ibtn" id="theme" title="Light / dark">🌓</button></div>
 <div id="ticker" class="ticker"></div>
-<div class="warn">These are computer-generated ideas, not financial advice. Start in practice mode and check “My results” before using real money.</div>
 </header>
-<nav><button data-t="plan" class="on">🏠 Today</button><button data-t="live">📊 NIFTY</button><button data-t="scan">🔎 Stock movers</button><button data-t="picks">🌙 Tomorrow's ideas</button>
-<button data-t="track">📈 My results</button><button data-t="lt">🌱 Long-term</button><button data-t="guide">📖 Learn</button></nav>
+<nav><button data-t="plan" class="on"><i>🏠</i><span>Today</span></button><button data-t="live"><i>📊</i><span>NIFTY</span></button><button data-t="scan"><i>🔎</i><span>Movers</span></button><button data-t="picks"><i>🌙</i><span>Tomorrow</span></button>
+<button data-t="track"><i>📈</i><span>Results</span></button><button data-t="lt"><i>🌱</i><span>Long-term</span></button><button data-t="guide"><i>📖</i><span>Learn</span></button></nav>
 <main>
 <section id="plan" class="on"></section><section id="live"></section><section id="scan"></section><section id="picks"></section>
 <section id="track"></section><section id="lt"></section><section id="guide" class="guide"></section>
 </main>
+<div class="foot">Computer-generated ideas, not financial advice. Practise first and check “Results” before using real money.</div>
 <script>
 const D=__DATA__;
 const $=s=>document.querySelector(s);
@@ -119,7 +177,33 @@ document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{
  document.querySelectorAll("nav button,section").forEach(e=>e.classList.remove("on"));
  b.classList.add("on");$("#"+b.dataset.t).classList.add("on");try{localStorage.tab=b.dataset.t}catch(e){}});
 try{const t=localStorage.tab;t&&document.querySelector(`nav button[data-t=${t}]`)?.click()}catch(e){}
-$("#upd").textContent=`Last updated ${D.built} (India time)`;
+$("#upd").textContent="⟳ "+D.built.slice(-5);$("#upd").title=`Last updated ${D.built} (India time)`;
+(()=>{const r=document.documentElement,b=$("#theme"),m=["","dark","light"],ic={"":"🌓",dark:"🌙",light:"☀️"};
+ const set=t=>{t?r.setAttribute("data-theme",t):r.removeAttribute("data-theme");b.textContent=ic[t];try{localStorage.theme=t}catch(e){}};
+ let t="";try{t=localStorage.theme||""}catch(e){}set(t);b.onclick=()=>{t=m[(m.indexOf(t)+1)%3];set(t)}})();
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>scrollTo({top:0})));
+let BUDGET=(()=>{try{return +localStorage.bud||D.capital}catch(e){return D.capital}})();
+function whatIf(entry,stop,target,qty,short){entry=+entry;const lo=Math.min(stop,target),hi=Math.max(stop,target),pad=(hi-lo)*.35,mn=lo-pad,mx=hi+pad;
+ const P=v=>((v-mn)/(mx-mn)*100).toFixed(1),e=P(entry),g=short?`var(--upbg) 0 ${e}%,var(--dnbg) ${e}% 100%`:`var(--dnbg) 0 ${e}%,var(--upbg) ${e}% 100%`;
+ return `<div class="wi" data-e="${entry}" data-q="${qty}" data-sh="${short?1:0}" data-s="${stop}" data-t="${target}"><div class="wi-h">🎚️ DRAG: what if the price goes to…</div><div class="wi-out"></div>
+ <input type="range" min="${mn}" max="${mx}" step="${(mx-mn)/200}" value="${entry}" style="background:linear-gradient(90deg,${g})" aria-label="price">
+ <div class="wi-t"><span class="dn" style="left:${P(stop)}%">Stop<br>${inr(stop)}</span><span style="left:${e}%">Buy<br>${inr(entry)}</span><span class="up" style="left:${P(target)}%">Target<br>${inr(target)}</span></div></div>`}
+function updWI(inp){const w=inp.closest(".wi"),e=+w.dataset.e,q=+w.dataset.q,sh=w.dataset.sh==="1",v=+inp.value,s=+w.dataset.s,t=+w.dataset.t;
+ const pnl=(sh?e-v:v-e)*q,pct=(sh?e-v:v-e)/e*100,hitT=sh?v<=t:v>=t,hitS=sh?v>=s:v<=s;
+ w.querySelector(".wi-out").innerHTML=Math.abs(v-e)<(Math.abs(t-e)/40)?`At <b>${inr(e)}</b> (buy price): no profit, no loss. Drag the dot ↔`:
+  `At <b>${inr(v)}</b> → you ${pnl>=0?"make":"lose"} <b class="${pnl>=0?"up":"dn"}">${pnl>=0?"+":"−"}${inr(Math.abs(pnl),0)}</b> <span class="muted">(${sgn(pct,1)}%)</span>${hitT?" ✅ target reached, sell":hitS?" ❌ stop reached, sell":""}`}
+document.addEventListener("input",ev=>{if(ev.target.matches(".wi input"))updWI(ev.target)});
+const initWI=()=>document.querySelectorAll(".wi input").forEach(updWI);
+function orGauge(lo,hi,now){const w=hi-lo||1,mn=lo-w,mx=hi+w,P=v=>Math.min(98,Math.max(2,(v-mn)/(mx-mn)*100));
+ return `<div class="org">${now?`<div class="org-now" style="left:${Math.min(85,Math.max(15,P(now)))}%">NIFTY ${num(now,0)}</div>`:""}
+ <div class="org-bar"><span class="org-band" style="left:${P(lo)}%;width:${P(hi)-P(lo)}%"></span>${now?`<i style="left:${P(now)}%"></i>`:""}</div>
+ <div class="org-l"><span class="dn">▼ <b>PE</b> if it closes<br>below ${num(lo,0)}</span><span class="muted">wait<br>zone</span><span class="up" style="text-align:right">▲ <b>CE</b> if it closes<br>above ${num(hi,0)}</span></div></div>`}
+function dayline(hm,wd){const T=[["09:15","Open"],["09:30","Range set"],["13:30","Last NIFTY buy"],["15:15","Sell all"],["15:30","Close"]];
+ const weekday=wd>0&&wd<6,idx=weekday?T.filter(t=>hm>=t[0]).length:0;
+ const msg=!weekday?"🛌 Weekend: market closed. Check “Tomorrow” for Monday's ideas.":hm<"09:15"?"⏰ Market opens at 9:15. First NIFTY idea possible after 9:30.":
+  hm<"09:30"?"👀 Setting today's NIFTY range (9:15–9:30). Don't trade the first 15 minutes.":hm<"13:30"?"🔔 Watching for a breakout. You'll get a Telegram message if there's a buy.":
+  hm<"15:15"?"🕑 No new NIFTY buys after 1:30. Open trades are still being watched.":hm<"15:30"?"🔚 Selling any open trades before the close.":"🌙 Market closed. Tomorrow's ideas arrive around 7 PM.";
+ return `<div class="steps5">${T.map((t,i)=>`<div class="${i<idx-1||(i===idx-1&&hm>="15:30")?"done":i===idx-1?"now":""}"><b>${+t[0].slice(0,2)>12?+t[0].slice(0,2)-12:+t[0].slice(0,2)}:${t[0].slice(3)}</b>${t[1]}</div>`).join("")}</div><div class="nowline">${msg}</div>`}
 function card(k,v,c="",sub=""){return `<div class="card"><div class="k">${k}</div><div class="v ${c}">${v}</div>${sub?`<div class="muted" style="font-size:12px">${sub}</div>`:""}</div>`}
 function table(cols,rows,empty,detail){if(!rows.length)return `<div class="tw"><div class="empty">${empty}</div></div>`;
  return `<div class="tw"><table><tr>${cols.map(c=>`<th>${c[0]}</th>`).join("")}</tr>${rows.map((r,i)=>
@@ -170,10 +254,11 @@ function ideaCard(x,big){
   <div><div class="k">If it works</div><div class="m up">+${inr(x.win,0)}</div></div>
   <div><div class="k">If it doesn't</div><div class="m dn">${inr(x.lose,0)}</div></div></div>
  <div class="why">💡 ${x.why}</div>
+ ${x.entry&&x.stop&&x.target?whatIf(x.entry,x.stop,x.target,x.qty,false):""}
  ${chartHTML(x.chart)}
  ${x.warn?`<div class="small-warn">⚠️ ${x.warn}</div>`:""}
  ${stepsHTML(x)}</div>`}
-(()=>{const now=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Kolkata"}));
+function renderToday(){const now=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Kolkata"}));
  const hm=now.toTimeString().slice(0,5),wd=now.getDay(),open=wd>0&&wd<6&&hm>="09:15"&&hm<="15:30";
  const today=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
  const fmt=s=>new Date(s+"T12:00:00").toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"});
@@ -188,7 +273,7 @@ function ideaCard(x,big){
  h+=`<div class="hero"><div><div class="hero-k">${open?"Market open · closes 3:30 PM":"Market closed · opens 9:15 AM Mon–Fri"}</div>
  <div class="hero-t">${mood||"Welcome 👋"}</div>
  <div class="hero-s">${nifty?`NIFTY 50 at <b data-idx="NIFTY 50">${num(nifty,0)}</b> (<span data-idxp="NIFTY 50">${sgn(nchg,2)}%</span>)`:""}${adv!=null?` · ${adv} of ${adv+dec} big stocks rising`:""}</div></div>
-</div>`;
+</div>${dayline(hm,wd)}`;
 
  // ---- NIFTY card: engine position / pending order / opening-range status
  const en=D.engine||{},ep=en.day===today?en.position:null,eo=en.day===today?en.pending:null,es=en.day===today?(en.status||{}):{};
@@ -214,48 +299,54 @@ function ideaCard(x,big){
   else{
    const rng=es.or_low?`${num(es.or_low,0)} – ${num(es.or_high,0)}`:null;
    h+=`<div class="card"><div style="font-size:17px;font-weight:650">⏳ No NIFTY call right now</div>
-   <p style="margin:6px 0 4px">${rng?`Our NIFTY rule is simple: in the first 15 minutes NIFTY moved between <b>${rng}</b>. If it then closes a 5-minute period <b>above</b> that range, we buy a CE (bet on up); <b>below</b> it, a PE (bet on down).`:"Our NIFTY rule waits for the first 15 minutes of trading (9:15–9:30) to set today's range."}
-   ${es.status?`<br><span class="muted">${es.status}${es.bar?` (as of ${es.bar})`:""}</span>`:""}</p>
+   ${rng?orGauge(es.or_low,es.or_high,es.close||nifty):""}
+   <p class="muted" style="margin:8px 0 4px;font-size:13px">${es.status?`${es.status}${es.bar?` (as of ${es.bar})`:""}`:"Our NIFTY rule waits for the first 15 minutes of trading (9:15–9:30) to set today's range."}</p>
+   ${rng?`<details class="explain"><summary>How the NIFTY rule works</summary><p>In the first 15 minutes NIFTY moved between <b>${rng}</b>. If a 5-minute period then closes <b>above</b> that range, we buy a CE (bet on up). If it closes <b>below</b>, a PE (bet on down). Only one buy per direction a day, and none after 1:30 PM.</p></details>`:""}
    ${Object.keys(w).length?`<div class="cards" style="margin-top:10px">${["CE","PE"].filter(s=>w[s]).map(s=>`<div class="hold"><span class="dir ${s}">${s==="CE"?"▲ If NIFTY breaks above"+(es.or_high?" "+num(es.or_high,0):""):"▼ If NIFTY breaks below"+(es.or_low?" "+num(es.or_low,0):"")}</span>
     <div class="idea-contract" style="margin-top:6px">We'd buy about: <b>NIFTY ${l.expiry} ${w[s].strike} ${s}</b> ${tip(s,s)}</div>
     <div class="livep" data-opt="${w[s].strike}${s}">Price now ${inr(w[s].ask)}</div>
     <div class="money"><div><div class="k">You pay</div><div class="m">${inr(w[s].cost_lot,0)}</div></div><div><div class="k">If it works</div><div class="m up">+${inr(w[s].profit_lot,0)}</div></div><div><div class="k">If it doesn't</div><div class="m dn">${inr(w[s].loss_lot,0)}</div></div></div>
+    ${whatIf(w[s].ask,w[s].ask*(1-D.stop/100),w[s].ask*(1+D.target/100),D.lot,false)}
     <div class="small-warn">Not yet: wait for our message before buying.</div></div>`).join("")}</div>`:""}</div>`}}
 
  // ---- 3. ideas: F&O and normal trades
  const fno=[];
- if(liveToday)(sl.signals||[]).filter(r=>r.option&&r.affordable).forEach(r=>{const o=r.option;
-  fno.push({live:true,side:r.signal,sym:r.symbol,sector:r.sector,contract:r.contract,expiry:r.contract.split(" ").slice(1,3).join(" "),strike:o.strike,qty:o.lot,
+ if(liveToday)(sl.signals||[]).filter(r=>r.option).forEach(r=>{const o=r.option;
+  fno.push({live:true,entry:o.est,side:r.signal,sym:r.symbol,sector:r.sector,contract:r.contract,expiry:r.contract.split(" ").slice(1,3).join(" "),strike:o.strike,qty:o.lot,
    pay:o.cost_lot,win:o.profit_lot,lose:o.loss_lot,target:o.target,stop:o.stop,maxText:`about <b>${inr(o.est)}</b> (estimate: use the live price shown, skip if it's more than 5% higher)`,
    title:`${r.symbol} is ${r.signal==="CE"?"rising":"falling"} strongly`,
    why:`${r.name||r.symbol} (${r.sector}) is ${r.chg>0?"up":"down"} ${Math.abs(r.chg)}% today, trading at ${r.rvol}× its usual volume, and it kept ${r.signal==="CE"?"rising":"falling"} in the last 30 minutes${r.agree?". Last night's scan expected this too":""}.`,
    warn:"The option price is an estimate. Check the real price in Groww first.",chart:r.chart,score:r.score+(r.agree?2:0)})});
  const valid=d.date&&(new Date(today)-new Date(d.date))/864e5<=4;
- if(valid)(d.options||[]).filter(p=>p.affordable).forEach(p=>{
-  fno.push({live:false,side:p.side,sym:p.symbol,contract:p.contract,expiry:p.contract.split(" ").slice(1,3).join(" "),strike:p.strike,qty:p.lot,
+ if(valid)(d.options||[]).forEach(p=>{
+  fno.push({live:false,entry:p.entry,side:p.side,sym:p.symbol,contract:p.contract,expiry:p.contract.split(" ").slice(1,3).join(" "),strike:p.strike,qty:p.lot,
    pay:p.cost_per_lot,win:p.profit_per_lot,lose:p.loss_per_lot,target:p.target,stop:p.stop,
    maxText:`between <b>${inr(p.entry*(1-D.gap/100))}</b> and <b>${inr(p.entry*(1+D.gap/100))}</b>. If it's outside this range, skip it`,
    title:`${p.symbol} looked strong at yesterday's close`,
    why:`On ${fmt(d.date)}, ${p.symbol} ${p.price_chg>0?"rose":"fell"} ${Math.abs(p.price_chg)}% and many new traders joined the move (open interest +${p.oi_chg}%). It's also ${p.side==="CE"?"above":"below"} its 20-day average.`,
    warn:open&&hm>"09:30"?"The market has been open a while, so this may have already moved. Only buy inside the price range.":"",chart:p.chart,score:-1+(p.chart?p.chart.passed-3:0)})});
  fno.sort((a,b)=>b.score-a.score);
- const cash=liveToday?(sl.signals||[]).filter(r=>r.cash):[];
+ const fnoAll=fno.length;fno.splice(0,fno.length,...fno.filter(x=>x.pay<=BUDGET));
+ const cash=liveToday?(sl.signals||[]).filter(r=>r.cash).map(r=>{const c=r.cash,q=Math.floor(BUDGET/c.entry),k=q/c.qty;
+  return q<1?null:{...r,cash:{...c,qty:q,invest:Math.round(q*c.entry),profit:Math.round(c.profit*k),loss:Math.round(c.loss*k)}}}).filter(Boolean):[];
 
  // sector note when one sector dominates
  const hot=Object.entries(sl.hot_sectors||{}).sort((a,b)=>b[1]-a[1]);
  const sectorNote=liveToday&&hot.length&&hot[0][1]>=3?`<p class="note">🔥 <b>${hot[0][0]}</b> stocks are leading today (${hot[0][1]} of ${sl.all_signals} signals). To avoid putting everything on one sector, we show at most 2 ideas per sector.</p>`:"";
 
  h+=`<h2>🎯 Trade ideas ${open?"right now":"for the next session"}</h2>${sectorNote}
+ <div class="bud"><span>💰 Budget</span>${[5000,10000,20000,50000].map(v=>`<button class="${v===BUDGET?"on":""}" data-bud="${v}">₹${v/1000}k</button>`).join("")}</div>
  <div class="seg"><button class="on" data-seg="fno">⚡ Options <small>(F&amp;O)</small> <span>${fno.length}</span></button><button data-seg="cash">🛒 Shares <small>(normal)</small> <span>${cash.length}</span></button></div>`;
 
  // F&O panel
- h+=`<div class="segp on" id="seg-fno"><p class="note"><b>Options in simple words:</b> you pay a small amount to bet on whether a share price goes up or down <b>today</b>. If you're right you can earn a lot quickly, but if you're wrong you lose quickly too, and the bet loses a little value every day. Pick <b>only one</b>, and never more than ${inr(D.capital,0)}.</p>`;
+ h+=`<div class="segp on" id="seg-fno"><details class="explain"><summary>What are options? (simple)</summary><p>You pay a small amount to bet on whether a share price goes up or down <b>today</b>. If you're right you can earn a lot quickly, but if you're wrong you lose quickly too, and the bet loses a little value every day. Pick <b>only one</b>, and stay within your budget.</p></details>`;
  if(fno.length){h+=ideaCard(fno[0],true);if(fno.length>1)h+=`<h3 style="margin:18px 0 8px">Other F&amp;O ideas</h3><div class="cards">${fno.slice(1,5).map(x=>ideaCard(x,false)).join("")}</div>`}
- else h+=`<div class="card empty">😴 No good F&amp;O setups right now. That's normal: no trade is better than a bad trade.</div>`;
+ else h+=`<div class="card empty">😴 No good F&amp;O setups ${fnoAll?`within ${inr(BUDGET,0)}`:"right now"}. That's normal: no trade is better than a bad trade.</div>`;
+ if(fnoAll>fno.length)h+=`<p class="note">${fnoAll-fno.length} more idea${fnoAll-fno.length>1?"s":""} cost more than ${inr(BUDGET,0)}. Pick a bigger budget above to see ${fnoAll-fno.length>1?"them":"it"}.</p>`;
  h+=`</div>`;
 
  // Normal (shares) panel
- h+=`<div class="segp" id="seg-cash"><p class="note"><b>Shares in simple words:</b> you buy a small piece of the company, then sell it later <b>the same day</b>. Safer and slower than options. You sell when the price is up ${D.st.cash_target_pct}% (profit), or down ${D.st.cash_stop_pct}% (to stop a bigger loss).</p>`;
+ h+=`<div class="segp" id="seg-cash"><details class="explain"><summary>What is intraday share trading? (simple)</summary><p>You buy a small piece of the company, then sell it later <b>the same day</b>. Safer and slower than options. You sell when the price is up ${D.st.cash_target_pct}% (profit), or down ${D.st.cash_stop_pct}% (to stop a bigger loss).</p></details>`;
  if(cash.length){h+=`<div class="cards">${cash.map((r,i)=>{const c=r.cash,up=r.signal==="CE";
   return `<div class="idea ${i?"":"big"}"><div class="idea-top"><span class="src live">● Live now · ${r.sector}</span><span class="dir ${r.signal}">${up?"▲ Buy shares":"▼ Short-sell (advanced)"}</span></div>
   <div class="idea-title">${up?"Buy":"Short-sell"} ${c.qty} shares of ${r.symbol}</div>
@@ -264,6 +355,7 @@ function ideaCard(x,big){
    <div><div class="k">If it works</div><div class="m up">+${inr(c.profit,0)}</div></div>
    <div><div class="k">If it doesn't</div><div class="m dn">${inr(c.loss,0)}</div></div></div>
   <div class="why">💡 ${r.symbol} is ${r.chg>0?"up":"down"} ${Math.abs(r.chg)}% today on ${r.rvol}× its usual volume and still ${up?"rising":"falling"}.</div>
+  ${whatIf(c.entry,c.stop,c.target,c.qty,!up)}
   ${chartHTML(r.chart)}
   ${up?"":`<div class="small-warn">⚠️ Short-selling means you sell first and buy back later the same day. If you're new, skip down-trades and only take ▲ ideas.</div>`}
   <details class="steps"><summary>Show me how to do this in Groww</summary><ol>
@@ -285,12 +377,15 @@ function ideaCard(x,big){
    <div class="muted" style="font-size:13px;margin-top:6px">Green number = company health score (out of 100). Total ${inr(ltTot,0)}. Buy with “Delivery”, in 2–3 parts over a few weeks. See the Long-term tab for details.</div></div></div>`}
 
  // ---- glossary
- h+=`<h2>📖 Words you'll see</h2><div class="gloss">${[["CE (Call)",GLOSS.CE],["PE (Put)",GLOSS.PE],["Lot",GLOSS.lot],["Premium",GLOSS.premium],["Target",GLOSS.target],["Stop-loss",GLOSS.stoploss],["Expiry",GLOSS.expiry],["Practice mode",GLOSS.paper]].map(g=>`<div><b>${g[0]}</b><br>${g[1]}</div>`).join("")}</div>
+ h+=`<details class="explain" style="margin-top:22px"><summary>📖 Words you'll see (CE, PE, lot, stop-loss…)</summary><div class="gloss" style="margin-top:8px">${[["CE (Call)",GLOSS.CE],["PE (Put)",GLOSS.PE],["Lot",GLOSS.lot],["Premium",GLOSS.premium],["Target",GLOSS.target],["Stop-loss",GLOSS.stoploss],["Expiry",GLOSS.expiry],["Practice mode",GLOSS.paper]].map(g=>`<div><b>${g[0]}</b><br>${g[1]}</div>`).join("")}</div></details>
  <p class="note" style="margin-top:14px">⚠️ Options are risky: you can lose the whole amount you pay. Only trade money you can afford to lose, and use the Learn tab before going live.</p>`;
  $("#plan").innerHTML=h;
  const segs=document.querySelectorAll(".seg button");
  const pick=k=>{segs.forEach(b=>b.classList.toggle("on",b.dataset.seg===k));document.querySelectorAll(".segp").forEach(p=>p.classList.toggle("on",p.id==="seg-"+k));try{localStorage.seg=k}catch(e){}};
- segs.forEach(b=>b.onclick=()=>pick(b.dataset.seg));try{localStorage.seg&&pick(localStorage.seg)}catch(e){}})();
+ segs.forEach(b=>b.onclick=()=>pick(b.dataset.seg));try{localStorage.seg&&pick(localStorage.seg)}catch(e){}
+ document.querySelectorAll(".bud button").forEach(b=>b.onclick=()=>{BUDGET=+b.dataset.bud;try{localStorage.bud=BUDGET}catch(e){}renderToday()});
+ initWI()}
+renderToday();
 
 // =============================== NIFTY live
 (()=>{const s=D.state||{},l=s.last_scan,t=s.open_trade,ch=D.chain;let h="";
