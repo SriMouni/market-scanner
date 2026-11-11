@@ -186,6 +186,9 @@ th.sortable{cursor:pointer;user-select:none}th.sortable:hover{color:var(--ink)}t
 .tile b{display:block;font-size:13px}.tile.sig{outline:2px solid var(--acc);outline-offset:1px}.tile.sel{outline:3px solid var(--ink)}
 #tileinfo:empty{display:none}#tileinfo{position:sticky;bottom:76px;z-index:5;margin-top:10px}
 @media (min-width:701px){#tileinfo{bottom:12px}}
+.tw table.chain tr>td:first-child,.tw table.chain tr>th:first-child{position:static}
+.chain td.st,.chain th.stc{position:sticky;left:0;right:0;z-index:2;box-shadow:0 0 0 1px var(--line)}.chain th.stc{background:var(--soft)}
+.chain tr.atm td.st{background:var(--acc);color:#fff}
 /* ---- phones */
 @media (max-width:700px){
  .ixs{grid-template-columns:repeat(5,150px);margin-left:-12px;margin-right:-12px;padding:2px 12px}
@@ -296,20 +299,27 @@ function card(k,v,c="",sub=""){return `<div class="card"><div class="k">${k}</di
 function table(cols,rows,empty,detail){if(!rows.length)return `<div class="tw"><div class="empty">${empty}</div></div>`;
  const body=rows.map(r=>cols.map(c=>c[1](r)).join(" ")).join(" "),dirs=/pill (CE|PE)|dir (CE|PE)/.test(body);
  const fc=cols.find(c=>typeof c[2]==="function"),fvals=fc?[...new Set(rows.map(fc[2]).filter(Boolean))].sort():[];
- const tools=rows.length>=4?`<div class="tt"><input type="search" placeholder="🔍 Search ${rows.length} rows…" aria-label="Search">${fvals.length>1?`<select aria-label="Filter"><option value="">All ${fc[3]||"groups"}</option>${fvals.map(v=>`<option>${v}</option>`).join("")}</select>`:""}${dirs?`<button class="on" data-f="">All</button><button data-f="CE">▲ Up</button><button data-f="PE">▼ Down</button>`:""}<span class="cnt"></span></div>`:"";
- return `${tools}<div class="tw"><table><tr>${cols.map(c=>`<th class="${rows.length>=4?"sortable":""}">${c[0]}</th>`).join("")}</tr>${rows.map((r,i)=>
+ const tools=rows.length>=2?`<div class="tt"><input type="search" placeholder="🔍 Search ${rows.length} rows…" aria-label="Search">${fvals.length>1?`<select aria-label="Filter"><option value="">All ${fc[3]||"groups"}</option>${fvals.map(v=>`<option>${v}</option>`).join("")}</select>`:""}${dirs?`<button class="on" data-f="">All</button><button data-f="CE">▲ Up</button><button data-f="PE">▼ Down</button>`:""}<span class="cnt"></span></div>`:"";
+ return `${tools}<div class="tw"><table><tr>${cols.map(c=>`<th class="${rows.length>=2?"sortable":""}">${c[0]}</th>`).join("")}</tr>${rows.map((r,i)=>
  `<tr class="${detail?"click":""}" ${fc?`data-fv="${fc[2](r)||""}"`:""} ${detail?`onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"`:""}>${cols.map(c=>`<td>${c[1](r)}</td>`).join("")}</tr>`+
  (detail?`<tr class="det"><td colspan="${cols.length}">${detail(r)}</td></tr>`:"")).join("")}</table></div>`}
-function ttApply(tt){const tw=tt.nextElementSibling,q=tt.querySelector("input").value.toLowerCase().trim(),f=(tt.querySelector("button.on")||{}).dataset?.f||"",sv=tt.querySelector("select")?.value||"";let n=0,tot=0;
- tw.querySelectorAll("tr").forEach((tr,i)=>{if(i===0||tr.classList.contains("det"))return;tot++;
-  const ok=(!q||tr.textContent.toLowerCase().includes(q))&&(!f||tr.querySelector(`.pill.${f},.dir.${f}`))&&(!sv||tr.dataset.fv===sv);tr.style.display=ok?"":"none";
-  const d=tr.nextElementSibling;if(d&&d.classList.contains("det"))d.style.display=ok?"":"none";if(ok)n++});
- tt.querySelector(".cnt").textContent=n===tot?"":`${n} of ${tot}`}
+function ttApply(tt){const tw=tt.nextElementSibling,q=tt.querySelector("input").value.toLowerCase().trim(),f=(tt.querySelector("button.on")||{}).dataset?.f||"",sv=tt.querySelector("select")?.value||"";
+ const rows=[...tw.querySelectorAll("tr")].filter(tr=>!tr.classList.contains("det")&&tr.querySelector("td")),ai=rows.findIndex(r=>r.classList.contains("atm"));let n=0;
+ rows.forEach((tr,i)=>{const ok=(!q||tr.textContent.toLowerCase().includes(q))&&(f==="near"?(ai<0||Math.abs(i-ai)<=5):(!f||tr.querySelector(`.pill.${f},.dir.${f}`)))&&(!sv||tr.dataset.fv===sv);
+  tr.style.display=ok?"":"none";const d=tr.nextElementSibling;if(d&&d.classList.contains("det"))d.style.display=ok?"":"none";if(ok)n++});
+ tt.querySelector(".cnt").textContent=n===rows.length?`${n} rows`:`${n} of ${rows.length}`}
+function addTools(){document.querySelectorAll(".tw").forEach(tw=>{const tb=tw.querySelector("table"),prev=tw.previousElementSibling;if(!tb||(prev&&prev.classList.contains("tt")))return;
+ const rows=[...tb.rows].filter(r=>!r.classList.contains("det")&&r.querySelector("td"));if(rows.length<2)return;
+ const pills=!!tb.querySelector(".pill.CE,.pill.PE"),chain=tb.classList.contains("chain");
+ tb.rows[0].querySelectorAll("th").forEach(th=>th.classList.add("sortable"));
+ const d=document.createElement("div");d.className="tt";
+ d.innerHTML=`<input type="search" placeholder="🔍 ${chain?"Find a strike…":"Search "+rows.length+" rows…"}" aria-label="Search">${chain?`<button class="on" data-f="near">Near ATM (±5)</button><button data-f="">All strikes</button>`:pills?`<button class="on" data-f="">All</button><button data-f="CE">▲ Up</button><button data-f="PE">▼ Down</button>`:""}<span class="cnt"></span>`;
+ tw.parentNode.insertBefore(d,tw);ttApply(d)})}
 document.addEventListener("input",e=>{const tt=e.target.closest(".tt");if(tt)ttApply(tt)});document.addEventListener("change",e=>{const tt=e.target.closest(".tt");if(tt)ttApply(tt)});
 document.addEventListener("click",e=>{const b=e.target.closest(".tt button");if(b){b.parentNode.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));ttApply(b.parentNode);return}
  const th=e.target.closest("th.sortable");if(!th)return;const tb=th.closest("table"),col=[...th.parentNode.children].indexOf(th),asc=!th.classList.contains("asc");
  th.parentNode.querySelectorAll("th").forEach(x=>x.classList.remove("asc","desc"));th.classList.add(asc?"asc":"desc");
- const rows=[...tb.rows].slice(1).filter(r=>!r.classList.contains("det")).map(r=>[r,r.nextElementSibling&&r.nextElementSibling.classList.contains("det")?r.nextElementSibling:null]);
+ const rows=[...tb.rows].filter(r=>!r.classList.contains("det")&&r.querySelector("td")).map(r=>[r,r.nextElementSibling&&r.nextElementSibling.classList.contains("det")?r.nextElementSibling:null]);
  const val=r=>{const t=(r.cells[col]?.textContent||"").trim(),m=t.replace(/[₹,%×+\s]/g,"").replace("−","-").match(/^-?\d+(\.\d+)?/);return m?parseFloat(m[0]):t.toLowerCase()};
  rows.sort((a,b)=>{const x=val(a[0]),y=val(b[0]);return (typeof x==="number"&&typeof y==="number"?x-y:String(x).localeCompare(String(y)))*(asc?1:-1)});
  const parent=rows[0][0].parentNode;rows.forEach(([r,d])=>{parent.appendChild(r);d&&parent.appendChild(d)})});
@@ -490,7 +500,7 @@ function renderToday(){const now=new Date(new Date().toLocaleString("en-US",{tim
  const pick=k=>{segs.forEach(b=>b.classList.toggle("on",b.dataset.seg===k));document.querySelectorAll(".segp").forEach(p=>p.classList.toggle("on",p.id==="seg-"+k));try{localStorage.seg=k}catch(e){}};
  segs.forEach(b=>b.onclick=()=>pick(b.dataset.seg));try{localStorage.seg&&pick(localStorage.seg)}catch(e){}
  document.querySelectorAll(".bud button").forEach(b=>b.onclick=()=>{BUDGET=+b.dataset.bud;try{localStorage.bud=BUDGET}catch(e){}renderToday()});
- initWI()}
+ initWI();addTools()}
 renderToday();
 
 // =============================== NIFTY live
@@ -522,7 +532,7 @@ renderToday();
   h+=`</div><p class="note" style="margin-bottom:0">Blue strike = at-the-money. NIFTY tends to stall near the strike with the biggest call wall above and bounce near the biggest put wall below.</p></div>`;
   h+=`<h2>Option chain with Greeks <span class="muted" style="font-weight:400;font-size:13px">(per lot of ${ch.lot})</span></h2>
   <p class="note">CALLS on the left, PUTS on the right. Δ = change per ₹1 NIFTY move · θ/lot = rupees lost per day per lot · Vega/lot = rupees per 1% IV change.</p>
-  <div class="tw"><table class="chain"><tr><th>OI</th><th>OI chg</th><th>IV</th><th>Vega/lot</th><th>θ/lot</th><th>Δ</th><th>LTP</th><th style="text-align:center">Strike</th>
+  <div class="tw"><table class="chain"><tr><th>OI</th><th>OI chg</th><th>IV</th><th>Vega/lot</th><th>θ/lot</th><th>Δ</th><th>LTP</th><th class="stc" style="text-align:center">Strike</th>
   <th>LTP</th><th>Δ</th><th>θ/lot</th><th>Vega/lot</th><th>IV</th><th>OI chg</th><th style="text-align:right">OI</th></tr>`;
   ch.rows.forEach(r=>{const c=r.CE||{},p=r.PE||{};h+=`<tr class="${r.strike===ch.atm?"atm":""}">
    <td>${big(c.oi||0)}</td><td class="${cls(c.oi_chg)}">${sgn(c.oi_chg||0,0)}</td><td>${c.iv??"–"}</td><td>${inr(c.vega_lot,0)}</td><td class="dn">${inr(c.theta_lot,0)}</td><td>${c.delta??"–"}</td><td><b>${inr(c.ltp)}</b></td>
@@ -787,6 +797,10 @@ $("#guide").innerHTML=`
 <li>Charges are estimates. Check a Groww contract note to confirm.</li>
 <li>Past results never guarantee future results. SEBI's studies found about 9 in 10 individual F&amp;O traders lose money.</li></ul>`;
 
+addTools();
+function centerChain(){document.querySelectorAll("table.chain").forEach(tb=>{const tw=tb.closest(".tw"),c=tb.rows[0].cells,st=c[7],l=c[6];
+ if(!tw||!st||!l||!tw.clientWidth)return;const x=l.getBoundingClientRect().right-tb.getBoundingClientRect().left;tw.scrollLeft=x+st.offsetWidth/2-tw.clientWidth/2})}
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>setTimeout(centerChain,0)));setTimeout(centerChain,0);addEventListener('load',centerChain);
 // =============================== live updates (only when served by app.py live)
 (()=>{const ticker=$("#ticker");
  {const R=(D.indices||{}).rows||{};const ks=["NIFTY 50","NIFTY BANK"].filter(k=>R[k]);
