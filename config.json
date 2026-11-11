@@ -37,7 +37,7 @@
   },
 
   "daily": {
-    "universe_top_n": 120,
+    "universe_top_n": 250,
     "price_chg_min": 1.0,
     "oi_chg_min": 3.0,
     "max_candidates": 40,
@@ -55,7 +55,7 @@
   },
 
   "stocks": {
-    "universe_top_n": 80,
+    "universe_top_n": 250,
     "chg_min": 1.0,
     "mom_min": 0.2,
     "rvol_min": 1.5,
@@ -81,7 +81,7 @@
   },
 
   "engine": {
-    "poll_sec": 30,
+    "poll_sec": 10,
     "signal_sec": 60,
     "or_minutes": 15,
     "breakout_buffer_pct": 0.05,
