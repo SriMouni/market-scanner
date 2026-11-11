@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11T13:10:50+05:30",
+  "generated": "2026-11-11T13:12:24+05:30",
   "date": "2026-11-09",
   "options": [
     {
@@ -4064,8 +4064,8 @@
         "resistance": 368.95,
         "support": 302.3
       },
-      "alloc_shares": 58,
-      "alloc_amount": 19885
+      "alloc_shares": 0,
+      "alloc_amount": 0
     },
     {
       "symbol": "RUBICON",
@@ -4080,8 +4080,8 @@
       "from_high": -4.8,
       "ret6m": 86.4,
       "ret12m": 186.9,
-      "cagr3": NaN,
-      "cagr5": NaN,
+      "cagr3": null,
+      "cagr5": null,
       "dd1y": -23.4,
       "dd5y": -23.4,
       "volatility": 45.2,
@@ -4381,8 +4381,8 @@
         "resistance": 1769.0,
         "support": 1390.5
       },
-      "alloc_shares": 11,
-      "alloc_amount": 19489
+      "alloc_shares": 0,
+      "alloc_amount": 0
     },
     {
       "symbol": "CPPLUS",
@@ -4397,8 +4397,8 @@
       "from_high": -4.9,
       "ret6m": 67.9,
       "ret12m": 218.9,
-      "cagr3": NaN,
-      "cagr5": NaN,
+      "cagr3": null,
+      "cagr5": null,
       "dd1y": -20.4,
       "dd5y": -20.4,
       "volatility": 44.9,
@@ -4711,8 +4711,8 @@
         "resistance": 4620.0,
         "support": 3619.3
       },
-      "alloc_shares": 0,
-      "alloc_amount": 0
+      "alloc_shares": 4,
+      "alloc_amount": 16900
     },
     {
       "symbol": "SANSERA",
@@ -5040,8 +5040,8 @@
         "resistance": 4544.0,
         "support": 3869.2
       },
-      "alloc_shares": 0,
-      "alloc_amount": 0
+      "alloc_shares": 4,
+      "alloc_amount": 18614
     },
     {
       "symbol": "LAURUSLABS",
