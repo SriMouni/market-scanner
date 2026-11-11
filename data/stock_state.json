@@ -18,8 +18,9 @@
       "stop": 3205.78,
       "profit": 238,
       "loss": -198,
-      "last": 3212.0
+      "last": 3213.0
     }
   ],
-  "cash_taken": []
+  "cash_taken": [],
+  "alerted": []
 }
