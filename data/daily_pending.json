@@ -4,7 +4,7 @@
     {
       "why": [
         "Futures rose 4.61% while open interest grew 9.5%: new buyers are entering (long build-up).",
-        "INDIANB closed at \u20b9933.66, so the move is with the trend, not against it.",
+        "INDIANB closed at \u20b9933.66 and above 20-day avg \u20b9857, so the move is with the trend, not against it.",
         "Strike 940 is near the money (delta +0.49): it moves about \u20b90.49 for each \u20b91 in INDIANB.",
         "Liquid: 1,870 contracts traded, open interest 311,000 shares, so you can get in and out.",
         "14 days to expiry, so time decay is slower than for an expiry-week option."
@@ -53,7 +53,48 @@
           "pnl_lot": 15164
         }
       ],
-      "chart": null,
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": false,
+            "text": "It has gone up a lot very fast and may fall back a little first",
+            "tech": "RSI 72",
+            "value": 72.4
+          },
+          {
+            "name": "Who's winning",
+            "ok": true,
+            "tech": "MACD",
+            "text": "Buyers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, buyers were firmly in charge",
+            "tech": "candle: strong green candle",
+            "pattern": "strong green candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "It just went above \u20b9902.0, a level where it kept stopping before. Often a good sign",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 4,
+        "verdict": "strong",
+        "rsi": 72.4,
+        "pattern": "strong green candle",
+        "resistance": 902.0,
+        "support": 808.0
+      },
       "days": 14,
       "gamma": 0.0067,
       "vega_lot": 729,
@@ -85,7 +126,7 @@
       "price_chg": 4.61,
       "oi_chg": 9.5,
       "buildup": "Long build-up",
-      "trend": "trend unchecked",
+      "trend": "above 20-day avg \u20b9857",
       "affordable": false
     },
     {
