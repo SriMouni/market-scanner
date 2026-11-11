@@ -4,7 +4,7 @@ Rule-based screens, not financial advice. Paper-trade for 2-3 weeks before using
 
 | Job | When | What |
 |---|---|---|
-| `intraday` | every 15 min, 9:15-15:30 IST | NIFTY option signal + live scan of the 80 most-traded F&O stocks (Yahoo 5-min data, option premium estimated from NSE's daily IV); paper-trades signals to target/stop/15:15 |
+| `intraday` | every 5 min, 9:15-15:30 IST (run inside the `monitor` job) | NIFTY option signal + live scan of the 80 most-traded F&O stocks (Yahoo 5-min data, option premium estimated from NSE's daily IV); paper-trades signals to target/stop/15:15 |
 | `monitor` | 9:15-15:31 IST, loops every 30 s | **NIFTY paper engine**: opening-range breakout signal, fills at ask (limit, may go unfilled), exits at validated NSE bid, append-only `data/ledger.jsonl`, trades in `data/engine_trades.csv`, quote recording in `data/quotes/` |
 | `daily` | 19:00 IST | grades yesterday's picks, next-day CE/PE picks across F&O stocks, long-term watchlist |
 

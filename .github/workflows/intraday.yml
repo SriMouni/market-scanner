@@ -1,7 +1,6 @@
 name: intraday
 on:
-  schedule:
-    - cron: '1,16,31,46 3-10 * * 1-5'   # every 15 min, 08:31-16:16 IST (app skips outside 9:15-15:30)
+  # runs every 5 min inside the monitor job now; this is only a manual button
   workflow_dispatch: {}
 concurrency:
   group: intraday

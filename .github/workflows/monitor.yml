@@ -20,7 +20,7 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Monitor (30-s exits, opening-range signals), saving every 5 min
+      - name: Monitor (30-s exits, 1-min signals) + 5-min stock scans, saving every 5 min
         env:
           TZ: Asia/Kolkata
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -39,5 +39,10 @@ jobs:
           }
           timeout 11700 python app.py monitor &   # 3h15m; the next scheduled half takes over
           PID=$!
-          while kill -0 $PID 2>/dev/null; do sleep 300; save; done
+          # every 5 min: stock scanner + NIFTY market mood, then save to the website
+          while kill -0 $PID 2>/dev/null; do
+            sleep 300
+            python -W ignore app.py intraday || true
+            save
+          done
           save
