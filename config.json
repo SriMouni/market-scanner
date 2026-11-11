@@ -3,7 +3,7 @@
   "capital_per_trade": 20000,
   "target_pct": 10,
   "stop_pct": 5,
-  "dashboard_url": "",
+  "dashboard_url": "https://srimouni.github.io/market-scanner/",
 
   "risk_free_rate": 0.065,
   "nifty_dividend_yield": 0.012,

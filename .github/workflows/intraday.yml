@@ -4,7 +4,7 @@ on:
     - cron: '1,16,31,46 3-10 * * 1-5'   # every 15 min, 08:31-16:16 IST (app skips outside 9:15-15:30)
   workflow_dispatch: {}
 concurrency:
-  group: scanner-state
+  group: intraday
   cancel-in-progress: false
 permissions:
   contents: write
@@ -39,4 +39,4 @@ jobs:
           git add data docs
           git diff --cached --quiet && exit 0
           git commit -m "intraday update $(date +'%Y-%m-%d %H:%M')"
-          git pull --rebase -X theirs && git push
+          for i in 1 2 3 4 5; do git pull -q --rebase --autostash -X theirs && git push -q && break; sleep $((RANDOM % 10 + 5)); done
