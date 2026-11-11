@@ -7,6 +7,7 @@ TEMPLATE = r"""<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Market Scanner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
 :root{--bg:#f6f7f9;--card:#fff;--ink:#14181f;--muted:#5f6b7a;--line:#e3e7ec;--soft:#f1f3f6;--up:#0f8a4b;--upbg:#e5f5ec;
 --dn:#c62f2f;--dnbg:#fbe9e9;--acc:#2955d9;--accbg:#e8eefc;--warn:#9a6a00;--warnbg:#fdf3dc;--ce:#d9534f;--pe:#1f9d61}
@@ -30,7 +31,7 @@ section{display:none}section.on{display:block}
 .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}.v{font-size:21px;font-weight:650;margin-top:2px}
 .pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600}
 .up{color:var(--up)}.dn{color:var(--dn)}
-.pill.CE{background:var(--upbg);color:var(--up)}.pill.PE{background:var(--dnbg);color:var(--dn)}.pill.n{background:var(--accbg);color:var(--acc)}
+.pill.CE{background:var(--upbg);color:var(--up)}.pill.sm{background:var(--warnbg);color:var(--warn)}.pill.PE{background:var(--dnbg);color:var(--dn)}.pill.n{background:var(--accbg);color:var(--acc)}
 .tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
 table{border-collapse:collapse;width:100%;font-size:14px;white-space:nowrap}
 th,td{padding:8px 11px;border-bottom:1px solid var(--line);text-align:right}th{color:var(--muted);font-weight:600;font-size:12px;background:var(--card)}
@@ -138,8 +139,38 @@ details.explain{margin:8px 0}details.explain summary{cursor:pointer;color:var(--
 .wi-t{position:relative;height:30px;font-size:11px}.wi-t span{position:absolute;transform:translateX(-50%);white-space:nowrap;text-align:center;line-height:1.2}
 .money .m{white-space:nowrap}
 .tw tr:not(.det)>td:first-child,.tw tr>th:first-child{position:sticky;left:0;background:var(--card);z-index:1}
+/* ---- modern skin */
+:root{--bg:#f5f6fb;--card:#fff;--line:#e8eaf2;--soft:#f3f4fa;--acc:#5b5bd6;--accbg:#eeeefd;--sh:0 1px 2px rgba(16,24,40,.04),0 2px 8px rgba(16,24,40,.06);--g1:#6366f1;--g2:#8b5cf6}
+:root[data-theme=dark]{--acc:#8b8cff;--accbg:#22234a;--sh:0 1px 2px rgba(0,0,0,.3)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--acc:#8b8cff;--accbg:#22234a;--sh:0 1px 2px rgba(0,0,0,.3)}}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-feature-settings:"tnum" 1,"cv11" 1;-webkit-font-smoothing:antialiased}
+.card,.box,.idea,.hold,.tw,.gloss>div,.nowline{border-color:var(--line);box-shadow:var(--sh);border-radius:16px}
+.idea,.hold{transition:transform .15s,box-shadow .15s}.idea:hover,.hold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(16,24,40,.10)}
+.idea.big{border:0;box-shadow:0 0 0 2px var(--up),0 8px 28px rgba(15,138,75,.12)}
+.hero{background:linear-gradient(135deg,var(--g1),var(--g2));border:0;color:#fff;box-shadow:0 10px 30px rgba(99,102,241,.25);border-radius:20px}
+.hero .hero-k,.hero .hero-s,.hero .hero-s *{color:rgba(255,255,255,.88)!important}.hero .hero-t{color:#fff!important}.hero b{color:#fff}
+h1 .gt{background:linear-gradient(135deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tt select{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 10px;font:inherit;font-size:13px;max-width:170px}
+h2{font-weight:700;letter-spacing:-.01em}.idea-title,.hero-t{letter-spacing:-.02em}
+nav{gap:4px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;width:max-content;max-width:calc(100% - 32px);box-shadow:var(--sh)}
+nav button{border:0;background:none;border-radius:10px;font-weight:600;color:var(--muted)}nav button:hover{background:var(--soft);color:var(--ink)}
+nav button.on{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff}
+.money>div{border-radius:12px}.dir,.pill{letter-spacing:.01em}
+.seg{border-radius:14px}.seg button.on{box-shadow:var(--sh)}
+.bud button.on{background:linear-gradient(135deg,var(--g1),var(--g2));border-color:transparent;color:#fff}
+.k{letter-spacing:.06em;font-weight:600}.grid .card .v{font-weight:750}
+th{text-transform:uppercase;letter-spacing:.05em;font-size:11px}
+/* ---- table tools */
+.tt{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:0 0 8px}
+.tt input{flex:1;min-width:150px;max-width:320px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 12px;font:inherit;font-size:14px;box-shadow:var(--sh)}
+.tt input:focus{outline:2px solid var(--accbg);border-color:var(--acc)}
+.tt button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer}
+.tt button.on{background:var(--ink);color:var(--card);border-color:var(--ink)}.tt .cnt{font-size:12px;color:var(--muted);margin-left:auto}
+th.sortable{cursor:pointer;user-select:none}th.sortable:hover{color:var(--ink)}th.sortable::after{content:" ↕";opacity:.35}th.asc::after{content:" ↑";opacity:1}th.desc::after{content:" ↓";opacity:1}
 /* ---- phones */
 @media (max-width:700px){
+ nav{width:auto;max-width:none;border-radius:0;box-shadow:0 -2px 12px rgba(0,0,0,.06)}nav button.on{background:var(--accbg);color:var(--acc)}
+ .tt input{max-width:none}.hero{border-radius:16px}
  header{padding:8px 12px}.hdr h1{font-size:17px}.ticker{font-size:13px;gap:10px}
  nav{position:fixed;left:0;right:0;bottom:0;margin:0;z-index:30;display:grid;grid-template-columns:repeat(7,1fr);gap:0;max-width:none;
   padding:6px 2px calc(6px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -2px 12px rgba(0,0,0,.06)}
@@ -154,7 +185,7 @@ details.explain{margin:8px 0}details.explain summary{cursor:pointer;color:var(--
  h2{font-size:16px;margin-top:20px}.grid{grid-template-columns:repeat(2,1fr)}.v{font-size:18px}
 }
 </style></head><body>
-<header><div class="hdr"><h1>📈 My Market Helper</h1><span class="sub" id="upd"></span>
+<header><div class="hdr"><h1><span style="-webkit-text-fill-color:initial">📈</span> <span class="gt">My Market Helper</span></h1><span class="sub" id="upd"></span>
 <button class="ibtn" onclick="location.reload()" title="Refresh">↻</button><button class="ibtn" id="theme" title="Light / dark">🌓</button></div>
 <div id="ticker" class="ticker"></div>
 </header>
@@ -206,9 +237,25 @@ function dayline(hm,wd){const T=[["09:15","Open"],["09:30","Range set"],["13:30"
  return `<div class="steps5">${T.map((t,i)=>`<div class="${i<idx-1||(i===idx-1&&hm>="15:30")?"done":i===idx-1?"now":""}"><b>${+t[0].slice(0,2)>12?+t[0].slice(0,2)-12:+t[0].slice(0,2)}:${t[0].slice(3)}</b>${t[1]}</div>`).join("")}</div><div class="nowline">${msg}</div>`}
 function card(k,v,c="",sub=""){return `<div class="card"><div class="k">${k}</div><div class="v ${c}">${v}</div>${sub?`<div class="muted" style="font-size:12px">${sub}</div>`:""}</div>`}
 function table(cols,rows,empty,detail){if(!rows.length)return `<div class="tw"><div class="empty">${empty}</div></div>`;
- return `<div class="tw"><table><tr>${cols.map(c=>`<th>${c[0]}</th>`).join("")}</tr>${rows.map((r,i)=>
- `<tr class="${detail?"click":""}" ${detail?`onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"`:""}>${cols.map(c=>`<td>${c[1](r)}</td>`).join("")}</tr>`+
+ const body=rows.map(r=>cols.map(c=>c[1](r)).join(" ")).join(" "),dirs=/pill (CE|PE)|dir (CE|PE)/.test(body);
+ const fc=cols.find(c=>typeof c[2]==="function"),fvals=fc?[...new Set(rows.map(fc[2]).filter(Boolean))].sort():[];
+ const tools=rows.length>=4?`<div class="tt"><input type="search" placeholder="🔍 Search ${rows.length} rows…" aria-label="Search">${fvals.length>1?`<select aria-label="Filter"><option value="">All ${fc[3]||"groups"}</option>${fvals.map(v=>`<option>${v}</option>`).join("")}</select>`:""}${dirs?`<button class="on" data-f="">All</button><button data-f="CE">▲ Up</button><button data-f="PE">▼ Down</button>`:""}<span class="cnt"></span></div>`:"";
+ return `${tools}<div class="tw"><table><tr>${cols.map(c=>`<th class="${rows.length>=4?"sortable":""}">${c[0]}</th>`).join("")}</tr>${rows.map((r,i)=>
+ `<tr class="${detail?"click":""}" ${fc?`data-fv="${fc[2](r)||""}"`:""} ${detail?`onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"`:""}>${cols.map(c=>`<td>${c[1](r)}</td>`).join("")}</tr>`+
  (detail?`<tr class="det"><td colspan="${cols.length}">${detail(r)}</td></tr>`:"")).join("")}</table></div>`}
+function ttApply(tt){const tw=tt.nextElementSibling,q=tt.querySelector("input").value.toLowerCase().trim(),f=(tt.querySelector("button.on")||{}).dataset?.f||"",sv=tt.querySelector("select")?.value||"";let n=0,tot=0;
+ tw.querySelectorAll("tr").forEach((tr,i)=>{if(i===0||tr.classList.contains("det"))return;tot++;
+  const ok=(!q||tr.textContent.toLowerCase().includes(q))&&(!f||tr.querySelector(`.pill.${f},.dir.${f}`))&&(!sv||tr.dataset.fv===sv);tr.style.display=ok?"":"none";
+  const d=tr.nextElementSibling;if(d&&d.classList.contains("det"))d.style.display=ok?"":"none";if(ok)n++});
+ tt.querySelector(".cnt").textContent=n===tot?"":`${n} of ${tot}`}
+document.addEventListener("input",e=>{const tt=e.target.closest(".tt");if(tt)ttApply(tt)});document.addEventListener("change",e=>{const tt=e.target.closest(".tt");if(tt)ttApply(tt)});
+document.addEventListener("click",e=>{const b=e.target.closest(".tt button");if(b){b.parentNode.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));ttApply(b.parentNode);return}
+ const th=e.target.closest("th.sortable");if(!th)return;const tb=th.closest("table"),col=[...th.parentNode.children].indexOf(th),asc=!th.classList.contains("asc");
+ th.parentNode.querySelectorAll("th").forEach(x=>x.classList.remove("asc","desc"));th.classList.add(asc?"asc":"desc");
+ const rows=[...tb.rows].slice(1).filter(r=>!r.classList.contains("det")).map(r=>[r,r.nextElementSibling&&r.nextElementSibling.classList.contains("det")?r.nextElementSibling:null]);
+ const val=r=>{const t=(r.cells[col]?.textContent||"").trim(),m=t.replace(/[₹,%×+\s]/g,"").replace("−","-").match(/^-?\d+(\.\d+)?/);return m?parseFloat(m[0]):t.toLowerCase()};
+ rows.sort((a,b)=>{const x=val(a[0]),y=val(b[0]);return (typeof x==="number"&&typeof y==="number"?x-y:String(x).localeCompare(String(y)))*(asc?1:-1)});
+ const parent=rows[0][0].parentNode;rows.forEach(([r,d])=>{parent.appendChild(r);d&&parent.appendChild(d)})});
 function line(points,h=140,opts={}){ // points [{x,y}]
  if(points.length<2)return `<div class="muted" style="font-size:12px">Not enough data yet.</div>`;
  const w=1000,ys=points.map(p=>p.y),base=opts.base??(opts.zero?0:null);
@@ -445,9 +492,9 @@ renderToday();
   ["Day",r=>`<span class="${cls(r.chg)}">${sgn(r.chg)}%</span>`],["Vol",r=>r.rvol+"×"],["Prem. est.",r=>inr(r.option.est)],["Lot",r=>r.option.lot],
   ["Cost/lot",r=>`<span class="${r.affordable?"":"muted"}">${inr(r.option.cost_lot,0)}</span>`],["Δ",r=>r.option.delta],["θ/lot",r=>`<span class="dn">${inr(r.option.theta_lot,0)}</span>`],
   ["Also last night",r=>r.agree?`<span class="up">yes</span>`:"–"]],s.signals,"")}
- h+=`<h2>All scanned stocks (biggest movers first)</h2>`+table([["Stock",r=>`<b>${r.symbol}</b>${r.signal?` <span class="pill ${r.signal}">${r.signal}</span>`:""}`],["Sector",r=>`<span class="muted">${r.sector||""}</span>`],["Price",r=>inr(r.price)],
-  ["Day",r=>`<span class="${cls(r.chg)}">${sgn(r.chg)}%</span>`],["vs VWAP",r=>`<span class="${cls(r.vs_vwap)}">${sgn(r.vs_vwap)}%</span>`],["30 min",r=>`<span class="${cls(r.mom30)}">${sgn(r.mom30)}%</span>`],
-  ["Volume",r=>r.rvol!=null?r.rvol+"×":"–"],["Day range",r=>`${inr(r.day_low,1)} – ${inr(r.day_high,1)}`],
+ h+=`<h2>All scanned stocks (biggest movers first)</h2>`+table([["Stock",r=>`<b>${r.symbol}</b>${r.signal?` <span class="pill ${r.signal}">${r.signal}</span>`:""}<div class="muted" style="font-size:11px;max-width:140px;overflow:hidden;text-overflow:ellipsis">${r.sector||""}</div>`,r=>r.sector,"sectors"],
+  ["Day",r=>`<b class="${cls(r.chg)}">${sgn(r.chg)}%</b>`],["Price",r=>inr(r.price)],["30 min",r=>`<span class="${cls(r.mom30)}">${sgn(r.mom30)}%</span>`],
+  ["Volume",r=>r.rvol!=null?r.rvol+"×":"–"],["vs VWAP",r=>`<span class="${cls(r.vs_vwap)}">${sgn(r.vs_vwap)}%</span>`],["Day range",r=>`${inr(r.day_low,1)} – ${inr(r.day_high,1)}`],
   ["Move",r=>ok(r.checks.move)],["VWAP",r=>ok(r.checks.vwap)],["Mom.",r=>ok(r.checks.momentum)],["Vol.",r=>ok(r.checks.volume)],["Range",r=>ok(r.checks.range)]],s.rows,"");
  $("#scan").innerHTML=h})();
 
@@ -498,45 +545,63 @@ function pickDetail(r){const ce=r.side==="CE",lot=r.lot;
  $("#picks").innerHTML=h})();
 
 // =============================== Track record
-(()=>{const it=D.trades,dl=D.results.filter(r=>["TARGET","STOP","CLOSE"].includes(r.result));let h="";
+(()=>{const it=D.trades,dl=D.results.filter(r=>["TARGET","STOP","CLOSE"].includes(r.result)),em=D.engine_metrics||{},ct=D.cash_trades||[],stt=D.stock_trades||[];let h="";
  function summary(rows,label){const n=rows.map(r=>+r.net_pnl),w=n.filter(x=>x>0),l=n.filter(x=>x<=0),tot=n.reduce((a,b)=>a+b,0);
   const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
   return `<h2>${label}</h2><div class="grid">${card("Trades",rows.length)}${card("Win rate",rows.length?Math.round(w.length/rows.length*100)+"%":"–","","need ~35%+ to profit with +10/−5")}
   ${card("Avg win / loss",rows.length?`${inr(avg(w)??0,0)} / ${inr(avg(l)??0,0)}`:"–")}${card("Net P&L",rows.length?sgn(Math.round(tot),0):"–",cls(tot),"after estimated charges")}</div>`}
  function curve(rows,key){if(rows.length<2)return "";let c=0;return `<div class="card" style="margin-bottom:14px"><h3>Cumulative P&L</h3>${line(rows.map(r=>({x:(r[key]||"").slice(0,10),y:c+=+r.net_pnl})),130,{zero:true,fmt:v=>inr(v,0)})}</div>`}
- h+=summary(dl,"Next-day option picks (1 lot each)")+curve(dl,"trade_date");
- h+=table([["Day",r=>r.trade_date],["Option",r=>`${r.contract} <span class="pill ${r.side}">${r.side}</span>`],["Entry (open)",r=>inr(r.entry)],
-  ["Exit",r=>inr(r.exit)],["Result",r=>`<span class="pill ${r.result==="TARGET"?"CE":r.result==="STOP"?"PE":"n"}">${r.result}</span>`],
-  ["%",r=>`<span class="${cls(+r.pct)}">${sgn(+r.pct)}%</span>`],["Net P&L",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl,0)}</span>`]],
-  D.results.slice().reverse(),"Picks are graded the evening after each session. First results after the next trading day.");
- h+=`<p class="note">Graded on the next day's open, high, low and close: entry at the open, then +${D.target}% target / −${D.stop}% stop. If both were touched the same day it counts as a stop (we can't see which came first). “SKIP GAP” = opened more than ${D.gap}% away. “CLOSE” = neither hit, sold at the close.</p>`;
- const em=D.engine_metrics||{};
- h+=`<h2>NIFTY engine (opening-range rule, real NSE prices)</h2>
- <p class="note">The main test. Bought at the asking price and sold at the bid price, with charges, 1-tick slippage and orders that don't fill all counted. Judge it on <b>average profit per trade</b> after 30+ trades, not on single wins.</p>
- <div class="grid">${card("Avg profit per trade",em.expectancy!=null?sgn(em.expectancy,0):"–",cls(em.expectancy),"= win% × avg win − loss% × avg loss")}
- ${card("Trades / win rate",em.trades?`${em.trades} · ${em.win_rate}%`:"0","","")}${card("Avg win / avg loss",em.trades?`${inr(em.avg_win,0)} / ${inr(em.avg_loss,0)}`:"–")}
- ${card("Total after costs",em.trades?sgn(em.net_total,0):"–",cls(em.net_total))}${card("Worst drop from a high",em.trades?inr(-em.max_drawdown,0):"–","dn",em.trades?`longest losing run: ${em.worst_streak}`:"")}
+ const st=rows=>{const n=rows.map(r=>+r.net_pnl);return {n:rows.length,w:n.filter(x=>x>0).length,net:n.reduce((a,b)=>a+b,0)}};
+ const S=[
+  {id:"r-eng",ic:"📊",k:"NIFTY CE/PE",sub:"opening-range rule · real NSE prices",s:em.trades?{n:em.trades,w:Math.round(em.trades*em.win_rate/100),net:em.net_total}:{n:0},
+   next:"Trades when NIFTY breaks its first-15-min range between 9:30 AM and 1:30 PM"},
+  {id:"r-pick",ic:"🌙",k:"Tomorrow's option picks",sub:"graded on the next day's prices",s:st(dl),next:"Graded every evening around 7 PM"},
+  {id:"r-cash",ic:"🛒",k:"Live share trades",sub:"real prices",s:st(ct),next:"When a stock passes all 5 checks, 9:45 AM–2:30 PM"},
+  {id:"r-sopt",ic:"⚡",k:"Live stock options",sub:"estimated prices (less reliable)",s:st(stt),next:"Same signals as share trades"}];
+ if(it.length)S.push({id:"r-old",ic:"🗂",k:"Old NIFTY scanner",sub:"retired rule",s:st(it),next:"No longer opens trades"});
+ const all=S.reduce((a,x)=>({n:a.n+x.s.n,w:a.w+(x.s.w||0),net:a.net+(x.s.net||0)}),{n:0,w:0,net:0});
+ h+=`<div class="hero"><div><div class="hero-k">All practice trades so far</div>
+  <div class="hero-t ${all.n?cls(all.net):""}">${all.n?`${all.net>=0?"+":"−"}${inr(Math.abs(all.net),0)}`:"No results yet"}</div>
+  <div class="hero-s">${all.n?`${all.n} trade${all.n>1?"s":""} closed · ${all.w} won · ${all.n-all.w} lost`:"Practice tracking started on 11 Nov. Results appear as trades close."}</div></div></div>
+  <p class="note">Judge each rule after <b>30+ trades</b>. A few days of results is mostly luck.</p>
+  <div class="cards">${S.map(x=>`<div class="hold" ${x.s.n?`onclick="document.getElementById('${x.id}').scrollIntoView({behavior:'smooth'})" style="cursor:pointer"`:""}>
+   <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><div><b>${x.ic} ${x.k}</b><div class="muted" style="font-size:12px">${x.sub}</div></div>
+   ${x.s.n?`<div style="text-align:right"><div class="m ${cls(x.s.net)}" style="font-size:20px;font-weight:750">${x.s.net>=0?"+":"−"}${inr(Math.abs(x.s.net),0)}</div><div class="muted" style="font-size:12px">${x.s.n} trades · ${x.s.w} won</div></div>`:`<span class="pill n">waiting</span>`}</div>
+   ${x.s.n?"":`<div class="muted" style="font-size:13px;margin-top:8px">⏳ No trades yet. ${x.next}.</div>`}</div>`).join("")}</div>`;
+ const sig=D.engine_signals||[];
+ if(sig.length)h+=`<h2>📊 Today's NIFTY signals</h2><div class="card">${sig.map(g=>`<div style="padding:6px 0;border-bottom:1px solid var(--line)"><b>${g.time}</b> <span class="dir ${g.side}">${g.side==="CE"?"▲ broke above":"▼ broke below"}</span>
+  ${g.blocked?`<span class="muted">Not traded: ${g.blocked}${g.late?` (came ${g.late} min after the cut-off)`:""}.</span>`:`<span class="up">Traded ✓</span>`}</div>`).join("")}</div>`;
+
+ if(em.trades){h+=`<div id="r-eng"></div><h2>📊 NIFTY CE/PE (opening-range rule, real NSE prices)</h2>
+ <p class="note">Bought at the asking price and sold at the bid price, with charges, 1-tick slippage and orders that don't fill all counted. Judge it on <b>average profit per trade</b> after 30+ trades.</p>
+ <div class="grid">${card("Avg profit per trade",sgn(em.expectancy,0),cls(em.expectancy),"= win% × avg win − loss% × avg loss")}
+ ${card("Trades / win rate",`${em.trades} · ${em.win_rate}%`)}${card("Avg win / avg loss",`${inr(em.avg_win,0)} / ${inr(em.avg_loss,0)}`)}
+ ${card("Total after costs",sgn(em.net_total,0),cls(em.net_total))}${card("Worst drop from a high",inr(-em.max_drawdown,0),"dn",`longest losing run: ${em.worst_streak}`)}
  ${card("Data problems",`${em.rejected_quotes||0} bad quotes`,"",`${em.unfilled||0} not filled · ${em.missed_exits||0} missed · ${em.unresolved||0} unresolved (not counted) · avg slippage ${em.avg_slippage!=null?inr(em.avg_slippage):"–"}`)}</div>`;
  const brk=(o,t)=>Object.keys(o||{}).length?`<div class="box"><h3>${t}</h3><table class="mini">${Object.entries(o).map(([k,v])=>`<tr><td>${k}</td><td>${v.n} trades</td><td class="${cls(v.exp)}">${sgn(v.exp,0)}/trade</td></tr>`).join("")}</table></div>`:"";
- if(em.trades)h+=`<div class="cols">${brk(em.by_hour,"By time of day")}${brk(em.by_expiry,"By days to expiry")}${brk(em.by_iv,"By option price level (IV)")}</div>`;
+ h+=`<div class="cols">${brk(em.by_hour,"By time of day")}${brk(em.by_expiry,"By days to expiry")}${brk(em.by_iv,"By option price level (IV)")}</div>`;
  h+=table([["Signal",r=>(r.signal_time||"").slice(0,16).replace("T"," ")],["Option",r=>`NIFTY ${r.strike} <span class="pill ${r.side}">${r.side}</span>`],["Bought",r=>r.entry?inr(+r.entry):"–"],["Sold",r=>r.exit?inr(+r.exit):"–"],
   ["Result",r=>`<span class="pill ${r.result==="TARGET"?"CE":r.result==="STOP"?"PE":"n"}">${r.result}</span>`],["How exit was priced",r=>`<span class="muted">${r.exit_basis||""}</span>`],["Net",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl||0,0)}</span>`]],
-  (em.rows||[]).slice().reverse(),"No NIFTY engine trades yet. The first one comes when NIFTY breaks its opening range.");
- const ct=D.cash_trades||[];
- h+=summary(ct,"Normal share trades (live signals, real prices)")+curve(ct,"exit_time");
+  (em.rows||[]).slice().reverse(),"")}
+
+ if(dl.length){h+=`<div id="r-pick"></div>`+summary(dl,"🌙 Tomorrow's option picks (1 lot each)")+curve(dl,"trade_date");
+ h+=table([["Day",r=>r.trade_date],["Option",r=>`${r.contract} <span class="pill ${r.side}">${r.side}</span>`],["Entry (open)",r=>inr(r.entry)],
+  ["Exit",r=>inr(r.exit)],["Result",r=>`<span class="pill ${r.result==="TARGET"?"CE":r.result==="STOP"?"PE":"n"}">${r.result}</span>`],
+  ["%",r=>`<span class="${cls(+r.pct)}">${sgn(+r.pct)}%</span>`],["Net P&L",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl,0)}</span>`]],D.results.slice().reverse(),"");
+ h+=`<p class="note">Graded on the next day's open, high, low and close: entry at the open, then +${D.target}% target / −${D.stop}% stop. If both were touched the same day it counts as a stop. “SKIP GAP” = opened more than ${D.gap}% away. “CLOSE” = neither hit, sold at the close.</p>`}
+
+ if(ct.length){h+=`<div id="r-cash"></div>`+summary(ct,"🛒 Live share trades (real prices)")+curve(ct,"exit_time");
  h+=table([["Entry",r=>r.entry_time.slice(0,16).replace("T"," ")],["Stock",r=>`<b>${r.symbol}</b> ${r.action}`],["Qty",r=>r.qty],["Entry",r=>inr(r.entry)],["Exit",r=>inr(r.exit)],
-  ["Result",r=>r.result],["%",r=>`<span class="${cls(+r.pct)}">${sgn(+r.pct)}%</span>`],["Net P&L",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl,0)}</span>`]],
-  ct.slice().reverse(),"No share trades closed yet.");
- const stt=D.stock_trades||[];
- h+=summary(stt,"Live stock signals (estimated premiums, 1 lot each)")+curve(stt,"exit_time");
+  ["Result",r=>r.result],["%",r=>`<span class="${cls(+r.pct)}">${sgn(+r.pct)}%</span>`],["Net P&L",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl,0)}</span>`]],ct.slice().reverse(),"")}
+
+ if(stt.length){h+=`<div id="r-sopt"></div>`+summary(stt,"⚡ Live stock options (estimated prices, 1 lot each)")+curve(stt,"exit_time");
  h+=table([["Entry",r=>r.entry_time.slice(0,16).replace("T"," ")],["Option",r=>`${r.contract} <span class="pill ${r.side}">${r.side}</span>`],["Stock in → out",r=>`${inr(r.spot_in)} → ${inr(r.spot_out)}`],
-  ["Prem. est. in → out",r=>`${inr(r.entry_est)} → ${inr(r.exit_est)}`],["Result",r=>r.result],["%",r=>`<span class="${cls(+r.pct)}">${sgn(+r.pct)}%</span>`],["Net P&L",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl,0)}</span>`]],
-  stt.slice().reverse(),"No live stock paper trades closed yet.");
- h+=`<p class="note">⚠️ These option results are a <b>model estimate</b>: there are no live quotes for stock options, so prices are calculated from the share price and yesterday's volatility, with a 1% price penalty each way. Real results can differ a lot. Trust the share trades and NIFTY results more.</p>`;
- h+=summary(it,"NIFTY intraday (15-min scanner)")+curve(it,"exit_time");
+  ["Prem. est. in → out",r=>`${inr(r.entry_est)} → ${inr(r.exit_est)}`],["Result",r=>r.result],["%",r=>`<span class="${cls(+r.pct)}">${sgn(+r.pct)}%</span>`],["Net P&L",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl,0)}</span>`]],stt.slice().reverse(),"");
+ h+=`<p class="note">⚠️ These are a <b>model estimate</b>: there are no live quotes for stock options, so prices are calculated from the share price and yesterday's volatility, with a 1% price penalty each way. Trust the share trades and NIFTY results more.</p>`}
+
+ if(it.length){h+=`<div id="r-old"></div>`+summary(it,"🗂 Old NIFTY scanner (retired)")+curve(it,"exit_time");
  h+=table([["Entry",r=>r.entry_time.slice(0,16).replace("T"," ")],["Option",r=>r.contract],["Entry",r=>inr(r.entry)],["Exit",r=>inr(r.exit)],
-  ["Result",r=>r.result],["%",r=>`<span class="${cls(+r.pct)}">${sgn(+r.pct)}%</span>`],["Net P&L",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl,0)}</span>`]],
-  it.slice().reverse(),"No intraday paper trades closed yet.");
+  ["Result",r=>r.result],["%",r=>`<span class="${cls(+r.pct)}">${sgn(+r.pct)}%</span>`],["Net P&L",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl,0)}</span>`]],it.slice().reverse(),"")}
  $("#track").innerHTML=h})();
 
 // =============================== Long-term
@@ -570,7 +635,7 @@ function ltDetail(r){const b=D.daily.benchmark||{},pos=(r.price-r.low52)/((r.hig
  if(alloc.length)h+=`<h2>Example: how to split ${inr(d.lt_budget,0)}</h2><p class="note">Roughly equal money in up to 5 companies, not more than 2 from the same type of business, so one bad sector can't hurt you too much.</p>`+
   table([["Stock",r=>`<b>${r.symbol}</b>`],["Price",r=>inr(r.price)],["Shares",r=>r.alloc_shares],["Amount",r=>inr(r.alloc_amount,0)],["When to buy",r=>`<span class="muted">${r.zone}</span>`]],alloc,"")+
   `<p class="note">Total ${inr(tot,0)} · leftover ${inr(d.lt_budget-tot,0)}. Many people put half in a NIFTY 50 index fund and half in picks like these.</p>`;
- h+=`<h2>Watchlist</h2>`+table([["Stock",r=>`<b>${r.symbol}</b> <span class="muted">${r.name}</span> <span class="pill ${r.index==="Large cap"?"n":"PE"}" style="font-weight:500">${r.index}</span>`],["Price",r=>inr(r.price)],
+ h+=`<h2>Watchlist</h2>`+table([["Stock",r=>`<b>${r.symbol}</b> <span class="muted">${r.name}</span> <span class="pill ${r.index==="Large cap"?"n":"sm"}" style="font-weight:500">${r.index}</span>`,r=>r.index,"sizes"],["Price",r=>inr(r.price)],
   ["1 yr",r=>`<span class="${cls(r.ret12m)}">${sgn(r.ret12m,1)}%</span>`],["Per yr (3 yrs)",r=>r.cagr3!=null?`<span class="${cls(r.cagr3)}">${sgn(r.cagr3,1)}%</span>`:"–"],
   ["Per yr (5 yrs)",r=>r.cagr5!=null?`<span class="${cls(r.cagr5)}">${sgn(r.cagr5,1)}%</span>`:"–"],["Health",r=>r.health!=null?`<span class="hb ${r.health>=70?"g":r.health>=50?"m":"b"}">${r.health}</span>`:"–"],["P/E",r=>r.pe??"–"],["Below its top",r=>r.from_high+"%"],
   ["When to buy",r=>`<span class="pill ${r.extended?"n":"CE"}">${r.extended?"wait for a dip":"OK to buy now"}</span>`]],d.long_term,"No stocks passed the screen.",ltDetail);
@@ -691,6 +756,31 @@ $("#guide").innerHTML=`
 </script></body></html>"""
 
 
+def engine_signals(today):
+    """Today's NIFTY breakouts from the ledger, traded or not (for the Results page)."""
+    out = []
+    try:
+        lines = (DATA / "ledger.jsonl").read_text().splitlines()[-3000:]
+    except OSError:
+        return out
+    end = CONFIG["engine"]["entry_end"]
+    for l in lines:
+        try:
+            d = json.loads(l)
+        except ValueError:
+            continue
+        ts = d.get("ts") or ""
+        if d.get("event") != "signal" or not ts.startswith(today):
+            continue
+        bar = (d.get("info") or {}).get("bar") if isinstance(d.get("info"), dict) else None
+        late = None
+        if d.get("blocked", "") and "outside entry window" in d["blocked"] and ts[11:16] > end:
+            h, m = map(int, ts[11:16].split(":")); eh, em = map(int, end.split(":"))
+            late = (h * 60 + m) - (eh * 60 + em)
+        out.append({"time": ts[11:16], "bar": bar, "side": d.get("side"), "blocked": d.get("blocked"), "late": late})
+    return out
+
+
 def build():
     today = now_ist().date().isoformat()
     data = {
@@ -711,6 +801,7 @@ def build():
         "cash_trades": read_csv(DATA / "cash_trades.csv"),
         "engine": read_json(DATA / "engine_state.json", {}),
         "engine_metrics": __import__("engine").metrics(),
+        "engine_signals": engine_signals(today),
         "st": CONFIG["stocks"], "min_health": CONFIG["daily"]["lt_min_health"],
     }
     if data["stock_state"].get("day") != today:
