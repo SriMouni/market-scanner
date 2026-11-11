@@ -826,5 +826,833 @@
     ],
     "revenue_cagr": 17.467525148496698,
     "fetched": 1794375606.924976
+  },
+  "CUPID": {
+    "trailingPE": 348.3,
+    "priceToBook": 103.75334,
+    "returnOnEquity": null,
+    "returnOnAssets": null,
+    "debtToEquity": 12.506,
+    "profitMargins": 0.30351,
+    "operatingMargins": 0.37985,
+    "revenueGrowth": 1.587,
+    "earningsGrowth": 1.909,
+    "heldPercentInsiders": 0.64426005,
+    "dividendYield": 0.0,
+    "marketCap": 468345323520,
+    "profit_cagr": 50.76600371557809,
+    "profit_history": [
+      [
+        "2026-03-31",
+        1082333000.0
+      ],
+      [
+        "2025-03-31",
+        408871000.0
+      ],
+      [
+        "2024-03-31",
+        398548000.0
+      ],
+      [
+        "2023-03-31",
+        315828000.0
+      ]
+    ],
+    "revenue_cagr": 31.1738619903021,
+    "fetched": 1794382751.833368
+  },
+  "LAURUSLABS": {
+    "trailingPE": 98.34948,
+    "priceToBook": 21.729362,
+    "returnOnEquity": 0.23973,
+    "returnOnAssets": 0.112799995,
+    "debtToEquity": 42.471,
+    "profitMargins": 0.17128,
+    "operatingMargins": 0.28232,
+    "revenueGrowth": 0.334,
+    "earningsGrowth": 1.26,
+    "heldPercentInsiders": 0.32031,
+    "dividendYield": 0.08,
+    "marketCap": 1316794925056,
+    "profit_cagr": 4.000924612741641,
+    "profit_history": [
+      [
+        "2026-03-31",
+        8887900000.0
+      ],
+      [
+        "2025-03-31",
+        3583200000.0
+      ],
+      [
+        "2024-03-31",
+        1605500000.0
+      ],
+      [
+        "2023-03-31",
+        7901100000.0
+      ]
+    ],
+    "revenue_cagr": 3.77430071243563,
+    "fetched": 1794382752.1181793
+  },
+  "SANSERA": {
+    "trailingPE": 75.81478,
+    "priceToBook": 9.405599,
+    "returnOnEquity": null,
+    "returnOnAssets": null,
+    "debtToEquity": 19.023,
+    "profitMargins": 0.09284,
+    "operatingMargins": 0.13137001,
+    "revenueGrowth": 0.333,
+    "earningsGrowth": 0.383,
+    "heldPercentInsiders": 0.29035,
+    "dividendYield": 0.09,
+    "marketCap": 291266199552,
+    "profit_cagr": 30.38975732297957,
+    "profit_history": [
+      [
+        "2026-03-31",
+        3240880000.0
+      ],
+      [
+        "2025-03-31",
+        2151640000.0
+      ],
+      [
+        "2024-03-31",
+        1857550000.0
+      ],
+      [
+        "2023-03-31",
+        1461950000.0
+      ]
+    ],
+    "revenue_cagr": 14.822008520868435,
+    "fetched": 1794382752.5021763
+  },
+  "RUBICON": {
+    "trailingPE": 89.17949,
+    "priceToBook": 20.309015,
+    "returnOnEquity": 0.31252,
+    "returnOnAssets": 0.12189999,
+    "debtToEquity": 35.027,
+    "profitMargins": 0.15467,
+    "operatingMargins": 0.21868,
+    "revenueGrowth": 0.399,
+    "earningsGrowth": 0.559,
+    "heldPercentInsiders": 0.69149,
+    "dividendYield": 0.08,
+    "marketCap": 287872516096,
+    "profit_cagr": null,
+    "profit_history": [
+      [
+        "2026-03-31",
+        2467350000.0
+      ]
+    ],
+    "revenue_cagr": 36.62382882541606,
+    "fetched": 1794382752.7910397
+  },
+  "CPPLUS": {
+    "trailingPE": 84.03739,
+    "priceToBook": 13.636965,
+    "returnOnEquity": 0.22564,
+    "returnOnAssets": 0.104540005,
+    "debtToEquity": 11.377,
+    "profitMargins": 0.10383,
+    "operatingMargins": 0.16531,
+    "revenueGrowth": 0.899,
+    "earningsGrowth": 1.511,
+    "heldPercentInsiders": 0.74060994,
+    "dividendYield": 0.04,
+    "marketCap": 518351093760,
+    "profit_cagr": 50.329106079051215,
+    "profit_history": [
+      [
+        "2026-03-31",
+        3679610000.0
+      ],
+      [
+        "2025-03-31",
+        3513690000.0
+      ],
+      [
+        "2024-03-31",
+        1151720000.0
+      ],
+      [
+        "2023-03-31",
+        1083110000.0
+      ]
+    ],
+    "revenue_cagr": 22.673760548993236,
+    "fetched": 1794382753.097364
+  },
+  "ATHERENERG": {
+    "trailingPE": null,
+    "priceToBook": 18.549225,
+    "returnOnEquity": -0.066989996,
+    "returnOnAssets": -0.03716,
+    "debtToEquity": 22.455,
+    "profitMargins": -0.048800003,
+    "operatingMargins": -0.02418,
+    "revenueGrowth": 0.629,
+    "earningsGrowth": null,
+    "heldPercentInsiders": 0.53754,
+    "dividendYield": 0.0,
+    "marketCap": 750908080128,
+    "profit_cagr": null,
+    "profit_history": [
+      [
+        "2026-03-31",
+        -5171700000.0
+      ],
+      [
+        "2025-03-31",
+        -8122800000.0
+      ],
+      [
+        "2024-03-31",
+        -10597000000.0
+      ],
+      [
+        "2023-03-31",
+        -8645000000.0
+      ]
+    ],
+    "revenue_cagr": 27.199636224445122,
+    "fetched": 1794382753.4458628
+  },
+  "WELSPUNLIV": {
+    "trailingPE": 55.306343,
+    "priceToBook": 4.6869783,
+    "returnOnEquity": 0.088479996,
+    "returnOnAssets": 0.04064,
+    "debtToEquity": 47.296,
+    "profitMargins": 0.04198,
+    "operatingMargins": 0.084359996,
+    "revenueGrowth": 0.163,
+    "earningsGrowth": 12.846,
+    "heldPercentInsiders": 0.68975997,
+    "dividendYield": 0.04,
+    "marketCap": 237950222336,
+    "profit_cagr": 0.9317925946917383,
+    "profit_history": [
+      [
+        "2026-03-31",
+        2044400000.0
+      ],
+      [
+        "2025-03-31",
+        6391600000.0
+      ],
+      [
+        "2024-03-31",
+        6811000000.0
+      ],
+      [
+        "2023-03-31",
+        1988300000.0
+      ]
+    ],
+    "revenue_cagr": 5.6892280796386085,
+    "fetched": 1794382753.7079916
+  },
+  "GLAND": {
+    "trailingPE": 43.90527,
+    "priceToBook": 5.2342753,
+    "returnOnEquity": null,
+    "returnOnAssets": null,
+    "debtToEquity": 2.738,
+    "profitMargins": 0.16784,
+    "operatingMargins": 0.21003,
+    "revenueGrowth": 0.196,
+    "earningsGrowth": 0.469,
+    "heldPercentInsiders": 0.45754,
+    "dividendYield": 0.63,
+    "marketCap": 543001182208,
+    "profit_cagr": 9.566141877345924,
+    "profit_history": [
+      [
+        "2026-03-31",
+        10273160000.0
+      ],
+      [
+        "2025-03-31",
+        6985260000.0
+      ],
+      [
+        "2024-03-31",
+        7724600000.0
+      ],
+      [
+        "2023-03-31",
+        7810430000.0
+      ]
+    ],
+    "revenue_cagr": 21.251147751201138,
+    "fetched": 1794382754.0869696
+  },
+  "SAILIFE": {
+    "trailingPE": 109.60751,
+    "priceToBook": 15.221943,
+    "returnOnEquity": 0.15177,
+    "returnOnAssets": 0.08567,
+    "debtToEquity": 23.049,
+    "profitMargins": 0.15864,
+    "operatingMargins": 0.20992,
+    "revenueGrowth": 0.225,
+    "earningsGrowth": 0.165,
+    "heldPercentInsiders": 0.36282003,
+    "dividendYield": 0.0,
+    "marketCap": 409413681152,
+    "profit_cagr": 226.88661246747603,
+    "profit_history": [
+      [
+        "2026-03-31",
+        3489100000.0
+      ],
+      [
+        "2025-03-31",
+        1701320000.0
+      ],
+      [
+        "2024-03-31",
+        828090000.0
+      ],
+      [
+        "2023-03-31",
+        99890000.0
+      ]
+    ],
+    "revenue_cagr": 21.310344962902008,
+    "fetched": 1794382754.3584876
+  },
+  "SONACOMS": {
+    "trailingPE": 77.36667,
+    "priceToBook": 9.022177,
+    "returnOnEquity": 0.11879,
+    "returnOnAssets": 0.075619996,
+    "debtToEquity": 10.085,
+    "profitMargins": 0.14101,
+    "operatingMargins": 0.17368001,
+    "revenueGrowth": 0.349,
+    "earningsGrowth": 0.288,
+    "heldPercentInsiders": 0.27866,
+    "dividendYield": 0.39,
+    "marketCap": 580414734336,
+    "profit_cagr": 17.43336469697705,
+    "profit_history": [
+      [
+        "2026-03-31",
+        6401740000.0
+      ],
+      [
+        "2025-03-31",
+        6012130000.0
+      ],
+      [
+        "2024-03-31",
+        5172670000.0
+      ],
+      [
+        "2023-03-31",
+        3952970000.0
+      ]
+    ],
+    "revenue_cagr": 18.825852886963034,
+    "fetched": 1794382754.705436
+  },
+  "SHYAMMETL": {
+    "trailingPE": 27.296244,
+    "priceToBook": 2.8932526,
+    "returnOnEquity": 0.10938,
+    "returnOnAssets": 0.06571,
+    "debtToEquity": 10.28,
+    "profitMargins": 0.06428,
+    "operatingMargins": 0.119619995,
+    "revenueGrowth": 0.337,
+    "earningsGrowth": 0.961,
+    "heldPercentInsiders": 0.61481,
+    "dividendYield": 0.34,
+    "marketCap": 370137202688,
+    "profit_cagr": 7.869425903269867,
+    "profit_history": [
+      [
+        "2026-03-31",
+        10702400000.0
+      ],
+      [
+        "2025-03-31",
+        9081000000.0
+      ],
+      [
+        "2024-03-31",
+        10347900000.0
+      ],
+      [
+        "2023-03-31",
+        8526800000.0
+      ]
+    ],
+    "revenue_cagr": 13.604530939586756,
+    "fetched": 1794382755.0497446
+  },
+  "ANANDRATHI": {
+    "trailingPE": 87.767136,
+    "priceToBook": 30.689945,
+    "returnOnEquity": 0.42988998,
+    "returnOnAssets": 0.28133,
+    "debtToEquity": 5.337,
+    "profitMargins": 0.31349,
+    "operatingMargins": 0.33688998,
+    "revenueGrowth": 0.161,
+    "earningsGrowth": -0.119,
+    "heldPercentInsiders": 0.27582002,
+    "dividendYield": 0.32,
+    "marketCap": 395510284288,
+    "profit_cagr": 32.96771749939471,
+    "profit_history": [
+      [
+        "2026-03-31",
+        3959114000.0
+      ],
+      [
+        "2025-03-31",
+        2998253000.0
+      ],
+      [
+        "2024-03-31",
+        2249744000.0
+      ],
+      [
+        "2023-03-31",
+        1684067000.0
+      ]
+    ],
+    "revenue_cagr": 27.935484982508683,
+    "fetched": 1794382755.3034277
+  },
+  "PVRINOX": {
+    "trailingPE": 36.157364,
+    "priceToBook": 2.0984583,
+    "returnOnEquity": 0.06,
+    "returnOnAssets": 0.04524,
+    "debtToEquity": 85.371,
+    "profitMargins": 0.0845,
+    "operatingMargins": 0.22488001,
+    "revenueGrowth": 0.155,
+    "earningsGrowth": 1.492,
+    "heldPercentInsiders": 0.28384,
+    "dividendYield": 0.0,
+    "marketCap": 151963893760,
+    "profit_cagr": null,
+    "profit_history": [
+      [
+        "2026-03-31",
+        3341000000.0
+      ],
+      [
+        "2025-03-31",
+        -2796000000.0
+      ],
+      [
+        "2024-03-31",
+        -320000000.0
+      ],
+      [
+        "2023-03-31",
+        -3351000000.0
+      ]
+    ],
+    "revenue_cagr": 20.896014413671793,
+    "fetched": 1794382755.5799627
+  },
+  "HONASA": {
+    "trailingPE": 55.98844,
+    "priceToBook": 10.635307,
+    "returnOnEquity": 0.20555,
+    "returnOnAssets": 0.08996,
+    "debtToEquity": 8.662,
+    "profitMargins": 0.10297,
+    "operatingMargins": 0.11206,
+    "revenueGrowth": 0.359,
+    "earningsGrowth": 0.858,
+    "heldPercentInsiders": 0.387,
+    "dividendYield": 0.62,
+    "marketCap": 158017486848,
+    "profit_cagr": null,
+    "profit_history": [
+      [
+        "2026-03-31",
+        1999450000.0
+      ],
+      [
+        "2025-03-31",
+        726870000.0
+      ],
+      [
+        "2024-03-31",
+        1118200000.0
+      ],
+      [
+        "2023-03-31",
+        -1428090000.0
+      ]
+    ],
+    "revenue_cagr": 17.018550854816294,
+    "fetched": 1794382755.9347854
+  },
+  "ACUTAAS": {
+    "trailingPE": 73.20105,
+    "priceToBook": 17.234327,
+    "returnOnEquity": 0.26114,
+    "returnOnAssets": 0.18569,
+    "debtToEquity": 0.789,
+    "profitMargins": 0.27576,
+    "operatingMargins": 0.37370998,
+    "revenueGrowth": 0.427,
+    "earningsGrowth": 0.728,
+    "heldPercentInsiders": 0.38497,
+    "dividendYield": 0.06,
+    "marketCap": 320148832256,
+    "profit_cagr": 62.326719538286255,
+    "profit_history": [
+      [
+        "2026-03-31",
+        3562553000.0
+      ],
+      [
+        "2025-03-31",
+        1587136000.0
+      ],
+      [
+        "2024-03-31",
+        427730000.0
+      ],
+      [
+        "2023-03-31",
+        832897000.0
+      ]
+    ],
+    "revenue_cagr": 29.42092723103098,
+    "fetched": 1794382756.193017
+  },
+  "AETHER": {
+    "trailingPE": 86.775055,
+    "priceToBook": 8.330391,
+    "returnOnEquity": 0.10127,
+    "returnOnAssets": 0.06381,
+    "debtToEquity": 26.031,
+    "profitMargins": 0.19132,
+    "operatingMargins": 0.25561002,
+    "revenueGrowth": 0.262,
+    "earningsGrowth": 0.256,
+    "heldPercentInsiders": 0.76572,
+    "dividendYield": 0.0,
+    "marketCap": 216080646144,
+    "profit_cagr": 18.94456123677064,
+    "profit_history": [
+      [
+        "2026-03-31",
+        2194630000.0
+      ],
+      [
+        "2025-03-31",
+        1584180000.0
+      ],
+      [
+        "2024-03-31",
+        824900000.0
+      ],
+      [
+        "2023-03-31",
+        1304150000.0
+      ]
+    ],
+    "revenue_cagr": 20.239797552692316,
+    "fetched": 1794382756.461445
+  },
+  "AUROPHARMA": {
+    "trailingPE": 26.340332,
+    "priceToBook": 2.656245,
+    "returnOnEquity": 0.10712,
+    "returnOnAssets": 0.062589996,
+    "debtToEquity": 21.904,
+    "profitMargins": 0.108100004,
+    "operatingMargins": 0.15829,
+    "revenueGrowth": 0.239,
+    "earningsGrowth": 0.339,
+    "heldPercentInsiders": 0.54838,
+    "dividendYield": 0.75,
+    "marketCap": 1046497394688,
+    "profit_cagr": 22.054618958117334,
+    "profit_history": [
+      [
+        "2026-03-31",
+        35047500000.0
+      ],
+      [
+        "2025-03-31",
+        34858800000.0
+      ],
+      [
+        "2024-03-31",
+        31729700000.0
+      ],
+      [
+        "2023-03-31",
+        19275000000.0
+      ]
+    ],
+    "revenue_cagr": 10.688761055754913,
+    "fetched": 1794382756.7216227
+  },
+  "NYKAA": {
+    "trailingPE": 315.2232,
+    "priceToBook": 61.44274,
+    "returnOnEquity": 0.20768,
+    "returnOnAssets": 0.078,
+    "debtToEquity": 89.469,
+    "profitMargins": 0.02852,
+    "operatingMargins": 0.05639,
+    "revenueGrowth": 0.281,
+    "earningsGrowth": 1.917,
+    "heldPercentInsiders": 0.56128,
+    "dividendYield": 0.0,
+    "marketCap": 1011611009024,
+    "profit_cagr": 117.95673606589823,
+    "profit_history": [
+      [
+        "2026-03-31",
+        1994400000.0
+      ],
+      [
+        "2025-03-31",
+        660800000.0
+      ],
+      [
+        "2024-03-31",
+        322600000.0
+      ],
+      [
+        "2023-03-31",
+        192620000.0
+      ]
+    ],
+    "revenue_cagr": 24.72564760638678,
+    "fetched": 1794382757.0540817
+  },
+  "EMCURE": {
+    "trailingPE": 38.651745,
+    "priceToBook": 7.908022,
+    "returnOnEquity": 0.21365999,
+    "returnOnAssets": 0.10217,
+    "debtToEquity": 32.875,
+    "profitMargins": 0.106850006,
+    "operatingMargins": 0.1649,
+    "revenueGrowth": 0.243,
+    "earningsGrowth": 0.334,
+    "heldPercentInsiders": 0.77818,
+    "dividendYield": 0.16,
+    "marketCap": 422580453376,
+    "profit_cagr": 20.218551362676564,
+    "profit_history": [
+      [
+        "2026-03-31",
+        9243610000.0
+      ],
+      [
+        "2025-03-31",
+        6813320000.0
+      ],
+      [
+        "2024-03-31",
+        4981830000.0
+      ],
+      [
+        "2023-03-31",
+        5320190000.0
+      ]
+    ],
+    "revenue_cagr": 15.404257344449345,
+    "fetched": 1794382757.3078957
+  },
+  "PTCIL": {
+    "trailingPE": 291.67664,
+    "priceToBook": 23.818415,
+    "returnOnEquity": 0.0859,
+    "returnOnAssets": null,
+    "debtToEquity": 17.821,
+    "profitMargins": 0.18008,
+    "operatingMargins": 0.1851,
+    "revenueGrowth": 0.974,
+    "earningsGrowth": 4.657,
+    "heldPercentInsiders": 0.63164,
+    "dividendYield": 0.0,
+    "marketCap": 387069050880,
+    "profit_cagr": 57.863274551411514,
+    "profit_history": [
+      [
+        "2026-03-31",
+        1015587000.0
+      ],
+      [
+        "2025-03-31",
+        610185000.0
+      ],
+      [
+        "2024-03-31",
+        422158000.0
+      ],
+      [
+        "2023-03-31",
+        258151000.0
+      ]
+    ],
+    "revenue_cagr": 40.679711434372656,
+    "fetched": 1794382757.6563365
+  },
+  "PAYTM": {
+    "trailingPE": 135.43246,
+    "priceToBook": 6.902259,
+    "returnOnEquity": 0.053439997,
+    "returnOnAssets": 0.00849,
+    "debtToEquity": 1.589,
+    "profitMargins": 0.089490004,
+    "operatingMargins": 0.046830002,
+    "revenueGrowth": 0.285,
+    "earningsGrowth": 9.844,
+    "heldPercentInsiders": 0.23775,
+    "dividendYield": 0.0,
+    "marketCap": 1142716497920,
+    "profit_cagr": null,
+    "profit_history": [
+      [
+        "2026-03-31",
+        5530000000.0
+      ],
+      [
+        "2025-03-31",
+        -6590000000.0
+      ],
+      [
+        "2024-03-31",
+        -14170000000.0
+      ],
+      [
+        "2023-03-31",
+        -17759000000.0
+      ]
+    ],
+    "revenue_cagr": 1.1984074365245956,
+    "fetched": 1794382757.9575977
+  },
+  "INDHOTEL": {
+    "trailingPE": 56.622665,
+    "priceToBook": 9.176432,
+    "returnOnEquity": 0.16541,
+    "returnOnAssets": 0.09505,
+    "debtToEquity": 22.018,
+    "profitMargins": 0.20611,
+    "operatingMargins": 0.23911,
+    "revenueGrowth": 0.208,
+    "earningsGrowth": 0.23,
+    "heldPercentInsiders": 0.39345002,
+    "dividendYield": 0.36,
+    "marketCap": 1251695001600,
+    "profit_cagr": 27.62953186124879,
+    "profit_history": [
+      [
+        "2026-03-31",
+        20843800000.0
+      ],
+      [
+        "2025-03-31",
+        19075900000.0
+      ],
+      [
+        "2024-03-31",
+        12590700000.0
+      ],
+      [
+        "2023-03-31",
+        10025900000.0
+      ]
+    ],
+    "revenue_cagr": 18.576971212171344,
+    "fetched": 1794382758.2469018
+  },
+  "IPCALAB": {
+    "trailingPE": 35.236977,
+    "priceToBook": 5.693034,
+    "returnOnEquity": 0.15588,
+    "returnOnAssets": 0.09719,
+    "debtToEquity": 7.399,
+    "profitMargins": 0.13395001,
+    "operatingMargins": 0.19898,
+    "revenueGrowth": 0.148,
+    "earningsGrowth": 0.198,
+    "heldPercentInsiders": 0.45058,
+    "dividendYield": 0.31,
+    "marketCap": 494190460928,
+    "profit_cagr": 34.278088225310775,
+    "profit_history": [
+      [
+        "2026-03-31",
+        11411200000.0
+      ],
+      [
+        "2025-03-31",
+        7376800000.0
+      ],
+      [
+        "2024-03-31",
+        5473500000.0
+      ],
+      [
+        "2023-03-31",
+        4713200000.0
+      ]
+    ],
+    "revenue_cagr": 15.496104995789107,
+    "fetched": 1794382758.5835502
+  },
+  "ACMESOLAR": {
+    "trailingPE": 36.410034,
+    "priceToBook": 3.377386,
+    "returnOnEquity": 0.11504,
+    "returnOnAssets": 0.03924,
+    "debtToEquity": 330.058,
+    "profitMargins": 0.27132,
+    "operatingMargins": 0.65518,
+    "revenueGrowth": 0.896,
+    "earningsGrowth": 0.995,
+    "heldPercentInsiders": 0.71619004,
+    "dividendYield": 0.05,
+    "marketCap": 297148973056,
+    "profit_cagr": null,
+    "profit_history": [
+      [
+        "2026-03-31",
+        4989150000.0
+      ],
+      [
+        "2025-03-31",
+        2521080000.0
+      ],
+      [
+        "2024-03-31",
+        6977980000.0
+      ],
+      [
+        "2023-03-31",
+        -31410000.0
+      ]
+    ],
+    "revenue_cagr": 16.048588113713592,
+    "fetched": 1794382758.8701863
   }
 }
