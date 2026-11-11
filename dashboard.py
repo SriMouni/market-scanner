@@ -189,6 +189,16 @@ th.sortable{cursor:pointer;user-select:none}th.sortable:hover{color:var(--ink)}t
 .tw table.chain tr>td:first-child,.tw table.chain tr>th:first-child{position:static}
 .chain td.st,.chain th.stc{position:sticky;left:0;right:0;z-index:2;box-shadow:0 0 0 1px var(--line)}.chain th.stc{background:var(--soft)}
 .chain tr.atm td.st{background:var(--acc);color:#fff}
+/* ---- calculator */
+.cf{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:10px 0}
+.cf label{font-size:12px;font-weight:600;color:var(--muted);display:block}
+.cf input,.csym{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 12px;font:inherit;font-size:17px;font-weight:650;margin-top:4px}
+.csym{font-size:16px}.cf input:focus,.csym:focus{outline:2px solid var(--accbg);border-color:var(--acc)}
+.cres{text-align:center;padding:14px;border-radius:14px;background:var(--soft);margin:12px 0}.cres .big{font-size:34px;font-weight:800;letter-spacing:-.02em}
+.cqs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:6px 0}.cqs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 11px;font-size:13px;font-weight:600;cursor:pointer}
+.calc .wi{background:none;padding:0}
+.calc .wi input{height:14px}
+.cinfo{font-size:13px;color:var(--muted);margin-top:6px;min-height:18px}
 /* ---- phones */
 @media (max-width:700px){
  .ixs{grid-template-columns:repeat(5,150px);margin-left:-12px;margin-right:-12px;padding:2px 12px}
@@ -209,14 +219,14 @@ th.sortable{cursor:pointer;user-select:none}th.sortable:hover{color:var(--ink)}t
 }
 </style></head><body>
 <header><div class="hdr"><h1><span style="-webkit-text-fill-color:initial">📈</span> <span class="gt">My Market Helper</span></h1><span class="sub" id="upd"></span>
-<button class="ibtn" onclick="location.reload()" title="Refresh">↻</button><button class="ibtn" id="theme" title="Light / dark">🌓</button></div>
+<button class="ibtn" onclick="openCalc()" title="Profit calculator">🧮</button><button class="ibtn" onclick="location.reload()" title="Refresh">↻</button><button class="ibtn" id="theme" title="Light / dark">🌓</button></div>
 <div id="ticker" class="ticker"></div>
 </header>
 <nav><button data-t="plan" class="on"><i>🏠</i><span>Today</span></button><button data-t="live"><i>📊</i><span>NIFTY</span></button><button data-t="scan"><i>🗺️</i><span>Market</span></button><button data-t="picks"><i>🌙</i><span>Tomorrow</span></button>
 <button data-t="track"><i>📈</i><span>Results</span></button><button data-t="lt"><i>🌱</i><span>Long-term</span></button><button data-t="guide"><i>📖</i><span>Learn</span></button></nav>
 <main>
 <section id="plan" class="on"></section><section id="live"></section><section id="scan"></section><section id="picks"></section>
-<section id="track"></section><section id="lt"></section><section id="guide" class="guide"></section>
+<section id="track"></section><section id="calc"></section><section id="lt"></section><section id="guide" class="guide"></section>
 </main>
 <div class="foot">Computer-generated ideas, not financial advice. Practise first and check “Results” before using real money.</div>
 <script>
@@ -231,18 +241,20 @@ document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{
  document.querySelectorAll("nav button,section").forEach(e=>e.classList.remove("on"));
  b.classList.add("on");$("#"+b.dataset.t).classList.add("on");try{localStorage.tab=b.dataset.t}catch(e){}});
 try{const t=localStorage.tab;t&&document.querySelector(`nav button[data-t=${t}]`)?.click()}catch(e){}
+let _calcRestore=false;try{_calcRestore=localStorage.tab==="calc"}catch(e){}
 $("#upd").textContent="⟳ "+D.built.slice(-5);$("#upd").title=`Last updated ${D.built} (India time)`;
 (()=>{const r=document.documentElement,b=$("#theme"),m=["","dark","light"],ic={"":"🌓",dark:"🌙",light:"☀️"};
  const set=t=>{t?r.setAttribute("data-theme",t):r.removeAttribute("data-theme");b.textContent=ic[t];try{localStorage.theme=t}catch(e){}};
  let t="";try{t=localStorage.theme||""}catch(e){}set(t);b.onclick=()=>{t=m[(m.indexOf(t)+1)%3];set(t)}})();
 document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>scrollTo({top:0})));
 let BUDGET=(()=>{try{return +localStorage.bud||D.capital}catch(e){return D.capital}})();
-function whatIf(entry,stop,target,qty,short){entry=+entry;const lo=Math.min(stop,target),hi=Math.max(stop,target),pad=(hi-lo)*.35,mn=lo-pad,mx=hi+pad;
+function whatIf(entry,stop,target,qty,short,opt,sym){entry=+entry;const lo=Math.min(stop,target),hi=Math.max(stop,target),pad=(hi-lo)*.35,mn=lo-pad,mx=hi+pad;
  const P=v=>((v-mn)/(mx-mn)*100).toFixed(1),e=P(entry),g=short?`var(--upbg) 0 ${e}%,var(--dnbg) ${e}% 100%`:`var(--dnbg) 0 ${e}%,var(--upbg) ${e}% 100%`;
  return `<div class="wi" data-e="${entry}" data-q="${qty}" data-sh="${short?1:0}" data-s="${stop}" data-t="${target}"><div class="wi-h">🎚️ DRAG: what if the price goes to…</div><div class="wi-out"></div>
  <input type="range" min="${mn}" max="${mx}" step="${(mx-mn)/200}" value="${entry}" style="background:linear-gradient(90deg,${g})" aria-label="price">
- <div class="wi-t"><span class="dn" style="left:${P(stop)}%">Stop<br>${inr(stop)}</span><span style="left:${e}%">Buy<br>${inr(entry)}</span><span class="up" style="left:${P(target)}%">Target<br>${inr(target)}</span></div></div>`}
-function updWI(inp){const w=inp.closest(".wi"),e=+w.dataset.e,q=+w.dataset.q,sh=w.dataset.sh==="1",v=+inp.value,s=+w.dataset.s,t=+w.dataset.t;
+ <div class="wi-t"><span class="dn" style="left:${P(stop)}%">Stop<br>${inr(stop)}</span><span style="left:${e}%">Buy<br>${inr(entry)}</span><span class="up" style="left:${P(target)}%">Target<br>${inr(target)}</span></div>
+ <div style="text-align:right;margin:2px 0 6px"><a href="#" style="font-size:13px;font-weight:600;color:var(--acc)" onclick='openCalc(${JSON.stringify(opt?{sym:sym||"",type:"option",price:entry,lots:1,lot:qty}:{sym:sym||"",type:"intraday",side:short?"sell":"buy",price:entry,qty})});return false'>🧮 Change quantity / price →</a></div></div>`}
+function updWI(inp){if(!inp.closest(".wi")?.querySelector(".wi-out"))return;const w=inp.closest(".wi"),e=+w.dataset.e,q=+w.dataset.q,sh=w.dataset.sh==="1",v=+inp.value,s=+w.dataset.s,t=+w.dataset.t;
  const pnl=(sh?e-v:v-e)*q,pct=(sh?e-v:v-e)/e*100,hitT=sh?v<=t:v>=t,hitS=sh?v>=s:v<=s;
  w.querySelector(".wi-out").innerHTML=Math.abs(v-e)<(Math.abs(t-e)/40)?`At <b>${inr(e)}</b> (buy price): no profit, no loss. Drag the dot ↔`:
   `At <b>${inr(v)}</b> → you ${pnl>=0?"make":"lose"} <b class="${pnl>=0?"up":"dn"}">${pnl>=0?"+":"−"}${inr(Math.abs(pnl),0)}</b> <span class="muted">(${sgn(pct,1)}%)</span>${hitT?" ✅ target reached, sell":hitS?" ❌ stop reached, sell":""}`}
@@ -285,6 +297,101 @@ document.addEventListener("click",e=>{const b=e.target.closest(".mapf button");i
   <div style="font-size:13px;margin-top:6px">${r.signal?`⭐ <b>Trade idea:</b> ${r.signal==="CE"?"rising strongly, see the Today page":"falling strongly, see the Today page"}`:`Checks passed: ${Object.values(r.checks||{}).filter(Boolean).length} of 5 <span class="muted">(needs all 5 to become an idea)</span>`}</div></div>`});
 document.addEventListener("input",e=>{if(e.target.matches(".mapf input"))mapApply()});
 const go=t=>document.querySelector(`nav button[data-t=${t}]`).click();
+// ---------- profit calculator
+const CALC={sym:"",type:"intraday",side:"buy",price:0,qty:1,lot:1,lots:1};
+function calcList(){const L=[],seen=new Set();
+ (D.stocks.rows||[]).forEach(r=>{seen.add(r.symbol);L.push({k:r.symbol,label:`${r.symbol} · ${r.name||""}`,price:r.price,chg:r.chg,sec:r.sector,kind:"stock"})});
+ ((D.daily||{}).long_term||[]).forEach(r=>{if(!seen.has(r.symbol)){seen.add(r.symbol);L.push({k:r.symbol,label:`${r.symbol} · ${r.name||""}`,price:r.price,sec:r.industry,kind:"stock"})}});
+ const ch=D.chain||{};(ch.rows||[]).forEach(r=>["CE","PE"].forEach(sd=>{const o=r[sd];if(o&&o.ltp)L.push({k:`NIFTY ${r.strike} ${sd}`,label:`NIFTY ${ch.expiry} ${r.strike} ${sd}${r.strike===ch.atm?" (ATM)":""}`,price:o.ltp,kind:"opt",lot:ch.lot||D.lot})}));
+ return L}
+function chargesOf(t,buy,sell,q){const C=t==="option"?D.ch_opt:D.ch_cash,bv=buy*q,sv=sell*q;
+ if(t==="option"){const br=2*C.brokerage_per_order,ex=(bv+sv)*C.exchange_pct/100,se=(bv+sv)*1e-6;return br+sv*C.stt_sell_pct/100+ex+se+bv*C.stamp_buy_pct/100+(br+ex+se)*.18}
+ const br=Math.min(C.brokerage_per_order,Math.max(5,bv*C.brokerage_pct/100))+Math.min(C.brokerage_per_order,Math.max(5,sv*C.brokerage_pct/100)),ex=(bv+sv)*C.exchange_pct/100,se=(bv+sv)*1e-6;
+ if(t==="delivery")return br+(bv+sv)*0.1/100+ex+se+bv*0.015/100+(br+ex+se)*.18+16;   // STT 0.1% both sides, stamp 0.015%, DP ~₹16
+ return br+sv*C.stt_sell_pct/100+ex+se+bv*C.stamp_buy_pct/100+(br+ex+se)*.18}
+function calcNet(x){const c=CALC,q=c.type==="option"?c.lots*c.lot:c.qty,short=c.type==="intraday"&&c.side==="sell";
+ const gross=(short?c.price-x:x-c.price)*q,chg=short?chargesOf(c.type,x,c.price,q):chargesOf(c.type,c.price,x,q);return {q,gross,chg,net:gross-chg}}
+function calcRange(){const t=CALC.type;return t==="option"?[0,CALC.price*3]:t==="delivery"?[CALC.price*.5,CALC.price*1.6]:[CALC.price*.95,CALC.price*1.05]}
+function renderCalc(){const c=CALC,list=calcList(),it=list.find(x=>x.k===c.sym);
+ const quick=c.type==="option"?[-50,-25,-10,10,25,50,100]:c.type==="delivery"?[-20,-10,-5,5,10,20,50]:[-2,-1,-0.5,0.5,1,2,3];
+ let h=`<div class="hero"><div><div class="hero-k">🧮 Profit calculator</div><div class="hero-t">How much would I make?</div>
+  <div class="hero-s">Pick any stock or NIFTY option, set the price and quantity, then drag. Charges are included.</div></div></div>
+ <div class="card calc">
+  <label class="muted" style="font-size:12px;font-weight:600">Stock or option</label>
+  <input class="csym" list="calc-list" placeholder="Type a name, e.g. SBIN or NIFTY 25100 CE" value="${c.sym}" id="c-sym" autocomplete="off">
+  <datalist id="calc-list">${list.map(x=>`<option value="${x.k}">${x.label} · ${inr(x.price)}</option>`).join("")}</datalist>
+  <div class="cinfo" id="c-info">${it?`${it.label} · now <b>${inr(it.price)}</b>${it.chg!=null?` <span class="${cls(it.chg)}">${sgn(it.chg,2)}% today</span>`:""}${it.sec?` · ${it.sec}`:""}`:"Or just type your own price below."}</div>
+  <div class="seg" style="display:flex;margin-top:12px">${[["intraday","🛒 Intraday"],["delivery","🏦 Long-term"],["option","⚡ Option"]].map(([k,l])=>`<button class="${c.type===k?"on":""}" data-ct="${k}" style="flex:1">${l}</button>`).join("")}</div>
+  ${c.type==="intraday"?`<div class="cqs" style="justify-content:flex-start"><span class="muted" style="font-size:13px;align-self:center">I think it will go:</span><button class="${c.side==="buy"?"on":""}" data-cs="buy" style="${c.side==="buy"?"background:var(--up);color:#fff;border-color:var(--up)":""}">▲ Up (buy)</button><button data-cs="sell" style="${c.side==="sell"?"background:var(--dn);color:#fff;border-color:var(--dn)":""}">▼ Down (short-sell)</button></div>`:""}
+  <div class="cf"><div><label>${c.type==="option"?"Option price (premium) ₹":"Buy price ₹"}${c.type==="intraday"&&c.side==="sell"?" (sell first)":""}</label><input type="number" inputmode="decimal" step="0.05" min="0" id="c-price" value="${c.price||""}"></div>
+   ${c.type==="option"?`<div><label>Lots</label><input type="number" inputmode="numeric" min="1" id="c-lots" value="${c.lots}"></div><div><label>Lot size (units per lot)</label><input type="number" inputmode="numeric" min="1" id="c-lot" value="${c.lot}"></div>`
+   :`<div><label>Quantity (shares)</label><input type="number" inputmode="numeric" min="1" id="c-qty" value="${c.qty}"></div>`}</div>
+  ${c.type!=="option"&&c.price>0?`<div class="cqs" style="justify-content:flex-start"><span class="muted" style="font-size:13px;align-self:center">Fill quantity for:</span>${[5000,10000,20000,50000,100000].map(v=>`<button data-cb="${v}">₹${v>=1e5?v/1e5+"L":v/1000+"k"}</button>`).join("")}</div>`:""}
+  <div id="c-out"></div></div>
+  <p class="note">Charges are estimates for Groww (brokerage ₹20 or 0.1% per order, STT, exchange, SEBI, stamp duty, GST${c.type==="delivery"?", DP charge":""}). ${c.type==="delivery"?"Tax is not included: profit on shares held under 1 year is taxed at 20%, over 1 year at 12.5% (above ₹1.25 lakh a year).":c.type==="option"?"An option can fall to ₹0, so the most you can lose is what you pay.":"Intraday trades must be closed by 3:20 PM."}</p>`;
+ $("#calc").innerHTML=h;calcOut()}
+function calcOut(){const c=CALC,o=$("#c-out");if(!o)return;if(!(c.price>0)){o.innerHTML=`<div class="cres muted">Enter a price to start.</div>`;return}
+ const [mn,mx]=calcRange(),short=c.type==="intraday"&&c.side==="sell",q=c.type==="option"?c.lots*c.lot:c.qty,inv=c.price*q;
+ // break-even by bisection
+ let lo=c.price,hi=short?c.price*.5:c.price*2;for(let i=0;i<60;i++){const m=(lo+hi)/2;(calcNet(m).net<0)===(true)?(lo=m):(hi=m)}const be=(lo+hi)/2;
+ const quick=c.type==="option"?[-50,-25,-10,10,25,50,100]:c.type==="delivery"?[-20,-10,-5,5,10,20,50]:[-2,-1,-0.5,0.5,1,2,3];
+ o.innerHTML=`<div style="display:flex;justify-content:space-between;font-size:14px;margin:4px 0 2px"><span>${short?"You sell":"You pay"} <b>${inr(inv,0)}</b> <span class="muted">(${num(q,0)} × ${inr(c.price)})</span></span><span>Break-even <b>${inr(be)}</b></span></div>
+  <div class="cres" id="c-res"></div>
+  <div class="wi"><div class="wi-h">🎚️ DRAG: ${short?"buy back":"sell"} price</div>
+  <input type="range" id="c-sl" min="${mn}" max="${mx}" step="${(mx-mn)/400}" value="${c.sell??c.price}" style="background:linear-gradient(90deg,${short?"var(--upbg)":"var(--dnbg)"} 0 ${((c.price-mn)/(mx-mn)*100).toFixed(1)}%,${short?"var(--dnbg)":"var(--upbg)"} ${((c.price-mn)/(mx-mn)*100).toFixed(1)}% 100%)">
+  <div class="wi-t"><span style="left:2%;transform:none">${inr(mn)}</span><span style="left:${((c.price-mn)/(mx-mn)*100).toFixed(1)}%">Buy<br>${inr(c.price)}</span><span style="left:98%;transform:translateX(-100%)">${inr(mx)}</span></div></div>
+  <div class="cqs">${quick.map(v=>`<button data-cq="${v}" class="${v<0?"dn":"up"}">${v>0?"+":""}${v}%</button>`).join("")}</div>
+  ${sqoffHTML()}
+  <h3 style="margin:14px 0 6px">If the price moves…</h3><div class="tw"><table><tr><th>Move</th><th>Price</th><th>You get (net)</th><th>Price gain</th><th>Charges</th></tr>
+  ${quick.map(v=>{const x=c.price*(1+v/100),r=calcNet(x);return `<tr><td class="${cls(v)}">${v>0?"+":""}${v}%</td><td>${inr(x)}</td><td><b class="${cls(r.net)}">${sgn(r.net,0)}</b></td><td class="${cls(r.gross)}">${sgn(r.gross,0)}</td><td class="muted">${inr(r.chg,0)}</td></tr>`}).join("")}</table></div>`;
+ calcRes()}
+const SQ_FEE=59; // Groww auto square-off: ₹50 + 18% GST per order (check the app's current rate)
+function sqoffHTML(){const c=CALC;if(c.type==="delivery")return `<details class="explain" style="margin-top:14px"><summary>⏰ Square-off? Not for long-term</summary><p>Delivery (CNC) shares are yours. They are <b>never</b> squared off automatically. You can hold them for years.</p></details>`;
+ const it=calcList().find(x=>x.k===c.sym),row=(D.stocks.rows||[]).find(r=>r.symbol===c.sym);
+ const now=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Kolkata"})),m=now.getHours()*60+now.getMinutes(),wd=now.getDay(),open=wd>0&&wd<6&&m>=555&&m<920;
+ const el=Math.min(365,Math.max(5,m-555)),rem=open?Math.max(0,920-m):365;
+ let sig=null,note="";const ch=D.chain||{},opt=c.type==="option";
+ if(!opt){if(row&&row.day_high>row.day_low){const sd=0.6*Math.log(row.day_high/row.day_low);sig=sd*Math.sqrt(rem/(open?el:365));note=`based on how much ${c.sym} has moved today`}
+  else{sig=0.015*Math.sqrt(rem/375);note="assuming a typical 1.5% daily move"}}
+ let lo,mid,hi;
+ if(opt){const mm=(c.sym||"").match(/^NIFTY (\d+) (CE|PE)$/),r=mm&&(ch.rows||[]).find(x=>x.strike===+mm[1]),o=r&&r[mm[2]];
+  if(o&&ch.spot){const n=((D.indices||{}).rows||{})["NIFTY 50"],sd=n&&n.high>n.low?0.6*Math.log(n.high/n.low):0.008,s=sd*Math.sqrt(rem/(open?el:365))*ch.spot;
+   const th=(o.theta_lot/(ch.lot||D.lot))*(rem/375),d=Math.abs(o.delta||0.5);mid=Math.max(0.05,c.price+th);lo=Math.max(0.05,c.price-d*s+th);hi=Math.max(0.05,c.price+d*s+th);
+   note=`NIFTY usually moves about ±${num(s,0)} points by 3:20 at today's pace, and the option loses ~${inr(Math.abs(th))} to time decay`}}
+ else{mid=c.price;lo=c.price*(1-sig);hi=c.price*(1+sig)}
+ const short=c.type==="intraday"&&c.side==="sell",fmt=x=>{const r=calcNet(x).net-SQ_FEE;return `<b class="${cls(r)}">${r>=0?"+":"−"}${inr(Math.abs(r),0)}</b>`};
+ const card=(t,x,sub)=>`<div style="flex:1;min-width:100px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px;text-align:center"><div class="muted" style="font-size:11px;font-weight:700">${t}</div><div style="font-size:13px">${inr(x)}</div><div style="font-size:17px">${fmt(x)}</div><div class="muted" style="font-size:10px">${sub}</div></div>`;
+ return `<div style="margin-top:16px;border:1px dashed var(--line);border-radius:14px;padding:12px">
+  <h3 style="margin:0 0 4px">⏰ What if Groww squares it off at ~3:20 PM?</h3>
+  <p style="font-size:13px;margin:0 0 8px">${short?"You sold first, so square-off <b>buys the shares back</b>":"Square-off <b>sells what you bought</b>"} at the market price, whatever it is then, and adds a fee of about <b>₹${SQ_FEE}</b>. ${open?`That's in <b>${Math.floor(rem/60)}h ${rem%60}m</b>.`:"The market is closed now, so this is for the next session."}</p>
+  ${lo!=null?`<div class="muted" style="font-size:12px;margin-bottom:6px">🔮 Likely ${opt?"option price":"price"} at 3:20 (about 2 out of 3 days), ${note}:</div>
+  <div style="display:flex;gap:6px;flex-wrap:wrap">${card(short?"IF IT RISES":"IF IT FALLS",short?hi:lo,"1 in 6 days worse")}${card("NO CHANGE",mid,opt?"time decay only":"flat")}${card(short?"IF IT FALLS":"IF IT RISES",short?lo:hi,"1 in 6 days better")}</div>`
+  :`<div class="muted" style="font-size:13px">No live data for this option to predict from. The result depends on the price at 3:20, minus ₹${SQ_FEE}.</div>`}
+  <details class="explain"><summary>How square-off works (with an example)</summary>
+  <p><b>Square-off = closing your trade.</b> In intraday you must end the day with zero: if you bought, you sell; if you short-sold, you buy back. Your profit or loss becomes final, and the money (margin) is free again.</p>
+  <p><b>Two ways:</b><br>1️⃣ <b>You do it</b> (best): tap <i>Exit</i> or <i>Sell</i> in Groww any time before ~3:15 PM, or let your target/stop-loss order do it. Normal charges only.<br>
+  2️⃣ <b>Groww does it automatically</b> around 3:10–3:20 PM if you forget. It sells at whatever the market price is then and adds ~₹${SQ_FEE} (₹50 + GST) per order.</p>
+  <p><b>Example:</b> you buy 20 shares at ₹1,000 intraday. At 2:00 PM it's ₹1,015 but you forget. At 3:20 it has slipped to ₹1,005, so Groww sells at ₹1,005: profit 20 × ₹5 = ₹100, minus ~₹40 charges, minus ₹${SQ_FEE} fee = <b>about ₹1</b>. If you had sold at ₹1,015 yourself: ₹300 − ₹40 = <b>₹260</b>.</p>
+  <p><b>How it affects you:</b> you lose control of the exit price, pay an extra fee, and in a falling market the auto-sell can come at the worst moment. For <b>options</b> it's worse: an option keeps losing value every minute (time decay) and its price can jump around near the close. ⚠️ <b>Stock</b> options left open on <b>expiry day</b> can turn into buying or selling the actual shares (physical settlement), which needs a lot of money. Always exit those before expiry.</p>
+  <p><b>Rule of thumb:</b> square off yourself by 3:15 PM, or place a target and stop-loss right after buying so it happens automatically at <i>your</i> prices.</p></details></div>`}
+function calcRes(user){const c=CALC,sl=$("#c-sl");if(!sl)return;const x=user?+sl.value:(c.sell??c.price);if(user)c.sell=x;const r=calcNet(x),q=r.q,inv=c.price*q,pct=r.net/inv*100;
+ $("#c-res").innerHTML=`<div class="muted" style="font-size:13px">${c.type==="intraday"&&c.side==="sell"?"Buy back":"Sell"} at <b style="color:var(--ink)">${inr(x)}</b> <span>(${sgn((x/c.price-1)*100,2)}%)</span></div>
+  <div class="big ${cls(r.net)}">${r.net>=0?"+":"−"}${inr(Math.abs(r.net),0)}</div>
+  <div style="font-size:13px">${r.net>=0?"profit":"loss"} after charges · <b class="${cls(pct)}">${sgn(pct,1)}%</b> on ${inr(inv,0)}</div>
+  <div class="muted" style="font-size:12px;margin-top:4px">Price ${r.gross>=0?"gain":"loss"} ${sgn(r.gross,0)} − charges ${inr(r.chg,0)}</div>`}
+function openCalc(o){if(o)Object.assign(CALC,o,{sell:null});if(!CALC.price){const r=(D.stocks.rows||[])[0];if(r)Object.assign(CALC,{sym:r.symbol,price:r.price,qty:Math.max(1,Math.floor(BUDGET/r.price))})}
+ document.querySelectorAll("nav button,section").forEach(e=>e.classList.remove("on"));$("#calc").classList.add("on");try{localStorage.tab="calc"}catch(e){}renderCalc();scrollTo({top:0})}
+document.addEventListener("input",e=>{const id=e.target.id;if(!id||!id.startsWith("c-"))return;const v=+e.target.value;
+ if(id==="c-sl")return calcRes(true);
+ if(id==="c-sym"){const it=calcList().find(x=>x.k===e.target.value.trim().toUpperCase()||x.k===e.target.value.trim());if(it){Object.assign(CALC,{sym:it.k,price:it.price,sell:null});
+   if(it.kind==="opt")Object.assign(CALC,{type:"option",lot:it.lot,lots:1});else{if(CALC.type==="option")CALC.type="intraday";CALC.qty=Math.max(1,Math.floor(BUDGET/it.price))}renderCalc();const f=$("#c-sym");f.focus()}return}
+ if(id==="c-price"){CALC.price=v;CALC.sell=null}if(id==="c-qty")CALC.qty=Math.max(1,Math.floor(v)||1);if(id==="c-lots")CALC.lots=Math.max(1,Math.floor(v)||1);if(id==="c-lot")CALC.lot=Math.max(1,Math.floor(v)||1);
+ calcOut()});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-ct],[data-cs],[data-cb],[data-cq]");if(!b||!b.closest("#calc"))return;
+ if(b.dataset.ct){CALC.type=b.dataset.ct;CALC.sell=null;if(CALC.type==="option"&&CALC.lot<=1)CALC.lot=D.lot;renderCalc()}
+ else if(b.dataset.cs){CALC.side=b.dataset.cs;CALC.sell=null;renderCalc()}
+ else if(b.dataset.cb){CALC.qty=Math.max(1,Math.floor(+b.dataset.cb/CALC.price));renderCalc()}
+ else if(b.dataset.cq){const sl=$("#c-sl"),x=CALC.price*(1+(+b.dataset.cq)/100);sl.value=Math.min(+sl.max,Math.max(+sl.min,x));CALC.sell=x;calcRes()}});
 function orGauge(lo,hi,now){const w=hi-lo||1,mn=lo-w,mx=hi+w,P=v=>Math.min(98,Math.max(2,(v-mn)/(mx-mn)*100));
  return `<div class="org">${now?`<div class="org-now" style="left:${Math.min(85,Math.max(15,P(now)))}%">NIFTY ${num(now,0)}</div>`:""}
  <div class="org-bar"><span class="org-band" style="left:${P(lo)}%;width:${P(hi)-P(lo)}%"></span>${now?`<i style="left:${P(now)}%"></i>`:""}</div>
@@ -368,7 +475,7 @@ function ideaCard(x,big){
   <div><div class="k">If it works</div><div class="m up">+${inr(x.win,0)}</div></div>
   <div><div class="k">If it doesn't</div><div class="m dn">${inr(x.lose,0)}</div></div></div>
  <div class="why">💡 ${x.why}</div>
- ${x.entry&&x.stop&&x.target?whatIf(x.entry,x.stop,x.target,x.qty,false):""}
+ ${x.entry&&x.stop&&x.target?whatIf(x.entry,x.stop,x.target,x.qty,false,true,x.contract):""}
  ${chartHTML(x.chart)}
  ${x.warn?`<div class="small-warn">⚠️ ${x.warn}</div>`:""}
  ${stepsHTML(x)}</div>`}
@@ -422,7 +529,7 @@ function renderToday(){const now=new Date(new Date().toLocaleString("en-US",{tim
     <div class="idea-contract" style="margin-top:6px">We'd buy about: <b>NIFTY ${l.expiry} ${w[s].strike} ${s}</b> ${tip(s,s)}</div>
     <div class="livep" data-opt="${w[s].strike}${s}">Price now ${inr(w[s].ask)}</div>
     <div class="money"><div><div class="k">You pay</div><div class="m">${inr(w[s].cost_lot,0)}</div></div><div><div class="k">If it works</div><div class="m up">+${inr(w[s].profit_lot,0)}</div></div><div><div class="k">If it doesn't</div><div class="m dn">${inr(w[s].loss_lot,0)}</div></div></div>
-    ${whatIf(w[s].ask,w[s].ask*(1-D.stop/100),w[s].ask*(1+D.target/100),D.lot,false)}
+    ${whatIf(w[s].ask,w[s].ask*(1-D.stop/100),w[s].ask*(1+D.target/100),D.lot,false,true,`NIFTY ${w[s].strike} ${s}`)}
     <div class="small-warn">Not yet: wait for our message before buying.</div></div>`).join("")}</div>`:""}</div>`}}
 
  // ---- 3. ideas: F&O and normal trades
@@ -471,7 +578,7 @@ function renderToday(){const now=new Date(new Date().toLocaleString("en-US",{tim
    <div><div class="k">If it works</div><div class="m up">+${inr(c.profit,0)}</div></div>
    <div><div class="k">If it doesn't</div><div class="m dn">${inr(c.loss,0)}</div></div></div>
   <div class="why">💡 ${r.symbol} is ${r.chg>0?"up":"down"} ${Math.abs(r.chg)}% today on ${r.rvol}× its usual volume and still ${up?"rising":"falling"}.</div>
-  ${whatIf(c.entry,c.stop,c.target,c.qty,!up)}
+  ${whatIf(c.entry,c.stop,c.target,c.qty,!up,false,r.symbol)}
   ${chartHTML(r.chart)}
   ${up?"":`<div class="small-warn">⚠️ Short-selling means you sell first and buy back later the same day. If you're new, skip down-trades and only take ▲ ideas.</div>`}
   <details class="steps"><summary>Show me how to do this in Groww</summary><ol>
@@ -493,6 +600,7 @@ function renderToday(){const now=new Date(new Date().toLocaleString("en-US",{tim
    <div class="muted" style="font-size:13px;margin-top:6px">Green number = company health score (out of 100). Total ${inr(ltTot,0)}. Buy with “Delivery”, in 2–3 parts over a few weeks. See the Long-term tab for details.</div></div></div>`}
 
  // ---- glossary
+ h+=`<div class="card" style="margin-top:18px;cursor:pointer;display:flex;align-items:center;gap:12px" onclick="openCalc()"><span style="font-size:28px">🧮</span><div style="flex:1"><b>Profit calculator</b><div class="muted" style="font-size:13px">Any stock or option: enter quantity and price, drag to see your profit after charges.</div></div><span style="font-size:20px;color:var(--acc)">→</span></div>`;
  h+=`<details class="explain" style="margin-top:22px"><summary>📖 Words you'll see (CE, PE, lot, stop-loss…)</summary><div class="gloss" style="margin-top:8px">${[["CE (Call)",GLOSS.CE],["PE (Put)",GLOSS.PE],["Lot",GLOSS.lot],["Premium",GLOSS.premium],["Target",GLOSS.target],["Stop-loss",GLOSS.stoploss],["Expiry",GLOSS.expiry],["Practice mode",GLOSS.paper]].map(g=>`<div><b>${g[0]}</b><br>${g[1]}</div>`).join("")}</div></details>
  <p class="note" style="margin-top:14px">⚠️ Options are risky: you can lose the whole amount you pay. Only trade money you can afford to lose, and use the Learn tab before going live.</p>`;
  $("#plan").innerHTML=h;
@@ -798,6 +906,7 @@ $("#guide").innerHTML=`
 <li>Past results never guarantee future results. SEBI's studies found about 9 in 10 individual F&amp;O traders lose money.</li></ul>`;
 
 addTools();
+if(_calcRestore)openCalc();
 function centerChain(){document.querySelectorAll("table.chain").forEach(tb=>{const tw=tb.closest(".tw"),c=tb.rows[0].cells,st=c[7],l=c[6];
  if(!tw||!st||!l||!tw.clientWidth)return;const x=l.getBoundingClientRect().right-tb.getBoundingClientRect().left;tw.scrollLeft=x+st.offsetWidth/2-tw.clientWidth/2})}
 document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>setTimeout(centerChain,0)));setTimeout(centerChain,0);addEventListener('load',centerChain);
@@ -879,6 +988,7 @@ def build():
         "engine_metrics": __import__("engine").metrics(),
         "engine_signals": engine_signals(today),
         "indices": read_json(DATA / "indices.json", {}),
+        "ch_opt": CONFIG["charges"], "ch_cash": CONFIG["cash_charges"],
         "st": CONFIG["stocks"], "min_health": CONFIG["daily"]["lt_min_health"],
     }
     if data["stock_state"].get("day") != today:
