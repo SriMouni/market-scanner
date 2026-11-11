@@ -387,6 +387,93 @@
     },
     {
       "why": [
+        "Futures fell 2.37% while open interest grew 11.4%: new sellers are entering (short build-up).",
+        "BOSCHLTD closed at \u20b949,549.68, so the move is with the trend, not against it.",
+        "Strike 50000 is near the money (delta -0.53): it moves about \u20b90.53 for each \u20b91 in BOSCHLTD.",
+        "Liquid: 1,267 contracts traded, open interest 12,450 shares, so you can get in and out.",
+        "14 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 2334.71,
+          "pct": 61.1,
+          "pnl_lot": 21972
+        },
+        {
+          "move": -2,
+          "price": 1994.78,
+          "pct": 37.7,
+          "pnl_lot": 13490
+        },
+        {
+          "move": -1,
+          "price": 1684.74,
+          "pct": 16.3,
+          "pnl_lot": 5754
+        },
+        {
+          "move": 0,
+          "price": 1405.89,
+          "pct": -3.0,
+          "pnl_lot": -1204
+        },
+        {
+          "move": 1,
+          "price": 1158.71,
+          "pct": -20.0,
+          "pnl_lot": -7371
+        },
+        {
+          "move": 2,
+          "price": 942.88,
+          "pct": -34.9,
+          "pnl_lot": -12757
+        },
+        {
+          "move": 3,
+          "price": 757.31,
+          "pct": -47.7,
+          "pnl_lot": -17387
+        }
+      ],
+      "chart": null,
+      "days": 14,
+      "gamma": 0.00012,
+      "vega_lot": 966,
+      "opt_oi_chg": -850,
+      "opt_chg": 63.5,
+      "fut_oi": 216275,
+      "breakeven": 48551.2,
+      "max_loss_lot": 36220,
+      "need_move": 273.36,
+      "need_move_pct": 0.55,
+      "symbol": "BOSCHLTD",
+      "side": "PE",
+      "contract": "BOSCHLTD 23 Nov 50000 PE",
+      "expiry": "2026-11-23",
+      "strike": 50000.0,
+      "entry": 1448.8,
+      "target": 1593.68,
+      "stop": 1376.36,
+      "lot": 25,
+      "cost_per_lot": 36220,
+      "profit_per_lot": 3482,
+      "loss_per_lot": -1941,
+      "delta": -0.53,
+      "theta_lot": -1013,
+      "iv": 32.9,
+      "oi": 12450,
+      "volume": 1267,
+      "spot": 49549.68,
+      "price_chg": -2.37,
+      "oi_chg": 11.4,
+      "buildup": "Short build-up",
+      "trend": "trend unchecked",
+      "affordable": false
+    },
+    {
+      "why": [
         "Futures rose 3.24% while open interest grew 6.1%: new buyers are entering (long build-up).",
         "GLENMARK closed at \u20b92,671.37 and above 20-day avg \u20b92,325, so the move is with the trend, not against it.",
         "Strike 2680 is near the money (delta +0.51): it moves about \u20b90.51 for each \u20b91 in GLENMARK.",
