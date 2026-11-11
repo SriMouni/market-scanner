@@ -57,10 +57,32 @@ class NSE:
                         f"&symbol=NIFTY&expiry={expiry}")
 
     def index(self):
-        for row in self.get("https://www.nseindia.com/api/allIndices")["data"]:
+        self.all_indices = self.get("https://www.nseindia.com/api/allIndices")["data"]
+        for row in self.all_indices:
             if row.get("index") == "NIFTY 50":
                 return row
         raise RuntimeError("NIFTY 50 not found in allIndices")
+
+
+# indices shown on the website (main ones first, then sectors)
+MAIN_INDICES = ["NIFTY 50", "NIFTY BANK", "NIFTY FINANCIAL SERVICES", "NIFTY MIDCAP 100", "INDIA VIX"]
+SECTOR_INDICES = ["NIFTY PSU BANK", "NIFTY PRIVATE BANK", "NIFTY IT", "NIFTY AUTO", "NIFTY PHARMA", "NIFTY FMCG",
+                  "NIFTY METAL", "NIFTY REALTY", "NIFTY ENERGY", "NIFTY MEDIA", "NIFTY OIL & GAS",
+                  "NIFTY HEALTHCARE INDEX", "NIFTY CONSUMER DURABLES", "NIFTY INDIA DEFENCE"]
+
+
+def save_indices(rows):
+    want = set(MAIN_INDICES + SECTOR_INDICES)
+    out = {}
+    for r in rows or []:
+        if r.get("index") in want and r.get("last") is not None:
+            out[r["index"]] = {"last": r["last"], "chg": r.get("variation"), "pchg": r.get("percentChange"),
+                               "open": r.get("open"), "high": r.get("high"), "low": r.get("low"),
+                               "prev": r.get("previousClose")}
+    if out:
+        write_json(DATA / "indices.json", {"time": now_ist().isoformat(timespec="seconds"),
+                                          "main": [k for k in MAIN_INDICES if k in out],
+                                          "sectors": [k for k in SECTOR_INDICES if k in out], "rows": out})
 
 
 def expiry_dt(expiry_str):
@@ -447,6 +469,10 @@ def run(force=False):
 
     nse = NSE()
     idx = nse.index()
+    try:
+        save_indices(nse.all_indices)
+    except Exception as e:
+        log(f"intraday: indices not saved {e!r}")
     ts = (idx.get("timeVal") or "").strip()
     try:  # holiday check; NSE sometimes leaves this field blank, then we just carry on
         if ts and not force and datetime.strptime(ts.split()[0], "%d-%b-%Y").date() != now.date():

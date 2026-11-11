@@ -167,8 +167,18 @@ th{text-transform:uppercase;letter-spacing:.05em;font-size:11px}
 .tt button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer}
 .tt button.on{background:var(--ink);color:var(--card);border-color:var(--ink)}.tt .cnt{font-size:12px;color:var(--muted);margin-left:auto}
 th.sortable{cursor:pointer;user-select:none}th.sortable:hover{color:var(--ink)}th.sortable::after{content:" ↕";opacity:.35}th.asc::after{content:" ↑";opacity:1}th.desc::after{content:" ↓";opacity:1}
+/* ---- indices */
+.ixs{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:10px;margin:12px 0 4px;overflow-x:auto;scrollbar-width:none;padding:2px}.ixs::-webkit-scrollbar{display:none}
+.ix{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:var(--sh);min-width:150px}
+.ix .n{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.03em}.ix .p{font-size:19px;font-weight:750;margin:2px 0 0}.ix .c{font-size:13px;font-weight:650}
+.ix .rg{position:relative;height:4px;border-radius:2px;background:var(--line);margin:8px 0 3px}.ix .rg i{position:absolute;top:-3px;width:3px;height:10px;margin-left:-1px;border-radius:2px;background:var(--ink)}
+.ix .rl{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+.heat{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:8px 0 14px}
+.heat>div{border-radius:12px;padding:10px;font-size:12px;font-weight:600;line-height:1.3}.heat b{display:block;font-size:17px;font-weight:800}
+.secline{font-size:14px;margin:8px 0 0}
 /* ---- phones */
 @media (max-width:700px){
+ .ixs{grid-template-columns:repeat(5,150px);margin-left:-12px;margin-right:-12px;padding:2px 12px}
  nav{width:auto;max-width:none;border-radius:0;box-shadow:0 -2px 12px rgba(0,0,0,.06)}nav button.on{background:var(--accbg);color:var(--acc)}
  .tt input{max-width:none}.hero{border-radius:16px}
  header{padding:8px 12px}.hdr h1{font-size:17px}.ticker{font-size:13px;gap:10px}
@@ -225,6 +235,19 @@ function updWI(inp){const w=inp.closest(".wi"),e=+w.dataset.e,q=+w.dataset.q,sh=
   `At <b>${inr(v)}</b> → you ${pnl>=0?"make":"lose"} <b class="${pnl>=0?"up":"dn"}">${pnl>=0?"+":"−"}${inr(Math.abs(pnl),0)}</b> <span class="muted">(${sgn(pct,1)}%)</span>${hitT?" ✅ target reached, sell":hitS?" ❌ stop reached, sell":""}`}
 document.addEventListener("input",ev=>{if(ev.target.matches(".wi input"))updWI(ev.target)});
 const initWI=()=>document.querySelectorAll(".wi input").forEach(updWI);
+const IXN={"NIFTY 50":"NIFTY 50","NIFTY BANK":"BANK NIFTY","NIFTY FINANCIAL SERVICES":"FIN NIFTY","NIFTY MIDCAP 100":"MIDCAP 100","INDIA VIX":"INDIA VIX"};
+const secName=k=>k.replace(/^NIFTY /,"").replace(" INDEX","").replace("INDIA ","").toLowerCase().replace(/(^|\s)\S/g,c=>c.toUpperCase()).replace("Psu","PSU").replace("It","IT").replace("Fmcg","FMCG").replace("& Gas","& Gas");
+function indicesHTML(){const I=D.indices||{},R=I.rows||{};if(!I.main)return "";
+ return `<div class="ixs">${I.main.map(k=>{const r=R[k],vix=k==="INDIA VIX",pos=r.high>r.low?(r.last-r.low)/(r.high-r.low)*100:50;
+  const mood=vix?(r.last<13?"😌 calm market":r.last<18?"🙂 normal":r.last<24?"😬 nervous":"😱 fearful"):"";
+  return `<div class="ix"><div class="n">${IXN[k]||k}</div><div class="p" data-idx="${k}">${num(r.last,vix?2:0)}</div>
+   <div class="c ${vix?"":cls(r.pchg)}" data-idxp="${k}">${sgn(r.pchg,2)}%</div>
+   ${vix?`<div class="muted" style="font-size:12px;margin-top:6px">Fear gauge: ${mood}</div>`:`<div class="rg"><i style="left:${pos.toFixed(0)}%"></i></div><div class="rl"><span>L ${num(r.low,0)}</span><span>H ${num(r.high,0)}</span></div>`}</div>`}).join("")}</div>
+  <div class="muted" style="font-size:11px">Index prices from NSE at ${(I.time||"").slice(11,16)}${(I.time||"").slice(0,10)!==new Date().toISOString().slice(0,10)?" ("+(I.time||"").slice(0,10)+")":""}</div>`}
+function heatHTML(){const I=D.indices||{},R=I.rows||{},ks=(I.sectors||[]).slice().sort((a,b)=>R[b].pchg-R[a].pchg);if(!ks.length)return "";
+ const mx=Math.max(...ks.map(k=>Math.abs(R[k].pchg)),0.5);
+ return `<div class="heat">${ks.map(k=>{const v=R[k].pchg,a=Math.min(1,Math.abs(v)/mx)*.85+.08;
+  return `<div style="background:${v>=0?`rgba(15,160,85,${a})`:`rgba(220,50,50,${a})`};color:${a>.45?"#fff":"var(--ink)"}">${secName(k)}<b>${sgn(v,2)}%</b></div>`}).join("")}</div>`}
 function orGauge(lo,hi,now){const w=hi-lo||1,mn=lo-w,mx=hi+w,P=v=>Math.min(98,Math.max(2,(v-mn)/(mx-mn)*100));
  return `<div class="org">${now?`<div class="org-now" style="left:${Math.min(85,Math.max(15,P(now)))}%">NIFTY ${num(now,0)}</div>`:""}
  <div class="org-bar"><span class="org-band" style="left:${P(lo)}%;width:${P(hi)-P(lo)}%"></span>${now?`<i style="left:${P(now)}%"></i>`:""}</div>
@@ -314,13 +337,15 @@ function renderToday(){const now=new Date(new Date().toLocaleString("en-US",{tim
  let h="";
 
  // ---- 1. market mood banner
- const nifty=lToday?l.spot:null,prevC=snaps.length?+snaps[snaps.length-1].prev_close:null,nchg=nifty&&prevC?(nifty/prevC-1)*100:null;
+ let nifty=lToday?l.spot:null,prevC=snaps.length?+snaps[snaps.length-1].prev_close:null,nchg=nifty&&prevC?(nifty/prevC-1)*100:null;
+ {const I=D.indices||{},n=(I.rows||{})["NIFTY 50"];if(n&&(I.time||"").startsWith(today)&&(!lToday||I.time>l.time)){nifty=n.last;nchg=n.pchg}}
  const adv=liveToday?sl.rows.filter(r=>r.chg>0).length:null,dec=liveToday?sl.rows.length-adv:null;
  const mood=nchg==null?"":nchg>0.3?"🟢 Market is UP today":nchg<-0.3?"🔴 Market is DOWN today":"🟡 Market is FLAT today";
  h+=`<div class="hero"><div><div class="hero-k">${open?"Market open · closes 3:30 PM":"Market closed · opens 9:15 AM Mon–Fri"}</div>
  <div class="hero-t">${mood||"Welcome 👋"}</div>
  <div class="hero-s">${nifty?`NIFTY 50 at <b data-idx="NIFTY 50">${num(nifty,0)}</b> (<span data-idxp="NIFTY 50">${sgn(nchg,2)}%</span>)`:""}${adv!=null?` · ${adv} of ${adv+dec} big stocks rising`:""}</div></div>
-</div>${dayline(hm,wd)}`;
+</div>${indicesHTML()}${(()=>{const I=D.indices||{},R=I.rows||{},ks=(I.sectors||[]).slice().sort((a,b)=>R[b].pchg-R[a].pchg);
+  return ks.length>1?`<div class="secline">🔥 Strongest sector: <b class="up">${secName(ks[0])} ${sgn(R[ks[0]].pchg,1)}%</b> · Weakest: <b class="${cls(R[ks[ks.length-1]].pchg)}">${secName(ks[ks.length-1])} ${sgn(R[ks[ks.length-1]].pchg,1)}%</b> <span class="muted">(all sectors in Movers)</span></div>`:""})()}${dayline(hm,wd)}`;
 
  // ---- NIFTY card: engine position / pending order / opening-range status
  const en=D.engine||{},ep=en.day===today?en.position:null,eo=en.day===today?en.pending:null,es=en.day===today?(en.status||{}):{};
@@ -442,7 +467,7 @@ renderToday();
  ${card("Support / Resistance",`${l.support??"–"} / ${l.resistance??"–"}`,"","biggest put OI below / call OI above")}
  ${card("PCR",l.pcr,"",l.pcr>1.2?"puts dominate: bullish lean":l.pcr<0.8?"calls dominate: bearish lean / capped":"neutral zone")}
  ${card("ATM IV",l.atm_iv+"%","","option price level; high = expensive")}</div>`;
- h=`<p class="note">🔧 <b>Advanced page</b> with the full details for experienced traders. If you're new, the 🏠 Today page has everything you need.</p>`+h;
+ h=`<p class="note">🔧 <b>Advanced page</b> with the full details for experienced traders. If you're new, the 🏠 Today page has everything you need.</p>`+indicesHTML()+`<h2>NIFTY option chain signals</h2>`+h;
  h+=`<div class="card" style="margin-bottom:14px"><b>Last scan ${l.time.slice(11,16)} · expiry ${l.expiry}:</b> ${l.note==="signal"?"signal fired":l.note}
  <div class="muted" style="margin-top:4px">${l.reasons.map(r=>"• "+r).join("<br>")}</div></div>`;
  if(t){const pnl=(t.last_price-t.entry)/t.entry*100;
@@ -485,7 +510,7 @@ renderToday();
  const gain=s.rows.filter(r=>r.chg>0).length,lose=s.rows.length-gain;
  let h=`<p class="note">🔧 <b>Advanced page:</b> every big stock we check, and why it did or didn't become an idea. If you're new, use the 🏠 Today page.</p><p class="note">Scanned the <b>${s.scanned}</b> most-traded F&amp;O stocks at <b>${s.time.slice(11,16)}</b> (prices up to the ${s.bar_time} 5-min bar, from Yahoo Finance).
  A <b>signal</b> needs all 5 checks: moved ≥${D.st.chg_min}% on the day · on the right side of VWAP · ≥${D.st.mom_min}% more in the last 30 min · volume ≥${D.st.rvol_min}× normal for this time · broke the first-15-min range. Option premiums are <b>estimates</b> (yesterday's IV at today's price): check Groww before buying. ${s.entry_open?"":"<b>New entries only between "+D.st.entry_start+" and "+D.st.entry_end+".</b>"}</p>
- <div class="grid">${card("Signals now",s.signals.length,s.signals.length?"up":"")}${card("Advancing / declining",`${gain} / ${lose}`,gain>lose?"up":"dn")}
+ ${heatHTML()?`<h2 style="margin-top:4px">🔥 Sectors today</h2>${heatHTML()}`:""}<div class="grid">${card("Signals now",s.signals.length,s.signals.length?"up":"")}${card("Advancing / declining",`${gain} / ${lose}`,gain>lose?"up":"dn")}
  ${card("Top gainer",s.rows.slice().sort((a,b)=>b.chg-a.chg)[0].symbol,"up",sgn(s.rows.slice().sort((a,b)=>b.chg-a.chg)[0].chg)+"%")}
  ${card("Top loser",s.rows.slice().sort((a,b)=>a.chg-b.chg)[0].symbol,"dn",sgn(s.rows.slice().sort((a,b)=>a.chg-b.chg)[0].chg)+"%")}</div>`;
  if(s.signals.length){h+=`<h2>Signals</h2>`+table([["Option",r=>`<b>${r.contract}</b> <span class="pill ${r.signal}">${r.signal}</span>`],["Stock",r=>`${r.symbol} ${inr(r.price)}`],
@@ -729,13 +754,15 @@ $("#guide").innerHTML=`
 
 // =============================== live updates (only when served by app.py live)
 (()=>{const ticker=$("#ticker");
+ {const R=(D.indices||{}).rows||{};const ks=["NIFTY 50","NIFTY BANK"].filter(k=>R[k]);
+  if(ks.length){ticker.classList.add("on");ticker.innerHTML=ks.map(k=>`<span class="ti">${IXN[k]} <b data-t="${k}">${num(R[k].last,0)}</b> <span class="${cls(R[k].pchg)}">${sgn(R[k].pchg)}%</span></span>`).join("")+`<span class="muted" style="font-size:12px">${(D.indices.time||"").slice(11,16)}</span>`}}
  const setv=(el,txt,dir)=>{if(!el||el.textContent===txt)return;el.textContent=txt;if(dir){el.classList.remove("flash-up","flash-dn");void el.offsetWidth;el.classList.add(dir>0?"flash-up":"flash-dn")}};
  const last={};
  function apply(L){
   const ix=L.indices||{};ticker.classList.add("on");
   const age=L.ts?Math.round((Date.now()-new Date(L.ts))/1000):null;
   ticker.innerHTML=`<span class="dot ${L.market_open?"":"off"}">● ${L.market_open?"LIVE":"MARKET CLOSED"}</span>`+
-   ["NIFTY 50","NIFTY BANK"].filter(k=>ix[k]).map(k=>`<span class="ti">${k} <b data-t="${k}">${num(ix[k].last)}</b> <span class="${cls(ix[k].pchg)}">${sgn(ix[k].pchg)}%</span></span>`).join("")+
+   ["NIFTY 50","NIFTY BANK"].filter(k=>ix[k]).map(k=>`<span class="ti">${IXN[k]||k} <b data-t="${k}">${num(ix[k].last)}</b> <span class="${cls(ix[k].pchg)}">${sgn(ix[k].pchg)}%</span></span>`).join("")+
    `<span class="muted" style="font-size:12px">${L.quote_time?"NSE prices as of "+L.quote_time.slice(-8):(age!=null?"fetched "+(age<90?age+"s":Math.round(age/60)+" min")+" ago":"")}${(()=>{try{const q=new Date(L.quote_time.replace(/-/g," "));return L.market_open&&(Date.now()-q)/6e4>5?' · <b style="color:var(--dn)">prices may be stale</b>':""}catch(e){return ""}})()} · ideas update every 15 min</span>`;
   Object.entries(ix).forEach(([k,v])=>{const dir=last[k]!=null?Math.sign(v.last-last[k]):0;last[k]=v.last;
    document.querySelectorAll(`[data-t="${k}"]`).forEach(e=>dir&&e.classList.add(dir>0?"flash-up":"flash-dn"));
@@ -802,6 +829,7 @@ def build():
         "engine": read_json(DATA / "engine_state.json", {}),
         "engine_metrics": __import__("engine").metrics(),
         "engine_signals": engine_signals(today),
+        "indices": read_json(DATA / "indices.json", {}),
         "st": CONFIG["stocks"], "min_health": CONFIG["daily"]["lt_min_health"],
     }
     if data["stock_state"].get("day") != today:
