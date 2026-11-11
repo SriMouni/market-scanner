@@ -83,7 +83,7 @@ def index_members():
             df = pd.read_csv(cache)
             tag = "Large cap" if name in ("nifty50", "niftynext50") else "Mid/Small cap"
             for s, n, ind in zip(df["Symbol"], df["Company Name"], df["Industry"]):
-                if s not in seen:
+                if s not in seen and not str(s).upper().startswith("DUMMY"):
                     seen.add(s)
                     syms.append((s, n, tag, ind))
     return syms
@@ -310,7 +310,10 @@ def long_term(day):
         start = ser.index[-1] - pd.DateOffset(years=years)
         if ser.index[0] > start + pd.Timedelta(days=7):
             return None  # not enough history (e.g. listed recently)
-        then = float(ser[ser.index <= start + pd.Timedelta(days=4)].iloc[-1])
+        sub = ser[ser.index <= start + pd.Timedelta(days=7)]
+        if sub.empty:
+            return None
+        then = float(sub.iloc[-1])
         return round(((float(ser.iloc[-1]) / then) ** (1 / years) - 1) * 100, 1)
 
     def max_drawdown(ser):
