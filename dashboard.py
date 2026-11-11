@@ -305,9 +305,9 @@ function calcList(){const L=[],seen=new Set();
  const ch=D.chain||{};(ch.rows||[]).forEach(r=>["CE","PE"].forEach(sd=>{const o=r[sd];if(o&&o.ltp)L.push({k:`NIFTY ${r.strike} ${sd}`,label:`NIFTY ${ch.expiry} ${r.strike} ${sd}${r.strike===ch.atm?" (ATM)":""}`,price:o.ltp,kind:"opt",lot:ch.lot||D.lot})}));
  return L}
 function chargesOf(t,buy,sell,q){const C=t==="option"?D.ch_opt:D.ch_cash,bv=buy*q,sv=sell*q;
- if(t==="option"){const br=2*C.brokerage_per_order,ex=(bv+sv)*C.exchange_pct/100,se=(bv+sv)*1e-6;return br+sv*C.stt_sell_pct/100+ex+se+bv*C.stamp_buy_pct/100+(br+ex+se)*.18}
+ if(t==="option"){const br=2*C.brokerage_per_order,ex=(bv+sv)*(C.exchange_pct+(C.ipft_pct||0))/100,se=(bv+sv)*1e-6;return br+sv*C.stt_sell_pct/100+ex+se+bv*C.stamp_buy_pct/100+(br+ex+se)*.18}
  const br=Math.min(C.brokerage_per_order,Math.max(5,bv*C.brokerage_pct/100))+Math.min(C.brokerage_per_order,Math.max(5,sv*C.brokerage_pct/100)),ex=(bv+sv)*C.exchange_pct/100,se=(bv+sv)*1e-6;
- if(t==="delivery")return br+(bv+sv)*0.1/100+ex+se+bv*0.015/100+(br+ex+se)*.18+16;   // STT 0.1% both sides, stamp 0.015%, DP ~₹16
+ if(t==="delivery")return br+(bv+sv)*0.1/100+ex+se+bv*0.015/100+(br+ex+se)*.18+20*1.18;   // STT 0.1% both sides, stamp 0.015%, DP ₹3.5 + ₹16.5 (+GST) per sell
  return br+sv*C.stt_sell_pct/100+ex+se+bv*C.stamp_buy_pct/100+(br+ex+se)*.18}
 function calcNet(x){const c=CALC,q=c.type==="option"?c.lots*c.lot:c.qty,short=c.type==="intraday"&&c.side==="sell";
  const gross=(short?c.price-x:x-c.price)*q,chg=short?chargesOf(c.type,x,c.price,q):chargesOf(c.type,c.price,x,q);return {q,gross,chg,net:gross-chg}}
@@ -370,8 +370,8 @@ function sqoffHTML(){const c=CALC;if(c.type==="delivery")return `<details class=
   <details class="explain"><summary>How square-off works (with an example)</summary>
   <p><b>Square-off = closing your trade.</b> In intraday you must end the day with zero: if you bought, you sell; if you short-sold, you buy back. Your profit or loss becomes final, and the money (margin) is free again.</p>
   <p><b>Two ways:</b><br>1️⃣ <b>You do it</b> (best): tap <i>Exit</i> or <i>Sell</i> in Groww any time before ~3:15 PM, or let your target/stop-loss order do it. Normal charges only.<br>
-  2️⃣ <b>Groww does it automatically</b> around 3:10–3:20 PM if you forget. It sells at whatever the market price is then and adds ~₹${SQ_FEE} (₹50 + GST) per order.</p>
-  <p><b>Example:</b> you buy 20 shares at ₹1,000 intraday. At 2:00 PM it's ₹1,015 but you forget. At 3:20 it has slipped to ₹1,005, so Groww sells at ₹1,005: profit 20 × ₹5 = ₹100, minus ~₹40 charges, minus ₹${SQ_FEE} fee = <b>about ₹1</b>. If you had sold at ₹1,015 yourself: ₹300 − ₹40 = <b>₹260</b>.</p>
+  2️⃣ <b>Groww does it automatically</b> if it's still open at about 3:20 PM (10 minutes before the close). It sells at whatever the market price is then and adds ~₹${SQ_FEE} (₹50 + GST) per order.</p>
+  <p><b>Example:</b> you buy 20 shares at ₹1,000 intraday. At 2:00 PM it's ₹1,015 but you forget. At 3:20 it has slipped to ₹1,005, so Groww sells at ₹1,005: price gain 20 × ₹5 = ₹100, minus ~₹54 charges, minus ₹${SQ_FEE} fee = <b>a ₹13 loss</b>. If you had sold at ₹1,015 yourself: ₹300 − ₹54 = <b>₹246 profit</b>.</p>
   <p><b>How it affects you:</b> you lose control of the exit price, pay an extra fee, and in a falling market the auto-sell can come at the worst moment. For <b>options</b> it's worse: an option keeps losing value every minute (time decay) and its price can jump around near the close. ⚠️ <b>Stock</b> options left open on <b>expiry day</b> can turn into buying or selling the actual shares (physical settlement), which needs a lot of money. Always exit those before expiry.</p>
   <p><b>Rule of thumb:</b> square off yourself by 3:15 PM, or place a target and stop-loss right after buying so it happens automatically at <i>your</i> prices.</p></details></div>`}
 function calcRes(user){const c=CALC,sl=$("#c-sl");if(!sl)return;const x=user?+sl.value:(c.sell??c.price);if(user)c.sell=x;const r=calcNet(x),q=r.q,inv=c.price*q,pct=r.net/inv*100;

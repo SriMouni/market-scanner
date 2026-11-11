@@ -148,7 +148,7 @@ def charges(entry, exit_, qty):
     buy_val, sell_val = entry * qty, exit_ * qty
     brokerage = 2 * ch["brokerage_per_order"]
     stt = sell_val * ch["stt_sell_pct"] / 100
-    exch = (buy_val + sell_val) * ch["exchange_pct"] / 100
+    exch = (buy_val + sell_val) * (ch["exchange_pct"] + ch.get("ipft_pct", 0)) / 100
     sebi = (buy_val + sell_val) * 10 / 1e7
     stamp = buy_val * ch["stamp_buy_pct"] / 100
     gst = (brokerage + exch + sebi) * 0.18
