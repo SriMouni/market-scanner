@@ -353,7 +353,10 @@ def long_term(day):
     ok = df[(df.price > df.ma200) & (df.ma50 > df.ma200) & (df.from_high >= -D["lt_max_from_high"]) & (df.ret12m > 0)].copy()
     z = lambda c: (ok[c] - ok[c].mean()) / (ok[c].std() or 1)
     ok["score"] = z("ret6m") + z("ret12m") - 0.5 * z("volatility")
-    ok = ok.sort_values("score", ascending=False).head(D["lt_top_n"] * 2)
+    ok = ok.sort_values("score", ascending=False)
+    # rank large and mid/small caps separately so fast-moving small caps can't crowd out steady large ones
+    is_large = ok["index"] == "Large cap"
+    ok = pd.concat([ok[is_large].head(D["lt_top_large"] * 2), ok[~is_large].head(D["lt_top_small"] * 2)])
     from analysis import chart_check, fundamentals
     sector_of = {s: ind for s, _n, _i, ind in members}
     health = fundamentals(ok["symbol"].tolist(), sector_of)
@@ -361,7 +364,9 @@ def long_term(day):
     ok = ok[ok["health"].isna() | (ok["health"] >= D["lt_min_health"])].copy()
     # final rank: half price momentum, half company health
     ok["score"] = ok["score"] + (ok["health"].fillna(55) - 60) / 15
-    ok = ok.sort_values("score", ascending=False).head(D["lt_top_n"])
+    ok = ok.sort_values("score", ascending=False)
+    is_large = ok["index"] == "Large cap"
+    ok = pd.concat([ok[is_large].head(D["lt_top_large"]), ok[~is_large].head(D["lt_top_small"])])
     candles = yahoo_ohlc([s + ".NS" for s in ok["symbol"]], "6mo")
     out = []
     for r in ok.to_dict("records"):

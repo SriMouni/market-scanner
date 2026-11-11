@@ -48,6 +48,8 @@
     "min_contracts_traded": 200,
     "gap_skip_pct": 5,
     "lt_top_n": 15,
+    "lt_top_large": 9,
+    "lt_top_small": 6,
     "lt_max_from_high": 15,
     "lt_extended_pct": 8,
     "lt_budget": 100000,
