@@ -413,6 +413,16 @@ def run():
         notify(f"{'📈' if r['signal'] == 'CE' else '📉'} {r['symbol']} {'UP' if r['signal'] == 'CE' else 'DOWN'} signal [{CONFIG['mode'].upper()}]",
                "\n".join(msg) + f"\nWhy: {why}. Exit by {CONFIG['intraday']['exit_all_by']}.", level="signal")
 
+    # strong movers we did not practice-trade (daily limits used up): still tell the user, once per stock
+    st.setdefault("alerted", [])
+    room = S.get("max_alerts_per_day", 6) - len(st["alerted"])
+    fresh = [r for r in signals if can_enter and r["symbol"] not in st["taken"] and r["symbol"] not in st["alerted"]
+             and r.get("chart") and r["chart"]["verdict"] in ("strong", "ok")][:max(room, 0)]
+    if fresh:
+        import alerts
+        st["alerted"] += [r["symbol"] for r in fresh]
+        notify(*alerts.stock_watch(fresh), level="signal")
+
     rows.sort(key=lambda r: -abs(r["chg"]))
     write_json(OUT, {"time": now.isoformat(timespec="seconds"), "bar_time": max(r["bar_time"] for r in rows),
                      "bhav_date": bhav_day.isoformat(), "scanned": len(rows), "rows": rows,

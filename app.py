@@ -11,6 +11,7 @@
   python app.py live                 live server at http://127.0.0.1:8765 (prices every 30-60 s)
   python app.py report               print paper-trading results
   python app.py test-notify          send a test to Mac / Telegram / WhatsApp
+  python app.py test-alerts          send one sample of every "can be invested" message (marked TEST)
 """
 import subprocess
 import sys
@@ -82,6 +83,9 @@ def main():
                 print("No next-day picks graded yet.")
         elif cmd == "test-notify":
             notify.test()
+        elif cmd == "test-alerts":
+            import test_alerts
+            test_alerts.run()
         else:
             print(__doc__)
     except Exception as e:

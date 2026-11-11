@@ -430,14 +430,21 @@ def run():
                      "benchmark": bench, "lt_budget": D["lt_budget"]})
     write_json(PENDING, {"date": day.isoformat(), "picks": picks})
 
+    notify(*picks_message(picks, lt, day.isoformat()), level="signal")
+    return True
+
+
+def picks_message(picks, lt, day):
+    """Evening message: option setups for the next session + long-term watchlist."""
+    from datetime import date
     top = [p for p in picks if p["affordable"]][:4] or picks[:4]
     lines = [f"{'📈' if p['side'] == 'CE' else '📉'} {p['contract']} ~₹{p['entry']:.2f} "
              f"(lot {p['lot']}, ₹{p['cost_per_lot']:,}) → +₹{p['profit_per_lot']:,}/lot at target" for p in top]
     lt_line = ", ".join(r["symbol"] for r in lt[:5])
     url = CONFIG.get("dashboard_url")
-    notify(f"Picks for next session (data {day:%d %b})",
-           ("\n".join(lines) or "No option setups passed the filters today.") +
-           (f"\nLong-term watchlist: {lt_line}" if lt_line else "") +
-           "\nBuy only at the open if within " + f"{D['gap_skip_pct']}% of these prices. Paper-trade first." +
-           (f"\n{url}" if url else ""), level="signal")
-    return True
+    label = date.fromisoformat(day).strftime("%d %b") if day else ""
+    return (f"Picks for next session (data {label})",
+            ("\n".join(lines) or "No option setups passed the filters today.") +
+            (f"\nLong-term watchlist: {lt_line}" if lt_line else "") +
+            f"\nBuy only at the open if within {D['gap_skip_pct']}% of these prices. Paper-trade first." +
+            (f"\n{url}" if url else ""))

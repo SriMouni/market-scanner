@@ -68,6 +68,7 @@
     "entry_start": "09:45",
     "entry_end": "14:30",
     "max_trades_per_day": 3,
+    "max_alerts_per_day": 6,
     "max_open": 2,
     "max_per_sector": 2,
     "cash_target_pct": 1.5,
@@ -121,7 +122,7 @@
 
   "notify": {
     "mac": "all",
-    "telegram": "all",
+    "telegram": "signals",
     "whatsapp": "signals"
   }
 }

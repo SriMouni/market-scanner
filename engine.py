@@ -334,6 +334,9 @@ def apply_quote(st, q, bad):
             write_trade({**{k: o.get(k) for k in TRADE_FIELDS}, "result": "UNFILLED", "exit_basis": reason,
                          "net_pnl": 0, "gross_pnl": 0, "charges": 0})
             st["pending"] = None
+            notify(f"⏭ NIFTY {o['strike']:g} {o['side']}: skip it",
+                   f"The price moved above ₹{o['limit']:.2f} before it could be bought. Don't chase it, "
+                   "wait for the next signal.", level="signal")
             return
         # 2) a limit buy fills at ask + slippage but NEVER above the limit
         if not bad and q["ask"] <= o["limit"]:
@@ -482,6 +485,8 @@ def look_for_signal(nse, st, bars=None, prefetched=None):
     st["trades_today"] += 1
     event("order", trade_id=tid, limit=c["ask"], strike=c["strike"], side=side)
     log(f"engine: {side} breakout -> limit buy {c['strike']}{side} @ {c['ask']}")
+    import alerts
+    notify(*alerts.nifty_signal(st["pending"]), level="signal")
 
 
 def pick_expiry(expiries):
