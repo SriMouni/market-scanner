@@ -6,21 +6,7 @@
     "FEDERALBNK",
     "TRENT"
   ],
-  "cash_open": [
-    {
-      "time": "2026-11-11T11:03:17+05:30",
-      "symbol": "TRENT",
-      "action": "BUY",
-      "qty": 6,
-      "entry": 3230.0,
-      "invest": 19380,
-      "target": 3278.45,
-      "stop": 3205.78,
-      "profit": 238,
-      "loss": -198,
-      "last": 3208.4
-    }
-  ],
+  "cash_open": [],
   "cash_taken": [],
   "alerted": []
 }

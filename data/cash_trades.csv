@@ -1,0 +1,2 @@
+entry_time,exit_time,symbol,action,qty,entry,exit,result,pct,net_pnl
+2026-11-11T11:03:17+05:30,2026-11-11T15:03:09+05:30,TRENT,BUY,6,3230.0,3205.78,STOP,-0.75,-197.67
