@@ -387,90 +387,131 @@
     },
     {
       "why": [
-        "Futures fell 2.37% while open interest grew 11.4%: new sellers are entering (short build-up).",
-        "BOSCHLTD closed at \u20b949,549.68, so the move is with the trend, not against it.",
-        "Strike 50000 is near the money (delta -0.53): it moves about \u20b90.53 for each \u20b91 in BOSCHLTD.",
-        "Liquid: 1,267 contracts traded, open interest 12,450 shares, so you can get in and out.",
+        "Futures rose 2.45% while open interest grew 13.2%: new buyers are entering (long build-up).",
+        "COROMANDEL closed at \u20b91,879.20 and above 20-day avg \u20b91,766, so the move is with the trend, not against it.",
+        "Strike 1900 is near the money (delta +0.47): it moves about \u20b90.47 for each \u20b91 in COROMANDEL.",
+        "Liquid: 451 contracts traded, open interest 27,300 shares, so you can get in and out.",
         "14 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 2334.71,
-          "pct": 61.1,
-          "pnl_lot": 21972
+          "price": 23.44,
+          "pct": -50.1,
+          "pnl_lot": -7135
         },
         {
           "move": -2,
-          "price": 1994.78,
-          "pct": 37.7,
-          "pnl_lot": 13490
+          "price": 29.57,
+          "pct": -37.1,
+          "pnl_lot": -5300
         },
         {
           "move": -1,
-          "price": 1684.74,
-          "pct": 16.3,
-          "pnl_lot": 5754
+          "price": 36.71,
+          "pct": -21.9,
+          "pnl_lot": -3160
         },
         {
           "move": 0,
-          "price": 1405.89,
-          "pct": -3.0,
-          "pnl_lot": -1204
+          "price": 44.91,
+          "pct": -4.4,
+          "pnl_lot": -706
         },
         {
           "move": 1,
-          "price": 1158.71,
-          "pct": -20.0,
-          "pnl_lot": -7371
+          "price": 54.17,
+          "pct": 15.3,
+          "pnl_lot": 2067
         },
         {
           "move": 2,
-          "price": 942.88,
-          "pct": -34.9,
-          "pnl_lot": -12757
+          "price": 64.49,
+          "pct": 37.2,
+          "pnl_lot": 5157
         },
         {
           "move": 3,
-          "price": 757.31,
-          "pct": -47.7,
-          "pnl_lot": -17387
+          "price": 75.84,
+          "pct": 61.4,
+          "pnl_lot": 8554
         }
       ],
-      "chart": null,
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 58",
+            "value": 58.3
+          },
+          {
+            "name": "Who's winning",
+            "ok": true,
+            "tech": "MACD",
+            "text": "Buyers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit higher",
+            "tech": "candle: green candle",
+            "pattern": "green candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "There's room to rise before \u20b91,915.0, where it stopped before (1.9% away)",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 5,
+        "verdict": "strong",
+        "rsi": 58.3,
+        "pattern": "green candle",
+        "resistance": 1915.0,
+        "support": 1651.1
+      },
       "days": 14,
-      "gamma": 0.00012,
-      "vega_lot": 966,
-      "opt_oi_chg": -850,
-      "opt_chg": 63.5,
-      "fut_oi": 216275,
-      "breakeven": 48551.2,
-      "max_loss_lot": 36220,
-      "need_move": 273.36,
-      "need_move_pct": 0.55,
-      "symbol": "BOSCHLTD",
-      "side": "PE",
-      "contract": "BOSCHLTD 23 Nov 50000 PE",
+      "gamma": 0.00291,
+      "vega_lot": 439,
+      "opt_oi_chg": -2400,
+      "opt_chg": 46.6,
+      "fut_oi": 407400,
+      "breakeven": 1947.0,
+      "max_loss_lot": 14100,
+      "need_move": 10.0,
+      "need_move_pct": 0.53,
+      "symbol": "COROMANDEL",
+      "side": "CE",
+      "contract": "COROMANDEL 23 Nov 1900 CE",
       "expiry": "2026-11-23",
-      "strike": 50000.0,
-      "entry": 1448.8,
-      "target": 1593.68,
-      "stop": 1376.36,
-      "lot": 25,
-      "cost_per_lot": 36220,
-      "profit_per_lot": 3482,
-      "loss_per_lot": -1941,
-      "delta": -0.53,
-      "theta_lot": -1013,
-      "iv": 32.9,
-      "oi": 12450,
-      "volume": 1267,
-      "spot": 49549.68,
-      "price_chg": -2.37,
-      "oi_chg": 11.4,
-      "buildup": "Short build-up",
-      "trend": "trend unchecked",
-      "affordable": false
+      "strike": 1900.0,
+      "entry": 47.0,
+      "target": 51.7,
+      "stop": 44.65,
+      "lot": 300,
+      "cost_per_lot": 14100,
+      "profit_per_lot": 1327,
+      "loss_per_lot": -784,
+      "delta": 0.47,
+      "theta_lot": -626,
+      "iv": 37.1,
+      "oi": 27300,
+      "volume": 451,
+      "spot": 1879.2,
+      "price_chg": 2.45,
+      "oi_chg": 13.2,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b91,766",
+      "affordable": true
     },
     {
       "why": [
@@ -602,54 +643,54 @@
     },
     {
       "why": [
-        "Futures rose 3.36% while open interest grew 3.6%: new buyers are entering (long build-up).",
-        "VOLTAS closed at \u20b91,090.07 and above 20-day avg \u20b91,028, so the move is with the trend, not against it.",
-        "Strike 1100 is near the money (delta +0.47): it moves about \u20b90.47 for each \u20b91 in VOLTAS.",
-        "Liquid: 15,384 contracts traded, open interest 645,750 shares, so you can get in and out.",
+        "Futures fell 2.21% while open interest grew 4.5%: new sellers are entering (short build-up).",
+        "PIIND closed at \u20b91,712.85 and below 20-day avg \u20b92,070, so the move is with the trend, not against it.",
+        "Strike 1720 is near the money (delta -0.49): it moves about \u20b90.49 for each \u20b91 in PIIND.",
+        "Liquid: 2,316 contracts traded, open interest 194,250 shares, so you can get in and out.",
         "14 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 12.25,
-          "pct": -52.6,
-          "pnl_lot": -5162
+          "price": 84.22,
+          "pct": 48.3,
+          "pnl_lot": 4719
         },
         {
           "move": -2,
-          "price": 15.75,
-          "pct": -39.1,
-          "pnl_lot": -3849
+          "price": 73.58,
+          "pct": 29.5,
+          "pnl_lot": 2859
         },
         {
           "move": -1,
-          "price": 19.9,
-          "pct": -23.0,
-          "pnl_lot": -2298
+          "price": 63.8,
+          "pct": 12.3,
+          "pnl_lot": 1151
         },
         {
           "move": 0,
-          "price": 24.7,
-          "pct": -4.4,
-          "pnl_lot": -500
+          "price": 54.9,
+          "pct": -3.3,
+          "pnl_lot": -403
         },
         {
           "move": 1,
-          "price": 30.17,
-          "pct": 16.7,
-          "pnl_lot": 1548
+          "price": 46.87,
+          "pct": -17.5,
+          "pnl_lot": -1805
         },
         {
           "move": 2,
-          "price": 36.31,
-          "pct": 40.5,
-          "pnl_lot": 3844
+          "price": 39.71,
+          "pct": -30.1,
+          "pnl_lot": -3056
         },
         {
           "move": 3,
-          "price": 43.08,
-          "pct": 66.7,
-          "pnl_lot": 6379
+          "price": 33.37,
+          "pct": -41.3,
+          "pnl_lot": -4163
         }
       ],
       "chart": {
@@ -658,74 +699,74 @@
             "name": "Direction",
             "ok": true,
             "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
+            "text": "Overall the price is moving down, the same way as this idea"
           },
           {
             "name": "Speed",
-            "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 57",
-            "value": 56.8
+            "ok": false,
+            "text": "It has fallen a lot very fast and may bounce back a little first",
+            "tech": "RSI 24",
+            "value": 24.4
           },
           {
             "name": "Who's winning",
-            "ok": false,
+            "ok": true,
             "tech": "MACD",
-            "text": "Buyers are winning but getting tired"
+            "text": "Sellers are winning and getting stronger"
           },
           {
             "name": "Last move",
             "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b91,122.3, where it stopped before (3.0% away)",
+            "text": "It just fell below \u20b91,716.4, a level where it kept bouncing before. Often a sign of more fall",
             "tech": "support/resistance"
           }
         ],
         "passed": 4,
         "verdict": "strong",
-        "rsi": 56.8,
-        "pattern": "green candle",
-        "resistance": 1122.3,
-        "support": 930.5
+        "rsi": 24.4,
+        "pattern": "red candle",
+        "resistance": 2237.5,
+        "support": 1716.4
       },
       "days": 14,
-      "gamma": 0.00544,
-      "vega_lot": 319,
-      "opt_oi_chg": -236250,
-      "opt_chg": 53.9,
-      "fut_oi": 9910125,
-      "breakeven": 1125.85,
-      "max_loss_lot": 9694,
-      "need_move": 5.5,
-      "need_move_pct": 0.5,
-      "symbol": "VOLTAS",
-      "side": "CE",
-      "contract": "VOLTAS 23 Nov 1100 CE",
+      "gamma": 0.00288,
+      "vega_lot": 234,
+      "opt_oi_chg": 45675,
+      "opt_chg": 30.4,
+      "fut_oi": 6486900,
+      "breakeven": 1663.2,
+      "max_loss_lot": 9940,
+      "need_move": 11.59,
+      "need_move_pct": 0.68,
+      "symbol": "PIIND",
+      "side": "PE",
+      "contract": "PIIND 23 Nov 1720 PE",
       "expiry": "2026-11-23",
-      "strike": 1100.0,
-      "entry": 25.85,
-      "target": 28.44,
-      "stop": 24.56,
-      "lot": 375,
-      "cost_per_lot": 9694,
-      "profit_per_lot": 897,
-      "loss_per_lot": -554,
-      "delta": 0.47,
-      "theta_lot": -423,
-      "iv": 34.3,
-      "oi": 645750,
-      "volume": 15384,
-      "spot": 1090.07,
-      "price_chg": 3.36,
-      "oi_chg": 3.6,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b91,028",
+      "strike": 1720.0,
+      "entry": 56.8,
+      "target": 62.48,
+      "stop": 53.96,
+      "lot": 175,
+      "cost_per_lot": 9940,
+      "profit_per_lot": 921,
+      "loss_per_lot": -567,
+      "delta": -0.49,
+      "theta_lot": -318,
+      "iv": 41.3,
+      "oi": 194250,
+      "volume": 2316,
+      "spot": 1712.85,
+      "price_chg": -2.21,
+      "oi_chg": 4.5,
+      "buildup": "Short build-up",
+      "trend": "below 20-day avg \u20b92,070",
       "affordable": true
     }
   ]
