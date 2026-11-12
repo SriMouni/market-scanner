@@ -6,21 +6,7 @@
     "IDFCFIRSTB",
     "KAYNES"
   ],
-  "cash_open": [
-    {
-      "time": "2026-11-12T09:48:04+05:30",
-      "symbol": "KAYNES",
-      "action": "BUY",
-      "qty": 5,
-      "entry": 3459.4,
-      "invest": 17297,
-      "target": 3511.29,
-      "stop": 3433.45,
-      "profit": 212,
-      "loss": -177,
-      "last": 3457.4
-    }
-  ],
+  "cash_open": [],
   "cash_taken": [],
   "alerted": [
     "LODHA",
