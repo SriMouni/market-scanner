@@ -7,17 +7,17 @@
   "breakouts": [
     "CE"
   ],
-  "last_bar": "2026-11-12T10:30:00+05:30",
+  "last_bar": "2026-11-12T10:35:00+05:30",
   "rejects_today": 0,
   "status": {
     "or_high": 25341.6,
     "or_low": 25145.0,
-    "close": 25339.85,
-    "bar": "10:30",
-    "status": "NIFTY 25,340 is inside the opening range 25,145\u201325,342"
+    "close": 25354.2,
+    "bar": "10:35",
+    "status": "NIFTY 25,354 is above the opening range 25,145\u201325,342"
   },
   "heartbeat": "2026-11-11T11:39:23+05:30",
-  "heartbeat_exit": "2026-11-12T10:39:56+05:30",
-  "heartbeat_signal": "2026-11-12T10:39:17+05:30",
+  "heartbeat_exit": "2026-11-12T10:45:06+05:30",
+  "heartbeat_signal": "2026-11-12T10:44:17+05:30",
   "brief_day": "2026-11-12"
 }
