@@ -416,8 +416,9 @@ def run():
     log(f"daily: using NSE F&O file for {day}")
     grade_pending(day, fo)
     prev = read_json(OUT, {})
-    if prev.get("date") == day.isoformat() and not D.get("rerun_same_day"):
-        log("daily: already processed this file")
+    if prev.get("date") == day.isoformat() and prev.get("notified") and not D.get("rerun_same_day"):
+        log("daily: already processed and sent for this file, nothing to do")  # backup schedules land here
+        return False
     banned = ban_list()
     picks = make_picks(fo, day, banned)
     try:
@@ -431,6 +432,9 @@ def run():
     write_json(PENDING, {"date": day.isoformat(), "picks": picks})
 
     notify(*picks_message(picks, lt, day.isoformat()), level="signal")
+    out = read_json(OUT, {})
+    out["notified"] = True
+    write_json(OUT, out)
     return True
 
 

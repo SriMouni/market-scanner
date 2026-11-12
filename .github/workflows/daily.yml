@@ -2,6 +2,9 @@ name: daily
 on:
   schedule:
     - cron: '30 13 * * 1-5'   # 19:00 IST, after NSE publishes daily files
+    - cron: '30 14 * * 1-5'   # backups (GitHub schedules can be late or skipped);
+    - cron: '30 16 * * 1-5'   # a run that finds the day already done exits without messaging
+    - cron: '30 1 * * 2-6'    # 07:00 IST next morning, last chance before the open
   workflow_dispatch: {}
 concurrency:
   group: daily

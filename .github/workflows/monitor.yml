@@ -1,32 +1,52 @@
 name: monitor
 on:
   schedule:
-    - cron: '35 3 * * 1-5'   # 09:05 IST, runs until ~12:20
-    - cron: '45 6 * * 1-5'   # 12:15 IST, runs until 15:31
+    # GitHub often starts scheduled jobs late or skips them, so there are several starts.
+    # Only one monitor runs at a time (concurrency group); extra starts wait, then take over
+    # when the running one ends, and exit at once if the market is closed.
+    - cron: '30 3 * * 1-5'   # 09:00 IST
+    - cron: '45 3 * * 1-5'   # 09:15
+    - cron: '0 4 * * 1-5'    # 09:30
+    - cron: '30 4 * * 1-5'   # 10:00
+    - cron: '30 5 * * 1-5'   # 11:00
+    - cron: '30 6 * * 1-5'   # 12:00
+    - cron: '30 7 * * 1-5'   # 13:00
+    - cron: '30 8 * * 1-5'   # 14:00
   workflow_dispatch: {}
 concurrency:
   group: monitor
   cancel-in-progress: false
 permissions:
   contents: write
+  actions: write   # to start the next run itself (hand-off)
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 350
     steps:
+      - name: Market hours?
+        id: gate
+        run: |
+          H=$(TZ=Asia/Kolkata date +%H%M); D=$(TZ=Asia/Kolkata date +%u)
+          if [ "$D" -le 5 ] && [ "$H" -ge 0850 ] && [ "$H" -lt 1525 ]; then echo "run=1" >> "$GITHUB_OUTPUT"; else echo "Market closed ($H IST), nothing to do"; fi
       - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == '1'
       - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == '1'
         with:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Monitor (30-s exits, 1-min signals) + 5-min stock scans, saving every 5 min
+        if: steps.gate.outputs.run == '1'
+      - name: Monitor (10-s exits, 1-min signals) + 5-min stock scans, saving every 5 min
+        if: steps.gate.outputs.run == '1'
         env:
           TZ: Asia/Kolkata
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "scanner-bot"
           git config user.email "scanner-bot@users.noreply.github.com"
@@ -37,12 +57,14 @@ jobs:
             git commit -q -m "monitor $(date +'%Y-%m-%d %H:%M')"
             for i in 1 2 3 4 5; do git pull -q --rebase --autostash -X theirs && git push -q && return 0; sleep $((RANDOM % 10 + 5)); done
           }
-          timeout 11700 python app.py monitor &   # 3h15m; the next scheduled half takes over
+          git pull -q --rebase --autostash -X theirs || true   # start from the latest saved state
+          timeout 19800 python app.py monitor &   # 5h30m, then hand off to a fresh run
           PID=$!
-          # every 5 min: stock scanner + NIFTY market mood, then save to the website
           while kill -0 $PID 2>/dev/null; do
             sleep 300
             python -W ignore app.py intraday || true
             save
           done
           save
+          # hand-off: market still open -> start the next run so watching never stops
+          if [ "$(date +%H%M)" -lt 1520 ]; then gh workflow run monitor.yml --ref main && echo "handed off"; fi
