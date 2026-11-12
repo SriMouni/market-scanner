@@ -84,3 +84,4 @@ time,nse_time,spot,day_open,prev_close,atm,atm_iv,pcr,oi_bias,support,resistance
 2026-11-12T12:55:02+05:30,12-Nov-2026 12:54:15,25238.4,25213.5,25255.05,25250,16.3,0.738,0.053,25000,25500,0,No clear direction,info only: NIFTY trades come from the engine (opening-range breakout)
 2026-11-12T13:00:13+05:30,12-Nov-2026 12:58:59,25248.05,25213.5,25255.05,25250,16.29,0.745,0.063,25000,25500,0,No clear direction,info only: NIFTY trades come from the engine (opening-range breakout)
 2026-11-12T13:05:24+05:30,12-Nov-2026 13:04:19,25257.8,25213.5,25255.05,25250,16.15,0.729,0.023,25000,25500,2,Bullish,info only: NIFTY trades come from the engine (opening-range breakout)
+2026-11-12T13:10:35+05:30,12-Nov-2026 13:09:21,25265.35,25213.5,25255.05,25250,16.13,0.74,0.045,25000,25500,2,Bullish,info only: NIFTY trades come from the engine (opening-range breakout)
