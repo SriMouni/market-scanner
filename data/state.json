@@ -5,45 +5,45 @@
   "losses_today": 0,
   "last_exit": null,
   "last_scan": {
-    "time": "2026-11-12T14:23:18+05:30",
-    "spot": 25252.75,
+    "time": "2026-11-12T14:28:30+05:30",
+    "spot": 25265.85,
     "bias": "No clear direction",
-    "score": 0,
+    "score": 1,
     "pcr": 0.724,
     "support": 25000,
     "resistance": 25500,
-    "atm_iv": 15.75,
+    "atm_iv": 15.77,
     "reasons": [
-      "above day open +0.16%",
-      "falling -0.11% in 30m",
-      "OI build-up balanced (calls +293,168, puts +298,681)"
+      "above day open +0.21%",
+      "momentum flat -0.01%",
+      "OI build-up balanced (calls +288,148, puts +295,272)"
     ],
     "note": "info only: NIFTY trades come from the engine (opening-range breakout)",
     "expiry": "17-Nov-2026",
     "watch": {
       "CE": {
         "strike": 25300,
-        "ask": 165.6,
-        "delta": 0.48,
-        "theta_lot": -1284,
-        "iv": 15.38,
-        "cost_lot": 10764,
-        "target": 182.16,
-        "stop": 157.32,
-        "profit_lot": 1002,
-        "loss_lot": -610
+        "ask": 170.6,
+        "delta": 0.49,
+        "theta_lot": -1260,
+        "iv": 15.01,
+        "cost_lot": 11089,
+        "target": 187.66,
+        "stop": 162.07,
+        "profit_lot": 1033,
+        "loss_lot": -627
       },
       "PE": {
         "strike": 25300,
-        "ask": 212.4,
-        "delta": -0.52,
-        "theta_lot": -1130,
-        "iv": 16.49,
-        "cost_lot": 13806,
-        "target": 233.64,
-        "stop": 201.78,
-        "profit_lot": 1298,
-        "loss_lot": -769
+        "ask": 206,
+        "delta": -0.51,
+        "theta_lot": -1168,
+        "iv": 16.92,
+        "cost_lot": 13390,
+        "target": 226.6,
+        "stop": 195.7,
+        "profit_lot": 1257,
+        "loss_lot": -747
       }
     },
     "min_score": 2
