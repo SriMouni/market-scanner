@@ -1,0 +1,2 @@
+trade_id,signal_time,fill_time,exit_time,side,strike,expiry,days_to_expiry,signal_ask,entry,exit,target,stop,result,exit_basis,gross_pnl,charges,net_pnl,pct,slippage,mfe_pct,mae_pct,entry_delta,entry_theta_lot,entry_iv,spot_at_signal,or_high,or_low,hour,rule
+20261112-1000CE,2026-11-12T10:00:17+05:30,2026-11-12T10:00:26+05:30,2026-11-12T10:11:07+05:30,CE,25400,17-Nov-2026,5,202.6,202.6,184.85,222.86,192.47,STOP,NSE bid,-1153.75,76.21,-1229.96,-8.76,0.0,0.1,-8.76,0.499,-1437.0,17.53,25374.25,25341.6,25145.0,10,atm

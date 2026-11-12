@@ -1,56 +1,23 @@
 {
   "day": "2026-11-12",
-  "position": {
-    "trade_id": "20261112-1000CE",
-    "signal_time": "2026-11-12T10:00:17+05:30",
-    "side": "CE",
-    "strike": 25400,
-    "expiry": "17-Nov-2026",
-    "days_to_expiry": 5,
-    "lots": 1,
-    "limit": 202.6,
-    "signal_ask": 202.6,
-    "entry_delta": 0.499,
-    "entry_theta_lot": -1437.0,
-    "entry_iv": 17.53,
-    "spot_at_signal": 25374.25,
-    "or_high": 25341.6,
-    "or_low": 25145.0,
-    "hour": 10,
-    "rule": "atm",
-    "feasibility": {
-      "target_gain_lot": 1317,
-      "theta_cost_to_exit": 314,
-      "theta_share": 0.24,
-      "iv_drop_to_erase_target": 1.67,
-      "nifty_move_needed": 40.6
-    },
-    "entry": 202.6,
-    "fill_time": "2026-11-12T10:00:26+05:30",
-    "slippage": 0.0,
-    "last_bid": 194.65,
-    "last_bid_time": "12-Nov-2026 10:07:43",
-    "target": 222.86,
-    "stop": 192.47,
-    "mfe_pct": 0.1,
-    "mae_pct": -3.92
-  },
+  "position": null,
   "pending": null,
   "trades_today": 1,
-  "losses_today": 0,
+  "losses_today": 1,
   "breakouts": [
     "CE"
   ],
-  "last_bar": "2026-11-12T09:55:00+05:30",
+  "last_bar": "2026-11-12T10:05:00+05:30",
   "rejects_today": 0,
   "status": {
     "or_high": 25341.6,
     "or_low": 25145.0,
-    "close": 25371.95,
-    "bar": "09:55"
+    "close": 25352.6,
+    "bar": "10:05",
+    "status": "NIFTY 25,353 is above the opening range 25,145\u201325,342"
   },
   "heartbeat": "2026-11-11T11:39:23+05:30",
-  "heartbeat_exit": "2026-11-12T10:08:46+05:30",
-  "heartbeat_signal": "2026-11-12T10:00:18+05:30",
+  "heartbeat_exit": "2026-11-12T10:13:56+05:30",
+  "heartbeat_signal": "2026-11-12T10:13:17+05:30",
   "brief_day": "2026-11-12"
 }
