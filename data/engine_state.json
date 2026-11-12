@@ -28,12 +28,12 @@
     "entry": 202.6,
     "fill_time": "2026-11-12T10:00:26+05:30",
     "slippage": 0.0,
-    "last_bid": 200,
-    "last_bid_time": "12-Nov-2026 10:02:09",
+    "last_bid": 194.65,
+    "last_bid_time": "12-Nov-2026 10:07:43",
     "target": 222.86,
     "stop": 192.47,
     "mfe_pct": 0.1,
-    "mae_pct": -1.28
+    "mae_pct": -3.92
   },
   "pending": null,
   "trades_today": 1,
@@ -50,7 +50,7 @@
     "bar": "09:55"
   },
   "heartbeat": "2026-11-11T11:39:23+05:30",
-  "heartbeat_exit": "2026-11-12T10:03:36+05:30",
+  "heartbeat_exit": "2026-11-12T10:08:46+05:30",
   "heartbeat_signal": "2026-11-12T10:00:18+05:30",
   "brief_day": "2026-11-12"
 }
