@@ -1,57 +1,57 @@
 {
-  "generated": "2026-11-12T09:23:19+05:30",
-  "date": "2026-11-11",
+  "generated": "2026-11-13T02:30:18+05:30",
+  "date": "2026-11-12",
   "options": [
     {
       "why": [
-        "Futures rose 6.49% while open interest grew 89.0%: new buyers are entering (long build-up).",
-        "COROMANDEL closed at \u20b91,991.04 and above 20-day avg \u20b91,781, so the move is with the trend, not against it.",
-        "Strike 2000 is near the money (delta +0.51): it moves about \u20b90.51 for each \u20b91 in COROMANDEL.",
-        "Liquid: 12,786 contracts traded, open interest 218,400 shares, so you can get in and out.",
-        "12 days to expiry, so time decay is slower than for an expiry-week option."
+        "Futures rose 7.70% while open interest grew 9.6%: new buyers are entering (long build-up).",
+        "PAYTM closed at \u20b91,924.84 and above 20-day avg \u20b91,697, so the move is with the trend, not against it.",
+        "Strike 1940 is near the money (delta +0.48): it moves about \u20b90.48 for each \u20b91 in PAYTM.",
+        "Liquid: 4,886 contracts traded, open interest 408,175 shares, so you can get in and out.",
+        "11 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 48.21,
-          "pct": -38.6,
-          "pnl_lot": -9189
+          "price": 27.32,
+          "pct": -48.8,
+          "pnl_lot": -18975
         },
         {
           "move": -2,
-          "price": 56.3,
-          "pct": -28.3,
-          "pnl_lot": -6767
+          "price": 33.99,
+          "pct": -36.3,
+          "pnl_lot": -14146
         },
         {
           "move": -1,
-          "price": 65.2,
-          "pct": -17.0,
-          "pnl_lot": -4100
+          "price": 41.69,
+          "pct": -21.9,
+          "pnl_lot": -8580
         },
         {
           "move": 0,
-          "price": 74.93,
-          "pct": -4.6,
-          "pnl_lot": -1188
+          "price": 50.42,
+          "pct": -5.5,
+          "pnl_lot": -2257
         },
         {
           "move": 1,
-          "price": 85.47,
-          "pct": 8.8,
-          "pnl_lot": 1969
+          "price": 60.21,
+          "pct": 12.9,
+          "pnl_lot": 4827
         },
         {
           "move": 2,
-          "price": 96.81,
-          "pct": 23.2,
-          "pnl_lot": 5365
+          "price": 71.04,
+          "pct": 33.2,
+          "pnl_lot": 12662
         },
         {
           "move": 3,
-          "price": 108.93,
-          "pct": 38.7,
-          "pnl_lot": 8994
+          "price": 82.88,
+          "pct": 55.3,
+          "pnl_lot": 21226
         }
       ],
       "chart": {
@@ -66,8 +66,8 @@
             "name": "Speed",
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 66",
-            "value": 66.2
+            "tech": "RSI 62",
+            "value": 61.7
           },
           {
             "name": "Who's winning",
@@ -77,109 +77,109 @@
           },
           {
             "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
+            "ok": false,
+            "text": "In the last day, buyers and sellers were evenly matched, no clear winner",
+            "tech": "candle: doji",
+            "pattern": "doji (indecision)"
           },
           {
             "name": "Room to move",
-            "ok": true,
-            "text": "It just went above \u20b91,915.0, a level where it kept stopping before. Often a good sign",
+            "ok": false,
+            "text": "It's close to \u20b91,809.0, where it stopped before (only 0.8% away), so little room to rise",
             "tech": "support/resistance"
           }
         ],
-        "passed": 5,
-        "verdict": "strong",
-        "rsi": 66.2,
-        "pattern": "green candle",
-        "resistance": 1915.0,
-        "support": 1655.1
+        "passed": 3,
+        "verdict": "ok",
+        "rsi": 61.7,
+        "pattern": "doji (indecision)",
+        "resistance": 1809.0,
+        "support": 1571.0
       },
-      "days": 12,
-      "gamma": 0.00197,
-      "vega_lot": 432,
-      "opt_oi_chg": 192000,
-      "opt_chg": 351.4,
-      "fut_oi": 770100,
-      "breakeven": 2078.55,
-      "max_loss_lot": 23565,
-      "need_move": 15.4,
-      "need_move_pct": 0.77,
-      "symbol": "COROMANDEL",
+      "days": 11,
+      "gamma": 0.00271,
+      "vega_lot": 966,
+      "opt_oi_chg": 368300,
+      "opt_chg": 418.0,
+      "fut_oi": 13593025,
+      "breakeven": 1993.35,
+      "max_loss_lot": 38679,
+      "need_move": 11.11,
+      "need_move_pct": 0.58,
+      "symbol": "PAYTM",
       "side": "CE",
-      "contract": "COROMANDEL 23 Nov 2000 CE",
+      "contract": "PAYTM 23 Nov 1940 CE",
       "expiry": "2026-11-23",
-      "strike": 2000.0,
-      "entry": 78.55,
-      "target": 86.41,
-      "stop": 74.62,
-      "lot": 300,
-      "cost_per_lot": 23565,
-      "profit_per_lot": 2249,
-      "loss_per_lot": -1279,
-      "delta": 0.51,
-      "theta_lot": -1060,
-      "iv": 56.1,
-      "oi": 218400,
-      "volume": 12786,
-      "spot": 1991.04,
-      "price_chg": 6.49,
-      "oi_chg": 89.0,
+      "strike": 1940.0,
+      "entry": 53.35,
+      "target": 58.69,
+      "stop": 50.68,
+      "lot": 725,
+      "cost_per_lot": 38679,
+      "profit_per_lot": 3722,
+      "loss_per_lot": -2069,
+      "delta": 0.48,
+      "theta_lot": -2046,
+      "iv": 44.0,
+      "oi": 408175,
+      "volume": 4886,
+      "spot": 1924.84,
+      "price_chg": 7.7,
+      "oi_chg": 9.6,
       "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b91,781",
+      "trend": "above 20-day avg \u20b91,697",
       "affordable": false
     },
     {
       "why": [
-        "Futures rose 5.79% while open interest grew 44.5%: new buyers are entering (long build-up).",
-        "NAVINFLUOR closed at \u20b99,659.00 and above 20-day avg \u20b98,435, so the move is with the trend, not against it.",
-        "Strike 9700 is near the money (delta +0.50): it moves about \u20b90.50 for each \u20b91 in NAVINFLUOR.",
-        "Liquid: 1,486 contracts traded, open interest 13,950 shares, so you can get in and out.",
-        "12 days to expiry, so time decay is slower than for an expiry-week option."
+        "Futures rose 3.25% while open interest grew 19.3%: new buyers are entering (long build-up).",
+        "NAVINFLUOR closed at \u20b99,969.12 and above 20-day avg \u20b98,435, so the move is with the trend, not against it.",
+        "Strike 10000 is near the money (delta +0.51): it moves about \u20b90.51 for each \u20b91 in NAVINFLUOR.",
+        "Liquid: 6,197 contracts traded, open interest 50,625 shares, so you can get in and out.",
+        "11 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 123.8,
-          "pct": -51.3,
-          "pnl_lot": -9872
+          "price": 117.24,
+          "pct": -53.4,
+          "pnl_lot": -10168
         },
         {
           "move": -2,
-          "price": 157.53,
-          "pct": -38.1,
-          "pnl_lot": -7347
+          "price": 151.59,
+          "pct": -39.8,
+          "pnl_lot": -7597
         },
         {
           "move": -1,
-          "price": 196.97,
-          "pct": -22.6,
-          "pnl_lot": -4395
+          "price": 192.18,
+          "pct": -23.7,
+          "pnl_lot": -4559
         },
         {
           "move": 0,
-          "price": 242.25,
-          "pct": -4.8,
-          "pnl_lot": -1006
+          "price": 239.18,
+          "pct": -5.0,
+          "pnl_lot": -1041
         },
         {
           "move": 1,
-          "price": 293.39,
-          "pct": 15.3,
-          "pnl_lot": 2823
+          "price": 292.61,
+          "pct": 16.2,
+          "pnl_lot": 2959
         },
         {
           "move": 2,
-          "price": 350.27,
-          "pct": 37.7,
-          "pnl_lot": 7081
+          "price": 352.31,
+          "pct": 39.9,
+          "pnl_lot": 7428
         },
         {
           "move": 3,
-          "price": 412.65,
-          "pct": 62.2,
-          "pnl_lot": 11750
+          "price": 417.98,
+          "pct": 66.0,
+          "pnl_lot": 12344
         }
       ],
       "chart": {
@@ -224,305 +224,90 @@
         "resistance": 9179.0,
         "support": 7503.66
       },
-      "days": 12,
-      "gamma": 0.0006,
-      "vega_lot": 524,
-      "opt_oi_chg": 13950,
-      "opt_chg": 573.1,
-      "fut_oi": 446850,
-      "breakeven": 9954.45,
-      "max_loss_lot": 19084,
-      "need_move": 50.89,
-      "need_move_pct": 0.53,
+      "days": 11,
+      "gamma": 0.00062,
+      "vega_lot": 518,
+      "opt_oi_chg": 4275,
+      "opt_chg": 64.0,
+      "fut_oi": 533175,
+      "breakeven": 10251.85,
+      "max_loss_lot": 18889,
+      "need_move": 49.38,
+      "need_move_pct": 0.5,
       "symbol": "NAVINFLUOR",
       "side": "CE",
-      "contract": "NAVINFLUOR 23 Nov 9700 CE",
+      "contract": "NAVINFLUOR 23 Nov 10000 CE",
       "expiry": "2026-11-23",
-      "strike": 9700.0,
-      "entry": 254.45,
-      "target": 279.89,
-      "stop": 241.73,
+      "strike": 10000.0,
+      "entry": 251.85,
+      "target": 277.04,
+      "stop": 239.26,
       "lot": 75,
-      "cost_per_lot": 19084,
-      "profit_per_lot": 1812,
-      "loss_per_lot": -1045,
-      "delta": 0.5,
-      "theta_lot": -887,
-      "iv": 37.8,
-      "oi": 13950,
-      "volume": 1486,
-      "spot": 9659.0,
-      "price_chg": 5.79,
-      "oi_chg": 44.5,
+      "cost_per_lot": 18889,
+      "profit_per_lot": 1793,
+      "loss_per_lot": -1035,
+      "delta": 0.51,
+      "theta_lot": -941,
+      "iv": 37.3,
+      "oi": 50625,
+      "volume": 6197,
+      "spot": 9969.12,
+      "price_chg": 3.25,
+      "oi_chg": 19.3,
       "buildup": "Long build-up",
       "trend": "above 20-day avg \u20b98,435",
       "affordable": true
     },
     {
       "why": [
-        "Futures rose 8.82% while open interest grew 10.0%: new buyers are entering (long build-up).",
-        "KALYANKJIL closed at \u20b9663.70 and above 20-day avg \u20b9545, so the move is with the trend, not against it.",
-        "Strike 670 is near the money (delta +0.49): it moves about \u20b90.49 for each \u20b91 in KALYANKJIL.",
-        "Liquid: 19,465 contracts traded, open interest 2,258,550 shares, so you can get in and out.",
-        "12 days to expiry, so time decay is slower than for an expiry-week option."
+        "Futures rose 4.90% while open interest grew 8.2%: new buyers are entering (long build-up).",
+        "RADICO closed at \u20b94,638.05 and above 20-day avg \u20b94,345, so the move is with the trend, not against it.",
+        "Strike 4650 is near the money (delta +0.51): it moves about \u20b90.51 for each \u20b91 in RADICO.",
+        "Liquid: 803 contracts traded, open interest 26,250 shares, so you can get in and out.",
+        "11 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 13.9,
-          "pct": -40.7,
-          "pnl_lot": -12993
+          "price": 55.79,
+          "pct": -53.2,
+          "pnl_lot": -9576
         },
         {
           "move": -2,
-          "price": 16.42,
-          "pct": -30.0,
-          "pnl_lot": -9597
+          "price": 71.95,
+          "pct": -39.6,
+          "pnl_lot": -7156
         },
         {
           "move": -1,
-          "price": 19.22,
-          "pct": -18.0,
-          "pnl_lot": -5821
+          "price": 91.01,
+          "pct": -23.6,
+          "pnl_lot": -4302
         },
         {
           "move": 0,
-          "price": 22.31,
-          "pct": -4.9,
-          "pnl_lot": -1663
+          "price": 113.05,
+          "pct": -5.1,
+          "pnl_lot": -1003
         },
         {
           "move": 1,
-          "price": 25.68,
-          "pct": 9.5,
-          "pnl_lot": 2879
+          "price": 138.06,
+          "pct": 15.9,
+          "pnl_lot": 2741
         },
         {
           "move": 2,
-          "price": 29.33,
-          "pct": 25.1,
-          "pnl_lot": 7798
+          "price": 165.96,
+          "pct": 39.3,
+          "pnl_lot": 6919
         },
         {
           "move": 3,
-          "price": 33.25,
-          "pct": 41.8,
-          "pnl_lot": 13087
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": false,
-            "text": "It has gone up a lot very fast and may fall back a little first",
-            "tech": "RSI 75",
-            "value": 75.2
-          },
-          {
-            "name": "Who's winning",
-            "ok": true,
-            "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "It just went above \u20b9614.5, a level where it kept stopping before. Often a good sign",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 75.2,
-        "pattern": "green candle",
-        "resistance": 614.45,
-        "support": 490.6
-      },
-      "days": 12,
-      "gamma": 0.00618,
-      "vega_lot": 648,
-      "opt_oi_chg": 1857600,
-      "opt_chg": 123.3,
-      "fut_oi": 18932400,
-      "breakeven": 693.45,
-      "max_loss_lot": 31658,
-      "need_move": 4.79,
-      "need_move_pct": 0.72,
-      "symbol": "KALYANKJIL",
-      "side": "CE",
-      "contract": "KALYANKJIL 23 Nov 670 CE",
-      "expiry": "2026-11-23",
-      "strike": 670.0,
-      "entry": 23.45,
-      "target": 25.8,
-      "stop": 22.28,
-      "lot": 1350,
-      "cost_per_lot": 31658,
-      "profit_per_lot": 3037,
-      "loss_per_lot": -1702,
-      "delta": 0.49,
-      "theta_lot": -1519,
-      "iv": 53.6,
-      "oi": 2258550,
-      "volume": 19465,
-      "spot": 663.7,
-      "price_chg": 8.82,
-      "oi_chg": 10.0,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b9545",
-      "affordable": false
-    },
-    {
-      "why": [
-        "Futures rose 5.25% while open interest grew 6.6%: new buyers are entering (long build-up).",
-        "FORCEMOT closed at \u20b919,871.09, so the move is with the trend, not against it.",
-        "Strike 20000 is near the money (delta +0.49): it moves about \u20b90.49 for each \u20b91 in FORCEMOT.",
-        "Liquid: 12,757 contracts traded, open interest 30,250 shares, so you can get in and out.",
-        "12 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 277.43,
-          "pct": -49.1,
-          "pnl_lot": -6763
-        },
-        {
-          "move": -2,
-          "price": 346.97,
-          "pct": -36.4,
-          "pnl_lot": -5028
-        },
-        {
-          "move": -1,
-          "price": 427.37,
-          "pct": -21.6,
-          "pnl_lot": -3022
-        },
-        {
-          "move": 0,
-          "price": 518.89,
-          "pct": -4.8,
-          "pnl_lot": -738
-        },
-        {
-          "move": 1,
-          "price": 621.59,
-          "pct": 14.0,
-          "pnl_lot": 1824
-        },
-        {
-          "move": 2,
-          "price": 735.27,
-          "pct": 34.8,
-          "pnl_lot": 4661
-        },
-        {
-          "move": 3,
-          "price": 859.58,
-          "pct": 57.6,
-          "pnl_lot": 7762
-        }
-      ],
-      "chart": null,
-      "days": 12,
-      "gamma": 0.00027,
-      "vega_lot": 359,
-      "opt_oi_chg": 12425,
-      "opt_chg": 222.3,
-      "fut_oi": 325675,
-      "breakeven": 20545.3,
-      "max_loss_lot": 13632,
-      "need_move": 111.29,
-      "need_move_pct": 0.56,
-      "symbol": "FORCEMOT",
-      "side": "CE",
-      "contract": "FORCEMOT 23 Nov 20000 CE",
-      "expiry": "2026-11-23",
-      "strike": 20000.0,
-      "entry": 545.3,
-      "target": 599.83,
-      "stop": 518.03,
-      "lot": 25,
-      "cost_per_lot": 13632,
-      "profit_per_lot": 1281,
-      "loss_per_lot": -760,
-      "delta": 0.49,
-      "theta_lot": -652,
-      "iv": 40.8,
-      "oi": 30250,
-      "volume": 12757,
-      "spot": 19871.09,
-      "price_chg": 5.25,
-      "oi_chg": 6.6,
-      "buildup": "Long build-up",
-      "trend": "trend unchecked",
-      "affordable": true
-    },
-    {
-      "why": [
-        "Futures rose 3.08% while open interest grew 15.3%: new buyers are entering (long build-up).",
-        "CUB closed at \u20b9230.74 and above 20-day avg \u20b9221, so the move is with the trend, not against it.",
-        "Strike 230 is near the money (delta +0.54): it moves about \u20b90.54 for each \u20b91 in CUB.",
-        "Liquid: 1,414 contracts traded, open interest 669,600 shares, so you can get in and out.",
-        "12 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 4.4,
-          "pct": -44.6,
-          "pnl_lot": -8306
-        },
-        {
-          "move": -2,
-          "price": 5.35,
-          "pct": -32.7,
-          "pnl_lot": -6108
-        },
-        {
-          "move": -1,
-          "price": 6.42,
-          "pct": -19.2,
-          "pnl_lot": -3627
-        },
-        {
-          "move": 0,
-          "price": 7.61,
-          "pct": -4.2,
-          "pnl_lot": -864
-        },
-        {
-          "move": 1,
-          "price": 8.92,
-          "pct": 12.3,
-          "pnl_lot": 2177
-        },
-        {
-          "move": 2,
-          "price": 10.34,
-          "pct": 30.3,
-          "pnl_lot": 5487
-        },
-        {
-          "move": 3,
-          "price": 11.88,
-          "pct": 49.6,
-          "pnl_lot": 9055
+          "price": 196.63,
+          "pct": 65.0,
+          "pnl_lot": 11510
         }
       ],
       "chart": {
@@ -537,136 +322,8 @@
             "name": "Speed",
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 57",
-            "value": 57.0
-          },
-          {
-            "name": "Who's winning",
-            "ok": true,
-            "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b9235.2, where it stopped before (1.9% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 5,
-        "verdict": "strong",
-        "rsi": 57.0,
-        "pattern": "green candle",
-        "resistance": 235.18,
-        "support": 206.41
-      },
-      "days": 12,
-      "gamma": 0.02159,
-      "vega_lot": 386,
-      "opt_oi_chg": -81375,
-      "opt_chg": 66.5,
-      "fut_oi": 6558825,
-      "breakeven": 237.94,
-      "max_loss_lot": 18460,
-      "need_move": 1.47,
-      "need_move_pct": 0.64,
-      "symbol": "CUB",
-      "side": "CE",
-      "contract": "CUB 23 Nov 230 CE",
-      "expiry": "2026-11-23",
-      "strike": 230.0,
-      "entry": 7.94,
-      "target": 8.73,
-      "stop": 7.54,
-      "lot": 2325,
-      "cost_per_lot": 18460,
-      "profit_per_lot": 1752,
-      "loss_per_lot": -1012,
-      "delta": 0.54,
-      "theta_lot": -755,
-      "iv": 43.9,
-      "oi": 669600,
-      "volume": 1414,
-      "spot": 230.74,
-      "price_chg": 3.08,
-      "oi_chg": 15.3,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b9221",
-      "affordable": true
-    },
-    {
-      "why": [
-        "Futures fell 1.37% while open interest grew 8.1%: new sellers are entering (short build-up).",
-        "AMBER closed at \u20b96,195.00 and below 20-day avg \u20b96,315, so the move is with the trend, not against it.",
-        "Strike 6300 is near the money (delta -0.52): it moves about \u20b90.52 for each \u20b91 in AMBER.",
-        "Liquid: 1,770 contracts traded, open interest 46,600 shares, so you can get in and out.",
-        "12 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 450.86,
-          "pct": 26.6,
-          "pnl_lot": 9326
-        },
-        {
-          "move": -2,
-          "price": 413.07,
-          "pct": 16.0,
-          "pnl_lot": 5554
-        },
-        {
-          "move": -1,
-          "price": 377.34,
-          "pct": 6.0,
-          "pnl_lot": 1989
-        },
-        {
-          "move": 0,
-          "price": 343.7,
-          "pct": -3.5,
-          "pnl_lot": -1369
-        },
-        {
-          "move": 1,
-          "price": 312.13,
-          "pct": -12.3,
-          "pnl_lot": -4520
-        },
-        {
-          "move": 2,
-          "price": 282.63,
-          "pct": -20.6,
-          "pnl_lot": -7465
-        },
-        {
-          "move": 3,
-          "price": 255.16,
-          "pct": -28.3,
-          "pnl_lot": -10206
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving down, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Falling at a steady pace, not overdone",
-            "tech": "RSI 44",
-            "value": 43.6
+            "tech": "RSI 53",
+            "value": 53.0
           },
           {
             "name": "Who's winning",
@@ -677,57 +334,313 @@
           {
             "name": "Last move",
             "ok": true,
-            "text": "In the last day, the price jumped but sellers pushed it back down",
-            "tech": "candle: shooting star",
-            "pattern": "shooting star (sellers stepped in)"
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to fall before \u20b95,855.5, where it bounced before (5.5% away)",
+            "text": "There's room to rise before \u20b94,613.0, where it stopped before (3.9% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 4,
         "verdict": "strong",
-        "rsi": 43.6,
-        "pattern": "shooting star (sellers stepped in)",
-        "resistance": 6756.0,
-        "support": 5855.5
+        "rsi": 53.0,
+        "pattern": "red candle",
+        "resistance": 4613.0,
+        "support": 4025.0
       },
-      "days": 12,
-      "gamma": 0.00052,
-      "vega_lot": 447,
-      "opt_oi_chg": 17200,
-      "opt_chg": 24.1,
-      "fut_oi": 977100,
-      "breakeven": 5943.9,
-      "max_loss_lot": 35610,
-      "need_move": 68.48,
-      "need_move_pct": 1.11,
-      "symbol": "AMBER",
-      "side": "PE",
-      "contract": "AMBER 23 Nov 6300 PE",
+      "days": 11,
+      "gamma": 0.00132,
+      "vega_lot": 482,
+      "opt_oi_chg": 18300,
+      "opt_chg": 269.5,
+      "fut_oi": 1224300,
+      "breakeven": 4769.15,
+      "max_loss_lot": 17872,
+      "need_move": 23.36,
+      "need_move_pct": 0.5,
+      "symbol": "RADICO",
+      "side": "CE",
+      "contract": "RADICO 23 Nov 4650 CE",
       "expiry": "2026-11-23",
-      "strike": 6300.0,
-      "entry": 356.1,
-      "target": 391.71,
-      "stop": 338.3,
-      "lot": 100,
-      "cost_per_lot": 35610,
-      "profit_per_lot": 3423,
-      "loss_per_lot": -1909,
-      "delta": -0.52,
-      "theta_lot": -1209,
-      "iv": 68.3,
-      "oi": 46600,
-      "volume": 1770,
-      "spot": 6195.0,
-      "price_chg": -1.37,
-      "oi_chg": 8.1,
-      "buildup": "Short build-up",
-      "trend": "below 20-day avg \u20b96,315",
+      "strike": 4650.0,
+      "entry": 119.15,
+      "target": 131.07,
+      "stop": 113.19,
+      "lot": 150,
+      "cost_per_lot": 17872,
+      "profit_per_lot": 1694,
+      "loss_per_lot": -981,
+      "delta": 0.51,
+      "theta_lot": -882,
+      "iv": 37.5,
+      "oi": 26250,
+      "volume": 803,
+      "spot": 4638.05,
+      "price_chg": 4.9,
+      "oi_chg": 8.2,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b94,345",
+      "affordable": true
+    },
+    {
+      "why": [
+        "Futures rose 5.23% while open interest grew 3.7%: new buyers are entering (long build-up).",
+        "MOTILALOFS closed at \u20b91,216.94 and above 20-day avg \u20b91,021, so the move is with the trend, not against it.",
+        "Strike 1220 is near the money (delta +0.51): it moves about \u20b90.51 for each \u20b91 in MOTILALOFS.",
+        "Liquid: 6,604 contracts traded, open interest 318,525 shares, so you can get in and out.",
+        "11 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 17.34,
+          "pct": -49.7,
+          "pnl_lot": -13383
+        },
+        {
+          "move": -2,
+          "price": 21.78,
+          "pct": -36.9,
+          "pnl_lot": -9953
+        },
+        {
+          "move": -1,
+          "price": 26.91,
+          "pct": -22.0,
+          "pnl_lot": -5983
+        },
+        {
+          "move": 0,
+          "price": 32.75,
+          "pct": -5.1,
+          "pnl_lot": -1463
+        },
+        {
+          "move": 1,
+          "price": 39.3,
+          "pct": 13.9,
+          "pnl_lot": 3604
+        },
+        {
+          "move": 2,
+          "price": 46.55,
+          "pct": 34.9,
+          "pnl_lot": 9207
+        },
+        {
+          "move": 3,
+          "price": 54.45,
+          "pct": 57.8,
+          "pnl_lot": 15322
+        }
+      ],
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 69",
+            "value": 68.8
+          },
+          {
+            "name": "Who's winning",
+            "ok": true,
+            "tech": "MACD",
+            "text": "Buyers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "It just went above \u20b91,153.9, a level where it kept stopping before. Often a good sign",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 5,
+        "verdict": "strong",
+        "rsi": 68.8,
+        "pattern": "red candle",
+        "resistance": 1153.95,
+        "support": 886.75
+      },
+      "days": 11,
+      "gamma": 0.00457,
+      "vega_lot": 653,
+      "opt_oi_chg": 161200,
+      "opt_chg": 127.7,
+      "fut_oi": 5249850,
+      "breakeven": 1254.5,
+      "max_loss_lot": 26738,
+      "need_move": 6.76,
+      "need_move_pct": 0.56,
+      "symbol": "MOTILALOFS",
+      "side": "CE",
+      "contract": "MOTILALOFS 23 Nov 1220 CE",
+      "expiry": "2026-11-23",
+      "strike": 1220.0,
+      "entry": 34.5,
+      "target": 37.95,
+      "stop": 32.77,
+      "lot": 775,
+      "cost_per_lot": 26738,
+      "profit_per_lot": 2558,
+      "loss_per_lot": -1445,
+      "delta": 0.51,
+      "theta_lot": -1308,
+      "iv": 41.3,
+      "oi": 318525,
+      "volume": 6604,
+      "spot": 1216.94,
+      "price_chg": 5.23,
+      "oi_chg": 3.7,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b91,021",
       "affordable": false
+    },
+    {
+      "why": [
+        "Futures rose 3.48% while open interest grew 6.4%: new buyers are entering (long build-up).",
+        "BAJFINANCE closed at \u20b91,114.34 and above 20-day avg \u20b9975, so the move is with the trend, not against it.",
+        "Strike 1120 is near the money (delta +0.48): it moves about \u20b90.48 for each \u20b91 in BAJFINANCE.",
+        "Liquid: 14,358 contracts traded, open interest 1,395,750 shares, so you can get in and out.",
+        "11 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 7.05,
+          "pct": -64.9,
+          "pnl_lot": -9852
+        },
+        {
+          "move": -2,
+          "price": 10.15,
+          "pct": -49.5,
+          "pnl_lot": -7532
+        },
+        {
+          "move": -1,
+          "price": 14.11,
+          "pct": -29.8,
+          "pnl_lot": -4565
+        },
+        {
+          "move": 0,
+          "price": 19.0,
+          "pct": -5.5,
+          "pnl_lot": -906
+        },
+        {
+          "move": 1,
+          "price": 24.84,
+          "pct": 23.6,
+          "pnl_lot": 3463
+        },
+        {
+          "move": 2,
+          "price": 31.6,
+          "pct": 57.2,
+          "pnl_lot": 8526
+        },
+        {
+          "move": 3,
+          "price": 39.23,
+          "pct": 95.2,
+          "pnl_lot": 14238
+        }
+      ],
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 68",
+            "value": 67.6
+          },
+          {
+            "name": "Who's winning",
+            "ok": true,
+            "tech": "MACD",
+            "text": "Buyers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": false,
+            "text": "It's close to \u20b91,088.0, where it stopped before (only 0.9% away), so little room to rise",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 4,
+        "verdict": "strong",
+        "rsi": 67.6,
+        "pattern": "red candle",
+        "resistance": 1088.0,
+        "support": 899.15
+      },
+      "days": 11,
+      "gamma": 0.00731,
+      "vega_lot": 578,
+      "opt_oi_chg": 987000,
+      "opt_chg": 157.7,
+      "fut_oi": 55440750,
+      "breakeven": 1140.1,
+      "max_loss_lot": 15075,
+      "need_move": 4.19,
+      "need_move_pct": 0.38,
+      "symbol": "BAJFINANCE",
+      "side": "CE",
+      "contract": "BAJFINANCE 23 Nov 1120 CE",
+      "expiry": "2026-11-23",
+      "strike": 1120.0,
+      "entry": 20.1,
+      "target": 22.11,
+      "stop": 19.09,
+      "lot": 750,
+      "cost_per_lot": 15075,
+      "profit_per_lot": 1422,
+      "loss_per_lot": -835,
+      "delta": 0.48,
+      "theta_lot": -811,
+      "iv": 28.2,
+      "oi": 1395750,
+      "volume": 14358,
+      "spot": 1114.34,
+      "price_chg": 3.48,
+      "oi_chg": 6.4,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b9975",
+      "affordable": true
     }
   ],
   "banned": [
@@ -962,7 +875,7 @@
           11367.0
         ]
       ],
-      "score": 4.41,
+      "score": 4.38,
       "health": 88,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b99,502",
@@ -1292,7 +1205,7 @@
           138.48
         ]
       ],
-      "score": 2.51,
+      "score": 2.48,
       "health": 92,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9118",
@@ -1620,7 +1533,7 @@
           202.19
         ]
       ],
-      "score": 2.16,
+      "score": 2.12,
       "health": 92,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9180",
@@ -1948,7 +1861,7 @@
           1571.6
         ]
       ],
-      "score": 2.11,
+      "score": 2.07,
       "health": 85,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b91,388",
@@ -2276,7 +2189,7 @@
           50490.0
         ]
       ],
-      "score": 2.03,
+      "score": 1.99,
       "health": 82,
       "extended": false,
       "zone": "Price is close to its usual level (\u20b947,092): a reasonable time to buy",
@@ -2607,7 +2520,7 @@
           1199.5
         ]
       ],
-      "score": 1.82,
+      "score": 1.78,
       "health": 82,
       "extended": false,
       "zone": "Price is close to its usual level (\u20b91,159): a reasonable time to buy",
@@ -2937,7 +2850,7 @@
           487.7
         ]
       ],
-      "score": 1.64,
+      "score": 1.61,
       "health": 78,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9433",
@@ -3266,7 +3179,7 @@
           11040.0
         ]
       ],
-      "score": 1.47,
+      "score": 1.43,
       "health": 88,
       "extended": false,
       "zone": "Price is close to its usual level (\u20b910,897): a reasonable time to buy",
@@ -3596,7 +3509,7 @@
           2109.0
         ]
       ],
-      "score": 1.35,
+      "score": 1.31,
       "health": 82,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b91,876",
@@ -3927,7 +3840,7 @@
           354.0
         ]
       ],
-      "score": 16.23,
+      "score": 16.25,
       "health": 92,
       "extended": true,
       "zone": "Price jumped 15% above its usual level recently: wait for it to come down near \u20b9309",
@@ -4255,7 +4168,7 @@
           4655.1
         ]
       ],
-      "score": 5.72,
+      "score": 5.7,
       "health": 78,
       "extended": true,
       "zone": "Price jumped 11% above its usual level recently: wait for it to come down near \u20b94,198",
@@ -4361,14 +4274,14 @@
       "name": "Aditya Infotech Ltd.",
       "index": "Mid/Small cap",
       "industry": "Capital Goods",
-      "price": 4224.9,
-      "ma50": 3860.1,
-      "ma200": 2887.75,
+      "price": 4212.8,
+      "ma50": 3871.76,
+      "ma200": 2901.88,
       "high52": 4440.3,
       "low52": 1321.5,
-      "from_high": -4.9,
+      "from_high": -5.1,
       "ret6m": 67.9,
-      "ret12m": 218.9,
+      "ret12m": 218.8,
       "cagr3": null,
       "cagr5": null,
       "dd1y": -20.4,
@@ -4377,217 +4290,217 @@
       "spark": [
         [
           "Oct 25",
-          1372.88
+          1379.37
         ],
         [
           "Nov 25",
-          1321.5
+          1403.26
         ],
         [
           "Nov 25",
-          1494.92
+          1644.35
         ],
         [
           "Nov 25",
-          1721.12
+          1676.64
         ],
         [
           "Nov 25",
-          1585.68
+          1569.29
         ],
         [
           "Dec 25",
-          1532.4
+          1514.91
         ],
         [
           "Dec 25",
-          1472.53
+          1535.0
         ],
         [
           "Dec 25",
-          1520.11
+          1525.61
         ],
         [
           "Dec 25",
-          1530.61
+          1502.12
         ],
         [
           "Jan 26",
-          1521.31
+          1500.72
         ],
         [
           "Jan 26",
-          1370.48
+          1404.66
         ],
         [
           "Jan 26",
-          1400.56
+          1385.97
         ],
         [
           "Jan 26",
-          1429.75
-        ],
-        [
-          "Jan 26",
-          1381.37
+          1394.37
         ],
         [
           "Feb 26",
-          1488.02
+          1453.64
         ],
         [
           "Feb 26",
-          1572.59
+          1524.91
         ],
         [
           "Feb 26",
-          1499.22
+          1569.89
         ],
         [
           "Feb 26",
-          1688.23
+          1504.22
         ],
         [
           "Mar 26",
-          1639.86
+          1741.71
         ],
         [
           "Mar 26",
-          1587.48
+          1643.15
         ],
         [
           "Mar 26",
-          1641.45
+          1610.77
+        ],
+        [
+          "Mar 26",
+          1672.64
         ],
         [
           "Apr 26",
-          1789.49
+          1798.78
         ],
         [
           "Apr 26",
-          1902.94
+          1893.54
         ],
         [
           "Apr 26",
-          2263.27
+          2272.77
         ],
         [
           "Apr 26",
-          2272.17
+          2344.14
         ],
         [
           "May 26",
-          2394.71
+          2459.48
         ],
         [
           "May 26",
-          2516.56
+          2508.66
         ],
         [
           "May 26",
-          2416.0
+          2374.02
         ],
         [
           "May 26",
-          2554.94
+          2647.5
         ],
         [
           "Jun 26",
-          3212.24
+          3367.67
         ],
         [
           "Jun 26",
-          3480.62
+          3435.44
         ],
         [
           "Jun 26",
-          3375.37
+          3346.68
         ],
         [
           "Jun 26",
-          3559.68
+          3615.96
         ],
         [
           "Jul 26",
-          3570.68
+          3478.72
         ],
         [
           "Jul 26",
-          3552.99
+          3642.55
         ],
         [
           "Jul 26",
-          3717.61
+          3798.28
         ],
         [
           "Jul 26",
-          3446.3
+          3612.6
         ],
         [
           "Jul 26",
-          3425.0
+          3259.8
         ],
         [
           "Aug 26",
-          3554.7
+          3656.2
         ],
         [
           "Aug 26",
-          3899.1
+          3704.2
         ],
         [
           "Aug 26",
-          3303.5
+          3468.6
         ],
         [
           "Aug 26",
-          3530.3
+          3629.7
         ],
         [
           "Sep 26",
-          3721.4
+          3751.3
         ],
         [
           "Sep 26",
-          3746.1
+          3829.1
         ],
         [
           "Sep 26",
-          3378.4
+          3355.1
         ],
         [
           "Sep 26",
-          3800.1
+          3687.5
         ],
         [
           "Oct 26",
-          3799.6
+          3989.5
         ],
         [
           "Oct 26",
-          4185.2
+          4134.1
         ],
         [
           "Oct 26",
-          4063.6
+          4010.0
         ],
         [
           "Oct 26",
-          3867.4
+          3968.2
         ],
         [
           "Nov 26",
-          3849.3
+          3881.1
         ],
         [
           "Nov 26",
-          4224.9
+          4212.8
         ]
       ],
-      "score": 5.48,
+      "score": 5.46,
       "health": 88,
       "extended": true,
-      "zone": "Price jumped 9% above its usual level recently: wait for it to come down near \u20b93,860",
+      "zone": "Price jumped 9% above its usual level recently: wait for it to come down near \u20b93,872",
       "fund": {
         "health": 88,
         "grade": "Strong",
@@ -4654,7 +4567,7 @@
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
             "tech": "RSI 61",
-            "value": 61.2
+            "value": 60.6
           },
           {
             "name": "Who's winning",
@@ -4664,27 +4577,27 @@
           },
           {
             "name": "Last move",
-            "ok": false,
-            "text": "In the last day, buyers and sellers were evenly matched, no clear winner",
-            "tech": "candle: doji",
-            "pattern": "doji (indecision)"
+            "ok": true,
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b94,620.0, where it stopped before (9.4% away)",
+            "text": "There's room to rise before \u20b94,620.0, where it stopped before (9.7% away)",
             "tech": "support/resistance"
           }
         ],
-        "passed": 4,
+        "passed": 5,
         "verdict": "strong",
-        "rsi": 61.2,
-        "pattern": "doji (indecision)",
+        "rsi": 60.6,
+        "pattern": "red candle",
         "resistance": 4620.0,
         "support": 3619.3
       },
       "alloc_shares": 4,
-      "alloc_amount": 16900
+      "alloc_amount": 16851
     },
     {
       "symbol": "RUBICON",
@@ -4914,7 +4827,7 @@
           1723.3
         ]
       ],
-      "score": 5.1,
+      "score": 5.08,
       "health": 85,
       "extended": false,
       "zone": "Price is close to its usual level (\u20b91,656): a reasonable time to buy",
@@ -5231,7 +5144,7 @@
           2429.0
         ]
       ],
-      "score": 4.97,
+      "score": 4.95,
       "health": 70,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b92,054",
@@ -5562,7 +5475,7 @@
           1918.6
         ]
       ],
-      "score": 4.24,
+      "score": 4.21,
       "health": 82,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b91,547",
@@ -5673,5 +5586,6 @@
     "cagr5": 7.3,
     "dd5y": -16.5
   },
-  "lt_budget": 100000
+  "lt_budget": 100000,
+  "notified": true
 }
