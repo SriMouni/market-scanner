@@ -9,19 +9,6 @@
   "cash_open": [
     {
       "time": "2026-11-12T09:48:04+05:30",
-      "symbol": "ICICIGI",
-      "action": "BUY",
-      "qty": 11,
-      "entry": 1713.8,
-      "invest": 18852,
-      "target": 1739.51,
-      "stop": 1700.95,
-      "profit": 231,
-      "loss": -192,
-      "last": 1701.3
-    },
-    {
-      "time": "2026-11-12T09:48:04+05:30",
       "symbol": "IDFCFIRSTB",
       "action": "BUY",
       "qty": 244,
@@ -31,7 +18,7 @@
       "stop": 81.26,
       "profit": 246,
       "loss": -203,
-      "last": 81.32
+      "last": 81.34
     },
     {
       "time": "2026-11-12T09:48:04+05:30",
@@ -44,7 +31,7 @@
       "stop": 3433.45,
       "profit": 212,
       "loss": -177,
-      "last": 3451.1
+      "last": 3452.7
     }
   ],
   "cash_taken": [],
