@@ -29,12 +29,18 @@ def _mac(title, body):
 
 
 def _telegram(text):
-    tok, chat = env("TELEGRAM_BOT_TOKEN"), env("TELEGRAM_CHAT_ID")
-    if not (tok and chat):
+    """TELEGRAM_CHAT_ID may list several chats, comma-separated: your own chat id, a channel
+    (@channelname or -100...), a group. Each gets the message; one failing doesn't stop the rest."""
+    tok, chats = env("TELEGRAM_BOT_TOKEN"), [c.strip() for c in (env("TELEGRAM_CHAT_ID") or "").split(",") if c.strip()]
+    if not (tok and chats):
         return "telegram not configured"
-    r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
-                      data={"chat_id": chat, "text": text}, timeout=20)
-    return None if r.ok else f"telegram {r.status_code}: {r.text[:150]}"
+    errs = []
+    for chat in chats:
+        r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
+                          data={"chat_id": chat, "text": text, "disable_web_page_preview": "true"}, timeout=20)
+        if not r.ok:
+            errs.append(f"{chat[:6]}…: {r.status_code} {r.text[:120]}")
+    return "; ".join(errs) or None
 
 
 def _whatsapp(text):
