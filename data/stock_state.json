@@ -1,8 +1,86 @@
 {
   "day": "2026-11-12",
-  "open": [],
-  "taken": [],
-  "cash_open": [],
+  "open": [
+    {
+      "time": "2026-11-12T09:48:04+05:30",
+      "symbol": "ICICIGI",
+      "side": "CE",
+      "contract": "ICICIGI 23 Nov 1720 CE",
+      "expiry": "2026-11-23",
+      "strike": 1720.0,
+      "iv": 23.9,
+      "lot": 325,
+      "spot": 1713.8,
+      "entry": 27.64,
+      "last_est": 27.37,
+      "last_spot": 1713.8,
+      "target": 30.11,
+      "stop": 26.0
+    },
+    {
+      "time": "2026-11-12T09:48:04+05:30",
+      "symbol": "IDFCFIRSTB",
+      "side": "CE",
+      "contract": "IDFCFIRSTB 23 Nov 82 CE",
+      "expiry": "2026-11-23",
+      "strike": 82.0,
+      "iv": 31.4,
+      "lot": 9275,
+      "spot": 81.87,
+      "entry": 1.83,
+      "last_est": 1.81,
+      "last_spot": 81.87,
+      "target": 1.99,
+      "stop": 1.72
+    }
+  ],
+  "taken": [
+    "ICICIGI",
+    "IDFCFIRSTB",
+    "KAYNES"
+  ],
+  "cash_open": [
+    {
+      "time": "2026-11-12T09:48:04+05:30",
+      "symbol": "ICICIGI",
+      "action": "BUY",
+      "qty": 11,
+      "entry": 1713.8,
+      "invest": 18852,
+      "target": 1739.51,
+      "stop": 1700.95,
+      "profit": 231,
+      "loss": -192
+    },
+    {
+      "time": "2026-11-12T09:48:04+05:30",
+      "symbol": "IDFCFIRSTB",
+      "action": "BUY",
+      "qty": 244,
+      "entry": 81.87,
+      "invest": 19976,
+      "target": 83.1,
+      "stop": 81.26,
+      "profit": 246,
+      "loss": -203
+    },
+    {
+      "time": "2026-11-12T09:48:04+05:30",
+      "symbol": "KAYNES",
+      "action": "BUY",
+      "qty": 5,
+      "entry": 3459.4,
+      "invest": 17297,
+      "target": 3511.29,
+      "stop": 3433.45,
+      "profit": 212,
+      "loss": -177
+    }
+  ],
   "cash_taken": [],
-  "alerted": []
+  "alerted": [
+    "LODHA",
+    "IDEA",
+    "ADANIENSOL"
+  ]
 }

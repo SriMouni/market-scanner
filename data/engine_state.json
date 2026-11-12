@@ -5,17 +5,17 @@
   "trades_today": 0,
   "losses_today": 0,
   "breakouts": [],
-  "last_bar": "2026-11-12T09:35:00+05:30",
+  "last_bar": "2026-11-12T09:40:00+05:30",
   "rejects_today": 0,
   "status": {
     "or_high": 25341.6,
     "or_low": 25145.0,
-    "close": 25348.3,
-    "bar": "09:35",
-    "status": "NIFTY 25,348 is above the opening range 25,145\u201325,342"
+    "close": 25346.8,
+    "bar": "09:40",
+    "status": "NIFTY 25,347 is above the opening range 25,145\u201325,342"
   },
   "heartbeat": "2026-11-11T11:39:23+05:30",
-  "heartbeat_exit": "2026-11-12T09:42:59+05:30",
-  "heartbeat_signal": "2026-11-12T09:42:10+05:30",
+  "heartbeat_exit": "2026-11-12T09:48:09+05:30",
+  "heartbeat_signal": "2026-11-12T09:48:10+05:30",
   "brief_day": "2026-11-12"
 }
