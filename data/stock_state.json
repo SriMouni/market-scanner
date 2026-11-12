@@ -12,10 +12,11 @@
       "lot": 325,
       "spot": 1713.8,
       "entry": 27.64,
-      "last_est": 27.37,
-      "last_spot": 1713.8,
+      "last_est": 28.05,
+      "last_spot": 1715.8,
       "target": 30.11,
-      "stop": 26.0
+      "stop": 26.0,
+      "last_check": "2026-11-12T09:53:18+05:30"
     },
     {
       "time": "2026-11-12T09:48:04+05:30",
@@ -28,10 +29,11 @@
       "lot": 9275,
       "spot": 81.87,
       "entry": 1.83,
-      "last_est": 1.81,
-      "last_spot": 81.87,
+      "last_est": 1.86,
+      "last_spot": 81.99,
       "target": 1.99,
-      "stop": 1.72
+      "stop": 1.72,
+      "last_check": "2026-11-12T09:53:18+05:30"
     }
   ],
   "taken": [
@@ -50,7 +52,8 @@
       "target": 1739.51,
       "stop": 1700.95,
       "profit": 231,
-      "loss": -192
+      "loss": -192,
+      "last": 1715.8
     },
     {
       "time": "2026-11-12T09:48:04+05:30",
@@ -62,7 +65,8 @@
       "target": 83.1,
       "stop": 81.26,
       "profit": 246,
-      "loss": -203
+      "loss": -203,
+      "last": 81.99
     },
     {
       "time": "2026-11-12T09:48:04+05:30",
@@ -74,13 +78,17 @@
       "target": 3511.29,
       "stop": 3433.45,
       "profit": 212,
-      "loss": -177
+      "loss": -177,
+      "last": 3471.1
     }
   ],
   "cash_taken": [],
   "alerted": [
     "LODHA",
     "IDEA",
-    "ADANIENSOL"
+    "ADANIENSOL",
+    "MFSL",
+    "PHOENIXLTD",
+    "AUBANK"
   ]
 }
