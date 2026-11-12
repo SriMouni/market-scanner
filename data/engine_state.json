@@ -5,13 +5,13 @@
   "trades_today": 0,
   "losses_today": 0,
   "breakouts": [],
-  "last_bar": "2026-11-12T09:20:00+05:30",
+  "last_bar": "2026-11-12T09:25:00+05:30",
   "rejects_today": 0,
   "status": {
-    "status": "building opening range (2/3 bars)"
+    "status": "building opening range (3/3 bars)"
   },
   "heartbeat": "2026-11-11T11:39:23+05:30",
-  "heartbeat_exit": "2026-11-12T09:27:19+05:30",
-  "heartbeat_signal": "2026-11-12T09:27:10+05:30",
+  "heartbeat_exit": "2026-11-12T09:32:29+05:30",
+  "heartbeat_signal": "2026-11-12T09:32:10+05:30",
   "brief_day": "2026-11-11"
 }
