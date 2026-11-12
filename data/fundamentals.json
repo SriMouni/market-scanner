@@ -1654,5 +1654,75 @@
     ],
     "revenue_cagr": 16.048588113713592,
     "fetched": 1794382758.8701863
+  },
+  "BHARTIARTL": {
+    "trailingPE": 41.179367,
+    "priceToBook": 8.252577,
+    "returnOnEquity": 0.21389,
+    "returnOnAssets": 0.08573,
+    "debtToEquity": 100.02,
+    "profitMargins": 0.13555,
+    "operatingMargins": 0.32741,
+    "revenueGrowth": 0.167,
+    "earningsGrowth": 0.26,
+    "heldPercentInsiders": 0.53145003,
+    "dividendYield": 1.16,
+    "marketCap": 13055703384064,
+    "profit_cagr": 47.33977446458364,
+    "profit_history": [
+      [
+        "2026-03-31",
+        266952000000.0
+      ],
+      [
+        "2025-03-31",
+        335561000000.0
+      ],
+      [
+        "2024-03-31",
+        74670000000.0
+      ],
+      [
+        "2023-03-31",
+        83459000000.0
+      ]
+    ],
+    "revenue_cagr": 14.882310633383145,
+    "fetched": 1794455598.1182299
+  },
+  "INDIGO": {
+    "trailingPE": null,
+    "priceToBook": 43.91339,
+    "returnOnEquity": -0.6012,
+    "returnOnAssets": 0.03215,
+    "debtToEquity": 1738.69,
+    "profitMargins": -0.043709997,
+    "operatingMargins": 0.07575,
+    "revenueGrowth": 0.259,
+    "earningsGrowth": null,
+    "heldPercentInsiders": 0.4157,
+    "dividendYield": 0.0,
+    "marketCap": 2193410621440,
+    "profit_cagr": null,
+    "profit_history": [
+      [
+        "2026-03-31",
+        -23919000000.0
+      ],
+      [
+        "2025-03-31",
+        72584000000.0
+      ],
+      [
+        "2024-03-31",
+        81725000000.0
+      ],
+      [
+        "2023-03-31",
+        -3057890000.0
+      ]
+    ],
+    "revenue_cagr": 15.551373629828657,
+    "fetched": 1794455598.4813497
   }
 }
