@@ -1,3 +1,5 @@
 entry_time,exit_time,contract,side,spot_in,spot_out,entry_est,exit_est,lot,result,pct,net_pnl,basis
 2026-11-11T10:46:23+05:30,2026-11-11T11:16:48+05:30,BANKBARODA 23 Nov 272.5 CE,CE,271.08,272.21,5.15,5.72,2925,TARGET,11.07,1581.15,
 2026-11-11T10:46:23+05:30,2026-11-11T11:29:43+05:30,FEDERALBNK 23 Nov 355 CE,CE,356.2,357.3,7.28,6.92,2500,STOP,-4.95,-988.61,model estimate (no live option quotes)
+2026-11-12T09:48:04+05:30,2026-11-12T10:03:18+05:30,ICICIGI 23 Nov 1720 CE,CE,1713.8,1720.1,27.64,30.11,325,TARGET,8.94,732.71,model estimate (no live option quotes)
+2026-11-12T09:48:04+05:30,2026-11-12T10:03:18+05:30,IDFCFIRSTB 23 Nov 82 CE,CE,81.87,81.86,1.83,1.72,9275,STOP,-6.01,-1105.73,model estimate (no live option quotes)

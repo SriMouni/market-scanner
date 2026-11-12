@@ -1,41 +1,6 @@
 {
   "day": "2026-11-12",
-  "open": [
-    {
-      "time": "2026-11-12T09:48:04+05:30",
-      "symbol": "ICICIGI",
-      "side": "CE",
-      "contract": "ICICIGI 23 Nov 1720 CE",
-      "expiry": "2026-11-23",
-      "strike": 1720.0,
-      "iv": 23.9,
-      "lot": 325,
-      "spot": 1713.8,
-      "entry": 27.64,
-      "last_est": 28.05,
-      "last_spot": 1715.8,
-      "target": 30.11,
-      "stop": 26.0,
-      "last_check": "2026-11-12T09:53:18+05:30"
-    },
-    {
-      "time": "2026-11-12T09:48:04+05:30",
-      "symbol": "IDFCFIRSTB",
-      "side": "CE",
-      "contract": "IDFCFIRSTB 23 Nov 82 CE",
-      "expiry": "2026-11-23",
-      "strike": 82.0,
-      "iv": 31.4,
-      "lot": 9275,
-      "spot": 81.87,
-      "entry": 1.83,
-      "last_est": 1.86,
-      "last_spot": 81.99,
-      "target": 1.99,
-      "stop": 1.72,
-      "last_check": "2026-11-12T09:53:18+05:30"
-    }
-  ],
+  "open": [],
   "taken": [
     "ICICIGI",
     "IDFCFIRSTB",
@@ -53,7 +18,7 @@
       "stop": 1700.95,
       "profit": 231,
       "loss": -192,
-      "last": 1715.8
+      "last": 1720.1
     },
     {
       "time": "2026-11-12T09:48:04+05:30",
@@ -66,7 +31,7 @@
       "stop": 81.26,
       "profit": 246,
       "loss": -203,
-      "last": 81.99
+      "last": 81.86
     },
     {
       "time": "2026-11-12T09:48:04+05:30",
@@ -79,7 +44,7 @@
       "stop": 3433.45,
       "profit": 212,
       "loss": -177,
-      "last": 3471.1
+      "last": 3489.8
     }
   ],
   "cash_taken": [],
