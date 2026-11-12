@@ -1,23 +1,17 @@
 {
-  "day": "2026-11-11",
+  "day": "2026-11-12",
   "position": null,
   "pending": null,
   "trades_today": 0,
   "losses_today": 0,
-  "breakouts": [
-    "PE"
-  ],
-  "last_bar": "2026-11-11T15:25:00+05:30",
+  "breakouts": [],
+  "last_bar": "2026-11-12T09:20:00+05:30",
   "rejects_today": 0,
   "status": {
-    "or_high": 25398.95,
-    "or_low": 25266.65,
-    "close": 25255.05,
-    "bar": "15:25",
-    "status": "NIFTY 25,255 is below the opening range 25,267\u201325,399"
+    "status": "building opening range (2/3 bars)"
   },
   "heartbeat": "2026-11-11T11:39:23+05:30",
-  "heartbeat_exit": "2026-11-11T15:31:56+05:30",
-  "heartbeat_signal": "2026-11-11T15:31:27+05:30",
+  "heartbeat_exit": "2026-11-12T09:27:19+05:30",
+  "heartbeat_signal": "2026-11-12T09:27:10+05:30",
   "brief_day": "2026-11-11"
 }

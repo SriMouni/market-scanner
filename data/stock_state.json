@@ -1,11 +1,7 @@
 {
-  "day": "2026-11-11",
+  "day": "2026-11-12",
   "open": [],
-  "taken": [
-    "BANKBARODA",
-    "FEDERALBNK",
-    "TRENT"
-  ],
+  "taken": [],
   "cash_open": [],
   "cash_taken": [],
   "alerted": []
