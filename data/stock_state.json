@@ -9,19 +9,6 @@
   "cash_open": [
     {
       "time": "2026-11-12T09:48:04+05:30",
-      "symbol": "IDFCFIRSTB",
-      "action": "BUY",
-      "qty": 244,
-      "entry": 81.87,
-      "invest": 19976,
-      "target": 83.1,
-      "stop": 81.26,
-      "profit": 246,
-      "loss": -203,
-      "last": 81.35
-    },
-    {
-      "time": "2026-11-12T09:48:04+05:30",
       "symbol": "KAYNES",
       "action": "BUY",
       "qty": 5,
