@@ -1724,5 +1724,110 @@
     ],
     "revenue_cagr": 15.551373629828657,
     "fetched": 1794455598.4813497
+  },
+  "DLF": {
+    "trailingPE": 41.14696,
+    "priceToBook": 4.125614,
+    "returnOnEquity": 0.10311,
+    "returnOnAssets": 0.00708,
+    "debtToEquity": 0.69,
+    "profitMargins": 0.71639997,
+    "operatingMargins": 0.13071,
+    "revenueGrowth": -0.233,
+    "earningsGrowth": 0.101,
+    "heldPercentInsiders": 0.74142,
+    "dividendYield": 1.04,
+    "marketCap": 1878142746624,
+    "profit_cagr": 29.435304705700325,
+    "profit_history": [
+      [
+        "2026-03-31",
+        44146750000.0
+      ],
+      [
+        "2025-03-31",
+        43676215000.0
+      ],
+      [
+        "2024-03-31",
+        27271051000.0
+      ],
+      [
+        "2023-03-31",
+        20358252000.0
+      ]
+    ],
+    "revenue_cagr": 11.317235861499086,
+    "fetched": 1794602181.3043969
+  },
+  "SOLARINDS": {
+    "trailingPE": 77.3118,
+    "priceToBook": 22.80368,
+    "returnOnEquity": 0.35127,
+    "returnOnAssets": 0.18451999,
+    "debtToEquity": 22.384,
+    "profitMargins": 0.177,
+    "operatingMargins": 0.25601,
+    "revenueGrowth": 0.69,
+    "earningsGrowth": 0.789,
+    "heldPercentInsiders": 0.43919,
+    "dividendYield": 0.06,
+    "marketCap": 1749896658944,
+    "profit_cagr": 30.363756943282528,
+    "profit_history": [
+      [
+        "2026-03-31",
+        16775500000.0
+      ],
+      [
+        "2025-03-31",
+        12094400000.0
+      ],
+      [
+        "2024-03-31",
+        8359300000.0
+      ],
+      [
+        "2023-03-31",
+        7571900000.0
+      ]
+    ],
+    "revenue_cagr": 12.394672796181293,
+    "fetched": 1794602181.5161328
+  },
+  "KALYANKJIL": {
+    "trailingPE": 44.996773,
+    "priceToBook": 10.832064,
+    "returnOnEquity": 0.26738,
+    "returnOnAssets": 0.07637,
+    "debtToEquity": 92.305,
+    "profitMargins": 0.03853,
+    "operatingMargins": 0.05685,
+    "revenueGrowth": 0.324,
+    "earningsGrowth": 0.639,
+    "heldPercentInsiders": 0.62855,
+    "dividendYield": 0.35,
+    "marketCap": 719827435520,
+    "profit_cagr": 46.090690322040516,
+    "profit_history": [
+      [
+        "2026-03-31",
+        13503950000.0
+      ],
+      [
+        "2025-03-31",
+        7148000000.0
+      ],
+      [
+        "2024-03-31",
+        5973460000.0
+      ],
+      [
+        "2023-03-31",
+        4331050000.0
+      ]
+    ],
+    "revenue_cagr": 36.43100720906234,
+    "fetched": 1794602181.7185278
   }
 }
