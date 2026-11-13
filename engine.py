@@ -39,7 +39,7 @@ VERIFIED = ("TARGET", "STOP", "TIME")  # exits priced from a validated NSE bid
 TRADE_FIELDS = ["trade_id", "signal_time", "fill_time", "exit_time", "side", "strike", "expiry", "days_to_expiry",
                 "signal_ask", "entry", "exit", "target", "stop", "result", "exit_basis", "gross_pnl", "charges",
                 "net_pnl", "pct", "slippage", "mfe_pct", "mae_pct", "entry_delta", "entry_theta_lot", "entry_iv",
-                "spot_at_signal", "or_high", "or_low", "hour", "rule"]
+                "spot_at_signal", "or_high", "or_low", "hour", "rule", "strategy"]
 
 
 # ----------------------------------------------------------------- durability
@@ -91,6 +91,13 @@ def write_trade(row):
     """Append a result row once per trade_id (idempotent: safe to repeat after a crash)."""
     if row["trade_id"] in trade_ids():
         return False
+    if TRADES.exists():  # widen an old header (new columns) instead of misaligning rows
+        with TRADES.open() as f:
+            head = next(csv.reader(f), [])
+        if head and head != TRADE_FIELDS:
+            with TRADES.open() as f:
+                old = list(csv.DictReader(f))
+            rewrite_trades(old)
     new = not TRADES.exists()
     with TRADES.open("a", newline="") as f:
         w = csv.DictWriter(f, fieldnames=TRADE_FIELDS, extrasaction="ignore")
@@ -218,6 +225,61 @@ def orb_signal(bars, st):
     return None, {**info, "status": f"NIFTY {close:,.0f} is {where} the opening range {lo:,.0f}–{hi:,.0f}"}
 
 
+SETUP_NAMES = {"ORB": "Opening-range breakout", "PULL": "Trend pullback", "FADE": "Failed breakout",
+               "SR": "Support/resistance bounce"}
+SETUP_MAX = {"ORB": 1, "PULL": 2, "FADE": 1, "SR": 1}  # per side per day
+
+
+def setups(bars, st):
+    """Every NIFTY setup on the last completed 5-min bar. First match wins (one trade at a time).
+    Returns (side, code, info, why) or (None, None, info, None)."""
+    side, info = orb_signal(bars, st)
+    if not isinstance(info, dict):
+        return None, None, info, None
+    fired = st.setdefault("fired", {})
+    ok = lambda code, sd: fired.get(f"{code}:{sd}", 0) < SETUP_MAX[code]
+    hi, lo, close = info["or_high"], info["or_low"], info["close"]
+    if side and ok("ORB", side):
+        return side, "ORB", info, (f"NIFTY closed {'above' if side == 'CE' else 'below'} today's opening range "
+                                   f"{lo:,.0f}–{hi:,.0f}")
+    n_or = E["or_minutes"] // 5
+    last, prev = bars.iloc[-1], bars.iloc[-2]
+    o, h, l, cl = (float(last[k]) for k in ("Open", "High", "Low", "Close"))
+    ph, pl = float(prev["High"]), float(prev["Low"])
+    # 1) trend pullback: 9-EMA vs 21-EMA trend, previous bar dipped to the 9-EMA, this bar resumes
+    if len(bars) >= 9:
+        c = bars["Close"].astype(float)
+        e9, e21 = c.ewm(span=9, adjust=False).mean(), c.ewm(span=21, adjust=False).mean()
+        if e9.iloc[-1] > e21.iloc[-1] and cl > e21.iloc[-1] and pl <= e9.iloc[-2] and cl > o and cl > ph and ok("PULL", "CE"):
+            return "CE", "PULL", info, (f"NIFTY is trending up (9-EMA {e9.iloc[-1]:,.0f} above 21-EMA {e21.iloc[-1]:,.0f}); "
+                                        f"it dipped to the 9-EMA and the last candle closed above the previous high {ph:,.0f}")
+        if e9.iloc[-1] < e21.iloc[-1] and cl < e21.iloc[-1] and ph >= e9.iloc[-2] and cl < o and cl < pl and ok("PULL", "PE"):
+            return "PE", "PULL", info, (f"NIFTY is trending down (9-EMA {e9.iloc[-1]:,.0f} below 21-EMA {e21.iloc[-1]:,.0f}); "
+                                        f"it bounced to the 9-EMA and the last candle closed below the previous low {pl:,.0f}")
+    # 2) failed breakout: closed outside the range earlier, now back well inside -> the other way
+    if len(bars) >= n_or + 2:
+        earlier = bars.iloc[n_or:-1]["Close"].astype(float)
+        buf, width = E["breakout_buffer_pct"] / 100, hi - lo
+        if (earlier > hi * (1 + buf)).any() and cl < hi - 0.3 * width and cl > lo and cl < o and ok("FADE", "PE"):
+            return "PE", "FADE", info, (f"NIFTY broke above the opening range ({hi:,.0f}) but fell back inside to {cl:,.0f}: "
+                                        "the breakout failed, buyers gave up")
+        if (earlier < lo * (1 - buf)).any() and cl > lo + 0.3 * width and cl < hi and cl > o and ok("FADE", "CE"):
+            return "CE", "FADE", info, (f"NIFTY broke below the opening range ({lo:,.0f}) but climbed back inside to {cl:,.0f}: "
+                                        "the breakdown failed, sellers gave up")
+    # 3) bounce off the biggest option-OI walls (support = put wall, resistance = call wall)
+    sc = read_json(DATA / "state.json", {}).get("last_scan") or {}
+    if (sc.get("time") or "").startswith(now_ist().date().isoformat()) and h > l:
+        sup, res = sc.get("support"), sc.get("resistance")
+        strong_up, strong_dn = (cl - l) / (h - l) > 0.6, (h - cl) / (h - l) > 0.6
+        if sup and l <= sup * 1.0015 and cl > sup and cl > o and strong_up and ok("SR", "CE"):
+            return "CE", "SR", info, (f"NIFTY touched {l:,.0f}, near the biggest put-OI level {sup:,.0f} (support), "
+                                      "and bounced with a strong candle")
+        if res and h >= res * 0.9985 and cl < res and cl < o and strong_dn and ok("SR", "PE"):
+            return "PE", "SR", info, (f"NIFTY touched {h:,.0f}, near the biggest call-OI level {res:,.0f} (resistance), "
+                                      "and was pushed back down")
+    return None, None, info, None
+
+
 def pick_contract(chain, expiry, side, spot):
     """Liquid contract by delta rule. Returns (chosen, candidates) - candidates are logged for comparison."""
     exp_dt = datetime.strptime(expiry, "%d-%b-%Y").replace(hour=15, minute=30, tzinfo=IST)
@@ -286,13 +348,14 @@ def finish_closing(st):
         event("exit", trade_id=p["trade_id"], result=c["result"], price=c["price"], basis=c["basis"],
               net=round(net, 2), **c["extra"])
     st["position"] = None
+    st["last_exit"] = c["time"]
     if c["result"] in VERIFIED and net < 0:
         st["losses_today"] += 1
     save(st)
     if first:
         emoji = {"TARGET": "✅", "STOP": "❌", "TIME": "⏱"}.get(c["result"], "⚠️")
         note = "" if c["result"] in VERIFIED else " Not counted in results until checked against a real quote."
-        notify(f"{emoji} NIFTY EXIT {c['result']}: {p['strike']} {p['side']}",
+        notify(f"{emoji} NIFTY EXIT {c['result']}: {p['strike']} {p['side']} ({p.get('strategy') or 'ORB'})",
                f"Sell at ₹{c['price']:.2f} (bought ₹{p['entry']:.2f}). Net after charges ₹{net:+,.0f}. {c['basis']}.{note}",
                level="signal")
 
@@ -306,8 +369,8 @@ def new_day(st, today):
         close_position(st, p.get("last_bid") or p["entry"], "MISSED", "last valid bid (left open overnight)")
     if st.get("pending") and not ledger_has("unfilled", st["pending"]["trade_id"]):
         event("unfilled", trade_id=st["pending"]["trade_id"], reason="day ended")
-    st.update(day=today, position=None, pending=None, trades_today=0, losses_today=0, breakouts=[],
-              last_bar=None, rejects_today=0, status=None)
+    st.update(day=today, position=None, pending=None, trades_today=0, losses_today=0, breakouts=[], fired={},
+              last_bar=None, rejects_today=0, status=None, last_exit=None, summary_day=st.get("summary_day"))
 
 
 def fetch_quote(nse, item):
@@ -350,8 +413,8 @@ def apply_quote(st, q, bad):
             notify(f"{'📈' if p['side'] == 'CE' else '📉'} NIFTY BUY filled: {p['strike']} {p['side']} [{CONFIG['mode'].upper()}]",
                    f"Bought at ₹{fill:.2f} × {p['lots'] * LOT} ({p['expiry']}). Sell at ₹{p['target']:.2f} (+{CONFIG['target_pct']}%) "
                    f"or stop ₹{p['stop']:.2f} (-{CONFIG['stop_pct']}%), exit by {E['exit_by']}. "
-                   f"Why: NIFTY closed {'above' if p['side'] == 'CE' else 'below'} its opening range "
-                   f"{p['or_low']:,.0f}–{p['or_high']:,.0f}.", level="signal")
+                   f"Why: {p.get('why') or 'NIFTY broke its opening range ' + format(p['or_low'], ',.0f') + '–' + format(p['or_high'], ',.0f')}.",
+                   level="signal")
         return
 
     p = st.get("position")
@@ -445,11 +508,16 @@ def look_for_signal(nse, st, bars=None, prefetched=None):
         if bar == st.get("last_bar"):
             return  # judge each completed bar once
         st["last_bar"] = bar
-    side, info = orb_signal(bars, st)
+    side, code, info, why = setups(bars, st)
     st["status"] = info if isinstance(info, dict) else {"status": info}
     if not side:
         return
-    st["breakouts"].append(side)  # a direction triggers once a day, traded or not
+    if st.get("last_exit") and (now - datetime.fromisoformat(st["last_exit"])).total_seconds() < E.get("cooldown_min", 10) * 60:
+        st["status"] = {**info, "status": f"{SETUP_NAMES[code]} {side} seen, but pausing {E.get('cooldown_min', 10)} min after the last exit"}
+        return  # not counted as fired: it may still qualify after the pause
+    st.setdefault("fired", {})[f"{code}:{side}"] = st["fired"].get(f"{code}:{side}", 0) + 1
+    if code == "ORB":
+        st["breakouts"].append(side)  # each setup/direction triggers a limited number of times a day
     block = (None if E["entry_start"] <= hm <= E["entry_end"] else f"outside entry window {E['entry_start']}-{E['entry_end']}")
     if not block and st["trades_today"] >= E["max_trades_per_day"]:
         block = "daily trade limit reached"
@@ -470,10 +538,10 @@ def look_for_signal(nse, st, bars=None, prefetched=None):
         block = f"1 lot costs ₹{c['ask'] * LOT:,.0f}, above budget"
     tid = now.strftime("%Y%m%d-%H%M") + side
     event("signal", trade_id=tid, side=side, info=info, spot=spot, expiry=expiry, chosen=c, candidates=cands,
-          feasibility=feas, blocked=block, rule=E["contract_rule"])
+          feasibility=feas, blocked=block, rule=E["contract_rule"], strategy=SETUP_NAMES[code], why=why)
     if block:
-        st["status"] = {**info, "status": f"{side} breakout at {info['bar']}, not traded: {block}"}
-        log(f"engine: {side} breakout not traded: {block}")
+        st["status"] = {**info, "status": f"{SETUP_NAMES[code]} {side} at {info['bar']}, not traded: {block}"}
+        log(f"engine: {code} {side} not traded: {block}")
         return
     days = (datetime.strptime(expiry, "%d-%b-%Y").date() - now.date()).days
     st["pending"] = {"trade_id": tid, "signal_time": now.isoformat(timespec="seconds"), "side": side,
@@ -481,10 +549,10 @@ def look_for_signal(nse, st, bars=None, prefetched=None):
                      "limit": c["ask"], "signal_ask": c["ask"], "entry_delta": c["delta"],
                      "entry_theta_lot": c["theta_lot"], "entry_iv": c["iv"], "spot_at_signal": spot,
                      "or_high": info["or_high"], "or_low": info["or_low"], "hour": now.hour,
-                     "rule": E["contract_rule"], "feasibility": feas}
+                     "rule": E["contract_rule"], "feasibility": feas, "strategy": SETUP_NAMES[code], "why": why}
     st["trades_today"] += 1
     event("order", trade_id=tid, limit=c["ask"], strike=c["strike"], side=side)
-    log(f"engine: {side} breakout -> limit buy {c['strike']}{side} @ {c['ask']}")
+    log(f"engine: {code} {side} -> limit buy {c['strike']}{side} @ {c['ask']}")
     import alerts
     notify(*alerts.nifty_signal(st["pending"]), level="signal")
 
@@ -551,6 +619,36 @@ def signal_tick(nse):
         if due:
             import brief
             brief.send()
+    # end-of-day NIFTY summary, once
+    if now_ist().strftime("%H:%M") >= "15:20":
+        with locked():
+            st = load()
+            due = st.get("summary_day") != now_ist().date().isoformat() and not st.get("position")
+            if due:
+                st["summary_day"] = now_ist().date().isoformat()
+                save(st)
+        if due:
+            day_summary()
+
+
+def day_summary():
+    today = now_ist().date().isoformat()
+    rows = []
+    if TRADES.exists():
+        with TRADES.open() as f:
+            rows = [r for r in csv.DictReader(f) if (r.get("signal_time") or "").startswith(today)]
+    done = [r for r in rows if r["result"] in VERIFIED]
+    lines = [f"{r['signal_time'][11:16]} {r['strike']} {r['side']} · {r.get('strategy') or 'Opening-range breakout'} · "
+             f"{r['result']} {'+' if float(r['net_pnl']) >= 0 else '−'}₹{abs(float(r['net_pnl'])):,.0f}" for r in done]
+    skipped = sum(1 for r in rows if r["result"] == "UNFILLED")
+    net = sum(float(r["net_pnl"]) for r in done)
+    m = metrics()
+    body = ("\n".join(lines) if lines else "No NIFTY trades today (no setup passed all checks).") + \
+           (f"\nSkipped (price ran away): {skipped}" if skipped else "") + \
+           (f"\nToday: {'+' if net >= 0 else '−'}₹{abs(net):,.0f} after charges" if done else "") + \
+           (f"\nAll-time: {m['trades']} trades, win rate {m['win_rate']}%, avg {'+' if (m['expectancy'] or 0) >= 0 else '−'}₹{abs(m['expectancy'] or 0):,.0f}/trade"
+            if m["trades"] else "")
+    notify("📊 NIFTY day summary", body + "\nPractice results, 1 lot each.", level="signal")
 
 
 def step(nse):
@@ -625,7 +723,7 @@ def metrics():
     def by(key, fn):
         out = {}
         for r in filled:
-            k = fn(r[key])
+            k = fn(r.get(key))
             out.setdefault(k, []).append(float(r["net_pnl"]))
         return {k: {"n": len(v), "net": round(sum(v)), "exp": round(sum(v) / len(v))} for k, v in sorted(out.items())}
 
@@ -646,6 +744,7 @@ def metrics():
         "expectancy": round(wr * aw - (1 - wr) * al) if wr is not None else None,
         "net_total": round(sum(nets)), "max_drawdown": round(dd), "worst_streak": worst,
         "avg_slippage": round(sum(float(r["slippage"] or 0) for r in filled) / len(filled), 2) if filled else None,
+        "by_strategy": by("strategy", lambda s: s or "Opening-range breakout"),
         "by_hour": by("hour", lambda h: f"{int(h):02d}:00"),
         "by_expiry": by("days_to_expiry", lambda d: "0-2 days" if int(d) <= 2 else "3-5 days" if int(d) <= 5 else "6+ days"),
         "by_iv": by("entry_iv", lambda v: "IV <14" if float(v) < 14 else "IV 14-18" if float(v) < 18 else "IV 18+"),

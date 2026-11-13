@@ -431,7 +431,8 @@ def run():
                      "benchmark": bench, "lt_budget": D["lt_budget"]})
     write_json(PENDING, {"date": day.isoformat(), "picks": picks})
 
-    notify(*picks_message(picks, lt, day.isoformat()), level="signal")
+    if D.get("notify_picks", True):
+        notify(*picks_message(picks, lt, day.isoformat()), level="signal")
     out = read_json(OUT, {})
     out["notified"] = True
     write_json(OUT, out)

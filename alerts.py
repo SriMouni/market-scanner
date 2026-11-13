@@ -8,6 +8,10 @@ def _rs(x):
     return sign + (f"₹{x:,.2f}" if x < 100 else f"₹{x:,.0f}")
 
 
+def _px(x):
+    return f"₹{x:,.2f}"
+
+
 def nifty_signal(p):
     """NIFTY broke out of its first-15-min range: buy now."""
     lot = CONFIG["intraday"]["lot_size"] * p.get("lots", 1)
@@ -15,15 +19,31 @@ def nifty_signal(p):
     tgt = p["limit"] * (1 + CONFIG["target_pct"] / 100)
     stop = p["limit"] * (1 - CONFIG["stop_pct"] / 100)
     title = f"{'📈' if up else '📉'} NIFTY {'UP' if up else 'DOWN'}: buy {p['strike']:g} {p['side']} now"
-    body = (f"NIFTY closed {'above' if up else 'below'} today's opening range "
-            f"{p['or_low']:,.0f}–{p['or_high']:,.0f} (now {p['spot_at_signal']:,.0f}).\n"
+    why = p.get("why") or (f"NIFTY closed {'above' if up else 'below'} today's opening range "
+                           f"{p['or_low']:,.0f}–{p['or_high']:,.0f}")
+    body = (f"Setup: {p.get('strategy') or 'Opening-range breakout'}\n{why} (now {p['spot_at_signal']:,.0f}).\n"
             f"Buy 1 lot ({lot} qty) NIFTY {p['expiry']} {p['strike']:g} {p['side']} with a LIMIT order "
-            f"at up to {_rs(p['limit'])} (≈{_rs(p['limit'] * lot)}).\n"
-            f"Sell at {_rs(tgt)} (+{CONFIG['target_pct']}% ≈ +{_rs((tgt - p['limit']) * lot)}) "
-            f"or stop at {_rs(stop)} (−{_rs((p['limit'] - stop) * lot)}). "
+            f"at up to {_px(p['limit'])} (≈{_rs(p['limit'] * lot)}).\n"
+            f"Sell at {_px(tgt)} (+{CONFIG['target_pct']}% ≈ +{_rs((tgt - p['limit']) * lot)}) "
+            f"or stop at {_px(stop)} (−{_rs((p['limit'] - stop) * lot)}). "
             f"Sell by {CONFIG['engine']['exit_by']} whatever happens.\n"
-            f"If the price is already above {_rs(p['limit'])}, skip it: don't chase.")
+            f"If the price is already above {_px(p['limit'])}, skip it: don't chase."
+            + _record(p.get("strategy") or "Opening-range breakout"))
     return title, body
+
+
+def _record(name):
+    """This setup's practice track record, so every alert says honestly how it has done."""
+    try:
+        import engine
+        r = (engine.metrics().get("by_strategy") or {}).get(name)
+    except Exception:
+        r = None
+    if not r or r["n"] < 1:
+        return f"\n🧪 Track record: new setup, no completed practice trades yet."
+    sign = "+" if r["exp"] >= 0 else "−"
+    note = " (too few to judge)" if r["n"] < 30 else ""
+    return f"\n🧪 Track record: {r['n']} practice trades, avg {sign}₹{abs(r['exp']):,}/trade{note}."
 
 
 def stock_watch(rows):

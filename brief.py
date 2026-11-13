@@ -24,15 +24,21 @@ def build():
 
     # 1. NIFTY plan
     if status.get("or_high"):
-        lines.append(f"\n📊 NIFTY: first 15 min range {status['or_low']:,.0f}–{status['or_high']:,.0f}. "
-                     f"A 5-min close ABOVE {status['or_high']:,.0f} → we'll message 'buy CE'; "
-                     f"BELOW {status['or_low']:,.0f} → 'buy PE'. Wait for that message.")
+        E = CONFIG["engine"]
+        lines.append(f"\n📊 NIFTY: first 15 min range {status['or_low']:,.0f}–{status['or_high']:,.0f}.\n"
+                     f"• Close ABOVE {status['or_high']:,.0f} → 'buy CE' · BELOW {status['or_low']:,.0f} → 'buy PE'\n"
+                     f"• Also watching: trend pullbacks, failed breakouts and bounces off support/resistance\n"
+                     f"Up to {E['max_trades_per_day']} trades today, one at a time, new buys until "
+                     f"{E['entry_end']}. Wait for the 'buy now' message.")
     else:
         lines.append("\n📊 NIFTY: waiting for the first 15 minutes to set today's range. We'll message if it breaks out.")
 
-    # 2. options idea (last night's scan, affordable, chart OK)
-    opts = [p for p in d.get("options", []) if p.get("affordable")]
-    if opts:
+    # 2. options idea (last night's scan, affordable, chart OK) - only when stock alerts are on
+    stocks_on = CONFIG["stocks"].get("notify", True)
+    opts = [p for p in d.get("options", []) if p.get("affordable")] if stocks_on else []
+    if not stocks_on:
+        pass
+    elif opts:
         p = opts[0]
         lo, hi = p["entry"] * (1 - gap / 100), p["entry"] * (1 + gap / 100)
         lines.append(f"\n⚡ Option idea: BUY 1 lot {p['contract']} ({p['lot']} qty) only between {_inr(lo)}–{_inr(hi)}. "
@@ -43,12 +49,12 @@ def build():
 
     # 3. shares idea: live signal if any, else last night's strongest stock
     live = [r for r in sl.get("signals", []) if r.get("cash") and r["signal"] == "CE"] if \
-        (sl.get("time") or "").startswith(now.date().isoformat()) else []
+        (stocks_on and (sl.get("time") or "").startswith(now.date().isoformat())) else []
     if live:
         r, c = live[0], live[0]["cash"]
         lines.append(f"\n🛒 Shares idea: BUY {c['qty']} {r['symbol']} at ~{_inr(c['entry'])} (intraday). "
                      f"Sell at {_inr(c['target'])} (+{_inr(c['profit'])}) or stop {_inr(c['stop'])} ({_inr(c['loss'])}).")
-    elif opts:
+    elif opts and stocks_on:
         p = opts[0]
         qty = int(CONFIG["capital_per_trade"] // p["spot"])
         t, sp = CONFIG["stocks"]["cash_target_pct"], CONFIG["stocks"]["cash_stop_pct"]

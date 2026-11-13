@@ -20,7 +20,16 @@ import pandas as pd
 
 from common import (CONFIG, DATA, IST, append_csv, bs_price, charges, greeks, implied_vol, log,
                     now_ist, read_json, write_json)
-from notify import notify
+from notify import notify as _notify
+
+
+def notify(*a, **k):
+    """Stock alerts go to Telegram only when config stocks.notify is true (website always updates)."""
+    if CONFIG["stocks"].get("notify", True):
+        _notify(*a, **k)
+    else:
+        from common import log
+        log(f"stocks (muted): {a[0] if a else ''}")
 
 S = CONFIG["stocks"]
 R = CONFIG["risk_free_rate"]

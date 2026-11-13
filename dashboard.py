@@ -396,11 +396,11 @@ function orGauge(lo,hi,now){const w=hi-lo||1,mn=lo-w,mx=hi+w,P=v=>Math.min(98,Ma
  return `<div class="org">${now?`<div class="org-now" style="left:${Math.min(85,Math.max(15,P(now)))}%">NIFTY ${num(now,0)}</div>`:""}
  <div class="org-bar"><span class="org-band" style="left:${P(lo)}%;width:${P(hi)-P(lo)}%"></span>${now?`<i style="left:${P(now)}%"></i>`:""}</div>
  <div class="org-l"><span class="dn">▼ <b>PE</b> if it closes<br>below ${num(lo,0)}</span><span class="muted">wait<br>zone</span><span class="up" style="text-align:right">▲ <b>CE</b> if it closes<br>above ${num(hi,0)}</span></div></div>`}
-function dayline(hm,wd){const T=[["09:15","Open"],["09:30","Range set"],["13:30","Last NIFTY buy"],["15:15","Sell all"],["15:30","Close"]];
+function dayline(hm,wd){const T=[["09:15","Open"],["09:30","Range set"],["14:30","Last NIFTY buy"],["15:15","Sell all"],["15:30","Close"]];
  const weekday=wd>0&&wd<6,idx=weekday?T.filter(t=>hm>=t[0]).length:0;
  const msg=!weekday?"🛌 Weekend: market closed. Check “Tomorrow” for Monday's ideas.":hm<"09:15"?"⏰ Market opens at 9:15. First NIFTY idea possible after 9:30.":
-  hm<"09:30"?"👀 Setting today's NIFTY range (9:15–9:30). Don't trade the first 15 minutes.":hm<"13:30"?"🔔 Watching for a breakout. You'll get a Telegram message if there's a buy.":
-  hm<"15:15"?"🕑 No new NIFTY buys after 1:30. Open trades are still being watched.":hm<"15:30"?"🔚 Selling any open trades before the close.":"🌙 Market closed. Tomorrow's ideas arrive around 7 PM.";
+  hm<"09:30"?"👀 Setting today's NIFTY range (9:15–9:30). Don't trade the first 15 minutes.":hm<"14:30"?"🔔 Watching 4 NIFTY setups. You'll get a Telegram message when one fires.":
+  hm<"15:15"?"🕑 No new NIFTY buys after 2:30. Open trades are still being watched.":hm<"15:30"?"🔚 Selling any open trades before the close.":"🌙 Market closed. Tomorrow's ideas arrive around 7 PM.";
  return `<div class="steps5">${T.map((t,i)=>`<div class="${i<idx-1||(i===idx-1&&hm>="15:30")?"done":i===idx-1?"now":""}"><b>${+t[0].slice(0,2)>12?+t[0].slice(0,2)-12:+t[0].slice(0,2)}:${t[0].slice(3)}</b>${t[1]}</div>`).join("")}</div><div class="nowline">${msg}</div>`}
 function card(k,v,c="",sub=""){return `<div class="card"><div class="k">${k}</div><div class="v ${c}">${v}</div>${sub?`<div class="muted" style="font-size:12px">${sub}</div>`:""}</div>`}
 function table(cols,rows,empty,detail){if(!rows.length)return `<div class="tw"><div class="empty">${empty}</div></div>`;
@@ -524,7 +524,7 @@ function renderToday(){const now=new Date(new Date().toLocaleString("en-US",{tim
    h+=`<div class="card"><div style="font-size:17px;font-weight:650">⏳ No NIFTY call right now</div>
    ${rng?orGauge(es.or_low,es.or_high,es.close||nifty):""}
    <p class="muted" style="margin:8px 0 4px;font-size:13px">${es.status?`${es.status}${es.bar?` (as of ${es.bar})`:""}`:"Our NIFTY rule waits for the first 15 minutes of trading (9:15–9:30) to set today's range."}</p>
-   ${rng?`<details class="explain"><summary>How the NIFTY rule works</summary><p>In the first 15 minutes NIFTY moved between <b>${rng}</b>. If a 5-minute period then closes <b>above</b> that range, we buy a CE (bet on up). If it closes <b>below</b>, a PE (bet on down). Only one buy per direction a day, and none after 1:30 PM.</p></details>`:""}
+   ${rng?`<details class="explain"><summary>How the NIFTY rule works</summary><p>In the first 15 minutes NIFTY moved between <b>${rng}</b>. If a 5-minute period then closes <b>above</b> that range, we buy a CE (bet on up). If it closes <b>below</b>, a PE (bet on down).</p><p>We also watch three more setups: a <b>trend pullback</b> (NIFTY trending, dips to its 9-EMA, then resumes), a <b>failed breakout</b> (breaks out, then falls back inside: trade the other way) and a <b>bounce off support/resistance</b> (the biggest put/call open-interest levels). Up to 6 trades a day, one at a time, a 10-minute pause after each exit, no new buys after 2:30 PM.</p></details>`:""}
    ${Object.keys(w).length?`<div class="cards" style="margin-top:10px">${["CE","PE"].filter(s=>w[s]).map(s=>`<div class="hold"><span class="dir ${s}">${s==="CE"?"▲ If NIFTY breaks above"+(es.or_high?" "+num(es.or_high,0):""):"▼ If NIFTY breaks below"+(es.or_low?" "+num(es.or_low,0):"")}</span>
     <div class="idea-contract" style="margin-top:6px">We'd buy about: <b>NIFTY ${l.expiry} ${w[s].strike} ${s}</b> ${tip(s,s)}</div>
     <div class="livep" data-opt="${w[s].strike}${s}">Price now ${inr(w[s].ask)}</div>
@@ -731,8 +731,8 @@ function pickDetail(r){const ce=r.side==="CE",lot=r.lot;
  function curve(rows,key){if(rows.length<2)return "";let c=0;return `<div class="card" style="margin-bottom:14px"><h3>Cumulative P&L</h3>${line(rows.map(r=>({x:(r[key]||"").slice(0,10),y:c+=+r.net_pnl})),130,{zero:true,fmt:v=>inr(v,0)})}</div>`}
  const st=rows=>{const n=rows.map(r=>+r.net_pnl);return {n:rows.length,w:n.filter(x=>x>0).length,net:n.reduce((a,b)=>a+b,0)}};
  const S=[
-  {id:"r-eng",ic:"📊",k:"NIFTY CE/PE",sub:"opening-range rule · real NSE prices",s:em.trades?{n:em.trades,w:Math.round(em.trades*em.win_rate/100),net:em.net_total}:{n:0},
-   next:"Trades when NIFTY breaks its first-15-min range between 9:30 AM and 1:30 PM"},
+  {id:"r-eng",ic:"📊",k:"NIFTY CE/PE",sub:"4 setups · real NSE prices",s:em.trades?{n:em.trades,w:Math.round(em.trades*em.win_rate/100),net:em.net_total}:{n:0},
+   next:"Up to 6 trades a day, one at a time, 9:30 AM–2:30 PM"},
   {id:"r-pick",ic:"🌙",k:"Tomorrow's option picks",sub:"graded on the next day's prices",s:st(dl),next:"Graded every evening around 7 PM"},
   {id:"r-cash",ic:"🛒",k:"Live share trades",sub:"real prices",s:st(ct),next:"When a stock passes all 5 checks, 9:45 AM–2:30 PM"},
   {id:"r-sopt",ic:"⚡",k:"Live stock options",sub:"estimated prices (less reliable)",s:st(stt),next:"Same signals as share trades"}];
@@ -747,7 +747,7 @@ function pickDetail(r){const ce=r.side==="CE",lot=r.lot;
    ${x.s.n?`<div style="text-align:right"><div class="m ${cls(x.s.net)}" style="font-size:20px;font-weight:750">${x.s.net>=0?"+":"−"}${inr(Math.abs(x.s.net),0)}</div><div class="muted" style="font-size:12px">${x.s.n} trades · ${x.s.w} won</div></div>`:`<span class="pill n">waiting</span>`}</div>
    ${x.s.n?"":`<div class="muted" style="font-size:13px;margin-top:8px">⏳ No trades yet. ${x.next}.</div>`}</div>`).join("")}</div>`;
  const sig=D.engine_signals||[];
- if(sig.length)h+=`<h2>📊 Today's NIFTY signals</h2><div class="card">${sig.map(g=>`<div style="padding:6px 0;border-bottom:1px solid var(--line)"><b>${g.time}</b> <span class="dir ${g.side}">${g.side==="CE"?"▲ broke above":"▼ broke below"}</span>
+ if(sig.length)h+=`<h2>📊 Today's NIFTY signals</h2><div class="card">${sig.map(g=>`<div style="padding:6px 0;border-bottom:1px solid var(--line)"><b>${g.time}</b> <span class="dir ${g.side}">${g.side==="CE"?"▲ CE":"▼ PE"}</span> <b>${g.strategy||"Opening-range breakout"}</b>
   ${g.blocked?`<span class="muted">Not traded: ${g.blocked}${g.late?` (came ${g.late} min after the cut-off)`:""}.</span>`:`<span class="up">Traded ✓</span>`}</div>`).join("")}</div>`;
 
  if(em.trades){h+=`<div id="r-eng"></div><h2>📊 NIFTY CE/PE (opening-range rule, real NSE prices)</h2>
@@ -757,7 +757,7 @@ function pickDetail(r){const ce=r.side==="CE",lot=r.lot;
  ${card("Total after costs",sgn(em.net_total,0),cls(em.net_total))}${card("Worst drop from a high",inr(-em.max_drawdown,0),"dn",`longest losing run: ${em.worst_streak}`)}
  ${card("Data problems",`${em.rejected_quotes||0} bad quotes`,"",`${em.unfilled||0} not filled · ${em.missed_exits||0} missed · ${em.unresolved||0} unresolved (not counted) · avg slippage ${em.avg_slippage!=null?inr(em.avg_slippage):"–"}`)}</div>`;
  const brk=(o,t)=>Object.keys(o||{}).length?`<div class="box"><h3>${t}</h3><table class="mini">${Object.entries(o).map(([k,v])=>`<tr><td>${k}</td><td>${v.n} trades</td><td class="${cls(v.exp)}">${sgn(v.exp,0)}/trade</td></tr>`).join("")}</table></div>`:"";
- h+=`<div class="cols">${brk(em.by_hour,"By time of day")}${brk(em.by_expiry,"By days to expiry")}${brk(em.by_iv,"By option price level (IV)")}</div>`;
+ h+=`<div class="cols">${brk(em.by_strategy,"By setup (which one makes money?)")}${brk(em.by_hour,"By time of day")}${brk(em.by_expiry,"By days to expiry")}${brk(em.by_iv,"By option price level (IV)")}</div>`;
  h+=table([["Signal",r=>(r.signal_time||"").slice(0,16).replace("T"," ")],["Option",r=>`NIFTY ${r.strike} <span class="pill ${r.side}">${r.side}</span>`],["Bought",r=>r.entry?inr(+r.entry):"–"],["Sold",r=>r.exit?inr(+r.exit):"–"],
   ["Result",r=>`<span class="pill ${r.result==="TARGET"?"CE":r.result==="STOP"?"PE":"n"}">${r.result}</span>`],["How exit was priced",r=>`<span class="muted">${r.exit_basis||""}</span>`],["Net",r=>`<span class="${cls(+r.net_pnl)}">${sgn(+r.net_pnl||0,0)}</span>`]],
   (em.rows||[]).slice().reverse(),"")}
@@ -962,7 +962,8 @@ def engine_signals(today):
         if d.get("blocked", "") and "outside entry window" in d["blocked"] and ts[11:16] > end:
             h, m = map(int, ts[11:16].split(":")); eh, em = map(int, end.split(":"))
             late = (h * 60 + m) - (eh * 60 + em)
-        out.append({"time": ts[11:16], "bar": bar, "side": d.get("side"), "blocked": d.get("blocked"), "late": late})
+        out.append({"time": ts[11:16], "bar": bar, "side": d.get("side"), "blocked": d.get("blocked"), "late": late,
+                    "strategy": d.get("strategy")})
     return out
 
 
