@@ -1,57 +1,57 @@
 {
-  "generated": "2026-11-14T02:06:22+05:30",
-  "date": "2026-11-13",
+  "generated": "2026-11-17T04:29:14+05:30",
+  "date": "2026-11-16",
   "options": [
     {
       "why": [
-        "Futures rose 5.55% while open interest grew 8.3%: new buyers are entering (long build-up).",
-        "POLICYBZR closed at \u20b91,105.00 and above 20-day avg \u20b91,004, so the move is with the trend, not against it.",
-        "Strike 1120 is near the money (delta +0.48): it moves about \u20b90.48 for each \u20b91 in POLICYBZR.",
-        "Liquid: 14,757 contracts traded, open interest 546,000 shares, so you can get in and out.",
-        "10 days to expiry, so time decay is slower than for an expiry-week option."
+        "Futures rose 3.60% while open interest grew 3.0%: new buyers are entering (long build-up).",
+        "ITC closed at \u20b9295.09 and above 20-day avg \u20b9270, so the move is with the trend, not against it.",
+        "Strike 295 is near the money (delta +0.53): it moves about \u20b90.53 for each \u20b91 in ITC.",
+        "Liquid: 46,431 contracts traded, open interest 7,565,850 shares, so you can get in and out.",
+        "7 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 23.79,
-          "pct": -40.3,
-          "pnl_lot": -5691
+          "price": 0.49,
+          "pct": -86.1,
+          "pnl_lot": -5252
         },
         {
           "move": -2,
-          "price": 27.89,
-          "pct": -30.0,
-          "pnl_lot": -4257
+          "price": 1.02,
+          "pct": -70.9,
+          "pnl_lot": -4331
         },
         {
           "move": -1,
-          "price": 32.44,
-          "pct": -18.6,
-          "pnl_lot": -2669
+          "price": 1.91,
+          "pct": -45.3,
+          "pnl_lot": -2794
         },
         {
           "move": 0,
-          "price": 37.43,
-          "pct": -6.1,
-          "pnl_lot": -927
+          "price": 3.24,
+          "pct": -7.5,
+          "pnl_lot": -512
         },
         {
           "move": 1,
-          "price": 42.86,
-          "pct": 7.6,
-          "pnl_lot": 972
+          "price": 5.01,
+          "pct": 43.3,
+          "pnl_lot": 2546
         },
         {
           "move": 2,
-          "price": 48.74,
-          "pct": 22.3,
-          "pnl_lot": 3024
+          "price": 7.19,
+          "pct": 105.6,
+          "pnl_lot": 6299
         },
         {
           "move": 3,
-          "price": 55.05,
-          "pct": 38.1,
-          "pnl_lot": 5229
+          "price": 9.69,
+          "pct": 176.9,
+          "pnl_lot": 10596
         }
       ],
       "chart": {
@@ -64,122 +64,122 @@
           },
           {
             "name": "Speed",
-            "ok": false,
-            "text": "Not much buying energy yet",
-            "tech": "RSI 48",
-            "value": 47.5
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 66",
+            "value": 66.5
           },
           {
             "name": "Who's winning",
-            "ok": true,
+            "ok": false,
             "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
+            "text": "Buyers are winning but getting tired"
           },
           {
             "name": "Last move",
             "ok": true,
-            "text": "In the last day, buyers were firmly in charge",
-            "tech": "candle: strong green candle",
-            "pattern": "strong green candle"
+            "text": "In the last day, the price closed a bit higher",
+            "tech": "candle: green candle",
+            "pattern": "green candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b91,092.0, where it stopped before (4.0% away)",
+            "text": "There's room to rise before \u20b9290.2, where it stopped before (1.8% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 4,
         "verdict": "strong",
-        "rsi": 47.5,
-        "pattern": "strong green candle",
-        "resistance": 1092.0,
-        "support": 916.0
+        "rsi": 66.5,
+        "pattern": "green candle",
+        "resistance": 290.25,
+        "support": 252.8
       },
-      "days": 10,
-      "gamma": 0.00347,
-      "vega_lot": 255,
-      "opt_oi_chg": 282100,
-      "opt_chg": 107.6,
-      "fut_oi": 19957000,
-      "breakeven": 1159.85,
-      "max_loss_lot": 13948,
-      "need_move": 8.3,
-      "need_move_pct": 0.75,
-      "symbol": "POLICYBZR",
+      "days": 7,
+      "gamma": 0.04857,
+      "vega_lot": 281,
+      "opt_oi_chg": 3779475,
+      "opt_chg": 204.3,
+      "fut_oi": 198247350,
+      "breakeven": 298.5,
+      "max_loss_lot": 6038,
+      "need_move": 0.66,
+      "need_move_pct": 0.22,
+      "symbol": "ITC",
       "side": "CE",
-      "contract": "POLICYBZR 23 Nov 1120 CE",
+      "contract": "ITC 23 Nov 295 CE",
       "expiry": "2026-11-23",
-      "strike": 1120.0,
-      "entry": 39.85,
-      "target": 43.84,
-      "stop": 37.86,
-      "lot": 350,
-      "cost_per_lot": 13948,
-      "profit_per_lot": 1312,
-      "loss_per_lot": -776,
-      "delta": 0.48,
-      "theta_lot": -831,
-      "iv": 62.8,
-      "oi": 546000,
-      "volume": 14757,
-      "spot": 1105.0,
-      "price_chg": 5.55,
-      "oi_chg": 8.3,
+      "strike": 295.0,
+      "entry": 3.5,
+      "target": 3.85,
+      "stop": 3.32,
+      "lot": 1725,
+      "cost_per_lot": 6038,
+      "profit_per_lot": 541,
+      "loss_per_lot": -363,
+      "delta": 0.53,
+      "theta_lot": -449,
+      "iv": 20.1,
+      "oi": 7565850,
+      "volume": 46431,
+      "spot": 295.09,
+      "price_chg": 3.6,
+      "oi_chg": 3.0,
       "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b91,004",
+      "trend": "above 20-day avg \u20b9270",
       "affordable": true
     },
     {
       "why": [
-        "Futures rose 4.17% while open interest grew 5.0%: new buyers are entering (long build-up).",
-        "ENRIN closed at \u20b93,125.89 and above 20-day avg \u20b92,868, so the move is with the trend, not against it.",
-        "Strike 3150 is near the money (delta +0.50): it moves about \u20b90.50 for each \u20b91 in ENRIN.",
-        "Liquid: 4,028 contracts traded, open interest 30,450 shares, so you can get in and out.",
-        "10 days to expiry, so time decay is slower than for an expiry-week option."
+        "Futures fell 3.16% while open interest grew 4.7%: new sellers are entering (short build-up).",
+        "SYRMA closed at \u20b91,454.73 and below 20-day avg \u20b91,530, so the move is with the trend, not against it.",
+        "Strike 1440 is near the money (delta -0.43): it moves about \u20b90.43 for each \u20b91 in SYRMA.",
+        "Liquid: 244 contracts traded, open interest 29,575 shares, so you can get in and out.",
+        "7 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 68.95,
-          "pct": -40.6,
-          "pnl_lot": -8321
+          "price": 56.36,
+          "pct": 50.5,
+          "pnl_lot": 6059
         },
         {
           "move": -2,
-          "price": 81.09,
-          "pct": -30.1,
-          "pnl_lot": -6201
+          "price": 48.18,
+          "pct": 28.6,
+          "pnl_lot": 3404
         },
         {
           "move": -1,
-          "price": 94.54,
-          "pct": -18.5,
-          "pnl_lot": -3852
+          "price": 40.81,
+          "pct": 9.0,
+          "pnl_lot": 1012
         },
         {
           "move": 0,
-          "price": 109.3,
-          "pct": -5.8,
-          "pnl_lot": -1274
+          "price": 34.24,
+          "pct": -8.6,
+          "pnl_lot": -1118
         },
         {
           "move": 1,
-          "price": 125.38,
-          "pct": 8.0,
-          "pnl_lot": 1534
+          "price": 28.45,
+          "pct": -24.0,
+          "pnl_lot": -2994
         },
         {
           "move": 2,
-          "price": 142.75,
-          "pct": 23.0,
-          "pnl_lot": 4568
+          "price": 23.42,
+          "pct": -37.5,
+          "pnl_lot": -4627
         },
         {
           "move": 3,
-          "price": 161.39,
-          "pct": 39.1,
-          "pnl_lot": 7823
+          "price": 19.09,
+          "pct": -49.0,
+          "pnl_lot": -6031
         }
       ],
       "chart": {
@@ -188,330 +188,74 @@
             "name": "Direction",
             "ok": true,
             "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
+            "text": "Overall the price is moving down, the same way as this idea"
           },
           {
             "name": "Speed",
             "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 55",
-            "value": 54.6
+            "text": "Falling at a steady pace, not overdone",
+            "tech": "RSI 45",
+            "value": 45.1
           },
           {
             "name": "Who's winning",
-            "ok": true,
+            "ok": false,
             "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
+            "text": "Sellers are winning but getting tired"
           },
           {
             "name": "Last move",
             "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b93,162.8, where it stopped before (4.1% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 5,
-        "verdict": "strong",
-        "rsi": 54.6,
-        "pattern": "green candle",
-        "resistance": 3162.8,
-        "support": 2627.0
-      },
-      "days": 10,
-      "gamma": 0.00128,
-      "vega_lot": 361,
-      "opt_oi_chg": 19600,
-      "opt_chg": 81.3,
-      "fut_oi": 997500,
-      "breakeven": 3266.05,
-      "max_loss_lot": 20309,
-      "need_move": 23.21,
-      "need_move_pct": 0.74,
-      "symbol": "ENRIN",
-      "side": "CE",
-      "contract": "ENRIN 23 Nov 3150 CE",
-      "expiry": "2026-11-23",
-      "strike": 3150.0,
-      "entry": 116.05,
-      "target": 127.66,
-      "stop": 110.25,
-      "lot": 175,
-      "cost_per_lot": 20309,
-      "profit_per_lot": 1932,
-      "loss_per_lot": -1109,
-      "delta": 0.5,
-      "theta_lot": -1136,
-      "iv": 60.4,
-      "oi": 30450,
-      "volume": 4028,
-      "spot": 3125.89,
-      "price_chg": 4.17,
-      "oi_chg": 5.0,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b92,868",
-      "affordable": false
-    },
-    {
-      "why": [
-        "Futures rose 2.04% while open interest grew 7.0%: new buyers are entering (long build-up).",
-        "ANGELONE closed at \u20b9349.00 and above 20-day avg \u20b9305, so the move is with the trend, not against it.",
-        "Strike 350 is near the money (delta +0.51): it moves about \u20b90.51 for each \u20b91 in ANGELONE.",
-        "Liquid: 14,627 contracts traded, open interest 7,680,000 shares, so you can get in and out.",
-        "10 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 3.71,
-          "pct": -55.8,
-          "pnl_lot": -11792
-        },
-        {
-          "move": -2,
-          "price": 4.88,
-          "pct": -41.9,
-          "pnl_lot": -8872
-        },
-        {
-          "move": -1,
-          "price": 6.28,
-          "pct": -25.2,
-          "pnl_lot": -5380
-        },
-        {
-          "move": 0,
-          "price": 7.92,
-          "pct": -5.7,
-          "pnl_lot": -1297
-        },
-        {
-          "move": 1,
-          "price": 9.79,
-          "pct": 16.6,
-          "pnl_lot": 3379
-        },
-        {
-          "move": 2,
-          "price": 11.9,
-          "pct": 41.7,
-          "pnl_lot": 8634
-        },
-        {
-          "move": 3,
-          "price": 14.22,
-          "pct": 69.3,
-          "pnl_lot": 14437
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 71",
-            "value": 70.6
-          },
-          {
-            "name": "Who's winning",
-            "ok": true,
-            "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
-          },
-          {
-            "name": "Last move",
-            "ok": false,
-            "text": "In the last day, buyers and sellers were evenly matched, no clear winner",
-            "tech": "candle: doji",
-            "pattern": "doji (indecision)"
-          },
-          {
-            "name": "Room to move",
-            "ok": false,
-            "text": "It's close to \u20b9344.1, where it stopped before (only 0.9% away), so little room to rise",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 3,
-        "verdict": "ok",
-        "rsi": 70.6,
-        "pattern": "doji (indecision)",
-        "resistance": 344.1,
-        "support": 273.8
-      },
-      "days": 10,
-      "gamma": 0.01854,
-      "vega_lot": 576,
-      "opt_oi_chg": 5625000,
-      "opt_chg": 73.2,
-      "fut_oi": 37565000,
-      "breakeven": 358.4,
-      "max_loss_lot": 21000,
-      "need_move": 1.65,
-      "need_move_pct": 0.47,
-      "symbol": "ANGELONE",
-      "side": "CE",
-      "contract": "ANGELONE 23 Nov 350 CE",
-      "expiry": "2026-11-23",
-      "strike": 350.0,
-      "entry": 8.4,
-      "target": 9.24,
-      "stop": 7.98,
-      "lot": 2500,
-      "cost_per_lot": 21000,
-      "profit_per_lot": 1999,
-      "loss_per_lot": -1145,
-      "delta": 0.51,
-      "theta_lot": -1148,
-      "iv": 37.2,
-      "oi": 7680000,
-      "volume": 14627,
-      "spot": 349.0,
-      "price_chg": 2.04,
-      "oi_chg": 7.0,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b9305",
-      "affordable": false
-    },
-    {
-      "why": [
-        "Futures rose 1.38% while open interest grew 5.5%: new buyers are entering (long build-up).",
-        "DATAPATTNS closed at \u20b94,268.39 and above 20-day avg \u20b93,976, so the move is with the trend, not against it.",
-        "Strike 4300 is near the money (delta +0.49): it moves about \u20b90.49 for each \u20b91 in DATAPATTNS.",
-        "Liquid: 4,147 contracts traded, open interest 97,250 shares, so you can get in and out.",
-        "10 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 68.28,
-          "pct": -46.8,
-          "pnl_lot": -7580
-        },
-        {
-          "move": -2,
-          "price": 83.61,
-          "pct": -34.9,
-          "pnl_lot": -5667
-        },
-        {
-          "move": -1,
-          "price": 101.07,
-          "pct": -21.3,
-          "pnl_lot": -3489
-        },
-        {
-          "move": 0,
-          "price": 120.71,
-          "pct": -5.9,
-          "pnl_lot": -1038
-        },
-        {
-          "move": 1,
-          "price": 142.54,
-          "pct": 11.1,
-          "pnl_lot": 1685
-        },
-        {
-          "move": 2,
-          "price": 166.53,
-          "pct": 29.7,
-          "pnl_lot": 4678
-        },
-        {
-          "move": 3,
-          "price": 192.61,
-          "pct": 50.1,
-          "pnl_lot": 7932
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 56",
-            "value": 55.7
-          },
-          {
-            "name": "Who's winning",
-            "ok": true,
-            "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": false,
-            "text": "It's close to \u20b94,234.9, where it stopped before (only 0.1% away), so little room to rise",
+            "text": "There's room to fall before \u20b91,399.9, where it bounced before (6.9% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 4,
         "verdict": "strong",
-        "rsi": 55.7,
-        "pattern": "green candle",
-        "resistance": 4234.9,
-        "support": 3630.5
+        "rsi": 45.1,
+        "pattern": "red candle",
+        "resistance": 1713.2,
+        "support": 1399.9
       },
-      "days": 10,
-      "gamma": 0.00114,
-      "vega_lot": 352,
-      "opt_oi_chg": 23125,
-      "opt_chg": 2.4,
-      "fut_oi": 447125,
-      "breakeven": 4428.35,
-      "max_loss_lot": 16044,
-      "need_move": 26.19,
-      "need_move_pct": 0.61,
-      "symbol": "DATAPATTNS",
-      "side": "CE",
-      "contract": "DATAPATTNS 23 Nov 4300 CE",
+      "days": 7,
+      "gamma": 0.00344,
+      "vega_lot": 257,
+      "opt_oi_chg": 4875,
+      "opt_chg": 59.0,
+      "fut_oi": 2331225,
+      "breakeven": 1402.55,
+      "max_loss_lot": 12171,
+      "need_move": 8.71,
+      "need_move_pct": 0.6,
+      "symbol": "SYRMA",
+      "side": "PE",
+      "contract": "SYRMA 23 Nov 1440 PE",
       "expiry": "2026-11-23",
-      "strike": 4300.0,
-      "entry": 128.35,
-      "target": 141.19,
-      "stop": 121.93,
-      "lot": 125,
-      "cost_per_lot": 16044,
-      "profit_per_lot": 1516,
-      "loss_per_lot": -886,
-      "delta": 0.49,
-      "theta_lot": -916,
-      "iv": 49.5,
-      "oi": 97250,
-      "volume": 4147,
-      "spot": 4268.39,
-      "price_chg": 1.38,
-      "oi_chg": 5.5,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b93,976",
+      "strike": 1440.0,
+      "entry": 37.45,
+      "target": 41.2,
+      "stop": 35.58,
+      "lot": 325,
+      "cost_per_lot": 12171,
+      "profit_per_lot": 1139,
+      "loss_per_lot": -683,
+      "delta": -0.43,
+      "theta_lot": -1000,
+      "iv": 56.6,
+      "oi": 29575,
+      "volume": 244,
+      "spot": 1454.73,
+      "price_chg": -3.16,
+      "oi_chg": 4.7,
+      "buildup": "Short build-up",
+      "trend": "below 20-day avg \u20b91,530",
       "affordable": true
     }
   ],
@@ -522,233 +266,233 @@
       "name": "Divi's Laboratories Ltd.",
       "index": "Large cap",
       "industry": "Healthcare",
-      "price": 11485.0,
-      "ma50": 9546.8,
-      "ma200": 7464.98,
+      "price": 11442.0,
+      "ma50": 9586.3,
+      "ma200": 7492.25,
       "high52": 11565.5,
       "low52": 5797.09,
-      "from_high": -0.7,
-      "ret6m": 69.7,
-      "ret12m": 67.5,
-      "cagr3": 47.9,
-      "cagr5": 19.9,
-      "dd1y": -15.4,
+      "from_high": -1.1,
+      "ret6m": 66.0,
+      "ret12m": 72.6,
+      "cagr3": 46.8,
+      "cagr5": 19.8,
+      "dd1y": -13.0,
       "dd5y": -43.9,
       "volatility": 26.8,
       "spark": [
         [
           "Oct 25",
-          6627.67
+          6710.33
         ],
         [
           "Nov 25",
-          6629.16
+          6664.02
         ],
         [
           "Nov 25",
+          6491.73
+        ],
+        [
+          "Nov 25",
+          6332.89
+        ],
+        [
+          "Dec 25",
+          6396.12
+        ],
+        [
+          "Dec 25",
+          6302.51
+        ],
+        [
+          "Dec 25",
+          6321.43
+        ],
+        [
+          "Dec 25",
           6484.76
         ],
         [
-          "Nov 25",
-          6346.83
-        ],
-        [
-          "Nov 25",
-          6450.4
-        ],
-        [
           "Dec 25",
-          6446.92
-        ],
-        [
-          "Dec 25",
-          6400.11
-        ],
-        [
-          "Dec 25",
-          6451.89
-        ],
-        [
-          "Dec 25",
-          6364.26
+          6334.38
         ],
         [
           "Jan 26",
-          6337.37
+          6615.22
         ],
         [
           "Jan 26",
-          6458.87
+          6410.07
         ],
         [
           "Jan 26",
-          6114.78
+          5988.31
         ],
         [
           "Jan 26",
-          6031.13
+          6162.59
         ],
         [
           "Feb 26",
-          6183.5
+          6029.64
         ],
         [
           "Feb 26",
-          6150.14
+          6360.27
         ],
         [
           "Feb 26",
-          6162.09
+          6257.7
         ],
         [
           "Feb 26",
-          6229.81
+          6369.24
         ],
         [
           "Mar 26",
-          6290.06
+          6338.36
         ],
         [
           "Mar 26",
-          6326.41
+          6256.2
         ],
         [
           "Mar 26",
-          6114.78
+          5947.97
         ],
         [
           "Mar 26",
-          5989.8
+          5972.87
         ],
         [
           "Apr 26",
-          5797.09
+          5825.98
         ],
         [
           "Apr 26",
-          6045.07
+          6152.13
         ],
         [
           "Apr 26",
-          6260.19
+          6259.69
         ],
         [
           "Apr 26",
-          6406.08
+          6507.17
         ],
         [
           "May 26",
-          6674.48
+          6674.97
         ],
         [
           "May 26",
-          6768.09
+          6893.08
         ],
         [
           "May 26",
-          6864.69
+          6829.84
         ],
         [
           "May 26",
-          6769.58
+          6639.62
         ],
         [
           "Jun 26",
-          6569.41
+          6595.8
         ],
         [
           "Jun 26",
-          6628.17
+          6610.74
         ],
         [
           "Jun 26",
-          6739.21
+          6715.31
         ],
         [
           "Jun 26",
-          6685.93
+          6530.57
         ],
         [
           "Jul 26",
-          6729.25
+          6829.34
         ],
         [
           "Jul 26",
-          6807.93
+          6910.01
         ],
         [
           "Jul 26",
-          7217.74
+          7287.95
         ],
         [
           "Jul 26",
-          7248.5
-        ],
-        [
-          "Jul 26",
-          8056.0
+          7414.0
         ],
         [
           "Aug 26",
-          8275.0
+          8585.0
         ],
         [
           "Aug 26",
-          8477.0
+          8300.0
         ],
         [
           "Aug 26",
-          8597.0
+          8481.5
         ],
         [
           "Aug 26",
-          9239.0
+          8496.0
+        ],
+        [
+          "Aug 26",
+          9467.0
         ],
         [
           "Sep 26",
-          9100.0
+          9315.0
         ],
         [
           "Sep 26",
-          9322.0
+          9198.0
         ],
         [
           "Sep 26",
-          9410.5
+          9352.0
         ],
         [
           "Sep 26",
-          9550.0
+          9431.0
         ],
         [
           "Oct 26",
-          9550.0
+          9588.0
         ],
         [
           "Oct 26",
-          9285.0
+          9023.0
         ],
         [
           "Oct 26",
-          9190.0
+          9162.0
         ],
         [
           "Oct 26",
-          9558.5
+          9664.0
         ],
         [
           "Nov 26",
-          10037.5
+          10140.5
         ],
         [
           "Nov 26",
-          11485.0
+          11442.0
         ]
       ],
-      "score": 4.22,
+      "score": 4.26,
       "health": 88,
       "extended": true,
-      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b99,547",
+      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b99,586",
       "fund": {
         "health": 88,
         "grade": "Strong",
@@ -814,14 +558,14 @@
             "name": "Speed",
             "ok": false,
             "text": "It has gone up a lot very fast and may fall back a little first",
-            "tech": "RSI 80",
-            "value": 80.0
+            "tech": "RSI 79",
+            "value": 78.7
           },
           {
             "name": "Who's winning",
-            "ok": true,
+            "ok": false,
             "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
+            "text": "Buyers are winning but getting tired"
           },
           {
             "name": "Last move",
@@ -833,13 +577,13 @@
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b911,824.0, where it stopped before (3.0% away)",
+            "text": "There's room to rise before \u20b911,824.0, where it stopped before (3.3% away)",
             "tech": "support/resistance"
           }
         ],
-        "passed": 4,
-        "verdict": "against",
-        "rsi": 80.0,
+        "passed": 3,
+        "verdict": "ok",
+        "rsi": 78.7,
         "pattern": "green candle",
         "resistance": 11824.0,
         "support": 8797.0
@@ -852,187 +596,195 @@
       "name": "Punjab National Bank",
       "index": "Large cap",
       "industry": "Financial Services",
-      "price": 141.79,
-      "ma50": 118.83,
-      "ma200": 112.72,
-      "high52": 141.79,
+      "price": 142.81,
+      "ma50": 119.4,
+      "ma200": 112.83,
+      "high52": 142.81,
       "low52": 96.68,
       "from_high": 0.0,
-      "ret6m": 42.0,
-      "ret12m": 21.1,
-      "cagr3": 24.9,
-      "cagr5": 30.4,
+      "ret6m": 40.5,
+      "ret12m": 20.1,
+      "cagr3": 25.0,
+      "cagr5": 30.6,
       "dd1y": -24.8,
       "dd5y": -37.7,
       "volatility": 28.3,
       "spark": [
         [
           "Oct 25",
-          116.7
+          119.42
         ],
         [
           "Nov 25",
+          118.88
+        ],
+        [
+          "Nov 25",
+          119.52
+        ],
+        [
+          "Nov 25",
+          118.31
+        ],
+        [
+          "Dec 25",
+          121.76
+        ],
+        [
+          "Dec 25",
+          112.72
+        ],
+        [
+          "Dec 25",
+          115.38
+        ],
+        [
+          "Dec 25",
+          117.88
+        ],
+        [
+          "Dec 25",
           118.92
         ],
         [
-          "Nov 25",
-          118.76
+          "Jan 26",
+          121.92
         ],
         [
-          "Nov 25",
-          118.91
+          "Jan 26",
+          121.0
         ],
         [
-          "Nov 25",
+          "Jan 26",
+          122.22
+        ],
+        [
+          "Jan 26",
           120.98
         ],
         [
-          "Dec 25",
-          118.27
-        ],
-        [
-          "Dec 25",
-          114.48
-        ],
-        [
-          "Dec 25",
-          116.43
-        ],
-        [
-          "Dec 25",
-          117.13
-        ],
-        [
-          "Jan 26",
-          121.55
-        ],
-        [
-          "Jan 26",
-          119.68
-        ],
-        [
-          "Jan 26",
-          124.43
-        ],
-        [
-          "Jan 26",
-          119.48
+          "Feb 26",
+          120.16
         ],
         [
           "Feb 26",
-          120.36
+          119.44
         ],
         [
           "Feb 26",
-          119.49
+          124.55
         ],
         [
           "Feb 26",
-          121.29
-        ],
-        [
-          "Feb 26",
-          127.33
+          126.85
         ],
         [
           "Mar 26",
-          117.94
+          118.75
         ],
         [
           "Mar 26",
-          112.57
+          113.32
         ],
         [
           "Mar 26",
-          109.92
+          106.4
         ],
         [
           "Mar 26",
+          102.16
+        ],
+        [
+          "Apr 26",
+          101.62
+        ],
+        [
+          "Apr 26",
+          109.88
+        ],
+        [
+          "Apr 26",
+          111.43
+        ],
+        [
+          "Apr 26",
+          108.04
+        ],
+        [
+          "May 26",
+          106.03
+        ],
+        [
+          "May 26",
+          101.66
+        ],
+        [
+          "May 26",
+          99.04
+        ],
+        [
+          "May 26",
+          103.05
+        ],
+        [
+          "Jun 26",
+          103.83
+        ],
+        [
+          "Jun 26",
+          106.88
+        ],
+        [
+          "Jun 26",
+          108.77
+        ],
+        [
+          "Jun 26",
           106.96
         ],
         [
-          "Apr 26",
-          103.49
-        ],
-        [
-          "Apr 26",
-          107.6
-        ],
-        [
-          "Apr 26",
-          110.89
-        ],
-        [
-          "Apr 26",
-          108.24
-        ],
-        [
-          "May 26",
-          107.07
-        ],
-        [
-          "May 26",
-          99.87
-        ],
-        [
-          "May 26",
-          99.33
-        ],
-        [
-          "May 26",
-          103.66
-        ],
-        [
-          "Jun 26",
-          102.68
-        ],
-        [
-          "Jun 26",
-          103.17
-        ],
-        [
-          "Jun 26",
-          109.58
-        ],
-        [
-          "Jun 26",
-          107.87
+          "Jul 26",
+          104.29
         ],
         [
           "Jul 26",
-          105.35
+          106.34
         ],
         [
           "Jul 26",
-          105.41
+          111.76
         ],
         [
           "Jul 26",
-          105.77
-        ],
-        [
-          "Jul 26",
-          110.38
-        ],
-        [
-          "Jul 26",
-          112.71
+          111.62
         ],
         [
           "Aug 26",
-          114.81
+          113.0
         ],
         [
           "Aug 26",
-          118.0
+          113.5
         ],
         [
           "Aug 26",
-          116.55
+          117.32
         ],
         [
           "Aug 26",
-          115.4
+          115.86
+        ],
+        [
+          "Aug 26",
+          114.23
+        ],
+        [
+          "Sep 26",
+          115.6
+        ],
+        [
+          "Sep 26",
+          114.7
         ],
         [
           "Sep 26",
@@ -1040,23 +792,15 @@
         ],
         [
           "Sep 26",
-          116.75
-        ],
-        [
-          "Sep 26",
-          118.0
-        ],
-        [
-          "Sep 26",
-          112.6
+          111.75
         ],
         [
           "Oct 26",
-          111.92
+          114.59
         ],
         [
           "Oct 26",
-          116.55
+          118.5
         ],
         [
           "Oct 26",
@@ -1064,18 +808,18 @@
         ],
         [
           "Oct 26",
-          120.31
+          123.9
         ],
         [
           "Nov 26",
-          122.42
+          126.1
         ],
         [
           "Nov 26",
-          141.79
+          142.81
         ]
       ],
-      "score": 2.67,
+      "score": 2.62,
       "health": 92,
       "extended": true,
       "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9119",
@@ -1142,8 +886,8 @@
             "name": "Speed",
             "ok": false,
             "text": "It has gone up a lot very fast and may fall back a little first",
-            "tech": "RSI 81",
-            "value": 80.9
+            "tech": "RSI 82",
+            "value": 81.5
           },
           {
             "name": "Who's winning",
@@ -1153,260 +897,260 @@
           },
           {
             "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
+            "ok": false,
+            "text": "In the last day, the price jumped but sellers pushed it back down",
+            "tech": "candle: shooting star",
+            "pattern": "shooting star (sellers stepped in)"
           },
           {
             "name": "Room to move",
-            "ok": true,
-            "text": "It just went above \u20b9139.0, a level where it kept stopping before. Often a good sign",
+            "ok": false,
+            "text": "It's close to \u20b9143.8, where it stopped before (only 0.7% away), so little room to rise",
             "tech": "support/resistance"
           }
         ],
-        "passed": 4,
+        "passed": 2,
         "verdict": "against",
-        "rsi": 80.9,
-        "pattern": "green candle",
-        "resistance": 139.0,
+        "rsi": 81.5,
+        "pattern": "shooting star (sellers stepped in)",
+        "resistance": 143.8,
         "support": 114.1
       },
-      "alloc_shares": 0,
-      "alloc_amount": 0
+      "alloc_shares": 140,
+      "alloc_amount": 19993
     },
     {
       "symbol": "ICICIBANK",
       "name": "ICICI Bank Ltd.",
       "index": "Large cap",
       "industry": "Financial Services",
-      "price": 1590.0,
-      "ma50": 1391.79,
-      "ma200": 1351.32,
+      "price": 1583.6,
+      "ma50": 1394.39,
+      "ma200": 1352.42,
       "high52": 1590.0,
       "low52": 1195.82,
-      "from_high": 0.0,
-      "ret6m": 29.8,
-      "ret12m": 21.4,
-      "cagr3": 20.9,
-      "cagr5": 16.7,
+      "from_high": -0.4,
+      "ret6m": 28.2,
+      "ret12m": 18.9,
+      "cagr3": 20.8,
+      "cagr5": 16.6,
       "dd1y": -16.1,
       "dd5y": -20.7,
       "volatility": 21.1,
       "spark": [
         [
           "Oct 25",
-          1351.01
+          1334.05
         ],
         [
           "Nov 25",
-          1331.77
+          1336.73
         ],
         [
           "Nov 25",
-          1361.52
+          1367.47
         ],
         [
           "Nov 25",
-          1358.05
-        ],
-        [
-          "Nov 25",
-          1377.19
+          1356.96
         ],
         [
           "Dec 25",
-          1380.86
+          1378.48
         ],
         [
           "Dec 25",
-          1354.58
+          1377.98
         ],
         [
           "Dec 25",
-          1342.78
+          1353.79
         ],
         [
           "Dec 25",
-          1332.07
+          1357.06
+        ],
+        [
+          "Dec 25",
+          1331.28
         ],
         [
           "Jan 26",
-          1360.03
+          1399.4
         ],
         [
           "Jan 26",
-          1401.29
+          1424.99
         ],
         [
           "Jan 26",
-          1369.06
+          1364.3
         ],
         [
           "Jan 26",
-          1350.02
+          1356.27
         ],
         [
           "Feb 26",
-          1378.08
+          1396.63
         ],
         [
           "Feb 26",
-          1394.74
+          1394.34
         ],
         [
           "Feb 26",
-          1395.73
+          1396.43
         ],
         [
           "Feb 26",
-          1373.22
+          1388.79
         ],
         [
           "Mar 26",
-          1353.99
+          1346.25
         ],
         [
           "Mar 26",
-          1283.78
+          1255.91
         ],
         [
           "Mar 26",
-          1278.52
+          1239.65
         ],
         [
           "Mar 26",
-          1249.17
+          1223.49
         ],
         [
           "Apr 26",
-          1221.11
+          1235.09
         ],
         [
           "Apr 26",
-          1339.8
+          1336.83
         ],
         [
           "Apr 26",
-          1376.79
+          1356.17
         ],
         [
           "Apr 26",
-          1281.2
+          1270.29
         ],
         [
           "May 26",
-          1268.8
+          1268.31
         ],
         [
           "May 26",
-          1225.27
+          1235.58
         ],
         [
           "May 26",
-          1226.96
+          1232.41
         ],
         [
           "May 26",
-          1262.06
+          1245.9
         ],
         [
           "Jun 26",
-          1241.24
+          1251.55
         ],
         [
           "Jun 26",
-          1305.99
+          1329.59
         ],
         [
           "Jun 26",
-          1331.08
+          1335.24
         ],
         [
           "Jun 26",
-          1375.9
+          1376.0
         ],
         [
           "Jul 26",
-          1399.6
+          1414.97
         ],
         [
           "Jul 26",
-          1389.49
+          1397.72
         ],
         [
           "Jul 26",
-          1432.23
+          1447.99
         ],
         [
           "Jul 26",
-          1420.92
-        ],
-        [
-          "Jul 26",
-          1423.4
+          1433.61
         ],
         [
           "Aug 26",
-          1421.0
+          1460.0
         ],
         [
           "Aug 26",
-          1417.0
+          1431.8
         ],
         [
           "Aug 26",
-          1420.0
+          1415.3
         ],
         [
           "Aug 26",
-          1422.8
+          1415.0
+        ],
+        [
+          "Aug 26",
+          1454.0
         ],
         [
           "Sep 26",
-          1423.2
+          1427.5
         ],
         [
           "Sep 26",
-          1379.3
+          1350.4
         ],
         [
           "Sep 26",
-          1345.0
+          1339.6
         ],
         [
           "Sep 26",
-          1302.0
+          1292.2
         ],
         [
           "Oct 26",
-          1342.8
+          1357.5
         ],
         [
           "Oct 26",
-          1360.2
+          1338.6
         ],
         [
           "Oct 26",
-          1385.0
+          1398.5
         ],
         [
           "Oct 26",
-          1377.6
+          1386.6
         ],
         [
           "Nov 26",
-          1424.1
+          1500.0
         ],
         [
           "Nov 26",
-          1590.0
+          1583.6
         ]
       ],
-      "score": 2.2,
+      "score": 2.1,
       "health": 85,
       "extended": true,
-      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b91,392",
+      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b91,394",
       "fund": {
         "health": 85,
         "grade": "Strong",
@@ -1470,14 +1214,14 @@
             "name": "Speed",
             "ok": false,
             "text": "It has gone up a lot very fast and may fall back a little first",
-            "tech": "RSI 78",
-            "value": 77.6
+            "tech": "RSI 76",
+            "value": 75.8
           },
           {
             "name": "Who's winning",
-            "ok": true,
+            "ok": false,
             "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
+            "text": "Buyers are winning but getting tired"
           },
           {
             "name": "Last move",
@@ -1489,16 +1233,16 @@
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b91,616.0, where it stopped before (1.6% away)",
+            "text": "There's room to rise before \u20b91,616.0, where it stopped before (2.0% away)",
             "tech": "support/resistance"
           }
         ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 77.6,
+        "passed": 3,
+        "verdict": "ok",
+        "rsi": 75.8,
         "pattern": "green candle",
         "resistance": 1616.0,
-        "support": 1329.4
+        "support": 1338.6
       },
       "alloc_shares": 0,
       "alloc_amount": 0
@@ -1508,171 +1252,179 @@
       "name": "Union Bank of India",
       "index": "Large cap",
       "industry": "Financial Services",
-      "price": 204.4,
-      "ma50": 180.41,
-      "ma200": 174.37,
+      "price": 203.0,
+      "ma50": 180.7,
+      "ma200": 174.53,
       "high52": 204.4,
       "low52": 143.81,
-      "from_high": 0.0,
-      "ret6m": 29.5,
-      "ret12m": 40.1,
-      "cagr3": 27.1,
-      "cagr5": 39.0,
+      "from_high": -0.7,
+      "ret6m": 26.7,
+      "ret12m": 36.3,
+      "cagr3": 27.0,
+      "cagr5": 38.8,
       "dd1y": -21.4,
       "dd5y": -38.9,
-      "volatility": 33.1,
+      "volatility": 33.0,
       "spark": [
         [
           "Oct 25",
-          138.24
+          144.41
         ],
         [
           "Nov 25",
-          148.9
+          149.82
         ],
         [
           "Nov 25",
-          148.38
+          149.66
         ],
         [
           "Nov 25",
-          146.56
-        ],
-        [
-          "Nov 25",
-          148.87
+          146.66
         ],
         [
           "Dec 25",
-          148.9
+          149.77
         ],
         [
           "Dec 25",
-          148.36
+          144.11
         ],
         [
           "Dec 25",
-          149.61
+          149.24
         ],
         [
           "Dec 25",
-          144.87
+          148.42
+        ],
+        [
+          "Dec 25",
+          147.3
         ],
         [
           "Jan 26",
-          157.7
+          160.99
         ],
         [
           "Jan 26",
-          159.28
+          161.42
         ],
         [
           "Jan 26",
-          172.34
+          170.69
         ],
         [
           "Jan 26",
-          170.19
+          176.71
         ],
         [
           "Feb 26",
-          169.41
+          171.06
         ],
         [
           "Feb 26",
-          174.12
+          175.16
         ],
         [
           "Feb 26",
-          183.47
+          187.57
         ],
         [
           "Feb 26",
-          194.87
+          193.58
         ],
         [
           "Mar 26",
-          185.65
+          185.72
         ],
         [
           "Mar 26",
-          175.73
+          176.88
         ],
         [
           "Mar 26",
-          172.81
+          167.22
         ],
         [
           "Mar 26",
-          175.15
+          170.45
         ],
         [
           "Apr 26",
-          169.13
+          166.95
         ],
         [
           "Apr 26",
-          179.38
+          183.3
         ],
         [
           "Apr 26",
-          185.89
+          188.49
         ],
         [
           "Apr 26",
-          165.59
+          162.51
         ],
         [
           "May 26",
-          163.91
+          162.48
         ],
         [
           "May 26",
-          157.8
+          160.17
         ],
         [
           "May 26",
-          154.44
+          155.53
         ],
         [
           "May 26",
-          163.88
+          163.07
         ],
         [
           "Jun 26",
-          161.76
+          162.21
         ],
         [
           "Jun 26",
-          159.82
+          165.17
         ],
         [
           "Jun 26",
-          171.07
+          170.72
         ],
         [
           "Jun 26",
-          169.7
+          169.55
         ],
         [
           "Jul 26",
-          163.09
+          161.08
         ],
         [
           "Jul 26",
-          164.51
+          170.39
         ],
         [
           "Jul 26",
-          168.46
+          175.93
         ],
         [
           "Jul 26",
-          170.5
+          170.11
         ],
         [
-          "Jul 26",
-          171.24
+          "Aug 26",
+          174.0
+        ],
+        [
+          "Aug 26",
+          181.14
+        ],
+        [
+          "Aug 26",
+          188.9
         ],
         [
           "Aug 26",
@@ -1680,61 +1432,53 @@
         ],
         [
           "Aug 26",
-          187.38
-        ],
-        [
-          "Aug 26",
-          183.45
-        ],
-        [
-          "Aug 26",
-          186.0
+          188.63
         ],
         [
           "Sep 26",
-          187.22
+          186.04
         ],
         [
           "Sep 26",
-          178.1
+          175.0
         ],
         [
           "Sep 26",
-          178.09
+          178.0
         ],
         [
           "Sep 26",
-          171.75
+          166.0
         ],
         [
           "Oct 26",
-          168.44
+          173.15
         ],
         [
           "Oct 26",
-          172.22
+          174.0
         ],
         [
           "Oct 26",
-          182.0
+          182.85
         ],
         [
           "Oct 26",
-          182.98
+          186.5
         ],
         [
           "Nov 26",
-          183.89
+          188.0
         ],
         [
           "Nov 26",
-          204.4
+          203.0
         ]
       ],
-      "score": 2.2,
+      "score": 2.08,
       "health": 92,
       "extended": true,
-      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9180",
+      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9181",
       "fund": {
         "health": 92,
         "grade": "Strong",
@@ -1798,34 +1542,34 @@
             "name": "Speed",
             "ok": false,
             "text": "It has gone up a lot very fast and may fall back a little first",
-            "tech": "RSI 76",
-            "value": 75.9
+            "tech": "RSI 73",
+            "value": 73.2
           },
           {
             "name": "Who's winning",
-            "ok": true,
+            "ok": false,
             "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
+            "text": "Buyers are winning but getting tired"
           },
           {
             "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
+            "ok": false,
+            "text": "In the last day, buyers and sellers were evenly matched, no clear winner",
+            "tech": "candle: doji",
+            "pattern": "doji (indecision)"
           },
           {
             "name": "Room to move",
-            "ok": true,
-            "text": "It just went above \u20b9202.2, a level where it kept stopping before. Often a good sign",
+            "ok": false,
+            "text": "It's close to \u20b9204.4, where it stopped before (only 0.7% away), so little room to rise",
             "tech": "support/resistance"
           }
         ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 75.9,
-        "pattern": "green candle",
-        "resistance": 202.19,
+        "passed": 1,
+        "verdict": "weak",
+        "rsi": 73.2,
+        "pattern": "doji (indecision)",
+        "resistance": 204.4,
         "support": 167.5
       },
       "alloc_shares": 0,
@@ -1836,203 +1580,207 @@
       "name": "Bosch Ltd.",
       "index": "Large cap",
       "industry": "Automobile and Auto Components",
-      "price": 50500.0,
-      "ma50": 47128.7,
-      "ma200": 40173.8,
+      "price": 49390.0,
+      "ma50": 47116.5,
+      "ma200": 40244.03,
       "high52": 52475.0,
       "low52": 28557.08,
-      "from_high": -3.8,
-      "ret6m": 40.0,
-      "ret12m": 37.3,
-      "cagr3": 36.2,
-      "cagr5": 25.0,
+      "from_high": -5.9,
+      "ret6m": 34.6,
+      "ret12m": 35.1,
+      "cagr3": 35.3,
+      "cagr5": 24.4,
       "dd1y": -27.1,
       "dd5y": -32.5,
       "volatility": 30.2,
       "spark": [
         [
           "Oct 25",
-          36966.74
+          37001.51
         ],
         [
           "Nov 25",
-          36569.35
+          37036.28
         ],
         [
           "Nov 25",
-          36713.41
+          37205.17
         ],
         [
           "Nov 25",
-          36261.38
-        ],
-        [
-          "Nov 25",
-          35873.93
+          35963.34
         ],
         [
           "Dec 25",
-          36678.63
+          36097.46
         ],
         [
           "Dec 25",
-          36474.97
+          36355.76
         ],
         [
           "Dec 25",
-          35705.04
+          36162.03
         ],
         [
           "Dec 25",
-          35397.07
+          35923.6
+        ],
+        [
+          "Dec 25",
+          35292.75
         ],
         [
           "Jan 26",
-          38913.93
+          38705.3
         ],
         [
           "Jan 26",
-          37413.8
+          37657.2
         ],
         [
           "Jan 26",
-          36271.31
-        ],
-        [
-          "Jan 26",
-          35079.16
-        ],
-        [
-          "Feb 26",
-          37493.27
-        ],
-        [
-          "Feb 26",
           35342.43
         ],
         [
-          "Feb 26",
-          35138.77
+          "Jan 26",
+          35948.44
         ],
         [
           "Feb 26",
-          35099.03
+          36470.01
+        ],
+        [
+          "Feb 26",
+          36330.92
+        ],
+        [
+          "Feb 26",
+          35461.64
+        ],
+        [
+          "Feb 26",
+          36330.92
         ],
         [
           "Mar 26",
-          33171.71
+          33012.76
         ],
         [
           "Mar 26",
-          31507.66
+          31100.34
         ],
         [
           "Mar 26",
-          30802.3
+          29937.99
         ],
         [
           "Mar 26",
-          30191.32
+          29421.39
         ],
         [
           "Apr 26",
-          33241.25
+          33226.35
         ],
         [
           "Apr 26",
-          36375.63
+          36837.59
         ],
         [
           "Apr 26",
-          37850.92
+          37637.32
         ],
         [
           "Apr 26",
-          37076.02
+          36107.39
         ],
         [
           "May 26",
-          36405.43
+          37647.26
         ],
         [
           "May 26",
-          36077.59
+          36703.47
         ],
         [
           "May 26",
-          36589.22
+          34979.81
         ],
         [
           "May 26",
-          35799.42
+          36385.56
         ],
         [
           "Jun 26",
-          36758.11
+          36996.54
         ],
         [
           "Jun 26",
-          37319.42
+          38804.64
         ],
         [
           "Jun 26",
-          39773.27
+          39932.22
         ],
         [
           "Jun 26",
-          40175.62
+          39624.25
         ],
         [
           "Jul 26",
-          41621.11
+          41849.61
         ],
         [
           "Jul 26",
-          41541.63
+          41422.42
         ],
         [
           "Jul 26",
-          40587.91
+          40692.22
         ],
         [
           "Jul 26",
-          41482.02
-        ],
-        [
-          "Jul 26",
-          40816.41
+          40980.32
         ],
         [
           "Aug 26",
-          42950.0
+          41030.0
         ],
         [
           "Aug 26",
-          47100.0
+          43505.0
         ],
         [
           "Aug 26",
-          48200.0
+          46970.0
         ],
         [
           "Aug 26",
-          48640.0
+          48100.0
+        ],
+        [
+          "Aug 26",
+          50000.0
         ],
         [
           "Sep 26",
-          46820.0
+          48025.0
         ],
         [
           "Sep 26",
-          48385.0
+          47070.0
         ],
         [
           "Sep 26",
-          47565.0
+          48290.0
         ],
         [
           "Sep 26",
-          47020.0
+          45700.0
+        ],
+        [
+          "Oct 26",
+          44410.0
         ],
         [
           "Oct 26",
@@ -2040,29 +1788,25 @@
         ],
         [
           "Oct 26",
-          44900.0
+          44070.0
         ],
         [
           "Oct 26",
-          44500.0
-        ],
-        [
-          "Oct 26",
-          47625.0
+          47565.0
         ],
         [
           "Nov 26",
-          50925.0
+          52475.0
         ],
         [
           "Nov 26",
-          50500.0
+          49390.0
         ]
       ],
-      "score": 2.05,
+      "score": 1.86,
       "health": 82,
       "extended": false,
-      "zone": "Price is close to its usual level (\u20b947,129): a reasonable time to buy",
+      "zone": "Price is close to its usual level (\u20b947,116): a reasonable time to buy",
       "fund": {
         "health": 82,
         "grade": "Strong",
@@ -2129,8 +1873,8 @@
             "name": "Speed",
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 62",
-            "value": 62.2
+            "tech": "RSI 56",
+            "value": 56.4
           },
           {
             "name": "Who's winning",
@@ -2141,23 +1885,352 @@
           {
             "name": "Last move",
             "ok": false,
-            "text": "In the last day, buyers and sellers were evenly matched, no clear winner",
-            "tech": "candle: doji",
-            "pattern": "doji (indecision)"
+            "text": "In the last day, sellers were firmly in charge",
+            "tech": "candle: strong red candle",
+            "pattern": "strong red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b952,475.0, where it stopped before (3.9% away)",
+            "text": "There's room to rise before \u20b952,475.0, where it stopped before (6.2% away)",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 3,
+        "verdict": "against",
+        "rsi": 56.4,
+        "pattern": "strong red candle",
+        "resistance": 52475.0,
+        "support": 43650.0
+      },
+      "alloc_shares": 0,
+      "alloc_amount": 0
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "name": "Kotak Mahindra Bank Ltd.",
+      "index": "Large cap",
+      "industry": "Financial Services",
+      "price": 488.55,
+      "ma50": 435.56,
+      "ma200": 402.51,
+      "high52": 490.4,
+      "low52": 352.79,
+      "from_high": -0.4,
+      "ret6m": 27.7,
+      "ret12m": 17.2,
+      "cagr3": 11.5,
+      "cagr5": 3.9,
+      "dd1y": -20.3,
+      "dd5y": -26.1,
+      "volatility": 21.9,
+      "spark": [
+        [
+          "Oct 25",
+          419.72
+        ],
+        [
+          "Nov 25",
+          417.82
+        ],
+        [
+          "Nov 25",
+          419.86
+        ],
+        [
+          "Nov 25",
+          416.74
+        ],
+        [
+          "Dec 25",
+          428.78
+        ],
+        [
+          "Dec 25",
+          425.59
+        ],
+        [
+          "Dec 25",
+          435.51
+        ],
+        [
+          "Dec 25",
+          429.2
+        ],
+        [
+          "Dec 25",
+          429.8
+        ],
+        [
+          "Jan 26",
+          428.54
+        ],
+        [
+          "Jan 26",
+          425.78
+        ],
+        [
+          "Jan 26",
+          423.07
+        ],
+        [
+          "Jan 26",
+          411.69
+        ],
+        [
+          "Feb 26",
+          411.64
+        ],
+        [
+          "Feb 26",
+          428.81
+        ],
+        [
+          "Feb 26",
+          425.62
+        ],
+        [
+          "Feb 26",
+          424.22
+        ],
+        [
+          "Mar 26",
+          406.6
+        ],
+        [
+          "Mar 26",
+          374.65
+        ],
+        [
+          "Mar 26",
+          367.52
+        ],
+        [
+          "Mar 26",
+          365.52
+        ],
+        [
+          "Apr 26",
+          362.32
+        ],
+        [
+          "Apr 26",
+          381.74
+        ],
+        [
+          "Apr 26",
+          376.2
+        ],
+        [
+          "Apr 26",
+          381.34
+        ],
+        [
+          "May 26",
+          378.75
+        ],
+        [
+          "May 26",
+          382.54
+        ],
+        [
+          "May 26",
+          380.19
+        ],
+        [
+          "May 26",
+          383.54
+        ],
+        [
+          "Jun 26",
+          376.8
+        ],
+        [
+          "Jun 26",
+          402.6
+        ],
+        [
+          "Jun 26",
+          398.56
+        ],
+        [
+          "Jun 26",
+          394.82
+        ],
+        [
+          "Jul 26",
+          380.64
+        ],
+        [
+          "Jul 26",
+          383.99
+        ],
+        [
+          "Jul 26",
+          382.05
+        ],
+        [
+          "Jul 26",
+          384.65
+        ],
+        [
+          "Aug 26",
+          397.5
+        ],
+        [
+          "Aug 26",
+          393.5
+        ],
+        [
+          "Aug 26",
+          392.7
+        ],
+        [
+          "Aug 26",
+          401.45
+        ],
+        [
+          "Aug 26",
+          419.4
+        ],
+        [
+          "Sep 26",
+          422.1
+        ],
+        [
+          "Sep 26",
+          409.8
+        ],
+        [
+          "Sep 26",
+          412.65
+        ],
+        [
+          "Sep 26",
+          406.0
+        ],
+        [
+          "Oct 26",
+          440.0
+        ],
+        [
+          "Oct 26",
+          438.05
+        ],
+        [
+          "Oct 26",
+          437.0
+        ],
+        [
+          "Oct 26",
+          459.0
+        ],
+        [
+          "Nov 26",
+          467.0
+        ],
+        [
+          "Nov 26",
+          488.55
+        ]
+      ],
+      "score": 1.54,
+      "health": 78,
+      "extended": true,
+      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9436",
+      "fund": {
+        "health": 78,
+        "grade": "Strong",
+        "good": [
+          "Earns \u20b92.1 profit a year on every \u20b9100 it lends and holds (good for a bank)",
+          "Share price is 23\u00d7 its yearly profit per share; similar companies are 20\u00d7 (fairly priced)",
+          "Keeps about \u20b929 as profit from every \u20b9100 of sales (good)"
+        ],
+        "bad": [
+          "Profit grew about 9% every year for the last 3 years"
+        ],
+        "info": [
+          "The founders/owner family hold 28% of the company"
+        ],
+        "parts": {
+          "Profitability": 20,
+          "Growth": 8,
+          "Valuation": 14,
+          "Margins": 20
+        },
+        "pe": 22.6,
+        "sector_pe": 19.6,
+        "pb": 2.5,
+        "roe": 11.8,
+        "debt_equity": null,
+        "profit_cagr": 8.9,
+        "revenue_cagr": 14.1,
+        "div_yield": 0.14,
+        "mcap_cr": 484561,
+        "profit_history": [
+          [
+            "2026-03-31",
+            192878925000.0
+          ],
+          [
+            "2025-03-31",
+            221259890000.0
+          ],
+          [
+            "2024-03-31",
+            182132075000.0
+          ],
+          [
+            "2023-03-31",
+            149250096000.0
+          ]
+        ]
+      },
+      "pe": 22.6,
+      "pb": 2.5,
+      "mcap_cr": 484561,
+      "div_yield": 0.14,
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": false,
+            "text": "It has gone up a lot very fast and may fall back a little first",
+            "tech": "RSI 74",
+            "value": 74.0
+          },
+          {
+            "name": "Who's winning",
+            "ok": false,
+            "tech": "MACD",
+            "text": "Buyers are winning but getting tired"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price dipped but buyers pushed it back up",
+            "tech": "candle: hammer",
+            "pattern": "hammer (buyers stepped in)"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "There's room to rise before \u20b9494.0, where it stopped before (1.1% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 3,
         "verdict": "ok",
-        "rsi": 62.2,
-        "pattern": "doji (indecision)",
-        "resistance": 52475.0,
-        "support": 43650.0
+        "rsi": 74.0,
+        "pattern": "hammer (buyers stepped in)",
+        "resistance": 494.05,
+        "support": 427.7
       },
       "alloc_shares": 0,
       "alloc_amount": 0
@@ -2167,233 +2240,233 @@
       "name": "Zydus Lifesciences Ltd.",
       "index": "Large cap",
       "industry": "Healthcare",
-      "price": 1206.0,
-      "ma50": 1159.34,
-      "ma200": 1045.06,
+      "price": 1189.9,
+      "ma50": 1159.91,
+      "ma200": 1046.65,
       "high52": 1245.5,
       "low52": 859.83,
-      "from_high": -3.2,
-      "ret6m": 28.5,
-      "ret12m": 28.9,
-      "cagr3": 24.3,
-      "cagr5": 21.9,
+      "from_high": -4.5,
+      "ret6m": 20.1,
+      "ret12m": 26.1,
+      "cagr3": 23.8,
+      "cagr5": 21.6,
       "dd1y": -9.5,
       "dd5y": -36.8,
-      "volatility": 24.6,
+      "volatility": 24.4,
       "spark": [
         [
           "Oct 25",
-          985.26
+          973.58
         ],
         [
           "Nov 25",
-          943.25
+          947.55
         ],
         [
           "Nov 25",
-          943.6
+          933.91
         ],
         [
           "Nov 25",
-          923.47
-        ],
-        [
-          "Nov 25",
-          941.65
+          925.82
         ],
         [
           "Dec 25",
-          930.61
+          935.61
         ],
         [
           "Dec 25",
-          928.32
+          923.77
         ],
         [
           "Dec 25",
-          918.77
+          920.77
         ],
         [
           "Dec 25",
-          903.79
+          917.38
+        ],
+        [
+          "Dec 25",
+          900.64
         ],
         [
           "Jan 26",
-          921.12
+          930.21
         ],
         [
           "Jan 26",
-          894.25
+          899.89
         ],
         [
           "Jan 26",
-          880.31
+          872.62
         ],
         [
           "Jan 26",
-          892.55
-        ],
-        [
-          "Feb 26",
-          902.09
-        ],
-        [
-          "Feb 26",
-          886.5
-        ],
-        [
-          "Feb 26",
-          905.84
-        ],
-        [
-          "Feb 26",
-          903.04
-        ],
-        [
-          "Mar 26",
           896.09
         ],
         [
-          "Mar 26",
-          920.92
+          "Feb 26",
+          904.44
+        ],
+        [
+          "Feb 26",
+          897.49
+        ],
+        [
+          "Feb 26",
+          909.23
+        ],
+        [
+          "Feb 26",
+          918.82
         ],
         [
           "Mar 26",
-          898.79
+          913.83
         ],
         [
           "Mar 26",
-          902.89
+          916.08
+        ],
+        [
+          "Mar 26",
+          875.36
+        ],
+        [
+          "Mar 26",
+          895.89
         ],
         [
           "Apr 26",
-          865.52
+          872.72
         ],
         [
           "Apr 26",
-          921.57
+          935.21
         ],
         [
           "Apr 26",
-          927.77
+          929.07
         ],
         [
           "Apr 26",
-          910.48
+          910.03
         ],
         [
           "May 26",
-          937.96
+          939.46
         ],
         [
           "May 26",
-          938.41
+          990.81
         ],
         [
           "May 26",
-          1039.92
+          1035.52
         ],
         [
           "May 26",
-          1084.83
+          1076.73
         ],
         [
           "Jun 26",
-          1083.63
+          1088.02
         ],
         [
           "Jun 26",
-          1104.91
+          1103.71
         ],
         [
           "Jun 26",
-          1073.44
+          1069.84
         ],
         [
           "Jun 26",
-          1100.41
+          1120.29
         ],
         [
           "Jul 26",
-          1139.58
+          1146.87
         ],
         [
           "Jul 26",
-          1149.77
+          1130.28
         ],
         [
           "Jul 26",
-          1142.67
+          1147.97
         ],
         [
           "Jul 26",
-          1108.7
-        ],
-        [
-          "Jul 26",
-          1126.8
+          1108.2
         ],
         [
           "Aug 26",
-          1114.2
+          1121.0
         ],
         [
           "Aug 26",
-          1135.2
+          1119.0
         ],
         [
           "Aug 26",
-          1120.0
+          1131.5
         ],
         [
           "Aug 26",
-          1191.0
+          1103.8
+        ],
+        [
+          "Aug 26",
+          1161.3
         ],
         [
           "Sep 26",
-          1120.0
+          1156.9
         ],
         [
           "Sep 26",
-          1119.1
+          1099.0
         ],
         [
           "Sep 26",
-          1161.0
+          1162.3
         ],
         [
           "Sep 26",
-          1215.0
+          1200.5
         ],
         [
           "Oct 26",
-          1159.5
+          1153.0
         ],
         [
           "Oct 26",
-          1132.5
+          1124.7
         ],
         [
           "Oct 26",
-          1117.3
+          1135.0
         ],
         [
           "Oct 26",
-          1175.5
+          1184.4
         ],
         [
           "Nov 26",
-          1188.1
+          1193.0
         ],
         [
           "Nov 26",
-          1206.0
+          1189.9
         ]
       ],
-      "score": 1.85,
+      "score": 1.51,
       "health": 82,
       "extended": false,
-      "zone": "Price is close to its usual level (\u20b91,159): a reasonable time to buy",
+      "zone": "Price is close to its usual level (\u20b91,160): a reasonable time to buy",
       "fund": {
         "health": 82,
         "grade": "Strong",
@@ -2459,8 +2532,8 @@
             "name": "Speed",
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 57",
-            "value": 56.9
+            "tech": "RSI 53",
+            "value": 52.6
           },
           {
             "name": "Who's winning",
@@ -2471,918 +2544,259 @@
           {
             "name": "Last move",
             "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b91,266.6, where it stopped before (5.0% away)",
+            "text": "There's room to rise before \u20b91,266.6, where it stopped before (6.4% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 4,
         "verdict": "strong",
-        "rsi": 56.9,
-        "pattern": "green candle",
+        "rsi": 52.6,
+        "pattern": "red candle",
         "resistance": 1266.6,
         "support": 1093.5
       },
       "alloc_shares": 16,
-      "alloc_amount": 19296
-    },
-    {
-      "symbol": "SOLARINDS",
-      "name": "Solar Industries India Ltd.",
-      "index": "Large cap",
-      "industry": "Chemicals",
-      "price": 19276.0,
-      "ma50": 19808.12,
-      "ma200": 17140.85,
-      "high52": 22455.0,
-      "low52": 11765.05,
-      "from_high": -14.2,
-      "ret6m": 22.2,
-      "ret12m": 41.6,
-      "cagr3": 37.7,
-      "cagr5": 47.5,
-      "dd1y": -20.3,
-      "dd5y": -33.1,
-      "volatility": 37.1,
-      "spark": [
-        [
-          "Oct 25",
-          13951.76
-        ],
-        [
-          "Nov 25",
-          13368.1
-        ],
-        [
-          "Nov 25",
-          13750.88
-        ],
-        [
-          "Nov 25",
-          13942.76
-        ],
-        [
-          "Nov 25",
-          13345.12
-        ],
-        [
-          "Dec 25",
-          12933.36
-        ],
-        [
-          "Dec 25",
-          12450.64
-        ],
-        [
-          "Dec 25",
-          11765.05
-        ],
-        [
-          "Dec 25",
-          12429.66
-        ],
-        [
-          "Jan 26",
-          12328.72
-        ],
-        [
-          "Jan 26",
-          13183.21
-        ],
-        [
-          "Jan 26",
-          12917.37
-        ],
-        [
-          "Jan 26",
-          12758.46
-        ],
-        [
-          "Feb 26",
-          13784.86
-        ],
-        [
-          "Feb 26",
-          13415.07
-        ],
-        [
-          "Feb 26",
-          13258.17
-        ],
-        [
-          "Feb 26",
-          13271.16
-        ],
-        [
-          "Mar 26",
-          14514.42
-        ],
-        [
-          "Mar 26",
-          14506.43
-        ],
-        [
-          "Mar 26",
-          13690.91
-        ],
-        [
-          "Mar 26",
-          12882.39
-        ],
-        [
-          "Apr 26",
-          13295.14
-        ],
-        [
-          "Apr 26",
-          14516.42
-        ],
-        [
-          "Apr 26",
-          14940.17
-        ],
-        [
-          "Apr 26",
-          15294.96
-        ],
-        [
-          "May 26",
-          15730.71
-        ],
-        [
-          "May 26",
-          15777.68
-        ],
-        [
-          "May 26",
-          18199.25
-        ],
-        [
-          "May 26",
-          18641.98
-        ],
-        [
-          "Jun 26",
-          18282.2
-        ],
-        [
-          "Jun 26",
-          17130.88
-        ],
-        [
-          "Jun 26",
-          17753.51
-        ],
-        [
-          "Jun 26",
-          17417.71
-        ],
-        [
-          "Jul 26",
-          18503.07
-        ],
-        [
-          "Jul 26",
-          18225.23
-        ],
-        [
-          "Jul 26",
-          18456.1
-        ],
-        [
-          "Jul 26",
-          18483.08
-        ],
-        [
-          "Jul 26",
-          18391.0
-        ],
-        [
-          "Aug 26",
-          18650.0
-        ],
-        [
-          "Aug 26",
-          19969.0
-        ],
-        [
-          "Aug 26",
-          19900.0
-        ],
-        [
-          "Aug 26",
-          20400.0
-        ],
-        [
-          "Sep 26",
-          21445.0
-        ],
-        [
-          "Sep 26",
-          22290.0
-        ],
-        [
-          "Sep 26",
-          19265.0
-        ],
-        [
-          "Sep 26",
-          19150.0
-        ],
-        [
-          "Oct 26",
-          20071.0
-        ],
-        [
-          "Oct 26",
-          20087.0
-        ],
-        [
-          "Oct 26",
-          19259.0
-        ],
-        [
-          "Oct 26",
-          19240.0
-        ],
-        [
-          "Nov 26",
-          19393.0
-        ],
-        [
-          "Nov 26",
-          19276.0
-        ]
-      ],
-      "score": 1.84,
-      "health": 94,
-      "extended": false,
-      "zone": "Price is close to its usual level (\u20b919,808): a reasonable time to buy",
-      "fund": {
-        "health": 94,
-        "grade": "Strong",
-        "good": [
-          "Makes \u20b935 profit a year for every \u20b9100 of the owners' money (very good)",
-          "Profit grew about 30% every year for the last 3 years",
-          "Has borrowed \u20b922 for every \u20b9100 of its own money (low, safe)",
-          "Share price is 77\u00d7 its yearly profit per share; similar companies are 77\u00d7 (fairly priced)",
-          "Keeps about \u20b926 as profit from every \u20b9100 of sales (good)"
-        ],
-        "bad": [],
-        "info": [
-          "The founders/owner family hold 44% of the company"
-        ],
-        "parts": {
-          "Profitability": 20,
-          "Growth": 20,
-          "Debt": 20,
-          "Valuation": 14,
-          "Margins": 20
-        },
-        "pe": 77.3,
-        "sector_pe": 77.3,
-        "pb": 22.8,
-        "roe": 35.1,
-        "debt_equity": 0.22,
-        "profit_cagr": 30.4,
-        "revenue_cagr": 12.4,
-        "div_yield": 0.06,
-        "mcap_cr": 174990,
-        "profit_history": [
-          [
-            "2026-03-31",
-            16775500000.0
-          ],
-          [
-            "2025-03-31",
-            12094400000.0
-          ],
-          [
-            "2024-03-31",
-            8359300000.0
-          ],
-          [
-            "2023-03-31",
-            7571900000.0
-          ]
-        ]
-      },
-      "pe": 77.3,
-      "pb": 22.8,
-      "mcap_cr": 174990,
-      "div_yield": 0.06,
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": false,
-            "text": "Not much buying energy yet",
-            "tech": "RSI 50",
-            "value": 49.5
-          },
-          {
-            "name": "Who's winning",
-            "ok": true,
-            "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b920,880.0, where it stopped before (8.3% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 49.5,
-        "pattern": "green candle",
-        "resistance": 20880.0,
-        "support": 17711.0
-      },
-      "alloc_shares": 1,
-      "alloc_amount": 19276
-    },
-    {
-      "symbol": "KOTAKBANK",
-      "name": "Kotak Mahindra Bank Ltd.",
-      "index": "Large cap",
-      "industry": "Financial Services",
-      "price": 490.4,
-      "ma50": 434.18,
-      "ma200": 402.19,
-      "high52": 490.4,
-      "low52": 352.79,
-      "from_high": 0.0,
-      "ret6m": 30.1,
-      "ret12m": 17.9,
-      "cagr3": 11.7,
-      "cagr5": 4.0,
-      "dd1y": -20.3,
-      "dd5y": -26.1,
-      "volatility": 21.9,
-      "spark": [
-        [
-          "Oct 25",
-          426.7
-        ],
-        [
-          "Nov 25",
-          416.94
-        ],
-        [
-          "Nov 25",
-          415.22
-        ],
-        [
-          "Nov 25",
-          416.84
-        ],
-        [
-          "Nov 25",
-          424.15
-        ],
-        [
-          "Dec 25",
-          430.24
-        ],
-        [
-          "Dec 25",
-          434.57
-        ],
-        [
-          "Dec 25",
-          431.16
-        ],
-        [
-          "Dec 25",
-          430.98
-        ],
-        [
-          "Jan 26",
-          437.42
-        ],
-        [
-          "Jan 26",
-          425.92
-        ],
-        [
-          "Jan 26",
-          426.16
-        ],
-        [
-          "Jan 26",
-          408.0
-        ],
-        [
-          "Feb 26",
-          415.08
-        ],
-        [
-          "Feb 26",
-          428.56
-        ],
-        [
-          "Feb 26",
-          423.72
-        ],
-        [
-          "Feb 26",
-          426.96
-        ],
-        [
-          "Mar 26",
-          402.65
-        ],
-        [
-          "Mar 26",
-          382.54
-        ],
-        [
-          "Mar 26",
-          374.75
-        ],
-        [
-          "Mar 26",
-          370.46
-        ],
-        [
-          "Apr 26",
-          359.93
-        ],
-        [
-          "Apr 26",
-          371.26
-        ],
-        [
-          "Apr 26",
-          381.49
-        ],
-        [
-          "Apr 26",
-          377.3
-        ],
-        [
-          "May 26",
-          375.95
-        ],
-        [
-          "May 26",
-          377.0
-        ],
-        [
-          "May 26",
-          382.54
-        ],
-        [
-          "May 26",
-          388.03
-        ],
-        [
-          "Jun 26",
-          380.84
-        ],
-        [
-          "Jun 26",
-          392.67
-        ],
-        [
-          "Jun 26",
-          402.26
-        ],
-        [
-          "Jun 26",
-          408.3
-        ],
-        [
-          "Jul 26",
-          396.07
-        ],
-        [
-          "Jul 26",
-          376.95
-        ],
-        [
-          "Jul 26",
-          389.95
-        ],
-        [
-          "Jul 26",
-          384.75
-        ],
-        [
-          "Jul 26",
-          390.3
-        ],
-        [
-          "Aug 26",
-          390.75
-        ],
-        [
-          "Aug 26",
-          391.15
-        ],
-        [
-          "Aug 26",
-          402.8
-        ],
-        [
-          "Aug 26",
-          423.7
-        ],
-        [
-          "Sep 26",
-          424.5
-        ],
-        [
-          "Sep 26",
-          419.0
-        ],
-        [
-          "Sep 26",
-          414.8
-        ],
-        [
-          "Sep 26",
-          401.55
-        ],
-        [
-          "Oct 26",
-          431.9
-        ],
-        [
-          "Oct 26",
-          439.0
-        ],
-        [
-          "Oct 26",
-          437.8
-        ],
-        [
-          "Oct 26",
-          440.0
-        ],
-        [
-          "Nov 26",
-          459.4
-        ],
-        [
-          "Nov 26",
-          490.4
-        ]
-      ],
-      "score": 1.64,
-      "health": 78,
-      "extended": true,
-      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9434",
-      "fund": {
-        "health": 78,
-        "grade": "Strong",
-        "good": [
-          "Earns \u20b92.1 profit a year on every \u20b9100 it lends and holds (good for a bank)",
-          "Share price is 23\u00d7 its yearly profit per share; similar companies are 20\u00d7 (fairly priced)",
-          "Keeps about \u20b929 as profit from every \u20b9100 of sales (good)"
-        ],
-        "bad": [
-          "Profit grew about 9% every year for the last 3 years"
-        ],
-        "info": [
-          "The founders/owner family hold 28% of the company"
-        ],
-        "parts": {
-          "Profitability": 20,
-          "Growth": 8,
-          "Valuation": 14,
-          "Margins": 20
-        },
-        "pe": 22.6,
-        "sector_pe": 19.6,
-        "pb": 2.5,
-        "roe": 11.8,
-        "debt_equity": null,
-        "profit_cagr": 8.9,
-        "revenue_cagr": 14.1,
-        "div_yield": 0.14,
-        "mcap_cr": 484561,
-        "profit_history": [
-          [
-            "2026-03-31",
-            192878925000.0
-          ],
-          [
-            "2025-03-31",
-            221259890000.0
-          ],
-          [
-            "2024-03-31",
-            182132075000.0
-          ],
-          [
-            "2023-03-31",
-            149250096000.0
-          ]
-        ]
-      },
-      "pe": 22.6,
-      "pb": 2.5,
-      "mcap_cr": 484561,
-      "div_yield": 0.14,
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": false,
-            "text": "It has gone up a lot very fast and may fall back a little first",
-            "tech": "RSI 76",
-            "value": 75.9
-          },
-          {
-            "name": "Who's winning",
-            "ok": true,
-            "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": false,
-            "text": "It's close to \u20b9491.0, where it stopped before (only 0.1% away), so little room to rise",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 3,
-        "verdict": "ok",
-        "rsi": 75.9,
-        "pattern": "green candle",
-        "resistance": 491.05,
-        "support": 427.7
-      },
-      "alloc_shares": 0,
-      "alloc_amount": 0
+      "alloc_amount": 19038
     },
     {
       "symbol": "BAJAJ-AUTO",
       "name": "Bajaj Auto Ltd.",
       "index": "Large cap",
       "industry": "Automobile and Auto Components",
-      "price": 10945.0,
-      "ma50": 10877.58,
-      "ma200": 10282.26,
+      "price": 10850.0,
+      "ma50": 10851.98,
+      "ma200": 10291.24,
       "high52": 12361.0,
-      "low52": 8599.48,
-      "from_high": -11.5,
-      "ret6m": 8.2,
-      "ret12m": 27.3,
-      "cagr3": 26.8,
-      "cagr5": 28.2,
+      "low52": 8600.46,
+      "from_high": -12.2,
+      "ret6m": 5.3,
+      "ret12m": 26.2,
+      "cagr3": 26.3,
+      "cagr5": 27.9,
       "dd1y": -22.0,
       "dd5y": -42.3,
       "volatility": 24.4,
       "spark": [
         [
           "Oct 25",
-          8799.17
+          8769.09
         ],
         [
           "Nov 25",
-          8600.46
+          8650.26
         ],
         [
           "Nov 25",
-          8720.28
+          8821.35
         ],
         [
           "Nov 25",
-          8768.6
-        ],
-        [
-          "Nov 25",
-          8947.58
+          8882.49
         ],
         [
           "Dec 25",
-          8982.58
+          8969.77
         ],
         [
           "Dec 25",
-          8889.89
+          8900.74
         ],
         [
           "Dec 25",
-          8877.07
+          8815.93
         ],
         [
           "Dec 25",
-          8960.89
+          9036.82
+        ],
+        [
+          "Dec 25",
+          9153.18
         ],
         [
           "Jan 26",
-          9365.69
+          9526.92
         ],
         [
           "Jan 26",
-          9359.28
+          9421.41
         ],
         [
           "Jan 26",
-          9298.64
+          9052.6
         ],
         [
           "Jan 26",
-          9360.27
+          9302.58
         ],
         [
           "Feb 26",
-          9462.33
+          9505.23
         ],
         [
           "Feb 26",
-          9638.36
+          9732.53
         ],
         [
           "Feb 26",
-          9690.13
+          9841.5
         ],
         [
           "Feb 26",
-          9692.59
+          9956.87
         ],
         [
           "Mar 26",
-          9518.54
+          9668.43
         ],
         [
           "Mar 26",
-          9198.05
+          9034.85
         ],
         [
           "Mar 26",
-          9142.34
+          8745.42
         ],
         [
           "Mar 26",
-          8922.92
+          8777.47
         ],
         [
           "Apr 26",
-          8818.4
+          8923.91
         ],
         [
           "Apr 26",
-          9679.77
+          9728.09
         ],
         [
           "Apr 26",
-          9657.09
+          9468.74
         ],
         [
           "Apr 26",
-          9363.72
+          9411.06
         ],
         [
           "May 26",
-          10175.79
+          10457.82
         ],
         [
           "May 26",
-          10119.58
+          10305.96
         ],
         [
           "May 26",
-          10317.3
+          10518.96
         ],
         [
           "May 26",
-          10658.5
+          10460.0
         ],
         [
           "Jun 26",
-          10362.0
+          10342.0
         ],
         [
           "Jun 26",
-          10114.0
+          10063.0
         ],
         [
           "Jun 26",
-          10077.0
+          10066.0
         ],
         [
           "Jun 26",
-          9843.0
+          9630.0
         ],
         [
           "Jul 26",
-          9785.5
+          10036.5
         ],
         [
           "Jul 26",
-          10156.0
+          10381.0
         ],
         [
           "Jul 26",
-          10443.0
+          10522.5
         ],
         [
           "Jul 26",
-          11130.0
-        ],
-        [
-          "Jul 26",
-          11520.5
+          11183.5
         ],
         [
           "Aug 26",
-          11662.0
+          11856.0
         ],
         [
           "Aug 26",
-          11700.0
+          11677.0
         ],
         [
           "Aug 26",
-          11700.0
+          11663.0
         ],
         [
           "Aug 26",
-          11910.0
+          11800.0
+        ],
+        [
+          "Aug 26",
+          12130.0
         ],
         [
           "Sep 26",
-          11919.0
+          11800.0
         ],
         [
           "Sep 26",
-          11678.0
+          11424.0
         ],
         [
           "Sep 26",
-          11460.0
+          11363.0
         ],
         [
           "Sep 26",
-          11024.0
+          10811.0
         ],
         [
           "Oct 26",
-          10017.0
+          9884.0
         ],
         [
           "Oct 26",
-          10318.0
+          10250.0
         ],
         [
           "Oct 26",
-          10072.0
+          10155.0
         ],
         [
           "Oct 26",
-          10485.0
+          10383.0
         ],
         [
           "Nov 26",
-          10608.0
+          10758.0
         ],
         [
           "Nov 26",
-          10945.0
+          10850.0
         ]
       ],
-      "score": 1.49,
+      "score": 1.35,
       "health": 88,
       "extended": false,
-      "zone": "Price is close to its usual level (\u20b910,878): a reasonable time to buy",
+      "zone": "Price is close to its usual level (\u20b910,852): a reasonable time to buy",
       "fund": {
         "health": 88,
         "grade": "Strong",
@@ -3448,8 +2862,8 @@
             "name": "Speed",
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 60",
-            "value": 60.4
+            "tech": "RSI 57",
+            "value": 56.8
           },
           {
             "name": "Who's winning",
@@ -3459,260 +2873,590 @@
           },
           {
             "name": "Last move",
-            "ok": false,
-            "text": "In the last day, sellers took over from buyers",
-            "tech": "candle: bearish engulfing",
-            "pattern": "bearish engulfing"
+            "ok": true,
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b911,120.0, where it stopped before (1.6% away)",
+            "text": "There's room to rise before \u20b911,173.0, where it stopped before (3.0% away)",
             "tech": "support/resistance"
           }
         ],
-        "passed": 3,
-        "verdict": "against",
-        "rsi": 60.4,
-        "pattern": "bearish engulfing",
-        "resistance": 11120.0,
+        "passed": 4,
+        "verdict": "strong",
+        "rsi": 56.8,
+        "pattern": "red candle",
+        "resistance": 11173.0,
         "support": 9906.0
       },
       "alloc_shares": 1,
-      "alloc_amount": 10945
+      "alloc_amount": 10850
+    },
+    {
+      "symbol": "TORNTPHARM",
+      "name": "Torrent Pharmaceuticals Ltd.",
+      "index": "Large cap",
+      "industry": "Healthcare",
+      "price": 4670.0,
+      "ma50": 4761.91,
+      "ma200": 4536.72,
+      "high52": 5122.8,
+      "low52": 3548.57,
+      "from_high": -8.8,
+      "ret6m": 6.3,
+      "ret12m": 31.6,
+      "cagr3": 31.6,
+      "cagr5": 28.9,
+      "dd1y": -11.7,
+      "dd5y": -22.9,
+      "volatility": 22.4,
+      "spark": [
+        [
+          "Oct 25",
+          3528.84
+        ],
+        [
+          "Nov 25",
+          3783.98
+        ],
+        [
+          "Nov 25",
+          3785.87
+        ],
+        [
+          "Nov 25",
+          3685.75
+        ],
+        [
+          "Dec 25",
+          3704.09
+        ],
+        [
+          "Dec 25",
+          3726.99
+        ],
+        [
+          "Dec 25",
+          3749.39
+        ],
+        [
+          "Dec 25",
+          3782.5
+        ],
+        [
+          "Dec 25",
+          3788.54
+        ],
+        [
+          "Jan 26",
+          3902.24
+        ],
+        [
+          "Jan 26",
+          3905.7
+        ],
+        [
+          "Jan 26",
+          3941.88
+        ],
+        [
+          "Jan 26",
+          3923.94
+        ],
+        [
+          "Feb 26",
+          3988.17
+        ],
+        [
+          "Feb 26",
+          4021.08
+        ],
+        [
+          "Feb 26",
+          4202.45
+        ],
+        [
+          "Feb 26",
+          4410.14
+        ],
+        [
+          "Mar 26",
+          4344.77
+        ],
+        [
+          "Mar 26",
+          4437.18
+        ],
+        [
+          "Mar 26",
+          4202.45
+        ],
+        [
+          "Mar 26",
+          4257.14
+        ],
+        [
+          "Apr 26",
+          4043.26
+        ],
+        [
+          "Apr 26",
+          4151.05
+        ],
+        [
+          "Apr 26",
+          4076.5
+        ],
+        [
+          "Apr 26",
+          4223.11
+        ],
+        [
+          "May 26",
+          4354.05
+        ],
+        [
+          "May 26",
+          4395.17
+        ],
+        [
+          "May 26",
+          4460.34
+        ],
+        [
+          "May 26",
+          4410.8
+        ],
+        [
+          "Jun 26",
+          4420.9
+        ],
+        [
+          "Jun 26",
+          4571.2
+        ],
+        [
+          "Jun 26",
+          4429.8
+        ],
+        [
+          "Jun 26",
+          4657.6
+        ],
+        [
+          "Jul 26",
+          4822.7
+        ],
+        [
+          "Jul 26",
+          4951.1
+        ],
+        [
+          "Jul 26",
+          5005.4
+        ],
+        [
+          "Jul 26",
+          5019.5
+        ],
+        [
+          "Aug 26",
+          5050.0
+        ],
+        [
+          "Aug 26",
+          4924.0
+        ],
+        [
+          "Aug 26",
+          4900.0
+        ],
+        [
+          "Aug 26",
+          4886.5
+        ],
+        [
+          "Aug 26",
+          5066.0
+        ],
+        [
+          "Sep 26",
+          4914.0
+        ],
+        [
+          "Sep 26",
+          4850.0
+        ],
+        [
+          "Sep 26",
+          4935.0
+        ],
+        [
+          "Sep 26",
+          4894.0
+        ],
+        [
+          "Oct 26",
+          4716.2
+        ],
+        [
+          "Oct 26",
+          4580.0
+        ],
+        [
+          "Oct 26",
+          4615.3
+        ],
+        [
+          "Oct 26",
+          4580.0
+        ],
+        [
+          "Nov 26",
+          4710.0
+        ],
+        [
+          "Nov 26",
+          4670.0
+        ]
+      ],
+      "score": 1.2,
+      "health": 82,
+      "extended": false,
+      "zone": "Price is close to its usual level (\u20b94,762): a reasonable time to buy",
+      "fund": {
+        "health": 82,
+        "grade": "Strong",
+        "good": [
+          "Makes \u20b916 profit a year for every \u20b9100 of the owners' money (good)",
+          "Profit grew about 20% every year for the last 3 years",
+          "Has borrowed \u20b977 for every \u20b9100 of its own money (manageable)",
+          "Share price is 80\u00d7 its yearly profit per share; similar companies are 89\u00d7 (fairly priced)",
+          "Keeps about \u20b921 as profit from every \u20b9100 of sales (good)"
+        ],
+        "bad": [],
+        "info": [
+          "The founders/owner family hold 63% of the company"
+        ],
+        "parts": {
+          "Profitability": 14,
+          "Growth": 20,
+          "Debt": 14,
+          "Valuation": 14,
+          "Margins": 20
+        },
+        "pe": 80.4,
+        "sector_pe": 88.7,
+        "pb": 9.9,
+        "roe": 15.7,
+        "debt_equity": 0.77,
+        "profit_cagr": 20.2,
+        "revenue_cagr": 13.3,
+        "div_yield": 0.8,
+        "mcap_cr": 181131,
+        "profit_history": [
+          [
+            "2026-03-31",
+            21633700000.0
+          ],
+          [
+            "2025-03-31",
+            19112500000.0
+          ],
+          [
+            "2024-03-31",
+            16563800000.0
+          ],
+          [
+            "2023-03-31",
+            12452300000.0
+          ]
+        ]
+      },
+      "pe": 80.4,
+      "pb": 9.9,
+      "mcap_cr": 181131,
+      "div_yield": 0.8,
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": false,
+            "tech": "trend",
+            "text": "Overall the price is moving down, the opposite way to this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": false,
+            "text": "Not much buying energy yet",
+            "tech": "RSI 48",
+            "value": 47.9
+          },
+          {
+            "name": "Who's winning",
+            "ok": false,
+            "tech": "MACD",
+            "text": "Buyers are winning but getting tired"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "There's room to rise before \u20b94,835.0, where it stopped before (3.5% away)",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 2,
+        "verdict": "weak",
+        "rsi": 47.9,
+        "pattern": "red candle",
+        "resistance": 4835.0,
+        "support": 4466.8
+      },
+      "alloc_shares": 0,
+      "alloc_amount": 0
     },
     {
       "symbol": "CUPID",
       "name": "Cupid Ltd.",
       "index": "Mid/Small cap",
       "industry": "Fast Moving Consumer Goods",
-      "price": 384.8,
-      "ma50": 310.89,
-      "ma200": 187.69,
+      "price": 377.8,
+      "ma50": 312.84,
+      "ma200": 189.18,
       "high52": 384.8,
-      "low52": 49.08,
-      "from_high": 0.0,
-      "ret6m": 215.0,
-      "ret12m": 684.1,
-      "cagr3": 252.3,
-      "cagr5": 182.7,
+      "low52": 50.65,
+      "from_high": -1.8,
+      "ret6m": 207.0,
+      "ret12m": 625.5,
+      "cagr3": 250.4,
+      "cagr5": 181.6,
       "dd1y": -28.3,
       "dd5y": -57.9,
-      "volatility": 59.1,
+      "volatility": 59.2,
       "spark": [
         [
           "Oct 25",
-          47.25
+          46.72
         ],
         [
           "Nov 25",
-          52.08
+          52.27
         ],
         [
           "Nov 25",
-          62.57
+          61.71
         ],
         [
           "Nov 25",
-          67.41
-        ],
-        [
-          "Nov 25",
-          65.85
+          67.44
         ],
         [
           "Dec 25",
-          73.02
+          69.81
         ],
         [
           "Dec 25",
+          76.0
+        ],
+        [
+          "Dec 25",
+          81.88
+        ],
+        [
+          "Dec 25",
+          91.59
+        ],
+        [
+          "Dec 25",
+          101.8
+        ],
+        [
+          "Jan 26",
+          85.79
+        ],
+        [
+          "Jan 26",
+          87.77
+        ],
+        [
+          "Jan 26",
+          80.67
+        ],
+        [
+          "Jan 26",
+          79.44
+        ],
+        [
+          "Feb 26",
+          85.49
+        ],
+        [
+          "Feb 26",
+          86.79
+        ],
+        [
+          "Feb 26",
+          84.59
+        ],
+        [
+          "Feb 26",
+          82.55
+        ],
+        [
+          "Mar 26",
+          81.1
+        ],
+        [
+          "Mar 26",
+          81.35
+        ],
+        [
+          "Mar 26",
           78.8
         ],
         [
-          "Dec 25",
-          89.54
-        ],
-        [
-          "Dec 25",
-          97.32
-        ],
-        [
-          "Jan 26",
-          78.01
-        ],
-        [
-          "Jan 26",
-          86.23
-        ],
-        [
-          "Jan 26",
-          85.01
-        ],
-        [
-          "Jan 26",
-          79.3
-        ],
-        [
-          "Feb 26",
-          83.04
-        ],
-        [
-          "Feb 26",
-          86.99
-        ],
-        [
-          "Feb 26",
-          85.91
-        ],
-        [
-          "Feb 26",
-          83.38
-        ],
-        [
           "Mar 26",
-          75.83
-        ],
-        [
-          "Mar 26",
-          86.9
-        ],
-        [
-          "Mar 26",
-          79.3
-        ],
-        [
-          "Mar 26",
-          80.65
+          84.65
         ],
         [
           "Apr 26",
-          88.55
+          86.34
         ],
         [
           "Apr 26",
-          92.45
+          93.4
         ],
         [
           "Apr 26",
-          109.92
+          112.94
         ],
         [
           "Apr 26",
-          111.53
+          115.84
         ],
         [
           "May 26",
-          126.49
+          131.14
         ],
         [
           "May 26",
-          122.14
+          123.08
         ],
         [
           "May 26",
-          119.44
+          120.16
         ],
         [
           "May 26",
-          128.9
+          129.06
         ],
         [
           "Jun 26",
-          133.09
+          137.1
         ],
         [
           "Jun 26",
-          155.18
+          159.97
         ],
         [
           "Jun 26",
-          169.19
+          176.92
         ],
         [
           "Jun 26",
-          182.61
+          188.4
         ],
         [
           "Jul 26",
-          198.84
+          213.09
         ],
         [
           "Jul 26",
-          212.24
+          206.83
         ],
         [
           "Jul 26",
-          214.78
+          207.27
         ],
         [
           "Jul 26",
-          213.43
-        ],
-        [
-          "Jul 26",
-          230.62
+          221.46
         ],
         [
           "Aug 26",
-          262.13
+          230.95
         ],
         [
           "Aug 26",
-          293.88
+          262.71
         ],
         [
           "Aug 26",
-          284.58
+          267.32
         ],
         [
           "Aug 26",
-          282.33
+          286.41
+        ],
+        [
+          "Aug 26",
+          280.46
         ],
         [
           "Sep 26",
-          283.15
+          280.95
         ],
         [
           "Sep 26",
-          280.0
+          284.4
         ],
         [
           "Sep 26",
-          251.3
+          258.2
         ],
         [
           "Sep 26",
-          264.5
+          288.0
         ],
         [
           "Oct 26",
-          324.2
+          343.95
         ],
         [
           "Oct 26",
-          353.1
+          354.6
         ],
         [
           "Oct 26",
-          340.75
+          320.05
         ],
         [
           "Oct 26",
-          314.55
+          320.15
         ],
         [
           "Nov 26",
-          336.5
+          341.25
         ],
         [
           "Nov 26",
-          384.8
+          377.8
         ]
       ],
-      "score": 17.19,
+      "score": 16.85,
       "health": 92,
       "extended": true,
-      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b9311",
+      "zone": "Price jumped 21% above its usual level recently: wait for it to come down near \u20b9313",
       "fund": {
         "health": 92,
         "grade": "Strong",
@@ -3774,10 +3518,10 @@
           },
           {
             "name": "Speed",
-            "ok": false,
-            "text": "It has gone up a lot very fast and may fall back a little first",
-            "tech": "RSI 73",
-            "value": 73.5
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 69",
+            "value": 69.2
           },
           {
             "name": "Who's winning",
@@ -3788,22 +3532,22 @@
           {
             "name": "Last move",
             "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "It just went above \u20b9364.0, a level where it kept stopping before. Often a good sign",
+            "text": "There's room to rise before \u20b9389.0, where it stopped before (3.0% away)",
             "tech": "support/resistance"
           }
         ],
-        "passed": 4,
+        "passed": 5,
         "verdict": "strong",
-        "rsi": 73.5,
-        "pattern": "green candle",
-        "resistance": 364.0,
+        "rsi": 69.2,
+        "pattern": "red candle",
+        "resistance": 389.0,
         "support": 302.3
       },
       "alloc_shares": 0,
@@ -3814,15 +3558,15 @@
       "name": "Sansera Engineering Ltd.",
       "index": "Mid/Small cap",
       "industry": "Automobile and Auto Components",
-      "price": 4701.8,
-      "ma50": 4214.86,
-      "ma200": 3082.78,
-      "high52": 4701.8,
+      "price": 4708.4,
+      "ma50": 4228.75,
+      "ma200": 3097.54,
+      "high52": 4708.4,
       "low52": 1513.27,
       "from_high": 0.0,
-      "ret6m": 96.8,
-      "ret12m": 207.4,
-      "cagr3": 78.5,
+      "ret6m": 96.5,
+      "ret12m": 211.1,
+      "cagr3": 76.6,
       "cagr5": 41.1,
       "dd1y": -17.0,
       "dd5y": -40.2,
@@ -3830,217 +3574,217 @@
       "spark": [
         [
           "Oct 25",
-          1510.58
+          1512.18
         ],
         [
           "Nov 25",
-          1513.27
+          1527.36
         ],
         [
           "Nov 25",
-          1554.33
+          1533.05
         ],
         [
           "Nov 25",
-          1604.78
-        ],
-        [
-          "Nov 25",
-          1747.34
+          1626.06
         ],
         [
           "Dec 25",
-          1655.43
+          1749.24
         ],
         [
           "Dec 25",
-          1697.49
+          1627.76
         ],
         [
           "Dec 25",
-          1722.46
+          1678.71
         ],
         [
           "Dec 25",
-          1708.88
+          1719.67
+        ],
+        [
+          "Dec 25",
+          1665.12
         ],
         [
           "Jan 26",
-          1931.05
+          1923.16
         ],
         [
           "Jan 26",
-          1834.95
+          1820.76
         ],
         [
           "Jan 26",
-          1800.28
+          1757.23
         ],
         [
           "Jan 26",
-          1644.84
+          1669.02
         ],
         [
           "Feb 26",
-          1850.13
+          1898.39
         ],
         [
           "Feb 26",
-          2032.95
+          2187.99
         ],
         [
           "Feb 26",
-          2177.7
+          2249.43
         ],
         [
           "Feb 26",
-          2343.14
+          2351.03
         ],
         [
           "Mar 26",
-          2165.92
+          2231.45
         ],
         [
           "Mar 26",
-          2175.51
+          2077.51
         ],
         [
           "Mar 26",
-          2196.59
+          2132.75
         ],
         [
           "Mar 26",
-          2180.8
+          2157.03
         ],
         [
           "Apr 26",
-          2141.44
+          2148.43
         ],
         [
           "Apr 26",
-          2343.84
+          2338.44
         ],
         [
           "Apr 26",
-          2372.21
+          2544.43
         ],
         [
           "Apr 26",
-          2574.1
+          2554.12
         ],
         [
           "May 26",
-          2504.08
+          2545.53
         ],
         [
           "May 26",
-          2389.49
+          2396.18
         ],
         [
           "May 26",
-          2483.7
+          2851.62
         ],
         [
           "May 26",
-          2938.74
+          2858.12
         ],
         [
           "Jun 26",
-          2922.85
+          2942.13
         ],
         [
           "Jun 26",
-          2858.62
+          2911.26
         ],
         [
           "Jun 26",
-          2883.89
+          2942.83
         ],
         [
           "Jun 26",
-          3143.03
+          3136.54
         ],
         [
           "Jul 26",
-          3248.22
+          3187.39
         ],
         [
           "Jul 26",
-          3300.67
+          3277.9
         ],
         [
           "Jul 26",
-          3215.56
+          3331.84
         ],
         [
           "Jul 26",
-          3181.49
-        ],
-        [
-          "Jul 26",
-          3343.53
+          3269.7
         ],
         [
           "Aug 26",
-          3859.91
+          3449.22
         ],
         [
           "Aug 26",
-          3920.65
+          3808.56
         ],
         [
           "Aug 26",
-          3872.99
+          3997.97
         ],
         [
           "Aug 26",
-          3855.11
+          3840.43
+        ],
+        [
+          "Aug 26",
+          4013.95
         ],
         [
           "Sep 26",
-          3778.79
+          3892.38
         ],
         [
           "Sep 26",
-          4125.74
+          3867.8
         ],
         [
           "Sep 26",
-          4297.0
+          4586.5
         ],
         [
           "Sep 26",
-          4457.2
+          4362.2
         ],
         [
           "Oct 26",
-          4232.9
+          4261.7
         ],
         [
           "Oct 26",
-          4254.8
+          4198.8
         ],
         [
           "Oct 26",
-          3945.1
+          3977.7
         ],
         [
           "Oct 26",
-          4310.0
+          4270.3
         ],
         [
           "Nov 26",
-          4430.8
+          4431.8
         ],
         [
           "Nov 26",
-          4701.8
+          4708.4
         ]
       ],
-      "score": 5.62,
+      "score": 5.97,
       "health": 78,
       "extended": true,
-      "zone": "Price jumped 12% above its usual level recently: wait for it to come down near \u20b94,215",
+      "zone": "Price jumped 11% above its usual level recently: wait for it to come down near \u20b94,229",
       "fund": {
         "health": 78,
         "grade": "Strong",
@@ -4106,7 +3850,7 @@
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
             "tech": "RSI 66",
-            "value": 66.2
+            "value": 66.3
           },
           {
             "name": "Who's winning",
@@ -4116,354 +3860,24 @@
           },
           {
             "name": "Last move",
-            "ok": false,
-            "text": "In the last day, buyers and sellers were evenly matched, no clear winner",
-            "tech": "candle: doji",
-            "pattern": "doji (indecision)"
+            "ok": true,
+            "text": "In the last day, the price closed a bit lower",
+            "tech": "candle: red candle",
+            "pattern": "red candle"
           },
           {
             "name": "Room to move",
-            "ok": false,
-            "text": "It's close to \u20b94,715.0, where it stopped before (only 0.3% away), so little room to rise",
+            "ok": true,
+            "text": "There's room to rise before \u20b94,844.0, where it stopped before (2.9% away)",
             "tech": "support/resistance"
           }
         ],
-        "passed": 3,
-        "verdict": "ok",
-        "rsi": 66.2,
-        "pattern": "doji (indecision)",
-        "resistance": 4715.0,
+        "passed": 5,
+        "verdict": "strong",
+        "rsi": 66.3,
+        "pattern": "red candle",
+        "resistance": 4844.0,
         "support": 3869.2
-      },
-      "alloc_shares": 4,
-      "alloc_amount": 18807
-    },
-    {
-      "symbol": "CPPLUS",
-      "name": "Aditya Infotech Ltd.",
-      "index": "Mid/Small cap",
-      "industry": "Capital Goods",
-      "price": 4209.4,
-      "ma50": 3884.42,
-      "ma200": 2916.01,
-      "high52": 4440.3,
-      "low52": 1370.48,
-      "from_high": -5.2,
-      "ret6m": 68.3,
-      "ret12m": 200.0,
-      "cagr3": null,
-      "cagr5": null,
-      "dd1y": -20.4,
-      "dd5y": -20.4,
-      "volatility": 44.9,
-      "spark": [
-        [
-          "Oct 25",
-          1360.88
-        ],
-        [
-          "Nov 25",
-          1534.2
-        ],
-        [
-          "Nov 25",
-          1620.16
-        ],
-        [
-          "Nov 25",
-          1666.94
-        ],
-        [
-          "Nov 25",
-          1533.3
-        ],
-        [
-          "Dec 25",
-          1511.21
-        ],
-        [
-          "Dec 25",
-          1554.19
-        ],
-        [
-          "Dec 25",
-          1558.69
-        ],
-        [
-          "Dec 25",
-          1490.42
-        ],
-        [
-          "Jan 26",
-          1464.34
-        ],
-        [
-          "Jan 26",
-          1422.05
-        ],
-        [
-          "Jan 26",
-          1384.37
-        ],
-        [
-          "Jan 26",
-          1379.87
-        ],
-        [
-          "Feb 26",
-          1488.72
-        ],
-        [
-          "Feb 26",
-          1586.28
-        ],
-        [
-          "Feb 26",
-          1592.18
-        ],
-        [
-          "Feb 26",
-          1473.83
-        ],
-        [
-          "Mar 26",
-          1684.94
-        ],
-        [
-          "Mar 26",
-          1582.18
-        ],
-        [
-          "Mar 26",
-          1683.14
-        ],
-        [
-          "Mar 26",
-          1808.58
-        ],
-        [
-          "Apr 26",
-          1815.08
-        ],
-        [
-          "Apr 26",
-          1953.31
-        ],
-        [
-          "Apr 26",
-          2256.98
-        ],
-        [
-          "Apr 26",
-          2305.55
-        ],
-        [
-          "May 26",
-          2459.38
-        ],
-        [
-          "May 26",
-          2500.96
-        ],
-        [
-          "May 26",
-          2399.31
-        ],
-        [
-          "May 26",
-          2638.4
-        ],
-        [
-          "Jun 26",
-          3535.99
-        ],
-        [
-          "Jun 26",
-          3341.98
-        ],
-        [
-          "Jun 26",
-          3512.11
-        ],
-        [
-          "Jun 26",
-          3556.89
-        ],
-        [
-          "Jul 26",
-          3586.77
-        ],
-        [
-          "Jul 26",
-          3660.74
-        ],
-        [
-          "Jul 26",
-          3612.76
-        ],
-        [
-          "Jul 26",
-          3543.4
-        ],
-        [
-          "Jul 26",
-          3391.0
-        ],
-        [
-          "Aug 26",
-          3708.7
-        ],
-        [
-          "Aug 26",
-          3519.0
-        ],
-        [
-          "Aug 26",
-          3475.5
-        ],
-        [
-          "Aug 26",
-          3576.6
-        ],
-        [
-          "Sep 26",
-          3704.6
-        ],
-        [
-          "Sep 26",
-          3825.5
-        ],
-        [
-          "Sep 26",
-          3482.3
-        ],
-        [
-          "Sep 26",
-          3723.4
-        ],
-        [
-          "Oct 26",
-          3976.0
-        ],
-        [
-          "Oct 26",
-          4376.5
-        ],
-        [
-          "Oct 26",
-          3904.3
-        ],
-        [
-          "Oct 26",
-          3979.0
-        ],
-        [
-          "Nov 26",
-          3999.8
-        ],
-        [
-          "Nov 26",
-          4209.4
-        ]
-      ],
-      "score": 5.05,
-      "health": 88,
-      "extended": true,
-      "zone": "Price jumped 8% above its usual level recently: wait for it to come down near \u20b93,884",
-      "fund": {
-        "health": 88,
-        "grade": "Strong",
-        "good": [
-          "Makes \u20b923 profit a year for every \u20b9100 of the owners' money (very good)",
-          "Profit grew about 50% every year for the last 3 years",
-          "Has borrowed \u20b911 for every \u20b9100 of its own money (low, safe)",
-          "Share price is 84\u00d7 its yearly profit per share; similar companies are 84\u00d7 (fairly priced)",
-          "Keeps about \u20b917 as profit from every \u20b9100 of sales (good)"
-        ],
-        "bad": [],
-        "info": [
-          "The founders/owner family hold 74% of the company"
-        ],
-        "parts": {
-          "Profitability": 20,
-          "Growth": 20,
-          "Debt": 20,
-          "Valuation": 14,
-          "Margins": 14
-        },
-        "pe": 84.0,
-        "sector_pe": 84.0,
-        "pb": 13.6,
-        "roe": 22.6,
-        "debt_equity": 0.11,
-        "profit_cagr": 50.3,
-        "revenue_cagr": 22.7,
-        "div_yield": 0.04,
-        "mcap_cr": 51835,
-        "profit_history": [
-          [
-            "2026-03-31",
-            3679610000.0
-          ],
-          [
-            "2025-03-31",
-            3513690000.0
-          ],
-          [
-            "2024-03-31",
-            1151720000.0
-          ],
-          [
-            "2023-03-31",
-            1083110000.0
-          ]
-        ]
-      },
-      "pe": 84.0,
-      "pb": 13.6,
-      "mcap_cr": 51835,
-      "div_yield": 0.04,
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 60",
-            "value": 60.4
-          },
-          {
-            "name": "Who's winning",
-            "ok": true,
-            "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
-          },
-          {
-            "name": "Last move",
-            "ok": false,
-            "text": "In the last day, the price jumped but sellers pushed it back down",
-            "tech": "candle: shooting star",
-            "pattern": "shooting star (sellers stepped in)"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b94,620.0, where it stopped before (9.8% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 4,
-        "verdict": "against",
-        "rsi": 60.4,
-        "pattern": "shooting star (sellers stepped in)",
-        "resistance": 4620.0,
-        "support": 3619.3
       },
       "alloc_shares": 0,
       "alloc_amount": 0
@@ -4473,14 +3887,14 @@
       "name": "Rubicon Research Ltd.",
       "index": "Mid/Small cap",
       "industry": "Healthcare",
-      "price": 1717.3,
-      "ma50": 1654.75,
-      "ma200": 1242.85,
+      "price": 1677.2,
+      "ma50": 1651.9,
+      "ma200": 1247.92,
       "high52": 1860.6,
       "low52": 614.6,
-      "from_high": -7.7,
-      "ret6m": 81.3,
-      "ret12m": 163.4,
+      "from_high": -9.9,
+      "ret6m": 75.6,
+      "ret12m": 162.9,
       "cagr3": null,
       "cagr5": null,
       "dd1y": -23.4,
@@ -4489,217 +3903,217 @@
       "spark": [
         [
           "Oct 25",
-          599.86
+          609.2
         ],
         [
           "Nov 25",
-          637.88
+          626.59
         ],
         [
           "Nov 25",
-          653.71
+          713.1
         ],
         [
           "Nov 25",
-          695.47
+          677.24
         ],
         [
           "Nov 25",
-          644.07
+          655.21
         ],
         [
           "Dec 25",
-          623.69
+          635.18
         ],
         [
           "Dec 25",
-          637.33
+          635.73
         ],
         [
           "Dec 25",
-          648.27
+          655.01
         ],
         [
           "Dec 25",
-          681.33
+          666.75
         ],
         [
           "Jan 26",
-          660.75
+          665.2
         ],
         [
           "Jan 26",
-          649.81
+          674.04
         ],
         [
           "Jan 26",
-          662.75
+          663.2
         ],
         [
           "Jan 26",
-          653.81
+          675.24
         ],
         [
           "Feb 26",
-          721.19
+          773.19
         ],
         [
           "Feb 26",
-          789.73
+          779.94
         ],
         [
           "Feb 26",
-          787.73
+          793.67
         ],
         [
           "Feb 26",
-          773.24
+          787.83
         ],
         [
           "Mar 26",
-          762.65
+          750.81
         ],
         [
           "Mar 26",
-          780.79
+          798.37
         ],
         [
           "Mar 26",
-          767.15
+          756.71
         ],
         [
           "Mar 26",
-          772.84
+          767.1
         ],
         [
           "Apr 26",
-          774.89
+          777.94
         ],
         [
           "Apr 26",
-          818.95
+          820.5
         ],
         [
           "Apr 26",
-          920.45
+          933.04
         ],
         [
           "Apr 26",
-          953.77
+          974.5
         ],
         [
           "May 26",
-          1000.87
+          950.42
         ],
         [
           "May 26",
-          947.42
+          955.36
         ],
         [
           "May 26",
-          985.09
+          968.15
         ],
         [
           "May 26",
-          966.95
+          1004.62
         ],
         [
           "Jun 26",
-          1296.93
+          1201.32
         ],
         [
           "Jun 26",
-          1284.04
+          1294.23
         ],
         [
           "Jun 26",
-          1306.02
+          1360.47
         ],
         [
           "Jun 26",
-          1415.21
+          1418.21
         ],
         [
           "Jul 26",
-          1305.72
+          1360.87
         ],
         [
           "Jul 26",
-          1430.0
+          1436.79
         ],
         [
           "Jul 26",
-          1438.19
+          1510.32
         ],
         [
           "Jul 26",
-          1518.71
-        ],
-        [
-          "Jul 26",
-          1489.54
+          1554.48
         ],
         [
           "Aug 26",
-          1553.2
+          1499.33
         ],
         [
           "Aug 26",
-          1619.1
+          1596.3
         ],
         [
           "Aug 26",
-          1724.7
+          1798.7
         ],
         [
           "Aug 26",
-          1804.4
+          1776.1
+        ],
+        [
+          "Aug 26",
+          1819.6
         ],
         [
           "Sep 26",
-          1768.3
+          1748.4
         ],
         [
           "Sep 26",
-          1835.4
+          1815.6
         ],
         [
           "Sep 26",
-          1732.6
+          1671.2
         ],
         [
           "Sep 26",
-          1592.8
+          1609.0
         ],
         [
           "Oct 26",
-          1596.8
+          1575.6
         ],
         [
           "Oct 26",
-          1523.4
+          1524.7
         ],
         [
           "Oct 26",
-          1448.5
+          1436.6
         ],
         [
           "Oct 26",
-          1564.0
+          1559.3
         ],
         [
           "Nov 26",
-          1716.8
+          1740.6
         ],
         [
           "Nov 26",
-          1717.3
+          1677.2
         ]
       ],
-      "score": 4.77,
+      "score": 4.78,
       "health": 85,
       "extended": false,
-      "zone": "Price is close to its usual level (\u20b91,655): a reasonable time to buy",
+      "zone": "Price is close to its usual level (\u20b91,652): a reasonable time to buy",
       "fund": {
         "health": 85,
         "grade": "Strong",
@@ -4752,8 +4166,8 @@
             "name": "Speed",
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 59",
-            "value": 58.8
+            "tech": "RSI 54",
+            "value": 54.3
           },
           {
             "name": "Who's winning",
@@ -4771,252 +4185,252 @@
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b91,777.9, where it stopped before (3.5% away)",
+            "text": "There's room to rise before \u20b91,777.9, where it stopped before (6.0% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 4,
         "verdict": "strong",
-        "rsi": 58.8,
+        "rsi": 54.3,
         "pattern": "red candle",
         "resistance": 1777.9,
         "support": 1390.5
       },
       "alloc_shares": 11,
-      "alloc_amount": 18890
+      "alloc_amount": 18449
     },
     {
       "symbol": "LAURUSLABS",
       "name": "Laurus Labs Ltd.",
       "index": "Mid/Small cap",
       "industry": "Healthcare",
-      "price": 2400.0,
-      "ma50": 2063.32,
-      "ma200": 1500.59,
+      "price": 2424.0,
+      "ma50": 2073.52,
+      "ma200": 1507.54,
       "high52": 2454.0,
       "low52": 943.56,
-      "from_high": -2.2,
-      "ret6m": 87.5,
-      "ret12m": 145.3,
-      "cagr3": 86.9,
-      "cagr5": 38.2,
+      "from_high": -1.2,
+      "ret6m": 84.3,
+      "ret12m": 147.2,
+      "cagr3": 87.8,
+      "cagr5": 38.5,
       "dd1y": -16.3,
       "dd5y": -52.4,
       "volatility": 30.6,
       "spark": [
         [
           "Oct 25",
-          968.17
+          952.3
         ],
         [
           "Nov 25",
-          980.75
+          999.63
         ],
         [
           "Nov 25",
+          1020.4
+        ],
+        [
+          "Nov 25",
+          978.16
+        ],
+        [
+          "Dec 25",
+          1027.94
+        ],
+        [
+          "Dec 25",
+          1002.67
+        ],
+        [
+          "Dec 25",
+          1003.47
+        ],
+        [
+          "Dec 25",
+          1062.69
+        ],
+        [
+          "Dec 25",
+          1090.35
+        ],
+        [
+          "Jan 26",
+          1114.31
+        ],
+        [
+          "Jan 26",
+          1056.8
+        ],
+        [
+          "Jan 26",
+          1034.03
+        ],
+        [
+          "Jan 26",
           997.58
         ],
         [
-          "Nov 25",
-          976.81
-        ],
-        [
-          "Nov 25",
-          1029.89
-        ],
-        [
-          "Dec 25",
-          1024.64
-        ],
-        [
-          "Dec 25",
-          1010.86
-        ],
-        [
-          "Dec 25",
-          1043.72
-        ],
-        [
-          "Dec 25",
-          1079.86
-        ],
-        [
-          "Jan 26",
-          1101.63
-        ],
-        [
-          "Jan 26",
-          1041.72
-        ],
-        [
-          "Jan 26",
-          1061.19
-        ],
-        [
-          "Jan 26",
-          998.78
+          "Feb 26",
+          978.91
         ],
         [
           "Feb 26",
-          974.21
+          1012.21
         ],
         [
           "Feb 26",
-          964.98
+          1035.98
         ],
         [
           "Feb 26",
-          1011.96
-        ],
-        [
-          "Feb 26",
-          1027.04
+          1074.82
         ],
         [
           "Mar 26",
-          1029.14
+          1044.41
         ],
         [
           "Mar 26",
-          1039.52
+          1045.31
         ],
         [
           "Mar 26",
-          982.0
+          943.56
         ],
         [
           "Mar 26",
-          1022.05
+          1007.37
         ],
         [
           "Apr 26",
-          1056.7
+          1055.95
         ],
         [
           "Apr 26",
-          1086.25
+          1116.01
         ],
         [
           "Apr 26",
-          1112.77
+          1094.54
         ],
         [
           "Apr 26",
-          1088.9
+          1104.53
         ],
         [
           "May 26",
-          1175.93
+          1204.79
         ],
         [
           "May 26",
-          1279.95
+          1314.94
         ],
         [
           "May 26",
-          1360.52
+          1350.42
         ],
         [
           "May 26",
-          1381.11
+          1361.42
         ],
         [
           "Jun 26",
-          1426.59
+          1446.18
         ],
         [
           "Jun 26",
-          1390.21
+          1393.71
         ],
         [
           "Jun 26",
-          1368.22
+          1412.3
         ],
         [
           "Jun 26",
-          1449.38
+          1499.66
         ],
         [
           "Jul 26",
-          1541.64
+          1528.55
         ],
         [
           "Jul 26",
-          1537.14
+          1557.94
         ],
         [
           "Jul 26",
-          1529.15
+          1558.24
         ],
         [
           "Jul 26",
-          1600.52
-        ],
-        [
-          "Jul 26",
-          1815.43
+          1712.67
         ],
         [
           "Aug 26",
-          1843.51
+          1810.63
         ],
         [
           "Aug 26",
-          1786.54
+          1853.21
         ],
         [
           "Aug 26",
-          1801.23
+          1808.93
         ],
         [
           "Aug 26",
-          1937.67
+          1800.23
+        ],
+        [
+          "Aug 26",
+          1914.18
         ],
         [
           "Sep 26",
-          1839.22
+          1875.9
         ],
         [
           "Sep 26",
-          1968.16
+          1926.08
         ],
         [
           "Sep 26",
-          2016.64
+          2005.64
         ],
         [
           "Sep 26",
-          2009.84
+          1978.16
         ],
         [
           "Oct 26",
-          2049.13
+          2051.93
         ],
         [
           "Oct 26",
-          2058.52
+          2036.03
         ],
         [
           "Oct 26",
-          2011.64
+          2001.65
         ],
         [
           "Oct 26",
-          2180.97
+          2243.04
         ],
         [
           "Nov 26",
-          2322.81
+          2345.0
         ],
         [
           "Nov 26",
-          2400.0
+          2424.0
         ]
       ],
-      "score": 4.62,
+      "score": 4.73,
       "health": 70,
       "extended": true,
-      "zone": "Price jumped 16% above its usual level recently: wait for it to come down near \u20b92,063",
+      "zone": "Price jumped 17% above its usual level recently: wait for it to come down near \u20b92,074",
       "fund": {
         "health": 70,
         "grade": "Strong",
@@ -5083,8 +4497,338 @@
             "name": "Speed",
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 68",
-            "value": 68.4
+            "tech": "RSI 70",
+            "value": 69.8
+          },
+          {
+            "name": "Who's winning",
+            "ok": false,
+            "tech": "MACD",
+            "text": "Buyers are winning but getting tired"
+          },
+          {
+            "name": "Last move",
+            "ok": true,
+            "text": "In the last day, the price closed a bit higher",
+            "tech": "candle: green candle",
+            "pattern": "green candle"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "There's room to rise before \u20b92,488.0, where it stopped before (2.6% away)",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 4,
+        "verdict": "strong",
+        "rsi": 69.8,
+        "pattern": "green candle",
+        "resistance": 2488.0,
+        "support": 1932.68
+      },
+      "alloc_shares": 0,
+      "alloc_amount": 0
+    },
+    {
+      "symbol": "CPPLUS",
+      "name": "Aditya Infotech Ltd.",
+      "index": "Mid/Small cap",
+      "industry": "Capital Goods",
+      "price": 4148.0,
+      "ma50": 3896.06,
+      "ma200": 2929.75,
+      "high52": 4440.3,
+      "low52": 1370.48,
+      "from_high": -6.6,
+      "ret6m": 62.9,
+      "ret12m": 170.4,
+      "cagr3": null,
+      "cagr5": null,
+      "dd1y": -20.4,
+      "dd5y": -20.4,
+      "volatility": 44.6,
+      "spark": [
+        [
+          "Oct 25",
+          1313.4
+        ],
+        [
+          "Nov 25",
+          1495.32
+        ],
+        [
+          "Nov 25",
+          1677.24
+        ],
+        [
+          "Nov 25",
+          1606.77
+        ],
+        [
+          "Dec 25",
+          1519.21
+        ],
+        [
+          "Dec 25",
+          1498.32
+        ],
+        [
+          "Dec 25",
+          1565.49
+        ],
+        [
+          "Dec 25",
+          1597.97
+        ],
+        [
+          "Dec 25",
+          1486.83
+        ],
+        [
+          "Jan 26",
+          1417.86
+        ],
+        [
+          "Jan 26",
+          1419.06
+        ],
+        [
+          "Jan 26",
+          1399.36
+        ],
+        [
+          "Jan 26",
+          1408.16
+        ],
+        [
+          "Feb 26",
+          1556.29
+        ],
+        [
+          "Feb 26",
+          1582.08
+        ],
+        [
+          "Feb 26",
+          1566.89
+        ],
+        [
+          "Feb 26",
+          1574.98
+        ],
+        [
+          "Mar 26",
+          1706.83
+        ],
+        [
+          "Mar 26",
+          1608.07
+        ],
+        [
+          "Mar 26",
+          1673.74
+        ],
+        [
+          "Mar 26",
+          1825.17
+        ],
+        [
+          "Apr 26",
+          1830.77
+        ],
+        [
+          "Apr 26",
+          2065.96
+        ],
+        [
+          "Apr 26",
+          2182.91
+        ],
+        [
+          "Apr 26",
+          2337.34
+        ],
+        [
+          "May 26",
+          2461.98
+        ],
+        [
+          "May 26",
+          2545.74
+        ],
+        [
+          "May 26",
+          2415.2
+        ],
+        [
+          "May 26",
+          2902.18
+        ],
+        [
+          "Jun 26",
+          3500.31
+        ],
+        [
+          "Jun 26",
+          3374.37
+        ],
+        [
+          "Jun 26",
+          3636.15
+        ],
+        [
+          "Jun 26",
+          3712.31
+        ],
+        [
+          "Jul 26",
+          3609.76
+        ],
+        [
+          "Jul 26",
+          3637.75
+        ],
+        [
+          "Jul 26",
+          3565.9
+        ],
+        [
+          "Jul 26",
+          3557.8
+        ],
+        [
+          "Aug 26",
+          3428.7
+        ],
+        [
+          "Aug 26",
+          3764.8
+        ],
+        [
+          "Aug 26",
+          3343.1
+        ],
+        [
+          "Aug 26",
+          3419.5
+        ],
+        [
+          "Aug 26",
+          3566.0
+        ],
+        [
+          "Sep 26",
+          3752.9
+        ],
+        [
+          "Sep 26",
+          3663.4
+        ],
+        [
+          "Sep 26",
+          3649.5
+        ],
+        [
+          "Sep 26",
+          3817.6
+        ],
+        [
+          "Oct 26",
+          4064.9
+        ],
+        [
+          "Oct 26",
+          4440.3
+        ],
+        [
+          "Oct 26",
+          3904.6
+        ],
+        [
+          "Oct 26",
+          3951.7
+        ],
+        [
+          "Nov 26",
+          4170.5
+        ],
+        [
+          "Nov 26",
+          4148.0
+        ]
+      ],
+      "score": 4.65,
+      "health": 88,
+      "extended": false,
+      "zone": "Price is close to its usual level (\u20b93,896): a reasonable time to buy",
+      "fund": {
+        "health": 88,
+        "grade": "Strong",
+        "good": [
+          "Makes \u20b923 profit a year for every \u20b9100 of the owners' money (very good)",
+          "Profit grew about 50% every year for the last 3 years",
+          "Has borrowed \u20b911 for every \u20b9100 of its own money (low, safe)",
+          "Share price is 84\u00d7 its yearly profit per share; similar companies are 95\u00d7 (fairly priced)",
+          "Keeps about \u20b917 as profit from every \u20b9100 of sales (good)"
+        ],
+        "bad": [],
+        "info": [
+          "The founders/owner family hold 74% of the company"
+        ],
+        "parts": {
+          "Profitability": 20,
+          "Growth": 20,
+          "Debt": 20,
+          "Valuation": 14,
+          "Margins": 14
+        },
+        "pe": 84.0,
+        "sector_pe": 94.7,
+        "pb": 13.6,
+        "roe": 22.6,
+        "debt_equity": 0.11,
+        "profit_cagr": 50.3,
+        "revenue_cagr": 22.7,
+        "div_yield": 0.04,
+        "mcap_cr": 51835,
+        "profit_history": [
+          [
+            "2026-03-31",
+            3679610000.0
+          ],
+          [
+            "2025-03-31",
+            3513690000.0
+          ],
+          [
+            "2024-03-31",
+            1151720000.0
+          ],
+          [
+            "2023-03-31",
+            1083110000.0
+          ]
+        ]
+      },
+      "pe": 84.0,
+      "pb": 13.6,
+      "mcap_cr": 51835,
+      "div_yield": 0.04,
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 57",
+            "value": 56.9
           },
           {
             "name": "Who's winning",
@@ -5102,304 +4846,306 @@
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b92,488.0, where it stopped before (3.7% away)",
+            "text": "There's room to rise before \u20b94,620.0, where it stopped before (11.4% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 4,
         "verdict": "strong",
-        "rsi": 68.4,
+        "rsi": 56.9,
         "pattern": "red candle",
-        "resistance": 2488.0,
-        "support": 1932.68
+        "resistance": 4620.0,
+        "support": 3619.3
       },
-      "alloc_shares": 0,
-      "alloc_amount": 0
+      "alloc_shares": 4,
+      "alloc_amount": 16592
     },
     {
-      "symbol": "GLAND",
-      "name": "Gland Pharma Ltd.",
+      "symbol": "SAILIFE",
+      "name": "Sai Life Sciences Ltd.",
       "index": "Mid/Small cap",
       "industry": "Healthcare",
-      "price": 3308.7,
-      "ma50": 2998.03,
-      "ma200": 2322.99,
-      "high52": 3308.7,
-      "low52": 1584.83,
+      "price": 1928.8,
+      "ma50": 1564.51,
+      "ma200": 1233.82,
+      "high52": 1928.8,
+      "low52": 795.0,
       "from_high": 0.0,
-      "ret6m": 80.8,
-      "ret12m": 74.4,
-      "cagr3": 27.8,
-      "cagr5": -0.1,
-      "dd1y": -16.5,
-      "dd5y": -77.6,
-      "volatility": 34.7,
+      "ret6m": 73.4,
+      "ret12m": 120.3,
+      "cagr3": null,
+      "cagr5": null,
+      "dd1y": -18.6,
+      "dd5y": -18.6,
+      "volatility": 36.4,
       "spark": [
         [
           "Oct 25",
-          1890.22
+          918.2
         ],
         [
           "Nov 25",
-          1884.36
+          907.05
         ],
         [
           "Nov 25",
-          1815.48
+          879.85
         ],
         [
           "Nov 25",
-          1803.67
-        ],
-        [
-          "Nov 25",
-          1760.7
+          883.75
         ],
         [
           "Dec 25",
-          1721.89
+          874.7
         ],
         [
           "Dec 25",
-          1679.21
+          860.1
         ],
         [
           "Dec 25",
-          1653.81
+          909.25
         ],
         [
           "Dec 25",
-          1641.1
+          911.75
+        ],
+        [
+          "Dec 25",
+          910.35
         ],
         [
           "Jan 26",
-          1702.93
+          976.1
         ],
         [
           "Jan 26",
-          1668.0
+          904.8
         ],
         [
           "Jan 26",
-          1668.3
+          821.45
         ],
         [
           "Jan 26",
-          1663.33
+          847.6
         ],
         [
           "Feb 26",
-          1881.49
+          810.0
         ],
         [
           "Feb 26",
-          1871.36
+          948.7
         ],
         [
           "Feb 26",
-          1822.53
+          941.9
         ],
         [
           "Feb 26",
-          1788.89
+          923.8
         ],
         [
           "Mar 26",
-          1695.59
+          1069.2
         ],
         [
           "Mar 26",
-          1654.5
+          1008.85
         ],
         [
           "Mar 26",
-          1652.32
+          1008.8
         ],
         [
           "Mar 26",
-          1697.67
+          985.85
         ],
         [
           "Apr 26",
-          1687.25
+          945.65
         ],
         [
           "Apr 26",
-          1711.37
+          981.3
         ],
         [
           "Apr 26",
-          1767.65
+          1006.0
         ],
         [
           "Apr 26",
-          1747.6
+          1055.1
         ],
         [
           "May 26",
-          1797.92
+          1089.7
         ],
         [
           "May 26",
-          1830.37
+          1112.5
         ],
         [
           "May 26",
-          2205.14
+          1138.1
         ],
         [
           "May 26",
-          2295.66
+          1160.0
         ],
         [
           "Jun 26",
-          2202.86
+          1186.4
         ],
         [
           "Jun 26",
-          2289.21
+          1218.1
         ],
         [
           "Jun 26",
-          2185.69
+          1216.4
         ],
         [
           "Jun 26",
-          2297.44
+          1247.9
         ],
         [
           "Jul 26",
-          2443.84
+          1232.6
         ],
         [
           "Jul 26",
-          2460.81
+          1272.1
         ],
         [
           "Jul 26",
-          2430.64
+          1297.0
         ],
         [
           "Jul 26",
-          2361.96
-        ],
-        [
-          "Jul 26",
-          2484.13
+          1287.0
         ],
         [
           "Aug 26",
-          2581.5
+          1333.4
         ],
         [
           "Aug 26",
-          2970.2
+          1426.2
         ],
         [
           "Aug 26",
-          2819.3
+          1416.4
         ],
         [
           "Aug 26",
-          2888.0
+          1435.9
+        ],
+        [
+          "Aug 26",
+          1459.7
         ],
         [
           "Sep 26",
-          2932.4
+          1579.6
         ],
         [
           "Sep 26",
-          2922.3
+          1541.5
         ],
         [
           "Sep 26",
-          2940.2
+          1600.5
         ],
         [
           "Sep 26",
-          2896.0
+          1559.9
         ],
         [
           "Oct 26",
-          3006.1
+          1561.8
         ],
         [
           "Oct 26",
-          3091.1
+          1432.1
         ],
         [
           "Oct 26",
-          2935.0
+          1395.9
         ],
         [
           "Oct 26",
-          3049.0
+          1495.7
         ],
         [
           "Nov 26",
-          3159.0
+          1594.5
         ],
         [
           "Nov 26",
-          3308.7
+          1928.8
         ]
       ],
-      "score": 4.04,
-      "health": 85,
+      "score": 4.33,
+      "health": 82,
       "extended": true,
-      "zone": "Price jumped 10% above its usual level recently: wait for it to come down near \u20b92,998",
+      "zone": "Went up too fast recently: wait for a small dip, ideally near \u20b91,565",
       "fund": {
-        "health": 85,
+        "health": 82,
         "grade": "Strong",
         "good": [
-          "Has borrowed \u20b93 for every \u20b9100 of its own money (low, safe)",
-          "Share price is 44\u00d7 its yearly profit per share; similar companies are 89\u00d7 (cheaper than similar companies)",
+          "Makes \u20b915 profit a year for every \u20b9100 of the owners' money (good)",
+          "Profit grew about 227% every year for the last 3 years",
+          "Has borrowed \u20b923 for every \u20b9100 of its own money (low, safe)",
           "Keeps about \u20b921 as profit from every \u20b9100 of sales (good)"
         ],
         "bad": [
-          "Profit grew about 10% every year for the last 3 years"
+          "Share price is 110\u00d7 its yearly profit per share; similar companies are 89\u00d7 (expensive compared with similar companies)"
         ],
         "info": [
-          "The founders/owner family hold 46% of the company"
+          "The founders/owner family hold 36% of the company"
         ],
         "parts": {
-          "Growth": 8,
+          "Profitability": 14,
+          "Growth": 20,
           "Debt": 20,
-          "Valuation": 20,
+          "Valuation": 8,
           "Margins": 20
         },
-        "pe": 43.9,
+        "pe": 109.6,
         "sector_pe": 88.7,
-        "pb": 5.2,
-        "roe": null,
-        "debt_equity": 0.03,
-        "profit_cagr": 9.6,
+        "pb": 15.2,
+        "roe": 15.2,
+        "debt_equity": 0.23,
+        "profit_cagr": 226.9,
         "revenue_cagr": 21.3,
-        "div_yield": 0.63,
-        "mcap_cr": 54300,
+        "div_yield": null,
+        "mcap_cr": 40941,
         "profit_history": [
           [
             "2026-03-31",
-            10273160000.0
+            3489100000.0
           ],
           [
             "2025-03-31",
-            6985260000.0
+            1701320000.0
           ],
           [
             "2024-03-31",
-            7724600000.0
+            828090000.0
           ],
           [
             "2023-03-31",
-            7810430000.0
+            99890000.0
           ]
         ]
       },
-      "pe": 43.9,
-      "pb": 5.2,
-      "mcap_cr": 54300,
-      "div_yield": 0.63,
+      "pe": 109.6,
+      "pb": 15.2,
+      "mcap_cr": 40941,
+      "div_yield": null,
       "chart": {
         "checks": [
           {
@@ -5410,37 +5156,37 @@
           },
           {
             "name": "Speed",
-            "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 69",
-            "value": 68.6
+            "ok": false,
+            "text": "It has gone up a lot very fast and may fall back a little first",
+            "tech": "RSI 83",
+            "value": 82.7
           },
           {
             "name": "Who's winning",
-            "ok": true,
+            "ok": false,
             "tech": "MACD",
-            "text": "Buyers are winning and getting stronger"
+            "text": "Buyers are winning but getting tired"
           },
           {
             "name": "Last move",
             "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
+            "text": "In the last day, buyers took over from sellers",
+            "tech": "candle: bullish engulfing",
+            "pattern": "bullish engulfing"
           },
           {
             "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b93,374.0, where it stopped before (2.0% away)",
+            "ok": false,
+            "text": "It's close to \u20b91,941.8, where it stopped before (only 0.7% away), so little room to rise",
             "tech": "support/resistance"
           }
         ],
-        "passed": 5,
-        "verdict": "strong",
-        "rsi": 68.6,
-        "pattern": "green candle",
-        "resistance": 3374.0,
-        "support": 2769.8
+        "passed": 2,
+        "verdict": "against",
+        "rsi": 82.7,
+        "pattern": "bullish engulfing",
+        "resistance": 1941.8,
+        "support": 1360.6
       },
       "alloc_shares": 0,
       "alloc_amount": 0
@@ -5448,9 +5194,9 @@
   ],
   "long_term_note": "15 of 481 companies (NIFTY 500) are healthy and in a steady rise",
   "benchmark": {
-    "ret12m": -1.2,
-    "cagr3": 8.6,
-    "cagr5": 7.3,
+    "ret12m": -1.4,
+    "cagr3": 8.5,
+    "cagr5": 7.2,
     "dd5y": -16.5
   },
   "lt_budget": 100000,
