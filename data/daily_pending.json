@@ -1,56 +1,56 @@
 {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "picks": [
     {
       "why": [
-        "Futures rose 3.60% while open interest grew 3.0%: new buyers are entering (long build-up).",
-        "ITC closed at \u20b9295.09 and above 20-day avg \u20b9270, so the move is with the trend, not against it.",
-        "Strike 295 is near the money (delta +0.53): it moves about \u20b90.53 for each \u20b91 in ITC.",
-        "Liquid: 46,431 contracts traded, open interest 7,565,850 shares, so you can get in and out.",
-        "7 days to expiry, so time decay is slower than for an expiry-week option."
+        "Futures rose 3.78% while open interest grew 3.3%: new buyers are entering (long build-up).",
+        "FORCEMOT closed at \u20b919,945.88 and above 20-day avg \u20b917,954, so the move is with the trend, not against it.",
+        "Strike 20000 is near the money (delta +0.54): it moves about \u20b90.54 for each \u20b91 in FORCEMOT.",
+        "Liquid: 326 contracts traded, open interest 2,950 shares, so you can get in and out.",
+        "42 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 0.49,
-          "pct": -86.1,
-          "pnl_lot": -5252
+          "price": 659.91,
+          "pct": -31.6,
+          "pnl_lot": -7699
         },
         {
           "move": -2,
-          "price": 1.02,
-          "pct": -70.9,
-          "pnl_lot": -4331
+          "price": 749.73,
+          "pct": -22.3,
+          "pnl_lot": -5458
         },
         {
           "move": -1,
-          "price": 1.91,
-          "pct": -45.3,
-          "pnl_lot": -2794
+          "price": 846.64,
+          "pct": -12.2,
+          "pnl_lot": -3040
         },
         {
           "move": 0,
-          "price": 3.24,
-          "pct": -7.5,
-          "pnl_lot": -512
+          "price": 950.6,
+          "pct": -1.4,
+          "pnl_lot": -446
         },
         {
           "move": 1,
-          "price": 5.01,
-          "pct": 43.3,
-          "pnl_lot": 2546
+          "price": 1061.51,
+          "pct": 10.1,
+          "pnl_lot": 2321
         },
         {
           "move": 2,
-          "price": 7.19,
-          "pct": 105.6,
-          "pnl_lot": 6299
+          "price": 1179.22,
+          "pct": 22.3,
+          "pnl_lot": 5258
         },
         {
           "move": 3,
-          "price": 9.69,
-          "pct": 176.9,
-          "pnl_lot": 10596
+          "price": 1303.51,
+          "pct": 35.2,
+          "pnl_lot": 8360
         }
       ],
       "chart": {
@@ -66,141 +66,13 @@
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
             "tech": "RSI 66",
-            "value": 66.5
+            "value": 65.9
           },
           {
             "name": "Who's winning",
             "ok": false,
             "tech": "MACD",
             "text": "Buyers are winning but getting tired"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b9290.2, where it stopped before (1.8% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 66.5,
-        "pattern": "green candle",
-        "resistance": 290.25,
-        "support": 252.8
-      },
-      "days": 7,
-      "gamma": 0.04857,
-      "vega_lot": 281,
-      "opt_oi_chg": 3779475,
-      "opt_chg": 204.3,
-      "fut_oi": 198247350,
-      "breakeven": 298.5,
-      "max_loss_lot": 6038,
-      "need_move": 0.66,
-      "need_move_pct": 0.22,
-      "symbol": "ITC",
-      "side": "CE",
-      "contract": "ITC 23 Nov 295 CE",
-      "expiry": "2026-11-23",
-      "strike": 295.0,
-      "entry": 3.5,
-      "target": 3.85,
-      "stop": 3.32,
-      "lot": 1725,
-      "cost_per_lot": 6038,
-      "profit_per_lot": 541,
-      "loss_per_lot": -363,
-      "delta": 0.53,
-      "theta_lot": -449,
-      "iv": 20.1,
-      "oi": 7565850,
-      "volume": 46431,
-      "spot": 295.09,
-      "price_chg": 3.6,
-      "oi_chg": 3.0,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b9270",
-      "affordable": true
-    },
-    {
-      "why": [
-        "Futures fell 3.16% while open interest grew 4.7%: new sellers are entering (short build-up).",
-        "SYRMA closed at \u20b91,454.73 and below 20-day avg \u20b91,530, so the move is with the trend, not against it.",
-        "Strike 1440 is near the money (delta -0.43): it moves about \u20b90.43 for each \u20b91 in SYRMA.",
-        "Liquid: 244 contracts traded, open interest 29,575 shares, so you can get in and out.",
-        "7 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 56.36,
-          "pct": 50.5,
-          "pnl_lot": 6059
-        },
-        {
-          "move": -2,
-          "price": 48.18,
-          "pct": 28.6,
-          "pnl_lot": 3404
-        },
-        {
-          "move": -1,
-          "price": 40.81,
-          "pct": 9.0,
-          "pnl_lot": 1012
-        },
-        {
-          "move": 0,
-          "price": 34.24,
-          "pct": -8.6,
-          "pnl_lot": -1118
-        },
-        {
-          "move": 1,
-          "price": 28.45,
-          "pct": -24.0,
-          "pnl_lot": -2994
-        },
-        {
-          "move": 2,
-          "price": 23.42,
-          "pct": -37.5,
-          "pnl_lot": -4627
-        },
-        {
-          "move": 3,
-          "price": 19.09,
-          "pct": -49.0,
-          "pnl_lot": -6031
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving down, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Falling at a steady pace, not overdone",
-            "tech": "RSI 45",
-            "value": 45.1
-          },
-          {
-            "name": "Who's winning",
-            "ok": false,
-            "tech": "MACD",
-            "text": "Sellers are winning but getting tired"
           },
           {
             "name": "Last move",
@@ -212,50 +84,50 @@
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to fall before \u20b91,399.9, where it bounced before (6.9% away)",
+            "text": "There's room to rise before \u20b920,478.0, where it stopped before (5.6% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 4,
         "verdict": "strong",
-        "rsi": 45.1,
+        "rsi": 65.9,
         "pattern": "red candle",
-        "resistance": 1713.2,
-        "support": 1399.9
+        "resistance": 20478.0,
+        "support": 16184.0
       },
-      "days": 7,
-      "gamma": 0.00344,
-      "vega_lot": 257,
-      "opt_oi_chg": 4875,
-      "opt_chg": 59.0,
-      "fut_oi": 2331225,
-      "breakeven": 1402.55,
-      "max_loss_lot": 12171,
-      "need_move": 8.71,
-      "need_move_pct": 0.6,
-      "symbol": "SYRMA",
-      "side": "PE",
-      "contract": "SYRMA 23 Nov 1440 PE",
-      "expiry": "2026-11-23",
-      "strike": 1440.0,
-      "entry": 37.45,
-      "target": 41.2,
-      "stop": 35.58,
-      "lot": 325,
-      "cost_per_lot": 12171,
-      "profit_per_lot": 1139,
-      "loss_per_lot": -683,
-      "delta": -0.43,
-      "theta_lot": -1000,
-      "iv": 56.6,
-      "oi": 29575,
-      "volume": 244,
-      "spot": 1454.73,
-      "price_chg": -3.16,
-      "oi_chg": 4.7,
-      "buildup": "Short build-up",
-      "trend": "below 20-day avg \u20b91,530",
-      "affordable": true
+      "days": 42,
+      "gamma": 0.00017,
+      "vega_lot": 672,
+      "opt_oi_chg": 1675,
+      "opt_chg": 67.7,
+      "fut_oi": 325000,
+      "breakeven": 20964.3,
+      "max_loss_lot": 24108,
+      "need_move": 178.57,
+      "need_move_pct": 0.9,
+      "symbol": "FORCEMOT",
+      "side": "CE",
+      "contract": "FORCEMOT 29 Dec 20000 CE",
+      "expiry": "2026-12-29",
+      "strike": 20000.0,
+      "entry": 964.3,
+      "target": 1060.73,
+      "stop": 916.08,
+      "lot": 25,
+      "cost_per_lot": 24108,
+      "profit_per_lot": 2302,
+      "loss_per_lot": -1307,
+      "delta": 0.54,
+      "theta_lot": -316,
+      "iv": 34.0,
+      "oi": 2950,
+      "volume": 326,
+      "spot": 19945.88,
+      "price_chg": 3.78,
+      "oi_chg": 3.3,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b917,954",
+      "affordable": false
     }
   ]
 }
