@@ -1,17 +1,17 @@
 {
   "DIVISLAB": {
-    "trailingPE": 88.66882,
-    "priceToBook": 16.561045,
+    "trailingPE": 87.185356,
+    "priceToBook": 16.28397,
     "returnOnEquity": 0.20131999,
     "returnOnAssets": 0.12897,
     "debtToEquity": 0.033,
     "profitMargins": 0.27586,
-    "operatingMargins": 0.38738,
+    "operatingMargins": 0.33951,
     "revenueGrowth": 0.354,
     "earningsGrowth": 0.636,
     "heldPercentInsiders": 0.52002996,
-    "dividendYield": 0.26,
-    "marketCap": 2983070269440,
+    "dividendYield": 0.27,
+    "marketCap": 2933162246144,
     "profit_cagr": 12.078780055201644,
     "profit_history": [
       [
@@ -32,21 +32,21 @@
       ]
     ],
     "revenue_cagr": 10.975670295672879,
-    "fetched": 1794375582.232994
+    "fetched": 1795037477.7090592
   },
   "MOTHERSON": {
-    "trailingPE": 36.91964,
-    "priceToBook": 3.8593462,
+    "trailingPE": 35.098217,
+    "priceToBook": 3.6689458,
     "returnOnEquity": 0.11201,
     "returnOnAssets": 0.04454,
     "debtToEquity": 47.731,
     "profitMargins": 0.034140002,
-    "operatingMargins": 0.05169,
+    "operatingMargins": 0.057550002,
     "revenueGrowth": 0.268,
     "earningsGrowth": 0.423,
     "heldPercentInsiders": 0.59002,
-    "dividendYield": 0.31,
-    "marketCap": 1758308073472,
+    "dividendYield": 0.3,
+    "marketCap": 1671562133504,
     "profit_cagr": 37.16586011740266,
     "profit_history": [
       [
@@ -67,21 +67,21 @@
       ]
     ],
     "revenue_cagr": 17.095039272356715,
-    "fetched": 1794375582.843568
+    "fetched": 1795037479.492279
   },
   "BOSCHLTD": {
-    "trailingPE": 53.73077,
-    "priceToBook": 19.31898,
+    "trailingPE": 52.919334,
+    "priceToBook": 18.915058,
     "returnOnEquity": 0.23295,
     "returnOnAssets": 0.08818,
     "debtToEquity": 2.68,
     "profitMargins": 0.11091,
-    "operatingMargins": 0.11792,
+    "operatingMargins": 0.11698,
     "revenueGrowth": 0.597,
     "earningsGrowth": 0.516,
-    "heldPercentInsiders": 0.70669997,
-    "dividendYield": 0.54,
-    "marketCap": 1481294086144,
+    "heldPercentInsiders": 0.70664,
+    "dividendYield": 0.55,
+    "marketCap": 1450323214336,
     "profit_cagr": 24.835466911870483,
     "profit_history": [
       [
@@ -102,21 +102,21 @@
       ]
     ],
     "revenue_cagr": 10.275313182858547,
-    "fetched": 1794375584.001204
+    "fetched": 1795037479.1145756
   },
   "TITAN": {
-    "trailingPE": 63.069542,
-    "priceToBook": 24.286283,
+    "trailingPE": 58.66591,
+    "priceToBook": 22.59057,
     "returnOnEquity": 0.45271,
     "returnOnAssets": 0.09661999,
     "debtToEquity": 218.562,
     "profitMargins": 0.07457,
-    "operatingMargins": 0.132,
+    "operatingMargins": 0.1015,
     "revenueGrowth": 0.101,
     "earningsGrowth": 1.136,
     "heldPercentInsiders": 0.60565,
-    "dividendYield": 0.3,
-    "marketCap": 4433899421696,
+    "dividendYield": 0.31,
+    "marketCap": 4124316532736,
     "profit_cagr": 16.0006707482786,
     "profit_history": [
       [
@@ -137,21 +137,21 @@
       ]
     ],
     "revenue_cagr": 29.23622602963414,
-    "fetched": 1794375586.848282
+    "fetched": 1795037480.1643918
   },
   "TECHM": {
-    "trailingPE": 29.061394,
-    "priceToBook": 5.3990784,
+    "trailingPE": 28.126003,
+    "priceToBook": 5.2253,
     "returnOnEquity": 0.19186,
     "returnOnAssets": 0.1142,
     "debtToEquity": 7.249,
     "profitMargins": 0.090059996,
-    "operatingMargins": 0.14753,
+    "operatingMargins": 0.14089,
     "revenueGrowth": 0.156,
     "earningsGrowth": 0.325,
     "heldPercentInsiders": 0.37094003,
-    "dividendYield": 2.83,
-    "marketCap": 1772406702080,
+    "dividendYield": 2.89,
+    "marketCap": 1550446493696,
     "profit_cagr": -0.14094743522335973,
     "profit_history": [
       [
@@ -172,21 +172,21 @@
       ]
     ],
     "revenue_cagr": 2.1581233101096498,
-    "fetched": 1794375587.487411
+    "fetched": 1795037479.9620962
   },
   "ZYDUSLIFE": {
-    "trailingPE": 28.64994,
-    "priceToBook": 4.2986617,
+    "trailingPE": 28.721626,
+    "priceToBook": 4.3094172,
     "returnOnEquity": 0.14723,
     "returnOnAssets": 0.06373,
     "debtToEquity": 46.059,
     "profitMargins": 0.1382,
-    "operatingMargins": 0.14581999,
+    "operatingMargins": 0.17204,
     "revenueGrowth": 0.292,
     "earningsGrowth": -0.258,
     "heldPercentInsiders": 0.75184995,
     "dividendYield": 0.08,
-    "marketCap": 1196007096320,
+    "marketCap": 1198999601152,
     "profit_cagr": 36.994352967661,
     "profit_history": [
       [
@@ -207,21 +207,21 @@
       ]
     ],
     "revenue_cagr": 16.54811321293024,
-    "fetched": 1794375588.176828
+    "fetched": 1795037479.778965
   },
   "ICICIBANK": {
-    "trailingPE": 19.638952,
-    "priceToBook": 2.9386847,
+    "trailingPE": 19.664743,
+    "priceToBook": 2.9425437,
     "returnOnEquity": 0.1649,
     "returnOnAssets": 0.02101,
     "debtToEquity": null,
     "profitMargins": 0.27844998,
-    "operatingMargins": 0.37518,
+    "operatingMargins": 0.29953,
     "revenueGrowth": 0.158,
     "earningsGrowth": 0.221,
-    "heldPercentInsiders": 0.03546,
-    "dividendYield": 0.76,
-    "marketCap": 11483617427456,
+    "heldPercentInsiders": 0.03704,
+    "dividendYield": 0.75,
+    "marketCap": 11503937781760,
     "profit_cagr": 16.780797644876188,
     "profit_history": [
       [
@@ -242,21 +242,21 @@
       ]
     ],
     "revenue_cagr": 18.113414743381927,
-    "fetched": 1794375590.020581
+    "fetched": 1795037478.639631
   },
   "TVSMOTOR": {
-    "trailingPE": 56.835506,
-    "priceToBook": 19.168865,
+    "trailingPE": 54.2396,
+    "priceToBook": 18.293346,
     "returnOnEquity": 0.3723,
     "returnOnAssets": 0.08831,
     "debtToEquity": 320.877,
     "profitMargins": 0.05819,
-    "operatingMargins": 0.12595999,
+    "operatingMargins": 0.12762,
     "revenueGrowth": 0.394,
     "earningsGrowth": 0.502,
     "heldPercentInsiders": 0.52287996,
     "dividendYield": 0.27,
-    "marketCap": 2175633326080,
+    "marketCap": 2076263448576,
     "profit_cagr": 31.456842625604487,
     "profit_history": [
       [
@@ -277,21 +277,21 @@
       ]
     ],
     "revenue_cagr": 20.207407485564268,
-    "fetched": 1794375590.629608
+    "fetched": 1795037478.3667936
   },
   "ETERNAL": {
-    "trailingPE": 696.88684,
-    "priceToBook": 10.544422,
+    "trailingPE": 690.5661,
+    "priceToBook": 10.448784,
     "returnOnEquity": 0.01588,
     "returnOnAssets": 0.00189,
     "debtToEquity": 18.412,
     "profitMargins": 0.00632,
-    "operatingMargins": 0.00526,
+    "operatingMargins": 0.00162,
     "revenueGrowth": 0.776,
     "earningsGrowth": 0.857,
     "heldPercentInsiders": 0.26578,
     "dividendYield": 0.0,
-    "marketCap": 3402738171904,
+    "marketCap": 3371875434496,
     "profit_cagr": null,
     "profit_history": [
       [
@@ -312,21 +312,21 @@
       ]
     ],
     "revenue_cagr": 97.70414165813189,
-    "fetched": 1794375591.595802
+    "fetched": 1795037478.173782
   },
   "UNIONBANK": {
-    "trailingPE": 6.9396253,
-    "priceToBook": 1.0699879,
+    "trailingPE": 7.2130466,
+    "priceToBook": 1.1121454,
     "returnOnEquity": 0.16291,
     "returnOnAssets": 0.0141199995,
     "debtToEquity": null,
     "profitMargins": 0.41458,
-    "operatingMargins": 0.49145,
+    "operatingMargins": 0.42543998,
     "revenueGrowth": 0.156,
     "earningsGrowth": 0.293,
     "heldPercentInsiders": 0.74757004,
-    "dividendYield": 2.54,
-    "marketCap": 1526721150976,
+    "dividendYield": 2.41,
+    "marketCap": 1586874023936,
     "profit_cagr": 31.670276057851645,
     "profit_history": [
       [
@@ -347,21 +347,21 @@
       ]
     ],
     "revenue_cagr": 7.64447174106484,
-    "fetched": 1794375592.624591
+    "fetched": 1795037479.3078406
   },
   "KOTAKBANK": {
-    "trailingPE": 22.571827,
-    "priceToBook": 2.484697,
+    "trailingPE": 22.930956,
+    "priceToBook": 2.5242298,
     "returnOnEquity": 0.11835,
     "returnOnAssets": 0.02108,
     "debtToEquity": null,
     "profitMargins": 0.28743,
-    "operatingMargins": 0.37792,
+    "operatingMargins": 0.29634002,
     "revenueGrowth": 0.207,
     "earningsGrowth": 0.262,
-    "heldPercentInsiders": 0.28457,
-    "dividendYield": 0.14,
-    "marketCap": 4845613350912,
+    "heldPercentInsiders": 0.28456,
+    "dividendYield": 0.13,
+    "marketCap": 4922940063744,
     "profit_cagr": 8.923950945073944,
     "profit_history": [
       [
@@ -382,21 +382,21 @@
       ]
     ],
     "revenue_cagr": 14.123421371444977,
-    "fetched": 1794375593.252985
+    "fetched": 1795037478.8732262
   },
   "TORNTPHARM": {
-    "trailingPE": 80.439186,
-    "priceToBook": 9.850872,
+    "trailingPE": 77.883446,
+    "priceToBook": 9.537887,
     "returnOnEquity": 0.15653,
     "returnOnAssets": 0.0802,
     "debtToEquity": 76.781,
     "profitMargins": 0.12209,
-    "operatingMargins": 0.21229,
+    "operatingMargins": 0.22171,
     "revenueGrowth": 0.508,
     "earningsGrowth": -0.195,
     "heldPercentInsiders": 0.63271,
-    "dividendYield": 0.8,
-    "marketCap": 1811311755264,
+    "dividendYield": 0.81,
+    "marketCap": 1753762234368,
     "profit_cagr": 20.215483995583906,
     "profit_history": [
       [
@@ -417,7 +417,7 @@
       ]
     ],
     "revenue_cagr": 13.269297536029146,
-    "fetched": 1794375594.0317
+    "fetched": 1795037480.459453
   },
   "ADANIPORTS": {
     "trailingPE": 32.515022,
@@ -455,18 +455,18 @@
     "fetched": 1794375595.05043
   },
   "PNB": {
-    "trailingPE": 6.9274554,
-    "priceToBook": 0.9821371,
+    "trailingPE": 7.5350127,
+    "priceToBook": 1.0682733,
     "returnOnEquity": 0.15059,
     "returnOnAssets": 0.01132,
     "debtToEquity": null,
     "profitMargins": 0.38777,
-    "operatingMargins": 0.49098,
+    "operatingMargins": 0.47794998,
     "revenueGrowth": 0.074,
     "earningsGrowth": 0.15,
     "heldPercentInsiders": 0.70079005,
-    "dividendYield": 2.27,
-    "marketCap": 1580394479616,
+    "dividendYield": 2.0,
+    "marketCap": 1718999580672,
     "profit_cagr": 76.44139288904096,
     "profit_history": [
       [
@@ -487,7 +487,7 @@
       ]
     ],
     "revenue_cagr": 9.965114951410104,
-    "fetched": 1794375597.30209
+    "fetched": 1795037477.9012792
   },
   "ABB": {
     "trailingPE": 94.714615,
@@ -525,18 +525,18 @@
     "fetched": 1794375598.3659892
   },
   "BAJAJ-AUTO": {
-    "trailingPE": 23.558022,
-    "priceToBook": 8.319912,
+    "trailingPE": 22.546928,
+    "priceToBook": 7.962827,
     "returnOnEquity": 0.3556,
     "returnOnAssets": 0.14616999,
     "debtToEquity": 69.647,
     "profitMargins": 0.15996,
-    "operatingMargins": 0.19621,
+    "operatingMargins": 0.21034001,
     "revenueGrowth": 0.574,
     "earningsGrowth": 0.638,
-    "heldPercentInsiders": 0.60964,
-    "dividendYield": 1.37,
-    "marketCap": 3034933624832,
+    "heldPercentInsiders": 0.61091,
+    "dividendYield": 1.39,
+    "marketCap": 2902286663680,
     "profit_cagr": 21.03071664453431,
     "profit_history": [
       [
@@ -557,7 +557,7 @@
       ]
     ],
     "revenue_cagr": 19.494168990528205,
-    "fetched": 1794375599.030085
+    "fetched": 1795037481.1584806
   },
   "PIDILITIND": {
     "trailingPE": 59.77592,
@@ -630,18 +630,18 @@
     "fetched": 1794375601.515697
   },
   "APOLLOHOSP": {
-    "trailingPE": 54.39606,
-    "priceToBook": 11.532742,
+    "trailingPE": 56.403862,
+    "priceToBook": 11.958425,
     "returnOnEquity": 0.22528,
     "returnOnAssets": 0.09115,
     "debtToEquity": 73.041,
     "profitMargins": 0.08051,
-    "operatingMargins": 0.12615,
+    "operatingMargins": 0.12088,
     "revenueGrowth": 0.208,
     "earningsGrowth": 0.319,
     "heldPercentInsiders": 0.28386,
     "dividendYield": 0.23,
-    "marketCap": 1223176093696,
+    "marketCap": 1268324499456,
     "profit_cagr": 33.336300616284454,
     "profit_history": [
       [
@@ -662,21 +662,21 @@
       ]
     ],
     "revenue_cagr": 14.846702644087806,
-    "fetched": 1794375602.754702
+    "fetched": 1795037480.684071
   },
   "GAIL": {
-    "trailingPE": 9.815104,
-    "priceToBook": 1.2805877,
+    "trailingPE": 9.895833,
+    "priceToBook": 1.2911205,
     "returnOnEquity": 0.13597,
     "returnOnAssets": 0.06761,
     "debtToEquity": 24.939,
     "profitMargins": 0.07936,
-    "operatingMargins": 0.12683,
+    "operatingMargins": 0.09904,
     "revenueGrowth": 0.326,
     "earningsGrowth": 1.393,
     "heldPercentInsiders": 0.58984,
-    "dividendYield": 2.93,
-    "marketCap": 1239073685504,
+    "dividendYield": 2.94,
+    "marketCap": 1249265057792,
     "profit_cagr": 10.525172279057893,
     "profit_history": [
       [
@@ -697,7 +697,7 @@
       ]
     ],
     "revenue_cagr": -0.8622469851381598,
-    "fetched": 1794375603.618976
+    "fetched": 1795037480.9446898
   },
   "JSWSTEEL": {
     "trailingPE": 11.630266,
@@ -828,18 +828,18 @@
     "fetched": 1794375606.924976
   },
   "CUPID": {
-    "trailingPE": 348.3,
-    "priceToBook": 103.75334,
-    "returnOnEquity": null,
-    "returnOnAssets": null,
-    "debtToEquity": 12.506,
-    "profitMargins": 0.30351,
-    "operatingMargins": 0.37985,
-    "revenueGrowth": 1.587,
-    "earningsGrowth": 1.909,
+    "trailingPE": 290.56,
+    "priceToBook": 86.37337,
+    "returnOnEquity": 0.35902,
+    "returnOnAssets": 0.20185,
+    "debtToEquity": 20.193,
+    "profitMargins": 0.29799998,
+    "operatingMargins": 0.34188998,
+    "revenueGrowth": 1.475,
+    "earningsGrowth": 1.303,
     "heldPercentInsiders": 0.64426005,
     "dividendYield": 0.0,
-    "marketCap": 468345323520,
+    "marketCap": 488380792832,
     "profit_cagr": 50.76600371557809,
     "profit_history": [
       [
@@ -860,21 +860,21 @@
       ]
     ],
     "revenue_cagr": 31.1738619903021,
-    "fetched": 1794382751.833368
+    "fetched": 1795037481.3566182
   },
   "LAURUSLABS": {
-    "trailingPE": 98.34948,
-    "priceToBook": 21.729362,
+    "trailingPE": 93.72478,
+    "priceToBook": 20.70758,
     "returnOnEquity": 0.23973,
     "returnOnAssets": 0.112799995,
     "debtToEquity": 42.471,
     "profitMargins": 0.17128,
-    "operatingMargins": 0.28232,
+    "operatingMargins": 0.24143,
     "revenueGrowth": 0.334,
     "earningsGrowth": 1.26,
-    "heldPercentInsiders": 0.32031,
-    "dividendYield": 0.08,
-    "marketCap": 1316794925056,
+    "heldPercentInsiders": 0.32029,
+    "dividendYield": 0.09,
+    "marketCap": 1254875070464,
     "profit_cagr": 4.000924612741641,
     "profit_history": [
       [
@@ -895,21 +895,21 @@
       ]
     ],
     "revenue_cagr": 3.77430071243563,
-    "fetched": 1794382752.1181793
+    "fetched": 1795037482.0764709
   },
   "SANSERA": {
-    "trailingPE": 75.81478,
-    "priceToBook": 9.405599,
+    "trailingPE": 73.11129,
+    "priceToBook": 9.070203,
     "returnOnEquity": null,
     "returnOnAssets": null,
     "debtToEquity": 19.023,
     "profitMargins": 0.09284,
-    "operatingMargins": 0.13137001,
+    "operatingMargins": 0.12681,
     "revenueGrowth": 0.333,
     "earningsGrowth": 0.383,
     "heldPercentInsiders": 0.29035,
     "dividendYield": 0.09,
-    "marketCap": 291266199552,
+    "marketCap": 280879890432,
     "profit_cagr": 30.38975732297957,
     "profit_history": [
       [
@@ -930,21 +930,21 @@
       ]
     ],
     "revenue_cagr": 14.822008520868435,
-    "fetched": 1794382752.5021763
+    "fetched": 1795037481.8235345
   },
   "RUBICON": {
-    "trailingPE": 89.17949,
-    "priceToBook": 20.309015,
+    "trailingPE": 85.04103,
+    "priceToBook": 19.366556,
     "returnOnEquity": 0.31252,
     "returnOnAssets": 0.12189999,
     "debtToEquity": 35.027,
     "profitMargins": 0.15467,
-    "operatingMargins": 0.21868,
+    "operatingMargins": 0.21094999,
     "revenueGrowth": 0.399,
     "earningsGrowth": 0.559,
     "heldPercentInsiders": 0.69149,
-    "dividendYield": 0.08,
-    "marketCap": 287872516096,
+    "dividendYield": 0.09,
+    "marketCap": 274513510400,
     "profit_cagr": null,
     "profit_history": [
       [
@@ -953,21 +953,21 @@
       ]
     ],
     "revenue_cagr": 36.62382882541606,
-    "fetched": 1794382752.7910397
+    "fetched": 1795037482.2860405
   },
   "CPPLUS": {
-    "trailingPE": 84.03739,
-    "priceToBook": 13.636965,
+    "trailingPE": 78.393005,
+    "priceToBook": 12.721035,
     "returnOnEquity": 0.22564,
     "returnOnAssets": 0.104540005,
     "debtToEquity": 11.377,
     "profitMargins": 0.10383,
-    "operatingMargins": 0.16531,
+    "operatingMargins": 0.14791,
     "revenueGrowth": 0.899,
     "earningsGrowth": 1.511,
     "heldPercentInsiders": 0.74060994,
     "dividendYield": 0.04,
-    "marketCap": 518351093760,
+    "marketCap": 483535945728,
     "profit_cagr": 50.329106079051215,
     "profit_history": [
       [
@@ -988,21 +988,21 @@
       ]
     ],
     "revenue_cagr": 22.673760548993236,
-    "fetched": 1794382753.097364
+    "fetched": 1795037482.4859219
   },
   "ATHERENERG": {
     "trailingPE": null,
-    "priceToBook": 18.549225,
+    "priceToBook": 18.630564,
     "returnOnEquity": -0.066989996,
     "returnOnAssets": -0.03716,
     "debtToEquity": 22.455,
     "profitMargins": -0.048800003,
-    "operatingMargins": -0.02418,
+    "operatingMargins": -0.07044,
     "revenueGrowth": 0.629,
     "earningsGrowth": null,
-    "heldPercentInsiders": 0.53754,
+    "heldPercentInsiders": 0.53723,
     "dividendYield": 0.0,
-    "marketCap": 750908080128,
+    "marketCap": 754954076160,
     "profit_cagr": null,
     "profit_history": [
       [
@@ -1023,21 +1023,21 @@
       ]
     ],
     "revenue_cagr": 27.199636224445122,
-    "fetched": 1794382753.4458628
+    "fetched": 1795037481.6174371
   },
   "WELSPUNLIV": {
-    "trailingPE": 55.306343,
-    "priceToBook": 4.6869783,
+    "trailingPE": 56.01094,
+    "priceToBook": 4.7466903,
     "returnOnEquity": 0.088479996,
     "returnOnAssets": 0.04064,
     "debtToEquity": 47.296,
     "profitMargins": 0.04198,
-    "operatingMargins": 0.084359996,
+    "operatingMargins": 0.06724,
     "revenueGrowth": 0.163,
     "earningsGrowth": 12.846,
-    "heldPercentInsiders": 0.68975997,
+    "heldPercentInsiders": 0.66375,
     "dividendYield": 0.04,
-    "marketCap": 237950222336,
+    "marketCap": 240981671936,
     "profit_cagr": 0.9317925946917383,
     "profit_history": [
       [
@@ -1058,7 +1058,7 @@
       ]
     ],
     "revenue_cagr": 5.6892280796386085,
-    "fetched": 1794382753.7079916
+    "fetched": 1795037482.7255988
   },
   "GLAND": {
     "trailingPE": 43.90527,
@@ -1096,18 +1096,18 @@
     "fetched": 1794382754.0869696
   },
   "SAILIFE": {
-    "trailingPE": 109.60751,
-    "priceToBook": 15.221943,
+    "trailingPE": 101.71217,
+    "priceToBook": 14.1254635,
     "returnOnEquity": 0.15177,
     "returnOnAssets": 0.08567,
     "debtToEquity": 23.049,
     "profitMargins": 0.15864,
-    "operatingMargins": 0.20992,
+    "operatingMargins": 0.21773,
     "revenueGrowth": 0.225,
     "earningsGrowth": 0.165,
-    "heldPercentInsiders": 0.36282003,
+    "heldPercentInsiders": 0.36263,
     "dividendYield": 0.0,
-    "marketCap": 409413681152,
+    "marketCap": 379922481152,
     "profit_cagr": 226.88661246747603,
     "profit_history": [
       [
@@ -1128,21 +1128,21 @@
       ]
     ],
     "revenue_cagr": 21.310344962902008,
-    "fetched": 1794382754.3584876
+    "fetched": 1795037483.1625156
   },
   "SONACOMS": {
-    "trailingPE": 77.36667,
-    "priceToBook": 9.022177,
+    "trailingPE": 74.083336,
+    "priceToBook": 8.639288,
     "returnOnEquity": 0.11879,
     "returnOnAssets": 0.075619996,
     "debtToEquity": 10.085,
     "profitMargins": 0.14101,
-    "operatingMargins": 0.17368001,
+    "operatingMargins": 0.17491,
     "revenueGrowth": 0.349,
     "earningsGrowth": 0.288,
     "heldPercentInsiders": 0.27866,
-    "dividendYield": 0.39,
-    "marketCap": 580414734336,
+    "dividendYield": 0.4,
+    "marketCap": 556156452864,
     "profit_cagr": 17.43336469697705,
     "profit_history": [
       [
@@ -1163,7 +1163,7 @@
       ]
     ],
     "revenue_cagr": 18.825852886963034,
-    "fetched": 1794382754.705436
+    "fetched": 1795037482.914473
   },
   "SHYAMMETL": {
     "trailingPE": 27.296244,
@@ -1236,18 +1236,18 @@
     "fetched": 1794382755.3034277
   },
   "PVRINOX": {
-    "trailingPE": 36.157364,
-    "priceToBook": 2.0984583,
+    "trailingPE": 39.213173,
+    "priceToBook": 2.2758076,
     "returnOnEquity": 0.06,
     "returnOnAssets": 0.04524,
     "debtToEquity": 85.371,
     "profitMargins": 0.0845,
-    "operatingMargins": 0.22488001,
+    "operatingMargins": 0.15903,
     "revenueGrowth": 0.155,
     "earningsGrowth": 1.492,
     "heldPercentInsiders": 0.28384,
     "dividendYield": 0.0,
-    "marketCap": 151963893760,
+    "marketCap": 164806983680,
     "profit_cagr": null,
     "profit_history": [
       [
@@ -1268,21 +1268,21 @@
       ]
     ],
     "revenue_cagr": 20.896014413671793,
-    "fetched": 1794382755.5799627
+    "fetched": 1795037483.4580631
   },
   "HONASA": {
-    "trailingPE": 55.98844,
-    "priceToBook": 10.635307,
+    "trailingPE": 60.63584,
+    "priceToBook": 11.518106,
     "returnOnEquity": 0.20555,
     "returnOnAssets": 0.08996,
     "debtToEquity": 8.662,
     "profitMargins": 0.10297,
-    "operatingMargins": 0.11206,
+    "operatingMargins": 0.11017,
     "revenueGrowth": 0.359,
     "earningsGrowth": 0.858,
     "heldPercentInsiders": 0.387,
-    "dividendYield": 0.62,
-    "marketCap": 158017486848,
+    "dividendYield": 0.58,
+    "marketCap": 171133960192,
     "profit_cagr": null,
     "profit_history": [
       [
@@ -1303,7 +1303,7 @@
       ]
     ],
     "revenue_cagr": 17.018550854816294,
-    "fetched": 1794382755.9347854
+    "fetched": 1795037483.9926016
   },
   "ACUTAAS": {
     "trailingPE": 73.20105,
@@ -1341,18 +1341,18 @@
     "fetched": 1794382756.193017
   },
   "AETHER": {
-    "trailingPE": 86.775055,
-    "priceToBook": 8.330391,
+    "trailingPE": 87.80383,
+    "priceToBook": 8.429153,
     "returnOnEquity": 0.10127,
     "returnOnAssets": 0.06381,
     "debtToEquity": 26.031,
     "profitMargins": 0.19132,
-    "operatingMargins": 0.25561002,
+    "operatingMargins": 0.25282,
     "revenueGrowth": 0.262,
     "earningsGrowth": 0.256,
     "heldPercentInsiders": 0.76572,
     "dividendYield": 0.0,
-    "marketCap": 216080646144,
+    "marketCap": 218642448384,
     "profit_cagr": 18.94456123677064,
     "profit_history": [
       [
@@ -1373,7 +1373,7 @@
       ]
     ],
     "revenue_cagr": 20.239797552692316,
-    "fetched": 1794382756.461445
+    "fetched": 1795037483.7602327
   },
   "AUROPHARMA": {
     "trailingPE": 26.340332,
