@@ -490,18 +490,18 @@
     "fetched": 1795037477.9012792
   },
   "ABB": {
-    "trailingPE": 94.714615,
-    "priceToBook": 15.782509,
-    "returnOnEquity": 0.19131,
-    "returnOnAssets": 0.07907,
+    "trailingPE": 92.853325,
+    "priceToBook": 15.777969,
+    "returnOnEquity": null,
+    "returnOnAssets": null,
     "debtToEquity": 1.547,
-    "profitMargins": 0.21349001,
-    "operatingMargins": 0.11459,
-    "revenueGrowth": 0.121,
-    "earningsGrowth": 0.03,
+    "profitMargins": 0.2069,
+    "operatingMargins": 0.12761,
+    "revenueGrowth": 0.129,
+    "earningsGrowth": 0.082,
     "heldPercentInsiders": 0.76382005,
     "dividendYield": 0.43,
-    "marketCap": 1473398833152,
+    "marketCap": 1472975077376,
     "profit_cagr": 17.96610544213353,
     "profit_history": [
       [
@@ -522,7 +522,7 @@
       ]
     ],
     "revenue_cagr": 15.414610570979438,
-    "fetched": 1794375598.3659892
+    "fetched": 1795124611.3695948
   },
   "BAJAJ-AUTO": {
     "trailingPE": 22.546928,
@@ -1656,8 +1656,8 @@
     "fetched": 1794382758.8701863
   },
   "BHARTIARTL": {
-    "trailingPE": 41.179367,
-    "priceToBook": 8.252577,
+    "trailingPE": 42.21303,
+    "priceToBook": 8.459729,
     "returnOnEquity": 0.21389,
     "returnOnAssets": 0.08573,
     "debtToEquity": 100.02,
@@ -1666,8 +1666,8 @@
     "revenueGrowth": 0.167,
     "earningsGrowth": 0.26,
     "heldPercentInsiders": 0.53145003,
-    "dividendYield": 1.16,
-    "marketCap": 13055703384064,
+    "dividendYield": 1.13,
+    "marketCap": 13377377140736,
     "profit_cagr": 47.33977446458364,
     "profit_history": [
       [
@@ -1688,7 +1688,7 @@
       ]
     ],
     "revenue_cagr": 14.882310633383145,
-    "fetched": 1794455598.1182299
+    "fetched": 1795124610.9978142
   },
   "INDIGO": {
     "trailingPE": null,
