@@ -1726,8 +1726,8 @@
     "fetched": 1794455598.4813497
   },
   "DLF": {
-    "trailingPE": 41.14696,
-    "priceToBook": 4.125614,
+    "trailingPE": 42.5705,
+    "priceToBook": 4.268346,
     "returnOnEquity": 0.10311,
     "returnOnAssets": 0.00708,
     "debtToEquity": 0.69,
@@ -1737,7 +1737,7 @@
     "earningsGrowth": 0.101,
     "heldPercentInsiders": 0.74142,
     "dividendYield": 1.04,
-    "marketCap": 1878142746624,
+    "marketCap": 1943119593472,
     "profit_cagr": 29.435304705700325,
     "profit_history": [
       [
@@ -1758,7 +1758,7 @@
       ]
     ],
     "revenue_cagr": 11.317235861499086,
-    "fetched": 1794602181.3043969
+    "fetched": 1795209961.3937495
   },
   "SOLARINDS": {
     "trailingPE": 77.3118,
