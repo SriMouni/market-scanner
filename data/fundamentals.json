@@ -793,18 +793,18 @@
     "fetched": 1794375606.281377
   },
   "EICHERMOT": {
-    "trailingPE": 36.88794,
-    "priceToBook": 8.4719925,
-    "returnOnEquity": null,
-    "returnOnAssets": null,
-    "debtToEquity": 2.048,
-    "profitMargins": 0.23211999,
-    "operatingMargins": 0.19798,
-    "revenueGrowth": 0.315,
-    "earningsGrowth": 0.213,
-    "heldPercentInsiders": 0.51469004,
-    "dividendYield": 1.07,
-    "marketCap": 2128092200960,
+    "trailingPE": 37.58335,
+    "priceToBook": 8.649009,
+    "returnOnEquity": 0.24888,
+    "returnOnAssets": 0.10521,
+    "debtToEquity": 1.984,
+    "profitMargins": 0.22882,
+    "operatingMargins": 0.20416,
+    "revenueGrowth": 0.203,
+    "earningsGrowth": 0.148,
+    "heldPercentInsiders": 0.51465,
+    "dividendYield": 1.01,
+    "marketCap": 2243740303360,
     "profit_cagr": 23.697524323492836,
     "profit_history": [
       [
@@ -825,7 +825,7 @@
       ]
     ],
     "revenue_cagr": 17.467525148496698,
-    "fetched": 1794375606.924976
+    "fetched": 1795482491.2916787
   },
   "CUPID": {
     "trailingPE": 290.56,
@@ -1061,18 +1061,18 @@
     "fetched": 1795037482.7255988
   },
   "GLAND": {
-    "trailingPE": 43.90527,
-    "priceToBook": 5.2342753,
-    "returnOnEquity": null,
-    "returnOnAssets": null,
-    "debtToEquity": 2.738,
-    "profitMargins": 0.16784,
-    "operatingMargins": 0.21003,
-    "revenueGrowth": 0.196,
-    "earningsGrowth": 0.469,
-    "heldPercentInsiders": 0.45754,
-    "dividendYield": 0.63,
-    "marketCap": 543001182208,
+    "trailingPE": 43.994663,
+    "priceToBook": 5.0920453,
+    "returnOnEquity": 0.12207,
+    "returnOnAssets": 0.073979996,
+    "debtToEquity": 2.351,
+    "profitMargins": 0.17475,
+    "operatingMargins": 0.20694,
+    "revenueGrowth": 0.233,
+    "earningsGrowth": 0.58,
+    "heldPercentInsiders": 0.45753,
+    "dividendYield": 0.6,
+    "marketCap": 544119095296,
     "profit_cagr": 9.566141877345924,
     "profit_history": [
       [
@@ -1093,7 +1093,7 @@
       ]
     ],
     "revenue_cagr": 21.251147751201138,
-    "fetched": 1794382754.0869696
+    "fetched": 1795482491.4831717
   },
   "SAILIFE": {
     "trailingPE": 101.71217,
