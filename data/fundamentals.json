@@ -525,8 +525,8 @@
     "fetched": 1795124611.3695948
   },
   "BAJAJ-AUTO": {
-    "trailingPE": 22.546928,
-    "priceToBook": 7.962827,
+    "trailingPE": 23.1442,
+    "priceToBook": 8.173763,
     "returnOnEquity": 0.3556,
     "returnOnAssets": 0.14616999,
     "debtToEquity": 69.647,
@@ -535,8 +535,8 @@
     "revenueGrowth": 0.574,
     "earningsGrowth": 0.638,
     "heldPercentInsiders": 0.61091,
-    "dividendYield": 1.39,
-    "marketCap": 2902286663680,
+    "dividendYield": 1.38,
+    "marketCap": 2979168256000,
     "profit_cagr": 21.03071664453431,
     "profit_history": [
       [
@@ -557,7 +557,7 @@
       ]
     ],
     "revenue_cagr": 19.494168990528205,
-    "fetched": 1795037481.1584806
+    "fetched": 1795732229.2236025
   },
   "PIDILITIND": {
     "trailingPE": 59.77592,
@@ -1341,8 +1341,8 @@
     "fetched": 1794382756.193017
   },
   "AETHER": {
-    "trailingPE": 87.80383,
-    "priceToBook": 8.429153,
+    "trailingPE": 89.32773,
+    "priceToBook": 8.703439,
     "returnOnEquity": 0.10127,
     "returnOnAssets": 0.06381,
     "debtToEquity": 26.031,
@@ -1350,9 +1350,9 @@
     "operatingMargins": 0.25282,
     "revenueGrowth": 0.262,
     "earningsGrowth": 0.256,
-    "heldPercentInsiders": 0.76572,
+    "heldPercentInsiders": 0.76561,
     "dividendYield": 0.0,
-    "marketCap": 218642448384,
+    "marketCap": 225800273920,
     "profit_cagr": 18.94456123677064,
     "profit_history": [
       [
@@ -1373,7 +1373,7 @@
       ]
     ],
     "revenue_cagr": 20.239797552692316,
-    "fetched": 1795037483.7602327
+    "fetched": 1795732230.0801492
   },
   "AUROPHARMA": {
     "trailingPE": 26.340332,
@@ -1829,5 +1829,40 @@
     ],
     "revenue_cagr": 36.43100720906234,
     "fetched": 1794602181.7185278
+  },
+  "BAJFINANCE": {
+    "trailingPE": 31.565556,
+    "priceToBook": 5.545985,
+    "returnOnEquity": 0.19026,
+    "returnOnAssets": 0.038399998,
+    "debtToEquity": 342.416,
+    "profitMargins": 0.4375,
+    "operatingMargins": 0.6007,
+    "revenueGrowth": 0.267,
+    "earningsGrowth": 0.284,
+    "heldPercentInsiders": 0.55454,
+    "dividendYield": 0.48,
+    "marketCap": 6958228176896,
+    "profit_cagr": 18.22815698685951,
+    "profit_history": [
+      [
+        "2026-03-31",
+        190173900000.0
+      ],
+      [
+        "2025-03-31",
+        166378200000.0
+      ],
+      [
+        "2024-03-31",
+        144511700000.0
+      ],
+      [
+        "2023-03-31",
+        115076900000.0
+      ]
+    ],
+    "revenue_cagr": 22.576659990078095,
+    "fetched": 1795732229.6544864
   }
 }
