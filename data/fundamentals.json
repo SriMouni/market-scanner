@@ -560,18 +560,18 @@
     "fetched": 1795732229.2236025
   },
   "PIDILITIND": {
-    "trailingPE": 59.77592,
-    "priceToBook": 14.282344,
+    "trailingPE": 60.569695,
+    "priceToBook": 14.472001,
     "returnOnEquity": 0.2566,
     "returnOnAssets": 0.14208001,
     "debtToEquity": 3.069,
     "profitMargins": 0.16628,
-    "operatingMargins": 0.18090001,
+    "operatingMargins": 0.21212,
     "revenueGrowth": 0.209,
     "earningsGrowth": 0.062,
-    "heldPercentInsiders": 0.69275004,
+    "heldPercentInsiders": 0.69267,
     "dividendYield": 0.72,
-    "marketCap": 1603080421376,
+    "marketCap": 1624367955968,
     "profit_cagr": 24.36179190172649,
     "profit_history": [
       [
@@ -592,7 +592,7 @@
       ]
     ],
     "revenue_cagr": 7.382691955854703,
-    "fetched": 1794375600.883331
+    "fetched": 1795817658.871501
   },
   "SUNPHARMA": {
     "trailingPE": 41.58862,
@@ -1726,8 +1726,8 @@
     "fetched": 1794455598.4813497
   },
   "DLF": {
-    "trailingPE": 42.5705,
-    "priceToBook": 4.268346,
+    "trailingPE": 43.6795,
+    "priceToBook": 4.3795404,
     "returnOnEquity": 0.10311,
     "returnOnAssets": 0.00708,
     "debtToEquity": 0.69,
@@ -1736,8 +1736,8 @@
     "revenueGrowth": -0.233,
     "earningsGrowth": 0.101,
     "heldPercentInsiders": 0.74142,
-    "dividendYield": 1.04,
-    "marketCap": 1943119593472,
+    "dividendYield": 0.99,
+    "marketCap": 1993739730944,
     "profit_cagr": 29.435304705700325,
     "profit_history": [
       [
@@ -1758,7 +1758,7 @@
       ]
     ],
     "revenue_cagr": 11.317235861499086,
-    "fetched": 1795209961.3937495
+    "fetched": 1795817658.5083506
   },
   "SOLARINDS": {
     "trailingPE": 77.3118,

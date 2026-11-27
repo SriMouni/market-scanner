@@ -1,184 +1,56 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "picks": [
     {
       "why": [
-        "Futures rose 1.94% while open interest grew 233.6%: new buyers are entering (long build-up).",
-        "ACUTAAS closed at \u20b94,078.82 and above 20-day avg \u20b93,900, so the move is with the trend, not against it.",
-        "Strike 4100 is near the money (delta +0.53): it moves about \u20b90.53 for each \u20b91 in ACUTAAS.",
-        "Liquid: 310 contracts traded, open interest 10,950 shares, so you can get in and out.",
-        "33 days to expiry, so time decay is slower than for an expiry-week option."
+        "Futures rose 4.67% while open interest grew 22.7%: new buyers are entering (long build-up).",
+        "DATAPATTNS closed at \u20b94,336.84 and above 20-day avg \u20b94,067, so the move is with the trend, not against it.",
+        "Strike 4400 is near the money (delta +0.50): it moves about \u20b90.50 for each \u20b91 in DATAPATTNS.",
+        "Liquid: 6,781 contracts traded, open interest 68,250 shares, so you can get in and out.",
+        "32 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 162.73,
-          "pct": -27.9,
-          "pnl_lot": -9569
+          "price": 158.92,
+          "pct": -28.6,
+          "pnl_lot": -8039
         },
         {
           "move": -2,
-          "price": 181.27,
-          "pct": -19.7,
-          "pnl_lot": -6794
+          "price": 177.47,
+          "pct": -20.2,
+          "pnl_lot": -5725
         },
         {
           "move": -1,
-          "price": 201.02,
-          "pct": -11.0,
-          "pnl_lot": -3837
+          "price": 197.29,
+          "pct": -11.3,
+          "pnl_lot": -3252
         },
         {
           "move": 0,
-          "price": 221.98,
-          "pct": -1.7,
-          "pnl_lot": -699
-        },
-        {
-          "move": 1,
-          "price": 244.14,
-          "pct": 8.1,
-          "pnl_lot": 2618
-        },
-        {
-          "move": 2,
-          "price": 267.46,
-          "pct": 18.5,
-          "pnl_lot": 6110
-        },
-        {
-          "move": 3,
-          "price": 291.94,
-          "pct": 29.3,
-          "pnl_lot": 9774
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 62",
-            "value": 62.0
-          },
-          {
-            "name": "Who's winning",
-            "ok": false,
-            "tech": "MACD",
-            "text": "Sellers are winning but getting tired"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b94,130.0, where it stopped before (3.4% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 62.0,
-        "pattern": "green candle",
-        "resistance": 4130.0,
-        "support": 3136.2
-      },
-      "days": 33,
-      "gamma": 0.00071,
-      "vega_lot": 732,
-      "opt_oi_chg": 9900,
-      "opt_chg": 26.8,
-      "fut_oi": 59550,
-      "breakeven": 4325.8,
-      "max_loss_lot": 33870,
-      "need_move": 42.6,
-      "need_move_pct": 1.04,
-      "symbol": "ACUTAAS",
-      "side": "CE",
-      "contract": "ACUTAAS 29 Dec 4100 CE",
-      "expiry": "2026-12-29",
-      "strike": 4100.0,
-      "entry": 225.8,
-      "target": 248.38,
-      "stop": 214.51,
-      "lot": 150,
-      "cost_per_lot": 33870,
-      "profit_per_lot": 3253,
-      "loss_per_lot": -1818,
-      "delta": 0.53,
-      "theta_lot": -561,
-      "iv": 45.9,
-      "oi": 10950,
-      "volume": 310,
-      "spot": 4078.82,
-      "price_chg": 1.94,
-      "oi_chg": 233.6,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b93,900",
-      "affordable": false
-    },
-    {
-      "why": [
-        "Futures rose 6.15% while open interest grew 5.7%: new buyers are entering (long build-up).",
-        "KFINTECH closed at \u20b9994.89 and above 20-day avg \u20b9911, so the move is with the trend, not against it.",
-        "Strike 1000 is near the money (delta +0.52): it moves about \u20b90.52 for each \u20b91 in KFINTECH.",
-        "Liquid: 8,685 contracts traded, open interest 547,400 shares, so you can get in and out.",
-        "33 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 29.07,
-          "pct": -33.6,
-          "pnl_lot": -8559
-        },
-        {
-          "move": -2,
-          "price": 33.35,
-          "pct": -23.9,
-          "pnl_lot": -6102
-        },
-        {
-          "move": -1,
-          "price": 38.01,
-          "pct": -13.2,
-          "pnl_lot": -3432
-        },
-        {
-          "move": 0,
-          "price": 43.03,
+          "price": 218.39,
           "pct": -1.8,
-          "pnl_lot": -548
+          "pnl_lot": -619
         },
         {
           "move": 1,
-          "price": 48.42,
-          "pct": 10.6,
-          "pnl_lot": 2546
+          "price": 240.76,
+          "pct": 8.2,
+          "pnl_lot": 2171
         },
         {
           "move": 2,
-          "price": 54.18,
-          "pct": 23.7,
-          "pnl_lot": 5848
+          "price": 264.37,
+          "pct": 18.8,
+          "pnl_lot": 5117
         },
         {
           "move": 3,
-          "price": 60.28,
-          "pct": 37.6,
-          "pnl_lot": 9350
+          "price": 289.22,
+          "pct": 30.0,
+          "pnl_lot": 8217
         }
       ],
       "chart": {
@@ -193,8 +65,8 @@
             "name": "Speed",
             "ok": true,
             "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 56",
-            "value": 56.1
+            "tech": "RSI 52",
+            "value": 51.7
           },
           {
             "name": "Who's winning",
@@ -212,485 +84,101 @@
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to rise before \u20b9985.0, where it stopped before (5.5% away)",
+            "text": "There's room to rise before \u20b94,324.4, where it stopped before (4.1% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 3,
         "verdict": "ok",
-        "rsi": 56.1,
+        "rsi": 51.7,
         "pattern": "doji (indecision)",
-        "resistance": 985.0,
-        "support": 784.0
+        "resistance": 4324.4,
+        "support": 3630.5
       },
-      "days": 33,
-      "gamma": 0.00365,
-      "vega_lot": 685,
-      "opt_oi_chg": 365125,
-      "opt_chg": 140.7,
-      "fut_oi": 2888800,
-      "breakeven": 1043.8,
-      "max_loss_lot": 25185,
-      "need_move": 8.42,
-      "need_move_pct": 0.85,
-      "symbol": "KFINTECH",
+      "days": 32,
+      "gamma": 0.00066,
+      "vega_lot": 640,
+      "opt_oi_chg": 55000,
+      "opt_chg": 67.3,
+      "fut_oi": 495875,
+      "breakeven": 4622.45,
+      "max_loss_lot": 27806,
+      "need_move": 44.49,
+      "need_move_pct": 1.03,
+      "symbol": "DATAPATTNS",
       "side": "CE",
-      "contract": "KFINTECH 29 Dec 1000 CE",
+      "contract": "DATAPATTNS 29 Dec 4400 CE",
       "expiry": "2026-12-29",
-      "strike": 1000.0,
-      "entry": 43.8,
-      "target": 48.18,
-      "stop": 41.61,
-      "lot": 575,
-      "cost_per_lot": 25185,
-      "profit_per_lot": 2407,
-      "loss_per_lot": -1364,
-      "delta": 0.52,
-      "theta_lot": -427,
-      "iv": 36.4,
-      "oi": 547400,
-      "volume": 8685,
-      "spot": 994.89,
-      "price_chg": 6.15,
-      "oi_chg": 5.7,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b9911",
-      "affordable": false
-    },
-    {
-      "why": [
-        "Futures rose 3.11% while open interest grew 11.5%: new buyers are entering (long build-up).",
-        "ENRIN closed at \u20b93,057.72 and above 20-day avg \u20b92,933, so the move is with the trend, not against it.",
-        "Strike 3100 is near the money (delta +0.50): it moves about \u20b90.50 for each \u20b91 in ENRIN.",
-        "Liquid: 3,438 contracts traded, open interest 86,100 shares, so you can get in and out.",
-        "33 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 108.4,
-          "pct": -29.2,
-          "pnl_lot": -7918
-        },
-        {
-          "move": -2,
-          "price": 121.44,
-          "pct": -20.7,
-          "pnl_lot": -5640
-        },
-        {
-          "move": -1,
-          "price": 135.41,
-          "pct": -11.6,
-          "pnl_lot": -3200
-        },
-        {
-          "move": 0,
-          "price": 150.31,
-          "pct": -1.8,
-          "pnl_lot": -598
-        },
-        {
-          "move": 1,
-          "price": 166.13,
-          "pct": 8.5,
-          "pnl_lot": 2165
-        },
-        {
-          "move": 2,
-          "price": 182.85,
-          "pct": 19.4,
-          "pnl_lot": 5086
-        },
-        {
-          "move": 3,
-          "price": 200.47,
-          "pct": 30.9,
-          "pnl_lot": 8163
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": false,
-            "text": "Not much buying energy yet",
-            "tech": "RSI 50",
-            "value": 49.6
-          },
-          {
-            "name": "Who's winning",
-            "ok": false,
-            "tech": "MACD",
-            "text": "Buyers are winning but getting tired"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit lower",
-            "tech": "candle: red candle",
-            "pattern": "red candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b93,222.3, where it stopped before (8.5% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 3,
-        "verdict": "ok",
-        "rsi": 49.6,
-        "pattern": "red candle",
-        "resistance": 3222.3,
-        "support": 2630.4
-      },
-      "days": 33,
-      "gamma": 0.00097,
-      "vega_lot": 642,
-      "opt_oi_chg": 45325,
-      "opt_chg": 17.6,
-      "fut_oi": 1411725,
-      "breakeven": 3253.1,
-      "max_loss_lot": 26792,
-      "need_move": 30.62,
-      "need_move_pct": 1.0,
-      "symbol": "ENRIN",
-      "side": "CE",
-      "contract": "ENRIN 29 Dec 3100 CE",
-      "expiry": "2026-12-29",
-      "strike": 3100.0,
-      "entry": 153.1,
-      "target": 168.41,
-      "stop": 145.44,
-      "lot": 175,
-      "cost_per_lot": 26792,
-      "profit_per_lot": 2563,
-      "loss_per_lot": -1448,
+      "strike": 4400.0,
+      "entry": 222.45,
+      "target": 244.69,
+      "stop": 211.33,
+      "lot": 125,
+      "cost_per_lot": 27806,
+      "profit_per_lot": 2662,
+      "loss_per_lot": -1501,
       "delta": 0.5,
-      "theta_lot": -479,
-      "iv": 44.8,
-      "oi": 86100,
-      "volume": 3438,
-      "spot": 3057.72,
-      "price_chg": 3.11,
-      "oi_chg": 11.5,
+      "theta_lot": -513,
+      "iv": 46.9,
+      "oi": 68250,
+      "volume": 6781,
+      "spot": 4336.84,
+      "price_chg": 4.67,
+      "oi_chg": 22.7,
       "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b92,933",
+      "trend": "above 20-day avg \u20b94,067",
       "affordable": false
     },
     {
       "why": [
-        "Futures rose 2.78% while open interest grew 3.5%: new buyers are entering (long build-up).",
-        "ANGELONE closed at \u20b9358.00 and above 20-day avg \u20b9325, so the move is with the trend, not against it.",
-        "Strike 365 is near the money (delta +0.48): it moves about \u20b90.48 for each \u20b91 in ANGELONE.",
-        "Liquid: 703 contracts traded, open interest 512,500 shares, so you can get in and out.",
-        "33 days to expiry, so time decay is slower than for an expiry-week option."
+        "Futures fell 3.34% while open interest grew 7.2%: new sellers are entering (short build-up).",
+        "ASHOKLEY closed at \u20b9151.43 and below 20-day avg \u20b9160, so the move is with the trend, not against it.",
+        "Strike 152.5 is near the money (delta -0.48): it moves about \u20b90.48 for each \u20b91 in ASHOKLEY.",
+        "Liquid: 1,205 contracts traded, open interest 2,155,000 shares, so you can get in and out.",
+        "32 days to expiry, so time decay is slower than for an expiry-week option."
       ],
       "scenarios": [
         {
           "move": -3,
-          "price": 10.4,
-          "pct": -32.0,
-          "pnl_lot": -12372
+          "price": 9.07,
+          "pct": 35.1,
+          "pnl_lot": 11642
         },
         {
           "move": -2,
-          "price": 11.82,
-          "pct": -22.8,
-          "pnl_lot": -8829
-        },
-        {
-          "move": -1,
-          "price": 13.35,
-          "pct": -12.7,
-          "pnl_lot": -4993
-        },
-        {
-          "move": 0,
-          "price": 15.01,
-          "pct": -1.9,
-          "pnl_lot": -862
-        },
-        {
-          "move": 1,
-          "price": 16.78,
-          "pct": 9.7,
-          "pnl_lot": 3563
-        },
-        {
-          "move": 2,
-          "price": 18.67,
+          "price": 8.19,
           "pct": 22.1,
-          "pnl_lot": 8281
-        },
-        {
-          "move": 3,
-          "price": 20.68,
-          "pct": 35.2,
-          "pnl_lot": 13285
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 64",
-            "value": 63.9
-          },
-          {
-            "name": "Who's winning",
-            "ok": false,
-            "tech": "MACD",
-            "text": "Buyers are winning but getting tired"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, buyers were firmly in charge",
-            "tech": "candle: strong green candle",
-            "pattern": "strong green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b9379.1, where it stopped before (8.6% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 63.9,
-        "pattern": "strong green candle",
-        "resistance": 379.15,
-        "support": 273.8
-      },
-      "days": 33,
-      "gamma": 0.00908,
-      "vega_lot": 1072,
-      "opt_oi_chg": 205000,
-      "opt_chg": 36.6,
-      "fut_oi": 37280000,
-      "breakeven": 380.3,
-      "max_loss_lot": 38250,
-      "need_move": 3.19,
-      "need_move_pct": 0.89,
-      "symbol": "ANGELONE",
-      "side": "CE",
-      "contract": "ANGELONE 29 Dec 365 CE",
-      "expiry": "2026-12-29",
-      "strike": 365.0,
-      "entry": 15.3,
-      "target": 16.83,
-      "stop": 14.54,
-      "lot": 2500,
-      "cost_per_lot": 38250,
-      "profit_per_lot": 3680,
-      "loss_per_lot": -2047,
-      "delta": 0.48,
-      "theta_lot": -733,
-      "iv": 40.8,
-      "oi": 512500,
-      "volume": 703,
-      "spot": 358.0,
-      "price_chg": 2.78,
-      "oi_chg": 3.5,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b9325",
-      "affordable": false
-    },
-    {
-      "why": [
-        "Futures rose 1.95% while open interest grew 5.2%: new buyers are entering (long build-up).",
-        "RELIANCE closed at \u20b91,396.23 and above 20-day avg \u20b91,307, so the move is with the trend, not against it.",
-        "Strike 1410 is near the money (delta +0.49): it moves about \u20b90.49 for each \u20b91 in RELIANCE.",
-        "Liquid: 10,604 contracts traded, open interest 1,428,500 shares, so you can get in and out.",
-        "33 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 21.22,
-          "pct": -45.9,
-          "pnl_lot": -9089
-        },
-        {
-          "move": -2,
-          "price": 26.24,
-          "pct": -33.1,
-          "pnl_lot": -6586
+          "pnl_lot": 7277
         },
         {
           "move": -1,
-          "price": 31.99,
-          "pct": -18.5,
-          "pnl_lot": -3716
+          "price": 7.38,
+          "pct": 9.9,
+          "pnl_lot": 3195
         },
         {
           "move": 0,
-          "price": 38.49,
-          "pct": -1.9,
-          "pnl_lot": -472
+          "price": 6.61,
+          "pct": -1.4,
+          "pnl_lot": -605
         },
         {
           "move": 1,
-          "price": 45.74,
-          "pct": 16.5,
-          "pnl_lot": 3147
+          "price": 5.91,
+          "pct": -11.9,
+          "pnl_lot": -4124
         },
         {
           "move": 2,
-          "price": 53.74,
-          "pct": 36.9,
-          "pnl_lot": 7135
+          "price": 5.26,
+          "pct": -21.6,
+          "pnl_lot": -7369
         },
         {
           "move": 3,
-          "price": 62.44,
-          "pct": 59.1,
-          "pnl_lot": 11480
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving up, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Rising at a healthy pace, not overheated",
-            "tech": "RSI 69",
-            "value": 68.9
-          },
-          {
-            "name": "Who's winning",
-            "ok": false,
-            "tech": "MACD",
-            "text": "Buyers are winning but getting tired"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit higher",
-            "tech": "candle: green candle",
-            "pattern": "green candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to rise before \u20b91,390.0, where it stopped before (1.2% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 68.9,
-        "pattern": "green candle",
-        "resistance": 1390.0,
-        "support": 1152.5
-      },
-      "days": 33,
-      "gamma": 0.0038,
-      "vega_lot": 837,
-      "opt_oi_chg": 130500,
-      "opt_chg": 37.0,
-      "fut_oi": 147516000,
-      "breakeven": 1449.25,
-      "max_loss_lot": 19625,
-      "need_move": 8.01,
-      "need_move_pct": 0.57,
-      "symbol": "RELIANCE",
-      "side": "CE",
-      "contract": "RELIANCE 29 Dec 1410 CE",
-      "expiry": "2026-12-29",
-      "strike": 1410.0,
-      "entry": 39.25,
-      "target": 43.18,
-      "stop": 37.29,
-      "lot": 500,
-      "cost_per_lot": 19625,
-      "profit_per_lot": 1865,
-      "loss_per_lot": -1073,
-      "delta": 0.49,
-      "theta_lot": -375,
-      "iv": 25.0,
-      "oi": 1428500,
-      "volume": 10604,
-      "spot": 1396.23,
-      "price_chg": 1.95,
-      "oi_chg": 5.2,
-      "buildup": "Long build-up",
-      "trend": "above 20-day avg \u20b91,307",
-      "affordable": true
-    },
-    {
-      "why": [
-        "Futures fell 1.31% while open interest grew 6.3%: new sellers are entering (short build-up).",
-        "CONCOR closed at \u20b9421.09 and below 20-day avg \u20b9432, so the move is with the trend, not against it.",
-        "Strike 430 is near the money (delta -0.55): it moves about \u20b90.55 for each \u20b91 in CONCOR.",
-        "Liquid: 239 contracts traded, open interest 427,500 shares, so you can get in and out.",
-        "33 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 25.63,
-          "pct": 43.2,
-          "pnl_lot": 9544
-        },
-        {
-          "move": -2,
-          "price": 22.81,
-          "pct": 27.4,
-          "pnl_lot": 6027
-        },
-        {
-          "move": -1,
-          "price": 20.18,
-          "pct": 12.7,
-          "pnl_lot": 2746
-        },
-        {
-          "move": 0,
-          "price": 17.75,
-          "pct": -0.9,
-          "pnl_lot": -292
-        },
-        {
-          "move": 1,
-          "price": 15.51,
-          "pct": -13.4,
-          "pnl_lot": -3085
-        },
-        {
-          "move": 2,
-          "price": 13.47,
-          "pct": -24.8,
-          "pnl_lot": -5632
-        },
-        {
-          "move": 3,
-          "price": 11.62,
-          "pct": -35.1,
-          "pnl_lot": -7937
+          "price": 4.66,
+          "pct": -30.5,
+          "pnl_lot": -10346
         }
       ],
       "chart": {
@@ -705,136 +193,8 @@
             "name": "Speed",
             "ok": true,
             "text": "Falling at a steady pace, not overdone",
-            "tech": "RSI 42",
-            "value": 41.6
-          },
-          {
-            "name": "Who's winning",
-            "ok": false,
-            "tech": "MACD",
-            "text": "Buyers are winning but getting tired"
-          },
-          {
-            "name": "Last move",
-            "ok": true,
-            "text": "In the last day, the price closed a bit lower",
-            "tech": "candle: red candle",
-            "pattern": "red candle"
-          },
-          {
-            "name": "Room to move",
-            "ok": true,
-            "text": "There's room to fall before \u20b9402.5, where it bounced before (5.5% away)",
-            "tech": "support/resistance"
-          }
-        ],
-        "passed": 4,
-        "verdict": "strong",
-        "rsi": 41.6,
-        "pattern": "red candle",
-        "resistance": 462.2,
-        "support": 402.53
-      },
-      "days": 33,
-      "gamma": 0.01097,
-      "vega_lot": 626,
-      "opt_oi_chg": 48750,
-      "opt_chg": 15.9,
-      "fut_oi": 23487500,
-      "breakeven": 412.1,
-      "max_loss_lot": 22375,
-      "need_move": 3.25,
-      "need_move_pct": 0.77,
-      "symbol": "CONCOR",
-      "side": "PE",
-      "contract": "CONCOR 29 Dec 430 PE",
-      "expiry": "2026-12-29",
-      "strike": 430.0,
-      "entry": 17.9,
-      "target": 19.69,
-      "stop": 17.0,
-      "lot": 1250,
-      "cost_per_lot": 22375,
-      "profit_per_lot": 2133,
-      "loss_per_lot": -1217,
-      "delta": -0.55,
-      "theta_lot": -214,
-      "iv": 28.5,
-      "oi": 427500,
-      "volume": 239,
-      "spot": 421.09,
-      "price_chg": -1.31,
-      "oi_chg": 6.3,
-      "buildup": "Short build-up",
-      "trend": "below 20-day avg \u20b9432",
-      "affordable": false
-    },
-    {
-      "why": [
-        "Futures fell 1.28% while open interest grew 3.0%: new sellers are entering (short build-up).",
-        "ADANIGREEN closed at \u20b91,348.79 and below 20-day avg \u20b91,380, so the move is with the trend, not against it.",
-        "Strike 1360 is near the money (delta -0.49): it moves about \u20b90.49 for each \u20b91 in ADANIGREEN.",
-        "Liquid: 711 contracts traded, open interest 101,400 shares, so you can get in and out.",
-        "33 days to expiry, so time decay is slower than for an expiry-week option."
-      ],
-      "scenarios": [
-        {
-          "move": -3,
-          "price": 84.51,
-          "pct": 33.3,
-          "pnl_lot": 12502
-        },
-        {
-          "move": -2,
-          "price": 76.75,
-          "pct": 21.1,
-          "pnl_lot": 7855
-        },
-        {
-          "move": -1,
-          "price": 69.47,
-          "pct": 9.6,
-          "pnl_lot": 3495
-        },
-        {
-          "move": 0,
-          "price": 62.66,
-          "pct": -1.2,
-          "pnl_lot": -578
-        },
-        {
-          "move": 1,
-          "price": 56.34,
-          "pct": -11.1,
-          "pnl_lot": -4366
-        },
-        {
-          "move": 2,
-          "price": 50.48,
-          "pct": -20.4,
-          "pnl_lot": -7874
-        },
-        {
-          "move": 3,
-          "price": 45.08,
-          "pct": -28.9,
-          "pnl_lot": -11109
-        }
-      ],
-      "chart": {
-        "checks": [
-          {
-            "name": "Direction",
-            "ok": true,
-            "tech": "trend",
-            "text": "Overall the price is moving down, the same way as this idea"
-          },
-          {
-            "name": "Speed",
-            "ok": true,
-            "text": "Falling at a steady pace, not overdone",
-            "tech": "RSI 50",
-            "value": 49.6
+            "tech": "RSI 46",
+            "value": 46.3
           },
           {
             "name": "Who's winning",
@@ -845,56 +205,184 @@
           {
             "name": "Last move",
             "ok": true,
-            "text": "In the last day, the price closed a bit lower",
-            "tech": "candle: red candle",
-            "pattern": "red candle"
+            "text": "In the last day, sellers were firmly in charge",
+            "tech": "candle: strong red candle",
+            "pattern": "strong red candle"
           },
           {
             "name": "Room to move",
             "ok": true,
-            "text": "There's room to fall before \u20b91,175.0, where it bounced before (13.9% away)",
+            "text": "There's room to fall before \u20b9140.2, where it bounced before (10.2% away)",
             "tech": "support/resistance"
           }
         ],
         "passed": 5,
         "verdict": "strong",
-        "rsi": 49.6,
-        "pattern": "red candle",
-        "resistance": 1479.0,
-        "support": 1175.0
+        "rsi": 46.3,
+        "pattern": "strong red candle",
+        "resistance": 177.75,
+        "support": 140.19
       },
-      "days": 33,
-      "gamma": 0.00258,
-      "vega_lot": 970,
-      "opt_oi_chg": 7200,
-      "opt_chg": 15.5,
-      "fut_oi": 18634800,
-      "breakeven": 1296.6,
-      "max_loss_lot": 38040,
-      "need_move": 12.94,
-      "need_move_pct": 0.96,
-      "symbol": "ADANIGREEN",
+      "days": 32,
+      "gamma": 0.02407,
+      "vega_lot": 894,
+      "opt_oi_chg": 875000,
+      "opt_chg": 57.1,
+      "fut_oi": 162310000,
+      "breakeven": 145.79,
+      "max_loss_lot": 33550,
+      "need_move": 1.4,
+      "need_move_pct": 0.92,
+      "symbol": "ASHOKLEY",
       "side": "PE",
-      "contract": "ADANIGREEN 29 Dec 1360 PE",
+      "contract": "ASHOKLEY 29 Dec 152.5 PE",
       "expiry": "2026-12-29",
-      "strike": 1360.0,
-      "entry": 63.4,
-      "target": 69.74,
-      "stop": 60.23,
-      "lot": 600,
-      "cost_per_lot": 38040,
-      "profit_per_lot": 3659,
-      "loss_per_lot": -2036,
-      "delta": -0.49,
-      "theta_lot": -484,
-      "iv": 38.2,
-      "oi": 101400,
-      "volume": 711,
-      "spot": 1348.79,
-      "price_chg": -1.28,
-      "oi_chg": 3.0,
+      "strike": 152.5,
+      "entry": 6.71,
+      "target": 7.38,
+      "stop": 6.37,
+      "lot": 5000,
+      "cost_per_lot": 33550,
+      "profit_per_lot": 3222,
+      "loss_per_lot": -1801,
+      "delta": -0.48,
+      "theta_lot": -445,
+      "iv": 36.9,
+      "oi": 2155000,
+      "volume": 1205,
+      "spot": 151.43,
+      "price_chg": -3.34,
+      "oi_chg": 7.2,
       "buildup": "Short build-up",
-      "trend": "below 20-day avg \u20b91,380",
+      "trend": "below 20-day avg \u20b9160",
+      "affordable": false
+    },
+    {
+      "why": [
+        "Futures rose 2.75% while open interest grew 7.1%: new buyers are entering (long build-up).",
+        "KALYANKJIL closed at \u20b9659.48 and above 20-day avg \u20b9608, so the move is with the trend, not against it.",
+        "Strike 670 is near the money (delta +0.49): it moves about \u20b90.49 for each \u20b91 in KALYANKJIL.",
+        "Liquid: 2,101 contracts traded, open interest 768,150 shares, so you can get in and out.",
+        "32 days to expiry, so time decay is slower than for an expiry-week option."
+      ],
+      "scenarios": [
+        {
+          "move": -3,
+          "price": 20.59,
+          "pct": -31.1,
+          "pnl_lot": -12681
+        },
+        {
+          "move": -2,
+          "price": 23.3,
+          "pct": -22.1,
+          "pnl_lot": -9034
+        },
+        {
+          "move": -1,
+          "price": 26.22,
+          "pct": -12.3,
+          "pnl_lot": -5100
+        },
+        {
+          "move": 0,
+          "price": 29.35,
+          "pct": -1.8,
+          "pnl_lot": -877
+        },
+        {
+          "move": 1,
+          "price": 32.7,
+          "pct": 9.4,
+          "pnl_lot": 3632
+        },
+        {
+          "move": 2,
+          "price": 36.26,
+          "pct": 21.3,
+          "pnl_lot": 8425
+        },
+        {
+          "move": 3,
+          "price": 40.02,
+          "pct": 33.9,
+          "pnl_lot": 13496
+        }
+      ],
+      "chart": {
+        "checks": [
+          {
+            "name": "Direction",
+            "ok": true,
+            "tech": "trend",
+            "text": "Overall the price is moving up, the same way as this idea"
+          },
+          {
+            "name": "Speed",
+            "ok": true,
+            "text": "Rising at a healthy pace, not overheated",
+            "tech": "RSI 56",
+            "value": 56.2
+          },
+          {
+            "name": "Who's winning",
+            "ok": false,
+            "tech": "MACD",
+            "text": "Sellers are winning and getting stronger"
+          },
+          {
+            "name": "Last move",
+            "ok": false,
+            "text": "In the last day, buyers and sellers were evenly matched, no clear winner",
+            "tech": "candle: doji",
+            "pattern": "doji (indecision)"
+          },
+          {
+            "name": "Room to move",
+            "ok": true,
+            "text": "There's room to rise before \u20b9729.3, where it stopped before (14.0% away)",
+            "tech": "support/resistance"
+          }
+        ],
+        "passed": 3,
+        "verdict": "ok",
+        "rsi": 56.2,
+        "pattern": "doji (indecision)",
+        "resistance": 729.35,
+        "support": 490.6
+      },
+      "days": 32,
+      "gamma": 0.00482,
+      "vega_lot": 1051,
+      "opt_oi_chg": 198450,
+      "opt_chg": 23.6,
+      "fut_oi": 17263800,
+      "breakeven": 699.9,
+      "max_loss_lot": 40365,
+      "need_move": 6.1,
+      "need_move_pct": 0.93,
+      "symbol": "KALYANKJIL",
+      "side": "CE",
+      "contract": "KALYANKJIL 29 Dec 670 CE",
+      "expiry": "2026-12-29",
+      "strike": 670.0,
+      "entry": 29.9,
+      "target": 32.89,
+      "stop": 28.4,
+      "lot": 1350,
+      "cost_per_lot": 40365,
+      "profit_per_lot": 3886,
+      "loss_per_lot": -2157,
+      "delta": 0.49,
+      "theta_lot": -767,
+      "iv": 42.4,
+      "oi": 768150,
+      "volume": 2101,
+      "spot": 659.48,
+      "price_chg": 2.75,
+      "oi_chg": 7.1,
+      "buildup": "Long build-up",
+      "trend": "above 20-day avg \u20b9608",
       "affordable": false
     }
   ]
